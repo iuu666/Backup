@@ -1,0 +1,8 @@
+#!name=七猫小说
+#!desc=解锁会员，7.29-7.30版本可用
+
+[Script]
+qimao = type=http-response,pattern=^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/QiMao/other.1/7mao.js
+
+[MITM]
+hostname= %APPEND% *.wtzw.com

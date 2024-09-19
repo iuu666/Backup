@@ -1,0 +1,9 @@
+#!name=Nicegram
+#!desc=解锁Nicegram会员
+#!For: https://github.com/I-am-R-E/Functional-Store-Hub/blob/Master/Nicegram/Surge.sgmodule
+
+[Script]
+Nicegram会员 = type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/Nicegram/Nicegram.js
+
+[MITM]
+hostname = %APPEND% restore-access.indream.app
