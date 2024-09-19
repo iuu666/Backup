@@ -1,0 +1,63 @@
+#!name=TikTok
+#!desc=解锁 TikTok 地区限制
+
+#!policy: TikTok 的规则策略组
+#!region: 解锁 TikTok 地区的地区码
+#!mcc_mnc: 解锁 TikTok 地区的运营商代码
+#!carrier: 解锁 TikTok地区的运营商名称
+#!tz_name: 解锁 TikTok 地区的时区
+#!tz_offset: 解锁 TikTok 地区的时区偏移
+
+#!日本：region:JP  mcc_mnc:44001  carrier:docomo  tz_name:Asia/Tokyo  tz_offset:32400  
+#!韩国：region:KR  mcc_mnc:45005  carrier:SKT  tz_name:Asia/Seoul  tz_offset:32400  
+#!台湾：region:TW  mcc_mnc:46692  carrier:CHT  tz_name:Asia/Taipei  tz_offset:28800  
+#!美国：region:US  mcc_mnc:310260  carrier:T-Mobile  tz_name:America/New_York  tz_offset:-18000
+#!新加坡：region:SG  mcc_mnc:52503  carrier:M1  tz_name:Asia/Singapore  tz_offset:28800
+
+[Rule]
+DOMAIN,lf16-effectcdn.byteeffecttos-g.com,{{{policy}}}
+DOMAIN,lf16-pkgcdn.pitaya-clientai.com,{{{policy}}}
+DOMAIN,p16-tiktokcdn-com.akamaized.net,{{{policy}}}
+DOMAIN-SUFFIX,bytedapm.com,{{{policy}}}
+DOMAIN-SUFFIX,bytegecko-i18n.com,{{{policy}}}
+DOMAIN-SUFFIX,bytegecko.com,{{{policy}}}
+DOMAIN-SUFFIX,byteoversea.com,{{{policy}}}
+DOMAIN-SUFFIX,capcut.com,{{{policy}}}
+DOMAIN-SUFFIX,ibytedtos.com,{{{policy}}}
+DOMAIN-SUFFIX,ibyteimg.com,{{{policy}}}
+DOMAIN-SUFFIX,ipstatp.com,{{{policy}}}
+DOMAIN-SUFFIX,isnssdk.com,{{{policy}}}
+DOMAIN-SUFFIX,muscdn.com,{{{policy}}}
+DOMAIN-SUFFIX,musical.ly,{{{policy}}}
+DOMAIN-SUFFIX,sgpstatp.com,{{{policy}}}
+DOMAIN-SUFFIX,snssdk.com,{{{policy}}}
+DOMAIN-SUFFIX,tik-tokapi.com,{{{policy}}}
+DOMAIN-SUFFIX,tiktok.com,{{{policy}}}
+DOMAIN-SUFFIX,tiktokcdn-us.com,{{{policy}}}
+DOMAIN-SUFFIX,tiktokcdn.com,{{{policy}}}
+DOMAIN-SUFFIX,tiktokd.net,{{{policy}}}
+DOMAIN-SUFFIX,tiktokd.org,{{{policy}}}
+DOMAIN-SUFFIX,tiktokmusic.app,{{{policy}}}
+DOMAIN-SUFFIX,tiktokv.com,{{{policy}}}
+DOMAIN-KEYWORD,musical.ly,{{{policy}}}
+DOMAIN-KEYWORD,tiktok,{{{policy}}}
+USER-AGENT,TikTok*,{{{policy}}}
+PROCESS-NAME,com.zhiliaoapp.musically,{{{policy}}}
+
+[URL Rewrite]
+(?<=_region=)CN(?=&) {{{region}}} 307
+(?<=carrier_region1=)CN(?=&) {{{region}}} 307
+(?<=&mcc_mnc=)460[0-1][0-9](?=&) {{{mcc_mnc}}} 307
+^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+(?<=&carrier=)[%A-Z0-9]+(?=&) {{{carrier}}} 307
+(?<=tz_name=)Asia/Shanghai(?=&) {{{tz_name}}} 307
+(?<=tz_offset=)28800(?=&) {{{tz_offset}}} 307
+
+#去水印
+(?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
+
+[Script]
+http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/(favorite|listcollection)) script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/TikTok/TikTok.js, requires-body=true, timeout=10, tag=TikTok去水印
+
+[MITM]
+hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com

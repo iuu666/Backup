@@ -1,0 +1,8 @@
+#!name=Picsew截图
+#!desc=Picsew Unlock
+
+[Script]
+picsew = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/Picsew/Picsew.js
+
+[MITM]
+hostname= %APPEND% buy.itunes.apple.com

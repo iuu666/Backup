@@ -1,0 +1,8 @@
+#!name=爱企查
+#!desc=爱企查vip
+
+[Script]
+爱企查vip=type=http-response,pattern=^https:\//aiqicha.baidu.com\/usercenter\/getvipinfoajax,requires-body=1,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/AiQiCha/aqc.js
+
+[MITM]
+hostname = %APPEND% aiqicha.baidu.com
