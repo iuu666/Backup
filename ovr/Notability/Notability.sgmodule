@@ -1,8 +1,0 @@
-#!name=Notability
-#!desc=Notability Unlock 
-
-[Script]
-Notability = type=http-response,pattern=^https?:\/\/notability\.com\/(global|subscriptions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/Notability/Notability.js
-
-[MITM]
-hostname= %APPEND% * notability.com

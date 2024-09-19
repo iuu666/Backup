@@ -1,8 +1,0 @@
-#!name=七猫小说
-#!desc=解锁七猫小说会员，小于7.29版本可用
-
-[MITM]
-hostname = %APPEND% *.wtzw.com
-
-[Script]
-七猫小说=type=http-response,pattern=^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/,requires-body=1,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/QiMao/qmxs.js
