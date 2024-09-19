@@ -1,34 +1,34 @@
-name: BM7  # 工作流程的名称
+name: Run Proxy Fetch Script
 
-# 定义工作流程的触发条件
+# 定义何时触发工作流
 on:
+  # 每天 UTC 时间 23:00 自动触发工作流
   schedule:
-    - cron: '0 15 * * *'  # 定时触发，每天 UTC 时间 15:00 运行此工作流程
-  workflow_dispatch:  # 手动触发工作流程
+    - cron: '0 23 * * *'
+  # 手动触发工作流
+  workflow_dispatch:
 
-# 定义作业
 jobs:
   run-script:
-    runs-on: ubuntu-latest  # 使用最新版本的 Ubuntu 运行作业
+    runs-on: ubuntu-latest
 
     steps:
-    # 步骤 1：签出当前仓库内容
-    - name: Checkout repository content
-      uses: actions/checkout@v3  # 使用官方的 GitHub Actions checkout v3 插件
+    # Step 1: 检出代码库
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    # 步骤 2：设置 Python 环境
+    # Step 2: 设置 Python 环境
     - name: Set up Python
-      uses: actions/setup-python@v4  # 使用官方的 GitHub Actions setup-python v4 插件
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.x'  # 安装指定的 Python 版本（例如 '3.8' 或 '3.9'）
+        python-version: '3.x'  # 使用3.x版本的Python，可以根据需求调整
 
-    # 步骤 3：安装依赖
+    # Step 3: 安装依赖
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip  # 更新 pip
-        pip install -r requirements.txt  # 安装 requirements.txt 文件中列出的依赖项
+        python -m pip install --upgrade pip
+        pip install requests lxml
 
-    # 步骤 4：运行 Python 脚本
-    - name: Run Proxy_All_No_Resolve.py script
-      run: |
-        python scripts/Proxy_All_No_Resolve.py  # 运行存放在 scripts 文件夹中的脚本
+    # Step 4: 运行 Python 脚本
+    - name: Run Proxy_All_No_Resolve script
+      run: python scripts/Proxy_All_No_Resolve.py
