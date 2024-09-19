@@ -19,8 +19,8 @@ Proxy = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/r
 China = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list"
 
 # 创建 main 目录，如果不存在的话
-os.makedirs('main', exist_ok=True)
+os.makedirs('bm7', exist_ok=True)
 
 # 执行函数，保存数据到 main 目录下
-fetch_and_save(Proxy, "main/Proxy_All_No_Resolve.list")
-fetch_and_save(China, "main/China_All_No_Resolve.list")
+fetch_and_save(Proxy, "bm7/Proxy_All_No_Resolve.list")
+fetch_and_save(China, "bm7/China_All_No_Resolve.list")
