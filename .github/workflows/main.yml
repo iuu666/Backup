@@ -1,34 +1,31 @@
-name: Run Proxy Fetch Script
+name: Update BM7 List
 
-# 定义何时触发工作流
 on:
-  # 每天 UTC 时间 23:00 自动触发工作流
+  push:  # 在代码推送到仓库时触发
+  workflow_dispatch:  # 允许手动触发此工作流
   schedule:
-    - cron: '0 23 * * *'
-  # 手动触发工作流
-  workflow_dispatch:
+    - cron: "00 23 * * *"  # 每天 UTC 时间 23:00 自动触发
+
+permissions:
+  contents: write  # 允许写入仓库内容
 
 jobs:
-  run-script:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest  # 在最新版本的 Ubuntu 环境中运行
 
     steps:
-    # Step 1: 检出代码库
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    # Step 2: 设置 Python 环境
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'  # 使用3.x版本的Python，可以根据需求调整
-
-    # Step 3: 安装依赖
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests lxml
-
-    # Step 4: 运行 Python 脚本
-    - name: Run Proxy_All_No_Resolve script
-      run: python scripts/Proxy_All_No_Resolve.py
+      - uses: actions/checkout@v3  # 检出代码仓库
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8  # 设置 Python 版本为 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # 升级 pip
+          pip install requests lxml  # 安装 requests 和 lxml 库
+      - name: Run Python
+        run: |
+          python scripts/Proxy_All_No_Resolve.py 
+      - uses: stefanzweifel/git-auto-commit-action@v5  # 使用 git-auto-commit-action 自动提交更改
+        with:
+          commit_message: Update IP List  # 提交信息
