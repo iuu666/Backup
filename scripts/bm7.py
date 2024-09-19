@@ -1,53 +1,26 @@
 import requests
-from lxml import etree
-import json
-from datetime import datetime, timedelta
-
-# 生成头部信息
-def get_header(file_name, count):
-    utc_time = datetime.utcnow()  # 获取当前的 UTC 时间
-    china_time = utc_time + timedelta(hours=8)  # 转换为 CST (UTC+8)
-    local_time = china_time.strftime("%Y-%m-%d %H:%M:%S")  # 格式化时间为字符串
-    # 根据文件名生成相应的头部信息
-    header = f"""\
-// {file_name.replace('.list', '')}
-// Link: https://github.com/iuu666/ASN.China
-// Total Count: {count}
-// Last Updated: CST {local_time}
-// Made by iuu, All rights reserved.
-
-"""
-    return header
+import os
 
 def fetch_and_save(url, file_name):
     # 发起 GET 请求获取页面内容
     response = requests.get(url)
     
-def fetch_and_save(url, file_name):
-    # 发起 GET 请求获取页面内容
-    r = requests.get(url).text
-    # 解析 HTML 内容
-    tree = etree.HTML(r)
-    # 提取嵌入的数据
-    asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
-    # 解析 JSON 数据
-    x = json.loads(asns)['payload']['blob']['rawLines']
-    # 计算总记录数
-    count = len(x)
+    # 确保请求成功
+    if response.status_code != 200:
+        print(f"Failed to fetch data from {url}")
+        return
+    
     # 保存数据到文件
     with open(file_name, "w", encoding='utf-8') as file:
-        # 写入头部信息
-        file.write(get_header(file_name, count))
-        # 写入数据
-        for i in x:
-            file.write(i)
-            file.write('\n')
+        file.write(response.text)
 
 # 各种 IP 列表的 URL
 Proxy = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list"
-China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/China/China_All_No_Resolve.list"
+China = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list"
 
+# 创建 main 目录，如果不存在的话
+os.makedirs('main', exist_ok=True)
 
-# 执行函数，保存数据
-fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")
-fetch_and_save(China, "China_All_No_Resolve.list")
+# 执行函数，保存数据到 main 目录下
+fetch_and_save(Proxy, "main/Proxy_All_No_Resolve.list")
+fetch_and_save(China, "main/China_All_No_Resolve.list")
