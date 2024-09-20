@@ -2,7 +2,7 @@
 #!desc=解锁得间小说会员
 
 [Script]
-dejianxiaoshuo = type=http-response,pattern=^https:\/\/dj\.palmestore\.com\/zyuc\/api\/user\/accountInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/DeJian/djxs.js
+dejianxiaoshuo = type=http-response,pattern=^https:\/\/dj\.palmestore\.com\/zyuc\/api\/user\/accountInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/DeJian/djxs.js
 
 [MITM]
 hostname= %APPEND% dj.palmestore.com
