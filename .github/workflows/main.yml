@@ -25,8 +25,8 @@ jobs:
           pip install requests lxml  # 安装 requests 和 lxml 库
       - name: Run Python
         run: |
-          python scripts/BM7-Surge.py 
-          python scripts/BM7-QuanX.py
+          python scripts/BM7Surge.py 
+          python scripts/BM7QuanX.py
       - uses: stefanzweifel/git-auto-commit-action@v5  # 使用 git-auto-commit-action 自动提交更改
         with:
           commit_message: Update BM7 List  # 提交信息
