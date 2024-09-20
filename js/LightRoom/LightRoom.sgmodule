@@ -2,7 +2,7 @@
 #!desc=解锁LightRoom
 
 [Script]
-LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/LightRoom/LightRoom.js
+LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/LightRoom/LightRoom.js
 
 [MITM]
 hostname = %APPEND% photos.adobe.io
