@@ -1,6 +1,10 @@
+import os  # 用于文件和目录操作
 import requests  # 用于发起 HTTP 请求
 from lxml import etree  # 用于解析 HTML 内容
 import json  # 用于处理 JSON 数据
+
+# 创建 BM7 和 QuanX 文件夹
+os.makedirs(os.path.join("BM7", "QuanX"), exist_ok=True)
 
 # 数据抓取和保存的主函数
 def fetch_and_save(url, file_name):
@@ -9,7 +13,7 @@ def fetch_and_save(url, file_name):
         r = requests.get(url)
         if r.status_code != 200:  # 检查请求是否成功
             print(f"Error: Failed to fetch data from {url}. Status code: {r.status_code}")
-            return  # 如果请求失败，终止函数
+            return
 
         r_text = r.text  # 获取响应文本
 
@@ -34,13 +38,13 @@ def fetch_and_save(url, file_name):
             return
 
         # 保存数据到文件
-        with open(file_name, "w", encoding='utf-8') as file:
+        with open(os.path.join("BM7", "QuanX", file_name), "w", encoding='utf-8') as file:
             # 写入数据
             for i in x:
-                file.write(f"{i}")  # 直接写入数据，不加前缀
+                file.write(i)
                 file.write('\n')
 
-        print(f"Success: Data successfully fetched and saved to {file_name}")  # 打印成功信息
+        print(f"Success: Data successfully fetched and saved to {file_name}")
 
     except Exception as e:  # 捕获其他意外错误
         print(f"Unexpected error: {str(e)}")
@@ -67,22 +71,22 @@ Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Quantu
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/China/China.list"
 
 # 执行函数，保存数据
-fetch_and_save(Direct, "Direct.list")  # 抓取和保存 Direct 列表
-fetch_and_save(Hijacking, "Hijacking.list")  # 抓取和保存 Hijacking 列表
-fetch_and_save(Privacy, "Privacy.list")  # 抓取和保存 Privacy 列表
-fetch_and_save(Apple, "Apple.list")  # 抓取和保存 Apple 列表
-fetch_and_save(Microsoft, "Microsoft.list")  # 抓取和保存 Microsoft 列表
-fetch_and_save(Google, "Google.list")  # 抓取和保存 Google 列表
-fetch_and_save(OpenAI, "OpenAI.list")  # 抓取和保存 OpenAI 列表
-fetch_and_save(GitHub, "GitHub.list")  # 抓取和保存 GitHub 列表
-fetch_and_save(Telegram, "Telegram.list")  # 抓取和保存 Telegram 列表
-fetch_and_save(Instagram, "Instagram.list")  # 抓取和保存 Instagram 列表
-fetch_and_save(TikTok, "TikTok.list")  # 抓取和保存 TikTok 列表
-fetch_and_save(Spotify, "Spotify.list")  # 抓取和保存 Spotify 列表
-fetch_and_save(YouTube, "YouTube.list")  # 抓取和保存 YouTube 列表
-fetch_and_save(Netflix, "Netflix.list")  # 抓取和保存 Netflix 列表
-fetch_and_save(Disney, "Disney.list")  # 抓取和保存 Disney 列表
-fetch_and_save(ChinaMedia, "ChinaMedia.list")  # 抓取和保存 ChinaMedia 列表
-fetch_and_save(GlobalMedia, "GlobalMedia.list")  # 抓取和保存 GlobalMedia 列表
-fetch_and_save(Proxy, "Proxy.list")  # 抓取和保存 Proxy 列表
-fetch_and_save(China, "China.list")  # 抓取和保存 China 列表
+fetch_and_save(Direct, "Direct.list")
+fetch_and_save(Hijacking, "Hijacking.list")
+fetch_and_save(Privacy, "Privacy.list")
+fetch_and_save(Apple, "Apple.list")
+fetch_and_save(Microsoft, "Microsoft.list")
+fetch_and_save(Google, "Google.list")
+fetch_and_save(OpenAI, "OpenAI.list")
+fetch_and_save(GitHub, "GitHub.list")
+fetch_and_save(Telegram, "Telegram.list")
+fetch_and_save(Instagram, "Instagram.list")
+fetch_and_save(TikTok, "TikTok.list")
+fetch_and_save(Spotify, "Spotify.list")
+fetch_and_save(YouTube, "YouTube.list")
+fetch_and_save(Netflix, "Netflix.list")
+fetch_and_save(Disney, "Disney.list")
+fetch_and_save(ChinaMedia, "ChinaMedia.list")
+fetch_and_save(GlobalMedia, "GlobalMedia.list")
+fetch_and_save(Proxy, "Proxy.list")
+fetch_and_save(China, "China.list")
