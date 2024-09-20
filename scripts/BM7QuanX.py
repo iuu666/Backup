@@ -28,25 +28,35 @@ Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Quantu
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/China/China.list"
 
 def fetch_and_save(url, file_name):
-    # 发起 GET 请求获取页面内容
-    r = requests.get(url)
+    try:
+        # 发起 GET 请求获取页面内容
+        r = requests.get(url)
+        r.raise_for_status()  # 如果请求失败，抛出异常
+        
+        # 解析 HTML 内容
+        tree = etree.HTML(r.text)
+        
+        # 提取嵌入的数据
+        try:
+            asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
+        except IndexError:
+            print(f"Failed to find embedded data in {url}")
+            return
+        
+        # 解析 JSON 数据
+        x = json.loads(asns)['payload']['blob']['rawLines']
+        
+        # 保存提取的数据到指定文件
+        with open(os.path.join("BM7", "QuanX", file_name), "w", encoding='utf-8') as file:
+            # 写入每条数据到文件
+            for i in x:
+                file.write(i)  # 写入数据行
+                file.write('\n')  # 换行
+        print(f"Successfully saved data to {file_name}")
     
-    # 解析 HTML 内容
-    tree = etree.HTML(r.text)
-    
-    # 提取嵌入的数据
-    asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
-    
-    # 解析 JSON 数据
-    x = json.loads(asns)['payload']['blob']['rawLines']
-    
-    # 保存提取的数据到指定文件
-    with open(os.path.join("BM7", "QuanX", file_name), "w", encoding='utf-8') as file:
-        # 写入每条数据到文件
-        for i in x:
-            file.write(i)  # 写入数据行
-            file.write('\n')  # 换行
-            
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to fetch {url}: {e}")
+
 # 执行函数，保存数据
 fetch_and_save(Direct, "Direct.list")
 fetch_and_save(Hijacking, "Hijacking.list")
