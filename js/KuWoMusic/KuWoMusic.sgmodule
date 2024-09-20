@@ -2,7 +2,7 @@
 #!desc=解锁及净化
 
 [Script]
-酷我音乐=type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/KuWoMusic/kuwo.js
+酷我音乐=type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/KuWoMusic/kuwo.js
 
 [MITM]
 hostname = %APPEND% *.kuwo.cn, *.kwcdn.kuwo.cn, *.lrts.me
