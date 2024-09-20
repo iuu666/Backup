@@ -4,7 +4,7 @@ from lxml import etree  # 用于解析 HTML 内容
 import json  # 用于处理 JSON 数据
 
 # 创建 BM7 和 QuanX 文件夹
-os.makedirs(os.path.join("BM7/QuanX"), exist_ok=True)
+os.makedirs(os.path.join("BM7", "QuanX"), exist_ok=True)
 
 # 数据抓取和保存的主函数
 def fetch_and_save(url, file_name):
