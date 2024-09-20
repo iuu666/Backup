@@ -2,14 +2,14 @@
 #!desc=净化+解锁本地会员功能[倍速、码率]
 
 [Script]
-alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.1\/users\/me\/vip\/info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v1\/users\/tools,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v1\/users\/me,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.0\/users\/vip\/info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.0\/users\/feature\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/apps\/v2\/users\/home\/widgets,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/user\.(aliyundrive|alipan)\.com\/v2\/user\/get,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
-alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v2\/activity\/sign_in_info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.1\/users\/me\/vip\/info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v1\/users\/tools,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v1\/users\/me,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.0\/users\/vip\/info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/business\/v1\.0\/users\/feature\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/api\.(aliyundrive|alipan)\.com\/apps\/v2\/users\/home\/widgets,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/user\.(aliyundrive|alipan)\.com\/v2\/user\/get,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
+alicloud = type=http-response,pattern=^https?:\/\/member\.(aliyundrive|alipan)\.com\/v2\/activity\/sign_in_info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ALiDrive/ALiDrive.js
 
 [MITM]
 hostname= %APPEND% api.alipan.com, member.aliyundrive.com, member.alipan.com, api.aliyundrive.com
