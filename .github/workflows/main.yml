@@ -4,7 +4,7 @@ on:
   push:  # 在代码推送到仓库时触发
   workflow_dispatch:  # 允许手动触发此工作流
   schedule:
-    - cron: "00 00 * * *"  # 每天 UTC 时间 23:00 自动触发
+    - cron: "00 00 * * *"  # 每天 UTC 时间 00:00 自动触发
 
 permissions:
   contents: write  # 允许写入仓库内容
