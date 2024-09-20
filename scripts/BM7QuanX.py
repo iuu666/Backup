@@ -4,7 +4,7 @@ from lxml import etree  # 导入用于解析 HTML 内容的库
 import json  # 导入用于处理 JSON 数据的库
 
 # 创建 BM7 和 Surge 文件夹
-os.makedirs(os.path.join("BM7", "Surge"), exist_ok=True)
+os.makedirs(os.path.join("BM7", "Quanx"), exist_ok=True)
 
 # 新的 IP 列表的 URL
 Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Direct/Direct.list"
