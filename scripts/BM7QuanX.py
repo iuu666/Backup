@@ -4,7 +4,7 @@ from lxml import etree  # 导入用于解析 HTML 内容的库
 import json  # 导入用于处理 JSON 数据的库
 
 # 创建 BM7 和 QuanX 文件夹
-os.makedirs(os.path.join("BM7", "Quanx"), exist_ok=True)
+os.makedirs(os.path.join("BM7", "QuanX"), exist_ok=True)
 
 # 新的 IP 列表的 URL
 Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Direct/Direct.list"
@@ -41,12 +41,14 @@ def fetch_and_save(url, file_name):
     x = json.loads(asns)['payload']['blob']['rawLines']
     
     # 保存提取的数据到指定文件
-    with open(os.path.join("BM7", "QuanX", file_name), "w", encoding='utf-8') as file:
-        # 写入每条数据到文件
+    file_path = os.path.join("BM7", "QuanX", file_name)
+    with open(file_path, "w", encoding='utf-8') as file:
         for i in x:
-            file.write(i)  # 写入数据行
-            file.write('\n')  # 换行
-            
+            file.write(i + '\n')  # 写入数据行并换行
+    
+    # 输出文件保存路径
+    print(f"File saved: {file_path}")
+
 # 执行函数，保存数据
 fetch_and_save(Direct, "Direct.list")
 fetch_and_save(Hijacking, "Hijacking.list")
