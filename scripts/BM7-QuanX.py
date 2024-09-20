@@ -1,12 +1,59 @@
-import os  # 导入用于文件和目录操作的库
-import requests  # 导入用于发送 HTTP 请求的库
-from lxml import etree  # 导入用于解析 HTML 内容的库
-import json  # 导入用于处理 JSON 数据的库
+import requests  # 用于发起 HTTP 请求
+from lxml import etree  # 用于解析 HTML 内容
+import json  # 用于处理 JSON 数据
 
-# 创建 BM7 和 Surge 文件夹
-os.makedirs(os.path.join("BM7", "QuanX"), exist_ok=True)
+# 数据抓取和保存的主函数
+def fetch_and_save(url, file_name, expected_min_count=100):
+    try:
+        # 发起 GET 请求获取页面内容
+        r = requests.get(url)
+        if r.status_code != 200:  # 检查请求是否成功
+            print(f"Error: Failed to fetch data from {url}. Status code: {r.status_code}")
+            return  # 如果请求失败，终止函数
 
-# 新的 IP 列表的 URL
+        r_text = r.text  # 获取响应文本
+
+        # 解析 HTML 内容
+        tree = etree.HTML(r_text)
+        # 提取嵌入的数据
+        asns_element = tree.xpath('//*[@data-target="react-app.embeddedData"]')
+        if not asns_element:  # 检查数据元素是否成功提取
+            print("Error: Failed to locate the embedded data element.")
+            return
+
+        asns = asns_element[0].text  # 获取嵌入的数据文本
+        if not asns:  # 检查提取的数据是否为空
+            print("Error: Extracted data is empty.")
+            return
+
+        # 解析 JSON 数据
+        try:
+            x = json.loads(asns)['payload']['blob']['rawLines']  # 解析 JSON 数据并提取行
+        except (json.JSONDecodeError, KeyError) as e:  # 处理 JSON 解析错误
+            print(f"Error: Failed to parse JSON data. {str(e)}")
+            return
+
+        # 计算总记录数
+        count = len(x)
+
+        # 内容验证：检查抓取到的数据行数是否低于预期
+        if count < expected_min_count:
+            print(f"Warning: Data count is less than expected ({count} records). Data not saved.")
+            return  # 如果行数不足，终止函数
+
+        # 保存数据到文件
+        with open(file_name, "w", encoding='utf-8') as file:
+            # 写入数据，并为每条数据添加 "IP-CIDR," 前缀
+            for i in x:
+                file.write(f"IP-CIDR,{i}")
+                file.write('\n')
+
+        print(f"Success: Data successfully fetched and saved to {file_name}")  # 打印成功信息
+
+    except Exception as e:  # 捕获其他意外错误
+        print(f"Unexpected error: {str(e)}")
+
+# 各种 IP 列表的 URL
 Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Direct/Direct.list"
 Hijacking = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Hijacking/Hijacking.list"
 Privacy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Privacy/Privacy.list"
@@ -27,43 +74,23 @@ GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Proxy/Proxy.list"
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/China/China.list"
 
-def fetch_and_save(url, file_name):
-    # 发起 GET 请求获取页面内容
-    r = requests.get(url)
-    
-    # 解析 HTML 内容
-    tree = etree.HTML(r.text)
-    
-    # 提取嵌入的数据
-    asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
-    
-    # 解析 JSON 数据
-    x = json.loads(asns)['payload']['blob']['rawLines']
-    
-    # 保存提取的数据到指定文件
-    with open(os.path.join("BM7", "QuanX", file_name), "w", encoding='utf-8') as file:
-        # 写入每条数据到文件
-        for i in x:
-            file.write(i)  # 写入数据行
-            file.write('\n')  # 换行
-
 # 执行函数，保存数据
-fetch_and_save(Direct, "Direct.list")
-fetch_and_save(Hijacking, "Hijacking.list")
-fetch_and_save(Privacy, "Privacy.list")
-fetch_and_save(Apple, "Apple.list")
-fetch_and_save(Microsoft, "Microsoft.list")
-fetch_and_save(Google, "Google.list")
-fetch_and_save(OpenAI, "OpenAI.list")
-fetch_and_save(GitHub, "GitHub.list")
-fetch_and_save(Telegram, "Telegram.list")
-fetch_and_save(Instagram, "Instagram.list")
-fetch_and_save(TikTok, "TikTok.list")
-fetch_and_save(Spotify, "Spotify.list")
-fetch_and_save(YouTube, "YouTube.list")
-fetch_and_save(Netflix, "Netflix.list")
-fetch_and_save(Disney, "Disney.list")
-fetch_and_save(ChinaMedia, "ChinaMedia.list")
-fetch_and_save(GlobalMedia, "GlobalMedia.list")
-fetch_and_save(Proxy, "Proxy.list")
-fetch_and_save(China, "China.list")
+fetch_and_save(Direct, "Direct.list")  # 抓取和保存 Direct 列表
+fetch_and_save(Hijacking, "Hijacking.list")  # 抓取和保存 Hijacking 列表
+fetch_and_save(Privacy, "Privacy.list")  # 抓取和保存 Privacy 列表
+fetch_and_save(Apple, "Apple.list")  # 抓取和保存 Apple 列表
+fetch_and_save(Microsoft, "Microsoft.list")  # 抓取和保存 Microsoft 列表
+fetch_and_save(Google, "Google.list")  # 抓取和保存 Google 列表
+fetch_and_save(OpenAI, "OpenAI.list")  # 抓取和保存 OpenAI 列表
+fetch_and_save(GitHub, "GitHub.list")  # 抓取和保存 GitHub 列表
+fetch_and_save(Telegram, "Telegram.list")  # 抓取和保存 Telegram 列表
+fetch_and_save(Instagram, "Instagram.list")  # 抓取和保存 Instagram 列表
+fetch_and_save(TikTok, "TikTok.list")  # 抓取和保存 TikTok 列表
+fetch_and_save(Spotify, "Spotify.list")  # 抓取和保存 Spotify 列表
+fetch_and_save(YouTube, "YouTube.list")  # 抓取和保存 YouTube 列表
+fetch_and_save(Netflix, "Netflix.list")  # 抓取和保存 Netflix 列表
+fetch_and_save(Disney, "Disney.list")  # 抓取和保存 Disney 列表
+fetch_and_save(ChinaMedia, "ChinaMedia.list")  # 抓取和保存 ChinaMedia 列表
+fetch_and_save(GlobalMedia, "GlobalMedia.list")  # 抓取和保存 GlobalMedia 列表
+fetch_and_save(Proxy, "Proxy.list")  # 抓取和保存 Proxy 列表
+fetch_and_save(China, "China.list")  # 抓取和保存 China 列表
