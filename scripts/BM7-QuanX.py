@@ -3,7 +3,7 @@ from lxml import etree  # 用于解析 HTML 内容
 import json  # 用于处理 JSON 数据
 
 # 数据抓取和保存的主函数
-def fetch_and_save(url, file_name, expected_min_count=100):
+def fetch_and_save(url, file_name):
     try:
         # 发起 GET 请求获取页面内容
         r = requests.get(url)
@@ -33,19 +33,11 @@ def fetch_and_save(url, file_name, expected_min_count=100):
             print(f"Error: Failed to parse JSON data. {str(e)}")
             return
 
-        # 计算总记录数
-        count = len(x)
-
-        # 内容验证：检查抓取到的数据行数是否低于预期
-        if count < expected_min_count:
-            print(f"Warning: Data count is less than expected ({count} records). Data not saved.")
-            return  # 如果行数不足，终止函数
-
         # 保存数据到文件
         with open(file_name, "w", encoding='utf-8') as file:
-            # 写入数据，并为每条数据添加 "IP-CIDR," 前缀
+            # 写入数据
             for i in x:
-                file.write(f"IP-CIDR,{i}")
+                file.write(f"{i}")  # 直接写入数据，不加前缀
                 file.write('\n')
 
         print(f"Success: Data successfully fetched and saved to {file_name}")  # 打印成功信息
