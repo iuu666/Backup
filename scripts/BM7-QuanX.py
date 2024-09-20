@@ -47,7 +47,7 @@ def fetch_and_save(url, file_name):
             file.write(i)  # 写入数据行
             file.write('\n')  # 换行
 
-# 执行函数，保存数据
+
 fetch_and_save(Direct, "Direct.list")
 fetch_and_save(Hijacking, "Hijacking.list")
 fetch_and_save(Privacy, "Privacy.list")
