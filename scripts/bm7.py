@@ -1,26 +1,50 @@
 import requests
-import os
+from lxml import etree
+import json
+from datetime import datetime, timedelta
+
+# 生成头部信息
+def get_header(file_name, count):
+    utc_time = datetime.utcnow()  # 获取当前的 UTC 时间
+    china_time = utc_time + timedelta(hours=8)  # 转换为 CST (UTC+8)
+    local_time = china_time.strftime("%Y-%m-%d %H:%M:%S")  # 格式化时间为字符串
+    # 根据文件名生成相应的头部信息
+    header = f"""\
+// {file_name.replace('.list', '')}
+// Link: https://github.com/iuu666/ASN.China
+// Total Count: {count}
+// Last Updated: CST {local_time}
+// Made by iuu, All rights reserved.
+
+"""
+    return header
 
 def fetch_and_save(url, file_name):
     # 发起 GET 请求获取页面内容
-    response = requests.get(url)
-    
-    # 确保请求成功
-    if response.status_code != 200:
-        print(f"Failed to fetch data from {url}")
-        return
-    
+    r = requests.get(url).text
+    # 解析 HTML 内容
+    tree = etree.HTML(r)
+    # 提取嵌入的数据
+    asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
+    # 解析 JSON 数据
+    x = json.loads(asns)['payload']['blob']['rawLines']
+    # 计算总记录数
+    count = len(x)
     # 保存数据到文件
     with open(file_name, "w", encoding='utf-8') as file:
-        file.write(response.text)
+        # 写入头部信息
+        file.write(get_header(file_name, count))
+        # 写入数据，并为每条数据添加 "IP-CIDR," 前缀
+        for i in x:
+            file.write(f"IP-CIDR,{i}")
+            file.write('\n')
 
 # 各种 IP 列表的 URL
-Proxy = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list"
-China = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list"
+Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Direct/Direct.list"
+Hijacking = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Hijacking/Hijacking.list"
+Privacy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Privacy/Privacy_All.list"
 
-# 创建 main 目录，如果不存在的话
-os.makedirs('bm7', exist_ok=True)
-
-# 执行函数，保存数据到 main 目录下
-fetch_and_save(Proxy, "bm7/Proxy_All_No_Resolve.list")
-fetch_and_save(China, "bm7/China_All_No_Resolve.list")
+# 执行函数，保存数据
+fetch_and_save(allChina, "Direct.list")
+fetch_and_save(v4China, "Hijacking.list")
+fetch_and_save(v6China, "Privacy_All.list")
