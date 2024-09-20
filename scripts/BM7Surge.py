@@ -1,7 +1,7 @@
-import os  # 导入用于文件和目录操作的库
-import requests  # 导入用于发送 HTTP 请求的库
-from lxml import etree  # 导入用于解析 HTML 内容的库
-import json  # 导入用于处理 JSON 数据的库
+import os 
+import requests  
+from lxml import etree  
+import json  
 
 # 创建 BM7 和 Surge 文件夹
 os.makedirs(os.path.join("BM7", "Surge"), exist_ok=True)
