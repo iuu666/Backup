@@ -5,6 +5,7 @@ import json  # 导入用于处理 JSON 数据的库
 
 # 创建 BM7 和 Surge 文件夹
 os.makedirs(os.path.join("BM7", "Surge"), exist_ok=True)
+
 # 新的 IP 列表的 URL
 Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Direct/Direct.list"
 Hijacking = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Hijacking/Hijacking.list"
@@ -25,6 +26,7 @@ ChinaMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Q
 GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list"
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Proxy/Proxy.list"
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/China/China.list"
+
 def fetch_and_save(url, file_name):
     # 发起 GET 请求获取页面内容
     r = requests.get(url)
@@ -44,6 +46,7 @@ def fetch_and_save(url, file_name):
         for i in x:
             file.write(i)  # 写入数据行
             file.write('\n')  # 换行
+            
 # 执行函数，保存数据
 fetch_and_save(Direct, "Direct.list")
 fetch_and_save(Hijacking, "Hijacking.list")
