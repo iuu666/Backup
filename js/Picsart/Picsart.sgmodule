@@ -2,7 +2,7 @@
 #!desc=Picsart Unlock
 
 [Script]
-Picsart美易 = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/Picsart/Picsart.js
+Picsart美易 = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/Picsart/Picsart.js
 
 [MITM]
 hostname= %APPEND% * api.meiease.cn
