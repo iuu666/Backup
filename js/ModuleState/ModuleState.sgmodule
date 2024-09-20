@@ -8,7 +8,7 @@
 #color2 参数可以自定义图标颜色，为模块开启时显示颜色。
 
 [Script]
-moduleState = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/ModuleState/moduleState.js,argument=title=Open Module&module=TUN Only&color1=#008080&color2=#994714&icon=arrow.clockwise
+moduleState = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ModuleState/moduleState.js,argument=title=Open Module&module=TUN Only&color1=#008080&color2=#994714&icon=arrow.clockwise
 
 [Panel]
 moduleState = script-name=moduleState,update-interval=43200
