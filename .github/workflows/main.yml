@@ -25,7 +25,7 @@ jobs:
           pip install requests lxml  # 安装 requests 和 lxml 库
       - name: Run Python
         run: |
-          python scripts/bm7.py 
+          python scripts/BM7-Surge.py 
       - uses: stefanzweifel/git-auto-commit-action@v5  # 使用 git-auto-commit-action 自动提交更改
         with:
           commit_message: Update IP List  # 提交信息
