@@ -3,7 +3,7 @@
 #!For: https://github.com/chavyleung/scripts/blob/master/emby/emby.sgmodule
 
 [Script]
-emby=type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/Emby/Emby.js
+emby=type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/Emby/Emby.js
 
 [MITM]
 hostname = %APPEND% mb3admin.com
