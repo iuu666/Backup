@@ -1,6 +1,10 @@
+import os  # 导入用于文件和目录操作的库
 import requests  # 导入用于发送 HTTP 请求的库
 from lxml import etree  # 导入用于解析 HTML 内容的库
 import json  # 导入用于处理 JSON 数据的库
+
+# 创建 BM7 和 Surge 文件夹
+os.makedirs(os.path.join("BM7", "Surge"), exist_ok=True)
 
 # 新的 IP 列表的 URL
 Direct = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Direct/Direct.list"
@@ -37,29 +41,29 @@ def fetch_and_save(url, file_name):
     x = json.loads(asns)['payload']['blob']['rawLines']
     
     # 保存提取的数据到指定文件
-    with open(file_name, "w", encoding='utf-8') as file:
+    with open(os.path.join("BM7", "Surge", file_name), "w", encoding='utf-8') as file:
         # 写入每条数据到文件
         for i in x:
             file.write(i)  # 写入数据行
             file.write('\n')  # 换行
 
 # 执行函数，保存数据
-fetch_and_save(Direct, "Direct.list")  # 保存 Direct 列表
-fetch_and_save(Hijacking, "Hijacking.list")  # 保存 Hijacking 列表
-fetch_and_save(Privacy, "Privacy_All_No_Resolve.list")  # 保存 Privacy 列表
-fetch_and_save(Apple, "Apple_All_No_Resolve.list")  # 保存 Apple 列表
-fetch_and_save(Microsoft, "Microsoft.list")  # 保存 Microsoft 列表
-fetch_and_save(Google, "Google.list")  # 保存 Google 列表
-fetch_and_save(OpenAI, "OpenAI.list")  # 保存 OpenAI 列表
-fetch_and_save(GitHub, "GitHub.list")  # 保存 GitHub 列表
-fetch_and_save(Telegram, "Telegram.list")  # 保存 Telegram 列表
-fetch_and_save(Instagram, "Instagram.list")  # 保存 Instagram 列表
-fetch_and_save(TikTok, "TikTok.list")  # 保存 TikTok 列表
-fetch_and_save(Spotify, "Spotify.list")  # 保存 Spotify 列表
-fetch_and_save(YouTube, "YouTube.list")  # 保存 YouTube 列表
-fetch_and_save(Netflix, "Netflix.list")  # 保存 Netflix 列表
-fetch_and_save(Disney, "Disney.list")  # 保存 Disney 列表
-fetch_and_save(ChinaMedia, "ChinaMedia.list")  # 保存 ChinaMedia 列表
-fetch_and_save(GlobalMedia, "GlobalMedia_All_No_Resolve.list")  # 保存 GlobalMedia 列表
-fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")  # 保存 Proxy 列表
-fetch_and_save(China, "China_All_No_Resolve.list")  # 保存 China 列表
+fetch_and_save(Direct, "Direct.list")
+fetch_and_save(Hijacking, "Hijacking.list")
+fetch_and_save(Privacy, "Privacy_All_No_Resolve.list")
+fetch_and_save(Apple, "Apple_All_No_Resolve.list")
+fetch_and_save(Microsoft, "Microsoft.list")
+fetch_and_save(Google, "Google.list")
+fetch_and_save(OpenAI, "OpenAI.list")
+fetch_and_save(GitHub, "GitHub.list")
+fetch_and_save(Telegram, "Telegram.list")
+fetch_and_save(Instagram, "Instagram.list")
+fetch_and_save(TikTok, "TikTok.list")
+fetch_and_save(Spotify, "Spotify.list")
+fetch_and_save(YouTube, "YouTube.list")
+fetch_and_save(Netflix, "Netflix.list")
+fetch_and_save(Disney, "Disney.list")
+fetch_and_save(ChinaMedia, "ChinaMedia.list")
+fetch_and_save(GlobalMedia, "GlobalMedia_All_No_Resolve.list")
+fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")
+fetch_and_save(China, "China_All_No_Resolve.list")
