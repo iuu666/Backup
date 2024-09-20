@@ -2,7 +2,7 @@
 #!desc=解锁PhotoshopExpress
 
 [Script]
-PhotoshopExpress=type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,script-path=https://raw.githubusercontent.com/mikoycc/Storage/main/ovr/PhotoShopExpress/PhotoShopExpress.js
+PhotoshopExpress=type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/PhotoShopExpress/PhotoShopExpress.js
 
 [MITM]
 hostname = %APPEND% lcs-mobile-cops.adobe.io
