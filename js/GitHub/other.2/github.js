@@ -56,7 +56,7 @@ let repositories = [
 
 const $ = API("github", false);
 
-token = $.read('token') || token;
+let token = urlParams.get('token') || $.read('token') || '默认值';
 if ($.read("repo") !== undefined) {
     repositories = JSON.parse($.read("repo"));
 }
