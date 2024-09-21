@@ -35,8 +35,8 @@ let repositories = [
         url: "https://github.com/chavyleung/scripts",
     },
     {
-        name: "Qure 图标",
-        url: "https://github.com/Koolson/Qure",
+        name: "监控仓库图标",
+        url: "https://github.com/iuu666/Backup/tree/main/icon/Color",
     },
     {
         name: "Orz-mini 图标",
