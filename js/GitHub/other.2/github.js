@@ -56,11 +56,10 @@ let repositories = [
 
 const $ = API("github", false);
 
-let token = urlParams.get('token') || $.read('token') || '默认值';
+token = $.read('token') || token;
 if ($.read("repo") !== undefined) {
     repositories = JSON.parse($.read("repo"));
 }
-
 const parser = {
     commits: new RegExp(
         /^https:\/\/github.com\/([\w|-]+)\/([\w|-]+)(\/tree\/([\w|-]+))?$/
