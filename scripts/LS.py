@@ -3,7 +3,7 @@ import requests
 from lxml import etree  
 import json  
 
-# 创建 LS 和 surge 文件夹
+# 创建 LS 和 surge 文件夹，如果已存在则不做任何操作
 os.makedirs(os.path.join("LS", "surge"), exist_ok=True)
 
 # 新的 IP 列表的 URL
@@ -21,6 +21,7 @@ TelegramCIDR = "https://github.com/Loyalsoldier/surge-rules/blob/release/telegra
 TLDNotCN = "https://github.com/Loyalsoldier/surge-rules/blob/release/tld-not-cn.txt"
 
 def fetch_and_save(url, file_name):
+    """ 从指定 URL 获取数据并保存到文件 """
     try:
         # 发起 GET 请求获取页面内容
         r = requests.get(url)
@@ -33,21 +34,35 @@ def fetch_and_save(url, file_name):
         try:
             asns = tree.xpath('//*[@data-target="react-app.embeddedData"]')[0].text
         except IndexError:
+            # 如果未找到嵌入数据，打印提示并返回
             print(f"Failed to find embedded data in {url}")
             return
         
         # 解析 JSON 数据
-        x = json.loads(asns)['payload']['blob']['rawLines']
+        data = json.loads(asns)
         
-        # 保存提取的数据到指定文件
-        with open(os.path.join("LS", "surge", file_name), "w", encoding='utf-8') as file:
-            # 写入每条数据到文件
-            for i in x:
-                file.write(i)  # 写入数据行
-                file.write('\n')  # 换行
-        print(f"Successfully saved data to {file_name}")
-    
+        # 检查数据结构是否有效
+        if 'payload' in data and 'blob' in data['payload'] and 'rawLines' in data['payload']['blob']:
+            x = data['payload']['blob']['rawLines']
+            
+            # 检查数据是否为空
+            if not x:
+                print(f"No data found in {url}, skipping {file_name}.")
+                return
+            
+            # 保存提取的数据到指定文件
+            with open(os.path.join("LS", "surge", file_name), "w", encoding='utf-8') as file:
+                # 写入每条数据到文件
+                for i in x:
+                    file.write(i)  # 写入数据行
+                    file.write('\n')  # 换行
+            print(f"Successfully saved data to {file_name}")
+        else:
+            # 如果数据结构无效，打印提示并返回
+            print(f"Invalid data structure from {url}, skipping {file_name}.")
+
     except requests.exceptions.RequestException as e:
+        # 捕获请求异常并打印错误信息
         print(f"Failed to fetch {url}: {e}")
 
 # 执行函数，保存数据
