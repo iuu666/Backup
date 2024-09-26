@@ -1,0 +1,165 @@
+亚洲地区
+香港 = smart, hidden=1, policy-regex-filter=(🇭🇰)|(香港)|(Hong)|(HK), include-other-group=☁️All Nodes
+澳门 = smart, hidden=1, policy-regex-filter=(🇲🇴)|(澳门)|(Macau)|(MO), include-other-group=☁️All Nodes
+台湾 = smart, hidden=1, policy-regex-filter=(🇹🇼)|(台湾)|(Taiwan)|(TW), include-other-group=☁️All Nodes
+新加坡 = smart, hidden=1, policy-regex-filter=(🇸🇬)|(新加坡)|(Singapore)|(SG), include-other-group=☁️All Nodes
+马来西亚 = smart, hidden=1, policy-regex-filter=(🇲🇾)|(马来西亚)|(Malaysia)|(MY), include-other-group=☁️All Nodes
+泰国 = smart, hidden=1, policy-regex-filter=(🇹🇭)|(泰国)|(Thailand)|(TH), include-other-group=☁️All Nodes
+日本 = smart, hidden=1, policy-regex-filter=(🇯🇵)|(日本)|(Japan)|(JP), include-other-group=☁️All Nodes
+韩国 = smart, hidden=1, policy-regex-filter=(🇰🇷)|(韩国)|(South Korea)|(KR), include-other-group=☁️All Nodes
+越南 = smart, hidden=1, policy-regex-filter=(🇻🇳)|(越南)|(Vietnam)|(VN), include-other-group=☁️All Nodes
+缅甸 = smart, hidden=1, policy-regex-filter=(🇲🇲)|(缅甸)|(Myanmar)|(MM), include-other-group=☁️All Nodes
+老挝 = smart, hidden=1, policy-regex-filter=(🇱🇦)|(老挝)|(Laos)|(LA), include-other-group=☁️All Nodes
+菲律宾 = smart, hidden=1, policy-regex-filter=(🇵🇭)|(菲律宾)|(Philippines)|(PH), include-other-group=☁️All Nodes
+印尼 = smart, hidden=1, policy-regex-filter=(🇮🇩)|(印尼)|(Indonesia)|(ID), include-other-group=☁️All Nodes
+柬埔寨 = smart, hidden=1, policy-regex-filter=(🇰🇭)|(柬埔寨)|(Cambodia)|(KH), include-other-group=☁️All Nodes
+印度 = smart, hidden=1, policy-regex-filter=(🇮🇳)|(印度)|(India)|(IN), include-other-group=☁️All Nodes
+蒙古 = smart, hidden=1, policy-regex-filter=(🇲🇳)|(蒙古)|(Mongolia)|(MN), include-other-group=☁️All Nodes
+朝鲜 = smart, hidden=1, policy-regex-filter=(🇰🇵)|(朝鲜)|(North Korea)|(KP), include-other-group=☁️All Nodes
+不丹 = smart, hidden=1, policy-regex-filter=(🇧🇹)|(不丹)|(Bhutan)|(BT), include-other-group=☁️All Nodes
+文莱 = smart, hidden=1, policy-regex-filter=(🇧🇳)|(文莱)|(Brunei)|(BN), include-other-group=☁️All Nodes
+约旦 = smart, hidden=1, policy-regex-filter=(🇯🇴)|(约旦)|(Jordan)|(JO), include-other-group=☁️All Nodes
+伊朗 = smart, hidden=1, policy-regex-filter=(🇮🇷)|(伊朗)|(Iran)|(IR), include-other-group=☁️All Nodes
+巴林 = smart, hidden=1, policy-regex-filter=(🇧🇭)|(巴林)|(Bahrain)|(BH), include-other-group=☁️All Nodes
+阿曼 = smart, hidden=1, policy-regex-filter=(🇴🇲)|(阿曼)|(Oman)|(OM), include-other-group=☁️All Nodes
+以色列 = smart, hidden=1, policy-regex-filter=(🇮🇱)|(以色列)|(Israel)|(IL), include-other-group=☁️All Nodes
+土耳其 = smart, hidden=1, policy-regex-filter=(🇹🇷)|(土耳其)|(Turkey)|(TR), include-other-group=☁️All Nodes
+尼泊尔 = smart, hidden=1, policy-regex-filter=(🇳🇵)|(尼泊尔)|(Nepal)|(NP), include-other-group=☁️All Nodes
+阿联酋 = smart, hidden=1, policy-regex-filter=(🇦🇪)|(阿联酋)|(United Arab Emirates)|(UAE), include-other-group=☁️All Nodes
+伊拉克 = smart, hidden=1, policy-regex-filter=(🇮🇶)|(伊拉克)|(Iraq)|(IQ), include-other-group=☁️All Nodes
+叙利亚 = smart, hidden=1, policy-regex-filter=(🇸🇾)|(叙利亚)|(Syria)|(SY), include-other-group=☁️All Nodes
+黎巴嫩 = smart, hidden=1, policy-regex-filter=(🇱🇧)|(黎巴嫩)|(Lebanon)|(LB), include-other-group=☁️All Nodes
+卡塔尔 = smart, hidden=1, policy-regex-filter=(🇶🇦)|(卡塔尔)|(Qatar)|(QA), include-other-group=☁️All Nodes
+阿塞拜疆 = smart, hidden=1, policy-regex-filter=(🇦🇿)|(阿塞拜疆)|(Azerbaijan)|(AZ), include-other-group=☁️All Nodes
+亚美尼亚 = smart, hidden=1, policy-regex-filter=(🇦🇲)|(亚美尼亚)|(Armenia)|(AM), include-other-group=☁️All Nodes
+格鲁吉亚 = smart, hidden=1, policy-regex-filter=(🇬🇪)|(格鲁吉亚)|(Georgia)|(GE), include-other-group=☁️All Nodes
+巴基斯坦 = smart, hidden=1, policy-regex-filter=(🇵🇰)|(巴基斯坦)|(Pakistan)|(PK), include-other-group=☁️All Nodes
+斯里兰卡 = smart, hidden=1, policy-regex-filter=(🇱🇰)|(斯里兰卡)|(Sri Lanka)|(LK), include-other-group=☁️All Nodes
+马尔代夫 = smart, hidden=1, policy-regex-filter=(🇲🇻)|(马尔代夫)|(Maldives)|(MV), include-other-group=☁️All Nodes
+沙特阿拉伯 = smart, hidden=1, policy-regex-filter=(🇸🇦)|(沙特阿拉伯)|(Saudi Arabia)|(SA), include-other-group=☁️All Nodes
+哈萨克斯坦 = smart, hidden=1, policy-regex-filter=(🇰🇿)|(哈萨克斯坦)|(Kazakhstan)|(KZ), include-other-group=☁️All Nodes
+吉尔吉斯斯坦 = smart, hidden=1, policy-regex-filter=(🇰🇬)|(吉尔吉斯斯坦)|(Kyrgyzstan)|(KG), include-other-group=☁️All Nodes
+乌兹别克斯坦 = smart, hidden=1, policy-regex-filter=(🇺🇿)|(乌兹别克斯坦)|(Uzbekistan)|(UZ), include-other-group=☁️All Nodes
+东帝汶 = smart, hidden=1, policy-regex-filter=(🇹🇱)|(东帝汶)|(Timor-Leste)|(TL), include-other-group=☁️All Nodes
+阿富汗 = smart, hidden=1, policy-regex-filter=(🇦🇫)|(阿富汗)|(Afghanistan)|(AF), include-other-group=☁️All Nodes
+巴勒斯坦 = smart, hidden=1, policy-regex-filter=(🇵🇸)|(巴勒斯坦)|(Palestine)|(PS), include-other-group=☁️All Nodes
+孟加拉 = smart, hidden=1, policy-regex-filter=(🇧🇩)|(孟加拉)|(Bangladesh)|(BD), include-other-group=☁️All Nodes
+
+
+大洋洲地区
+澳大利亚 = smart, hidden=1, policy-regex-filter=(🇦🇺)|(澳大利亚)|(Australia)|(AU), include-other-group=☁️All Nodes
+新西兰 = smart, hidden=1, policy-regex-filter=(🇳🇿)|(新西兰)|(New Zealand)|(NZ), include-other-group=☁️All Nodes
+斐济 = smart, hidden=1, policy-regex-filter=(🇫🇯)|(斐济)|(Fiji)|(FJ), include-other-group=☁️All Nodes
+关岛 = smart, hidden=1, policy-regex-filter=(🇬🇺)|(关岛)|(Guam)|(GU), include-other-group=☁️All Nodes
+
+
+欧洲地区
+法国 = smart, hidden=1, policy-regex-filter=(🇫🇷)|(法国)|(France)|(FR), include-other-group=☁️All Nodes
+英国 = smart, hidden=1, policy-regex-filter=(🇬🇧)|(英国)|(United Kingdom)|(UK), include-other-group=☁️All Nodes
+马恩岛 = smart, hidden=1, policy-regex-filter=(🇮🇲)|(马恩岛)|(Isle of Man)|(IM), include-other-group=☁️All Nodes
+德国 = smart, hidden=1, policy-regex-filter=(🇩🇪)|(德国)|(Germany)|(DE), include-other-group=☁️All Nodes
+挪威 = smart, hidden=1, policy-regex-filter=(🇳🇴)|(挪威)|(Norway)|(NO), include-other-group=☁️All Nodes
+瑞典 = smart, hidden=1, policy-regex-filter=(🇸🇪)|(瑞典)|(Sweden)|(SE), include-other-group=☁️All Nodes
+芬兰 = smart, hidden=1, policy-regex-filter=(🇫🇮)|(芬兰)|(Finland)|(FI), include-other-group=☁️All Nodes
+冰岛 = smart, hidden=1, policy-regex-filter=(🇮🇸)|(冰岛)|(Iceland)|(IS), include-other-group=☁️All Nodes
+瑞士 = smart, hidden=1, policy-regex-filter=(🇨🇭)|(瑞士)|(Switzerland)|(CH), include-other-group=☁️All Nodes
+捷克 = smart, hidden=1, policy-regex-filter=(🇨🇿)|(捷克)|(Czech Republic)|(CZ), include-other-group=☁️All Nodes
+希腊 = smart, hidden=1, policy-regex-filter=(🇬🇷)|(希腊)|(Greece)|(GR), include-other-group=☁️All Nodes
+荷兰 = smart, hidden=1, policy-regex-filter=(🇳🇱)|(荷兰)|(Netherlands)|(NL), include-other-group=☁️All Nodes
+波兰 = smart, hidden=1, policy-regex-filter=(🇵🇱)|(波兰)|(Poland)|(PL), include-other-group=☁️All Nodes
+俄罗斯 = smart, hidden=1, policy-regex-filter=(🇷🇺)|(俄罗斯)|(Russia)|(RU), include-other-group=☁️All Nodes
+黑山 = smart, hidden=1, policy-regex-filter=(🇲🇪)|(黑山)|(Montenegro)|(ME), include-other-group=☁️All Nodes
+梵蒂冈 = smart, hidden=1, policy-regex-filter=(🇻🇦)|(梵蒂冈)|(Vatican City)|(VA), include-other-group=☁️All Nodes
+摩纳哥 = smart, hidden=1, policy-regex-filter=(🇲🇽)|(摩纳哥)|(Monaco)|(MC), include-other-group=☁️All Nodes
+乌克兰 = smart, hidden=1, policy-regex-filter=(🇺🇦)|(乌克兰)|(Ukraine)|(UA), include-other-group=☁️All Nodes
+匈牙利 = smart, hidden=1, policy-regex-filter=(🇭🇺)|(匈牙利)|(Hungary)|(HU), include-other-group=☁️All Nodes
+卢森堡 = smart, hidden=1, policy-regex-filter=(🇱🇺)|(卢森堡)|(Luxembourg)|(LU), include-other-group=☁️All Nodes
+奥地利 = smart, hidden=1, policy-regex-filter=(🇦🇹)|(奥地利)|(Austria)|(AT), include-other-group=☁️All Nodes
+意大利 = smart, hidden=1, policy-regex-filter=(🇮🇹)|(意大利)|(Italy)|(IT), include-other-group=☁️All Nodes
+比利时 = smart, hidden=1, policy-regex-filter=(🇧🇪)|(比利时)|(Belgium)|(BE), include-other-group=☁️All Nodes
+爱尔兰 = smart, hidden=1, policy-regex-filter=(🇮🇪)|(爱尔兰)|(Ireland)|(IE), include-other-group=☁️All Nodes
+立陶宛 = smart, hidden=1, policy-regex-filter=(🇱🇹)|(立陶宛)|(Lithuania)|(LT), include-other-group=☁️All Nodes
+西班牙 = smart, hidden=1, policy-regex-filter=(🇪🇸)|(西班牙)|(Spain)|(ES), include-other-group=☁️All Nodes
+葡萄牙 = smart, hidden=1, policy-regex-filter=(🇵🇹)|(葡萄牙)|(Portugal)|(PT), include-other-group=☁️All Nodes
+安道尔 = smart, hidden=1, policy-regex-filter=(🇦🇩)|(安道尔)|(Andorra)|(AD), include-other-group=☁️All Nodes
+马耳他 = smart, hidden=1, policy-regex-filter=(🇲🇹)|(马耳他)|(Malta)|(MT), include-other-group=☁️All Nodes
+保加利亚 = smart, hidden=1, policy-regex-filter=(🇧🇬)|(保加利亚)|(Bulgaria)|(BG), include-other-group=☁️All Nodes
+克罗地亚 = smart, hidden=1, policy-regex-filter=(🇭🇷)|(克罗地亚)|(Croatia)|(HR), include-other-group=☁️All Nodes
+北马其顿 = smart, hidden=1, policy-regex-filter=(🇲🇰)|(北马其顿)|(North Macedonia)|(MK), include-other-group=☁️All Nodes
+塞尔维亚 = smart, hidden=1, policy-regex-filter=(🇷🇸)|(塞尔维亚)|(Serbia)|(RS), include-other-group=☁️All Nodes
+塞浦路斯 = smart, hidden=1, policy-regex-filter=(🇨🇾)|(塞浦路斯)|(Cyprus)|(CY), include-other-group=☁️All Nodes
+拉脱维亚 = smart, hidden=1, policy-regex-filter=(🇱🇻)|(拉脱维亚)|(Latvia)|(LV), include-other-group=☁️All Nodes
+摩尔多瓦 = smart, hidden=1, policy-regex-filter=(🇲🇩)|(摩尔多瓦)|(Moldova)|(MD), include-other-group=☁️All Nodes
+斯洛伐克 = smart, hidden=1, policy-regex-filter=(🇸🇰)|(斯洛伐克)|(Slovakia)|(SK), include-other-group=☁️All Nodes
+爱沙尼亚 = smart, hidden=1, policy-regex-filter=(🇪🇪)|(爱沙尼亚)|(Estonia)|(EE), include-other-group=☁️All Nodes
+白俄罗斯 = smart, hidden=1, policy-regex-filter=(🇧🇾)|(白俄罗斯)|(Belarus)|(BY), include-other-group=☁️All Nodes
+罗马尼亚 = smart, hidden=1, policy-regex-filter=(🇷🇴)|(罗马尼亚)|(Romania)|(RO), include-other-group=☁️All Nodes
+直布罗陀 = smart, hidden=1, policy-regex-filter=(🇬🇮)|(直布罗陀)|(Gibraltar)|(GI), include-other-group=☁️All Nodes
+圣马力诺 = smart, hidden=1, policy-regex-filter=(🇸🇲)|(圣马力诺)|(San Marino)|(SM), include-other-group=☁️All Nodes
+法罗群岛 = smart, hidden=1, policy-regex-filter=(🇫🇴)|(法罗群岛)|(Faroe Islands)|(FO), include-other-group=☁️All Nodes
+奥兰群岛 = smart, hidden=1, policy-regex-filter=(🇦🇽)|(奥兰群岛)|(Åland Islands)|(AX), include-other-group=☁️All Nodes
+斯洛文尼亚 = smart, hidden=1, policy-regex-filter=(🇸🇮)|(斯洛文尼亚)|(Slovenia)|(SI), include-other-group=☁️All Nodes
+阿尔巴尼亚 = smart, hidden=1, policy-regex-filter=(🇦🇱)|(阿尔巴尼亚)|(Albania)|(AL), include-other-group=☁️All Nodes
+列支敦士登 = smart, hidden=1, policy-regex-filter=(🇱🇮)|(列支敦士登)|(Liechtenstein)|(LI), include-other-group=☁️All Nodes
+法属留尼汪 = smart, hidden=1, policy-regex-filter=(🇷🇪)|(法属留尼汪)|(Réunion)|(RE), include-other-group=☁️All Nodes
+波斯尼亚和黑塞哥维那 = smart, hidden=1, policy-regex-filter=(🇧🇦)|(波斯尼亚和黑塞哥维那)|(Bosnia and Herzegovina)|(BA), include-other-group=☁️All Nodes
+丹麦 = smart, hidden=1, policy-regex-filter=(🇩🇰)|(丹麦)|(Denmark)|(DK), include-other-group=☁️All Nodes
+
+
+北美洲地区
+加拿大 = smart, hidden=1, policy-regex-filter=(🇨🇦)|(加拿大)|(Canada)|(CA), include-other-group=☁️All Nodes
+美国 = smart, hidden=1, policy-regex-filter=(🇺🇸)|(美国)|(United States)|(US), include-other-group=☁️All Nodes
+墨西哥 = smart, hidden=1, policy-regex-filter=(🇲🇽)|(墨西哥)|(Mexico)|(MX), include-other-group=☁️All Nodes
+格陵兰 = smart, hidden=1, policy-regex-filter=(🇬🇱)|(格陵兰)|(Greenland)|(GL), include-other-group=☁️All Nodes
+巴拿马 = smart, hidden=1, policy-regex-filter=(🇵🇦)|(巴拿马)|(Panama)|(PA), include-other-group=☁️All Nodes
+百慕大 = smart, hidden=1, policy-regex-filter=(🇧🇲)|(百慕大)|(Bermuda)|(BM), include-other-group=☁️All Nodes
+哥斯达黎加 = smart, hidden=1, policy-regex-filter=(🇨🇷)|(哥斯达黎加)|(Costa Rica)|(CR), include-other-group=☁️All Nodes
+特立尼达和多巴哥 = smart, hidden=1, policy-regex-filter=(🇹🇹)|(特立尼达和多巴哥)|(Trinidad and Tobago)|(TT), include-other-group=☁️All Nodes
+
+
+南美洲地区
+巴西 = smart, hidden=1, policy-regex-filter=(🇧🇷)|(巴西)|(Brazil)|(BR), include-other-group=☁️All Nodes
+智利 = smart, hidden=1, policy-regex-filter=(🇨🇱)|(智利)|(Chile)|(CL), include-other-group=☁️All Nodes
+秘鲁 = smart, hidden=1, policy-regex-filter=(🇵🇪)|(秘鲁)|(Peru)|(PE), include-other-group=☁️All Nodes
+古巴 = smart, hidden=1, policy-regex-filter=(🇨🇺)|(古巴)|(Cuba)|(CU), include-other-group=☁️All Nodes
+阿根廷 = smart, hidden=1, policy-regex-filter=(🇦🇷)|(阿根廷)|(Argentina)|(AR), include-other-group=☁️All Nodes
+乌拉圭 = smart, hidden=1, policy-regex-filter=(🇺🇾)|(乌拉圭)|(Uruguay)|(UY), include-other-group=☁️All Nodes
+牙买加 = smart, hidden=1, policy-regex-filter=(🇯🇲)|(牙买加)|(Jamaica)|(JM), include-other-group=☁️All Nodes
+巴拉圭 = smart, hidden=1, policy-regex-filter=(🇵🇾)|(巴拉圭)|(Paraguay)|(PY), include-other-group=☁️All Nodes
+库拉索 = smart, hidden=1, policy-regex-filter=(🇨🇼)|(库拉索)|(Curaçao)|(CW), include-other-group=☁️All Nodes
+哥伦比亚 = smart, hidden=1, policy-regex-filter=(🇨🇴)|(哥伦比亚)|(Colombia)|(CO), include-other-group=☁️All Nodes
+厄瓜多尔 = smart, hidden=1, policy-regex-filter=(🇪🇨)|(厄瓜多尔)|(Ecuador)|(EC), include-other-group=☁️All Nodes
+委内瑞拉 = smart, hidden=1, policy-regex-filter=(🇻🇪)|(委内瑞拉)|(Venezuela)|(VE), include-other-group=☁️All Nodes
+危地马拉 = smart, hidden=1, policy-regex-filter=(🇬🇹)|(危地马拉)|(Guatemala)|(GT), include-other-group=☁️All Nodes
+开曼群岛 = smart, hidden=1, policy-regex-filter=(🇰🇾)|(开曼群岛)|(Cayman Islands)|(KY), include-other-group=☁️All Nodes
+波多黎各 = smart, hidden=1, policy-regex-filter=(🇵🇷)|(波多黎各)|(Puerto Rico)|(PR), include-other-group=☁️All Nodes
+尼加拉瓜 = smart, hidden=1, policy-regex-filter=(🇳🇮)|(尼加拉瓜)|(Nicaragua)|(NI), include-other-group=☁️All Nodes
+洪都拉斯 = smart, hidden=1, policy-regex-filter=(🇭🇳)|(洪都拉斯)|(Honduras)|(HN), include-other-group=☁️All Nodes
+苏里南 = smart, hidden=1, policy-regex-filter=(🇸🇷)|(苏里南)|(Suriname)|(SR), include-other-group=☁️All Nodes
+英属维尔京群岛 = smart, hidden=1, policy-regex-filter=(🇻🇬)|(英属维尔京群岛)|(British Virgin Islands)|(VG), include-other-group=☁️All Nodes
+法属圭亚那 = smart, hidden=1, policy-regex-filter=(🇬🇫)|(法属圭亚那)|(French Guiana)|(GF), include-other-group=☁️All Nodes
+巴哈马 = smart, hidden=1, policy-regex-filter=(🇧🇸)|(巴哈马)|(Bahamas)|(BS), include-other-group=☁️All Nodes
+
+
+非洲地区
+埃及 = smart, hidden=1, policy-regex-filter=(🇪🇬)|(埃及)|(Egypt)|(EG), include-other-group=☁️All Nodes
+南非 = smart, hidden=1, policy-regex-filter=(🇿🇦)|(南非)|(South Africa)|(ZA), include-other-group=☁️All Nodes
+加纳 = smart, hidden=1, policy-regex-filter=(🇬🇭)|(加纳)|(Ghana)|(GH), include-other-group=☁️All Nodes
+摩洛哥 = smart, hidden=1, policy-regex-filter=(🇲🇦)|(摩洛哥)|(Morocco)|(MA), include-other-group=☁️All Nodes
+佛得角 = smart, hidden=1, policy-regex-filter=(🇨🇻)|(佛得角)|(Cape Verde)|(CV), include-other-group=☁️All Nodes
+突尼斯 = smart, hidden=1, policy-regex-filter=(🇹🇳)|(突尼斯)|(Tunisia)|(TN), include-other-group=☁️All Nodes
+利比亚 = smart, hidden=1, policy-regex-filter=(🇱🇾)|(利比亚)|(Libya)|(LY), include-other-group=☁️All Nodes
+肯尼亚 = smart, hidden=1, policy-regex-filter=(🇰🇪)|(肯尼亚)|(Kenya)|(KE), include-other-group=☁️All Nodes
+卢旺达 = smart, hidden=1, policy-regex-filter=(🇷🇼)|(卢旺达)|(Rwanda)|(RW), include-other-group=☁️All Nodes
+尼日利亚 = smart, hidden=1, policy-regex-filter=(🇳🇬)|(尼日利亚)|(Nigeria)|(NG), include-other-group=☁️All Nodes
+毛里求斯 = smart, hidden=1, policy-regex-filter=(🇲🇺)|(毛里求斯)|(Mauritius)|(MU), include-other-group=☁️All Nodes
+莫桑比克 = smart, hidden=1, policy-regex-filter=(🇲🇿)|(莫桑比克)|(Mozambique)|(MZ), include-other-group=☁️All Nodes
+多哥 = smart, hidden=1, policy-regex-filter=(🇹🇬)|(多哥)|(Togo)|(TG), include-other-group=☁️All Nodes
+安哥拉 = smart, hidden=1, policy-regex-filter=(🇦🇴)|(安哥拉)|(Angola)|(AO), include-other-group=☁️All Nodes
+阿尔及利亚 = smart, hidden=1, policy-regex-filter=(🇩🇿)|(阿尔及利亚)|(Algeria)|(DZ), include-other-group=☁️All Nodes
+
+
+特殊地区
+南极洲 = smart, hidden=1, policy-regex-filter=(🇦🇶)|(南极洲)|(Antarctica)|(AQ), include-other-group=☁️All Nodes
+
+
