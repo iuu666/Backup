@@ -1,3 +1,5 @@
+Surge国家分组
+
 亚洲地区
 香港 = smart, hidden=1, policy-regex-filter=(🇭🇰)|(香港)|(Hong)|(HK), include-other-group=☁️All Nodes
 澳门 = smart, hidden=1, policy-regex-filter=(🇲🇴)|(澳门)|(Macau)|(MO), include-other-group=☁️All Nodes
