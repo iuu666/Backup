@@ -3,7 +3,7 @@ import requests
 from lxml import etree  
 import json  
 
-# 创建 LS 和 surge 文件夹，如果已存在则不做任何操作
+# 创建 LS 和 surge 文件夹，如果已存在，则不做任何操作
 os.makedirs(os.path.join("LS", "surge"), exist_ok=True)
 
 # 新的 IP 列表的 URL
