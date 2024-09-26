@@ -163,5 +163,3 @@ Surge国家分组
 
 特殊地区
 南极洲 = smart, hidden=1, policy-regex-filter=(🇦🇶)|(南极洲)|(Antarctica)|(AQ), include-other-group=☁️All Nodes
-
-
