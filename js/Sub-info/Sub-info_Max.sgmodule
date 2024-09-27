@@ -7,11 +7,11 @@
 # 版本：5.0  https://github.com/Rabbit-Spec/Surge/blob/Master/Module/Panel/Sub-info/Moore/Sub-info_Max.sgmodule
 
 [Panel]
-{{{NAME_1}}}=script-name={{{NAME_1}}},update-interval=0
+{{{NAME_1}}}=script-name={{{NAME_1}}},update-interval=86400
 
-{{{NAME_2}}}=script-name={{{NAME_2}}},update-interval=0
+{{{NAME_2}}}=script-name={{{NAME_2}}},update-interval=86400
 
-{{{NAME_3}}}=script-name={{{NAME_3}}},update-interval=0
+{{{NAME_3}}}=script-name={{{NAME_3}}},update-interval=86400
 
 
 [Script]
