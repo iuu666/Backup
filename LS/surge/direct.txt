@@ -8728,6 +8728,7 @@ xz.pphimalayanrt.com
 .aabooo.com
 .aabux.com
 .aad5.com
+.aadcloud.com
 .aadongman.com
 .aads-cng.net
 .aafxw.com
@@ -23950,10 +23951,8 @@ xz.pphimalayanrt.com
 .dkybpc.com
 .dkzt.com
 .dl-huahong.com
-.dl-origin.ubnt.com
 .dl-rc.com
 .dl.delivery.mp.microsoft.com
-.dl.ubnt.com
 .dl0728.com
 .dl158.net
 .dl2link.com
@@ -39089,6 +39088,7 @@ xz.pphimalayanrt.com
 .huaweicloud-dns.com
 .huaweicloud-dns.net
 .huaweicloud-dns.org
+.huaweicloud-idme.com
 .huaweicloud-smn.com
 .huaweicloud-smn.net
 .huaweicloud.com
@@ -39774,6 +39774,7 @@ xz.pphimalayanrt.com
 .hwcrazy.com
 .hwehs.com
 .hweimall.com
+.hweventgrid.com
 .hwfcw.com
 .hwhidc.com
 .hwht.com
@@ -40846,6 +40847,7 @@ xz.pphimalayanrt.com
 .idongdong.com
 .idongmai.com
 .idongniu.com
+.idonguapi.com
 .idooshu.com
 .idosend.com
 .idotools.com
@@ -41628,6 +41630,7 @@ xz.pphimalayanrt.com
 .in9ni.com
 .inabr.com
 .inad.com
+.inanguapi.com
 .inanrenbang.com
 .inbeing.net
 .inbilin.com
@@ -42681,6 +42684,7 @@ xz.pphimalayanrt.com
 .ixiatxt.com
 .ixigua.com
 .ixiguan.com
+.ixiguapi.com
 .ixiguavideo.com
 .iximo.com
 .ixingfei.com
@@ -54219,6 +54223,7 @@ xz.pphimalayanrt.com
 .modashi.net
 .modb.cc
 .modb.pro
+.modelarts-infer.com
 .modelevel.com
 .modelwhale.com
 .modeng178.com
@@ -55159,6 +55164,9 @@ xz.pphimalayanrt.com
 .myhongzuan.com
 .myhostadmin.net
 .myhscodes.com
+.myhuaweicloud-custom.com
+.myhuaweicloud-koodrive.com
+.myhuaweicloud-obs.com
 .myhuaweicloud.com
 .myhuilv.com
 .myhwcdn.com
@@ -59276,7 +59284,6 @@ xz.pphimalayanrt.com
 .pinfangw.com
 .ping-jia.net
 .ping-qu.com
-.ping.ubnt.com
 .ping99.com
 .pingan.com
 .pingan.com.hk
@@ -73595,6 +73602,7 @@ xz.pphimalayanrt.com
 .ubja.vip
 .ublese.com
 .ubmconlinereg.com
+.ubnt.com
 .uboat100.com
 .uboxol.com
 .ubs001.com
@@ -74365,6 +74373,7 @@ xz.pphimalayanrt.com
 .uwan.com
 .uweitui.com
 .uwenku.com
+.uwn.com
 .uworter.com
 .ux18.com
 .ux6.com
