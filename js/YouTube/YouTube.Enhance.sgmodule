@@ -7,7 +7,7 @@
 # Youtube 画中画和后台播放分别在客户端内关闭
 #   - 设置 -> 通用 -> 画中画
 #   - 设置 -> 后台播放和下载 -> 后台播放
-
+# https://github.com/Maasea/sgmodule/blob/master/YouTube.Enhance.sgmodule
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
