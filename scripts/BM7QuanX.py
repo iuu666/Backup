@@ -22,6 +22,7 @@ Spotify = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Quan
 YouTube = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/YouTube/YouTube.list"
 Netflix = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Netflix/Netflix.list"
 Disney = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Disney/Disney.list"
+DouYin = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/DouYin/DouYin.list"
 ChinaMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/ChinaMedia/ChinaMedia.list"
 GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list"
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Proxy/Proxy.list"
@@ -73,6 +74,7 @@ fetch_and_save(Spotify, "Spotify.list")
 fetch_and_save(YouTube, "YouTube.list")
 fetch_and_save(Netflix, "Netflix.list")
 fetch_and_save(Disney, "Disney.list")
+fetch_and_save(DouYin, "DouYin.list")
 fetch_and_save(ChinaMedia, "ChinaMedia.list")
 fetch_and_save(GlobalMedia, "GlobalMedia.list")
 fetch_and_save(Proxy, "Proxy.list")
