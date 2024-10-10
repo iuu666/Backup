@@ -22,11 +22,11 @@ Spotify = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surg
 YouTube = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/YouTube/YouTube.list"
 Netflix = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Netflix/Netflix.list"
 Disney = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Disney/Disney.list"
+DouYin = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/DouYin/DouYin.list"
 ChinaMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/ChinaMedia/ChinaMedia.list"
 GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list"
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list"
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/China/China_All_No_Resolve.list"
-Douyin = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/DouYin/DouYin.list"
 
 def fetch_and_save(url, file_name):
     try:
@@ -74,8 +74,8 @@ fetch_and_save(Spotify, "Spotify.list")
 fetch_and_save(YouTube, "YouTube.list")
 fetch_and_save(Netflix, "Netflix.list")
 fetch_and_save(Disney, "Disney.list")
+fetch_and_save(DouYin, "DouYin.list")
 fetch_and_save(ChinaMedia, "ChinaMedia.list")
 fetch_and_save(GlobalMedia, "GlobalMedia_All_No_Resolve.list")
 fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")
 fetch_and_save(China, "China_All_No_Resolve.list")
-fetch_and_save(Douyin, "Douyin.list")
