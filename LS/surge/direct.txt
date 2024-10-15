@@ -612,7 +612,6 @@ xz.pphimalayanrt.com
 .01teacher.com
 .01w.com
 .01wb.com
-.01yhmp.com
 .01yo.com
 .01yuanma.com
 .01yun.com
@@ -9069,6 +9068,7 @@ xz.pphimalayanrt.com
 .adminxe.com
 .admobile.mobi
 .admqr.com
+.admunan.com
 .admxh.com
 .adnineplus.com
 .adnrhy.com
@@ -10418,7 +10418,6 @@ xz.pphimalayanrt.com
 .amzndns-cn.net
 .an1health.com
 .an2.net
-.anaheimpal.com
 .analysysdata.com
 .analytics-china.com
 .analyticskey.com
@@ -10551,6 +10550,7 @@ xz.pphimalayanrt.com
 .anlewo.com
 .anlibaby.com
 .anlibang.com
+.anlilaw.com
 .anlink.com
 .anlitai.com
 .anlogic.com
@@ -11262,6 +11262,7 @@ xz.pphimalayanrt.com
 .ashoucang.com
 .ashqgpxy.com
 .ashsilent.com
+.ashuiai.com
 .ashvsash.net
 .asi-midea.com
 .asia-cdn.com
@@ -12092,7 +12093,6 @@ xz.pphimalayanrt.com
 .bailiban.com
 .bailiguangmang.com
 .bailing88.com
-.bailingwin.com
 .bailitech.com
 .bailitop.com
 .bailvanquan.xyz
@@ -14079,6 +14079,7 @@ xz.pphimalayanrt.com
 .bjk30.com
 .bjkaihua.com
 .bjkaihua.net
+.bjkdvm.com
 .bjkhzx.com
 .bjkqj.com
 .bjkrtwl.com
@@ -14932,6 +14933,8 @@ xz.pphimalayanrt.com
 .brazzaleqingdao.com
 .brbtyt.com
 .brcpower.com
+.bre-line56.com
+.bre-linex.com
 .breadtrip.com
 .brentron.com
 .brewbeerwiki.org
@@ -15048,7 +15051,6 @@ xz.pphimalayanrt.com
 .bsxhly.com
 .bsxiaoshuo.com
 .bsxldl.com
-.bsxm.cc
 .bsxyzsdec.com
 .bsybx.com
 .bsyjrb.com
@@ -18913,7 +18915,6 @@ xz.pphimalayanrt.com
 .chubh.com
 .chucaotang.com
 .chuchujie.com
-.chudeer.com
 .chudian365.com
 .chufaba.me
 .chufw.com
@@ -18921,7 +18922,6 @@ xz.pphimalayanrt.com
 .chugeyun.com
 .chugou360.com
 .chuguo78.com
-.chuguofeng.com
 .chuguohao.com
 .chuhai-club.com
 .chuimg.com
@@ -19310,6 +19310,7 @@ xz.pphimalayanrt.com
 .ckplayer.com
 .cksd888.com
 .cksic.com
+.cktshare.com
 .ckuai.com
 .ckxx.net
 .ckzhaoyaojing.com
@@ -19623,7 +19624,6 @@ xz.pphimalayanrt.com
 .clz.me
 .clzbl.com
 .clzd.fun
-.clzg9.com
 .clzqm.com
 .clzqxp.com
 .clzt.com
@@ -19723,7 +19723,6 @@ xz.pphimalayanrt.com
 .cmscmc.org
 .cmseasy.cc
 .cmsfg.com
-.cmsforo.com
 .cmsjournal.net
 .cmsk1979.com
 .cmskchp.com
@@ -23782,6 +23781,7 @@ xz.pphimalayanrt.com
 .dingdangnao.com
 .dingdangsheji.com
 .dingdatech.com
+.dingdd.com
 .dingdean.com
 .dingdiange.org
 .dingdianku.com
@@ -24188,6 +24188,7 @@ xz.pphimalayanrt.com
 .dmyxj.com
 .dmyz.org
 .dmzfa.com
+.dmzgame.com
 .dmzj.com
 .dmzj8.com
 .dmzx.com
@@ -25025,7 +25026,6 @@ xz.pphimalayanrt.com
 .du8.com
 .dualaid.com
 .duan.red
-.duangcms.com
 .duanju.fun
 .duanlonggang.com
 .duanmale.com
@@ -25903,7 +25903,6 @@ xz.pphimalayanrt.com
 .ebioweb.com
 .ebjfinance.com
 .ebjservice.com
-.ebkj.net
 .eblockschina.com
 .ebnew.com
 .ebocert.com
@@ -27737,7 +27736,6 @@ xz.pphimalayanrt.com
 .fanyantao.com
 .fanyeda.com
 .fanyedu.com
-.fanyeong.com
 .fanyi.com
 .fanyiba.net
 .fanyibase.com
@@ -28602,7 +28600,6 @@ xz.pphimalayanrt.com
 .fjly.com
 .fjmlh.com
 .fjmstc.com
-.fjnacc.com
 .fjndwb.com
 .fjnet.com
 .fjotic.com
@@ -29226,7 +29223,6 @@ xz.pphimalayanrt.com
 .fsshenneng.com
 .fsspc.com
 .fssptjj.com
-.fsswcd.com
 .fstaoci.com
 .fstcb.com
 .fsthr.com
@@ -29273,7 +29269,6 @@ xz.pphimalayanrt.com
 .ftoc.com
 .ftsafe.com
 .ftsfund.com
-.ftt.me
 .ftuan.com
 .ftxad.com
 .ftxgame.com
@@ -32207,7 +32202,6 @@ xz.pphimalayanrt.com
 .guangxishangfu.com
 .guangxishuizhiyangzhigongsi.com
 .guangxisichujiadao.com
-.guangxitengyunjt.com
 .guangxixinchan.com
 .guangxixinyan.com
 .guangxixinyuwanzixun.com
@@ -34258,7 +34252,6 @@ xz.pphimalayanrt.com
 .gxsubat.com
 .gxsuda.com
 .gxsunwin.com
-.gxsurun.com
 .gxsut.com
 .gxsuyun.com
 .gxswgd.com
@@ -34498,7 +34491,6 @@ xz.pphimalayanrt.com
 .gxxjc168.com
 .gxxjchem.com
 .gxxjcz.com
-.gxxjjx.com
 .gxxjnc.com
 .gxxjpco.com
 .gxxjry.com
@@ -35755,7 +35747,6 @@ xz.pphimalayanrt.com
 .hao.ac
 .hao.gg
 .hao.ink
-.hao0202.com
 .hao0770.com
 .hao120.cc
 .hao123-hao123.com
@@ -35768,7 +35759,6 @@ xz.pphimalayanrt.com
 .hao163.com
 .hao181.com
 .hao184.com
-.hao1970.com
 .hao1996.com
 .hao1cm.com
 .hao22.com
@@ -35781,7 +35771,6 @@ xz.pphimalayanrt.com
 .hao315.cc
 .hao315.com
 .hao315.tv
-.hao3399.com
 .hao352.com
 .hao353.com
 .hao360.com
@@ -35940,7 +35929,6 @@ xz.pphimalayanrt.com
 .haonames.com
 .haonic.com
 .haonongzi.com
-.haonvxing.com
 .haopeixun.com
 .haopianyi.com
 .haoqdl.com
@@ -37724,7 +37712,6 @@ xz.pphimalayanrt.com
 .hlbcks.com
 .hlbeixiu.com
 .hlbeixiu.net
-.hlc2010.com
 .hlcdn.cc
 .hlchsw.com
 .hlclgd.com
@@ -38338,7 +38325,6 @@ xz.pphimalayanrt.com
 .hongyanjin.com
 .hongyanliren.com
 .hongyaomall.com
-.hongyaxuan.com
 .hongyeliehun.com
 .hongyewangluo.com
 .hongyewuyang.com
@@ -38752,6 +38738,7 @@ xz.pphimalayanrt.com
 .hsehome.org
 .hsez.net
 .hsfund.com
+.hsfzxjy.site
 .hsg2oi3c.com
 .hsgjj.com
 .hsgjysj.com
@@ -40035,7 +40022,6 @@ xz.pphimalayanrt.com
 .hxjbh.com
 .hxjiot.com
 .hxjiqi.com
-.hxjlhn.com
 .hxjsjkj.com
 .hxjwang.com
 .hxjxs.com
@@ -40533,6 +40519,7 @@ xz.pphimalayanrt.com
 .i9.org
 .i91pv.com
 .i9978.net
+.i9rht.com
 .i9star.com
 .ia-shenzhen.com
 .iaddata.com
@@ -40630,7 +40617,6 @@ xz.pphimalayanrt.com
 .ibicn.com
 .ibidian.com
 .ibiji.com
-.ibilibili.com
 .ibimuyu.com
 .ibingniao.com
 .ibiquge.info
@@ -41181,7 +41167,6 @@ xz.pphimalayanrt.com
 .ifeve.com
 .iffobi.xyz
 .ifindever.com
-.ifindhs.com
 .ifintechnews.com
 .ifireflygame.com
 .ifiretech.com
@@ -42106,7 +42091,6 @@ xz.pphimalayanrt.com
 .ios-auto.net
 .ios222.com
 .ios98.com
-.iosappx.com
 .iosask.com
 .ioser.fun
 .iosfengwo.com
@@ -43722,7 +43706,6 @@ xz.pphimalayanrt.com
 .jialiwood.com
 .jialiyoukuang8.com
 .jialongsports.com
-.jialunkj.com
 .jialvzc.com
 .jiamei123.com
 .jiameng.com
@@ -44281,7 +44264,6 @@ xz.pphimalayanrt.com
 .jindidq.com
 .jinding.cc
 .jindingfm.com
-.jindong.org
 .jindongneng.com
 .jindongsoft.com
 .jindun007.net
@@ -45665,6 +45647,7 @@ xz.pphimalayanrt.com
 .jspp.com
 .jspxcms.com
 .jsq886.com
+.jsqiuying.com
 .jsqlawer.com
 .jsqq.net
 .jsqstg.com
@@ -46384,6 +46367,7 @@ xz.pphimalayanrt.com
 .jyjt668.com
 .jyjxlt2009.net
 .jykm88.com
+.jykuaidi.com
 .jyl1688.com
 .jyl88.com
 .jylms.com
@@ -47254,6 +47238,7 @@ xz.pphimalayanrt.com
 .kfj.cc
 .kfjd.com
 .kfmanager.com
+.kfothf.xyz
 .kfqizhongji.com
 .kfw001.com
 .kfzimg.com
@@ -49041,7 +49026,6 @@ xz.pphimalayanrt.com
 .lbgttc.com
 .lbhdbl.com
 .lbhlvtbaf.store
-.lbhnjk.com
 .lbinin.com
 .lbjljc.com
 .lbjn.cc
@@ -50799,6 +50783,7 @@ xz.pphimalayanrt.com
 .llku.com
 .llliii.com
 .lllomh.com
+.llmworld.net
 .llpdf.com
 .llqsq.com
 .llqzj.net
@@ -53409,7 +53394,6 @@ xz.pphimalayanrt.com
 .mems.me
 .memsconsulting.com
 .memseminar.com
-.memsky.com
 .memuu.com
 .men.ci
 .menchuang.biz
@@ -56135,7 +56119,6 @@ xz.pphimalayanrt.com
 .neosey.com
 .neoyon.com
 .nep-logistics.com
-.nepalnagrik.com
 .neptcn.com
 .nepyb.com
 .neqtahotelshanghai.com
@@ -56599,7 +56582,6 @@ xz.pphimalayanrt.com
 .niuzhigongzuo.com
 .niuzhu.com
 .niuzhuan-test.com
-.nivta.com
 .nivtc.com
 .niwodai.com
 .niwodai.net
@@ -56710,7 +56692,6 @@ xz.pphimalayanrt.com
 .njzec.com
 .njzhituo.com
 .njzhzx.net
-.njzy99.com
 .njzztyl.com
 .nkasr.com
 .nks1688.com
@@ -58219,6 +58200,7 @@ xz.pphimalayanrt.com
 .open-falcon.com
 .open-falcon.org
 .open-open.com
+.open-verify.cc
 .open1024.com
 .open189.net
 .open3s.cloud
@@ -59531,7 +59513,6 @@ xz.pphimalayanrt.com
 .pigji.com
 .pigjian.com
 .pigonline.org
-.pigqq.com
 .pigsty.cc
 .pigv5.com
 .pigx.vip
@@ -60675,7 +60656,6 @@ xz.pphimalayanrt.com
 .qcds.com
 .qcdyj.com
 .qcenglish.com
-.qcfarm.net
 .qcgm.net
 .qcgq168.com
 .qchcm.com
@@ -60955,7 +60935,6 @@ xz.pphimalayanrt.com
 .qhee.com
 .qhftp0971.com
 .qhfx.net
-.qhgxq.com
 .qhgy.net
 .qhimg.com
 .qhimgs0.com
@@ -61737,7 +61716,6 @@ xz.pphimalayanrt.com
 .qjimage.com
 .qjjfin.com
 .qjjmw.com
-.qjkc.net
 .qjmotor.com
 .qjnice.com
 .qjrc.com
@@ -63150,7 +63128,6 @@ xz.pphimalayanrt.com
 .reachwin.net
 .react-china.org
 .react.mobi
-.read.cx
 .read678.com
 .readboy.com
 .readceo.com
@@ -63235,7 +63212,6 @@ xz.pphimalayanrt.com
 .rediao.com
 .redicecn.com
 .redidc.com
-.redironmc.com
 .redisbook.com
 .redisfans.com
 .redmagic.com
@@ -64173,6 +64149,7 @@ xz.pphimalayanrt.com
 .runqijx.com
 .runsheng.com
 .runshenggk.com
+.runshengkiji.org
 .runsisi.com
 .runsky.com
 .runtimeedu.com
@@ -64681,6 +64658,7 @@ xz.pphimalayanrt.com
 .sbr-info.com
 .sbrczx.com
 .sbrj.net
+.sbs-mag.com
 .sbscn.com
 .sbsjk.com
 .sbt123.com
@@ -64900,7 +64878,6 @@ xz.pphimalayanrt.com
 .scsmzy.com
 .scsstjt.com
 .scsuhuigy.com
-.scsx2016.org
 .scsxth.com
 .sctbc.net
 .sctcd.com
@@ -66166,7 +66143,6 @@ xz.pphimalayanrt.com
 .shenghuorili.com
 .shenghuowo.com
 .shengjing360.com
-.shengjinghuyu.com
 .shengjinglinye.com
 .shengjiu.com
 .shengjoy.com
@@ -67020,7 +66996,6 @@ xz.pphimalayanrt.com
 .shuimozhuan.net
 .shuimui.com
 .shuimujiaju.com
-.shuimux.com
 .shuimuyulin.com
 .shuini.biz
 .shuipingce.com
@@ -67352,7 +67327,6 @@ xz.pphimalayanrt.com
 .sikiedu.com
 .sikuwu.com
 .silanggame.com
-.silanxinxi.com
 .sildyn.com
 .sileadinc.com
 .silenceper.com
@@ -67603,7 +67577,6 @@ xz.pphimalayanrt.com
 .sireda.com
 .sirenji.com
 .sirfang.com
-.siruirencai.com
 .siryin.com
 .siscmag.com
 .sisen.com
@@ -67616,7 +67589,6 @@ xz.pphimalayanrt.com
 .sisisi.net
 .sisp-china.com
 .siswin.com
-.sitapix.com
 .site-digger.com
 .site119.com
 .siteapp-static.com
@@ -68029,7 +68001,6 @@ xz.pphimalayanrt.com
 .smgpt.com
 .smgstar.com
 .smgtech.net
-.smhdoto.com
 .smhsw.com
 .smhyplay.com
 .smianet.com
@@ -68081,7 +68052,6 @@ xz.pphimalayanrt.com
 .smtdwx.com
 .smthome.net
 .smtiger.com
-.smtlzb.com
 .smtphub.org
 .smtro.com
 .smtsmt.com
@@ -68252,7 +68222,6 @@ xz.pphimalayanrt.com
 .sofastack.tech
 .sofi-tech.com
 .sofineday.com
-.sofly.cc
 .sofoo.com
 .sofreight.com
 .soft128.com
@@ -70753,7 +70722,6 @@ xz.pphimalayanrt.com
 .tanghushi.com
 .tangjie.me
 .tangkabj.com
-.tanglanglangvr.com
 .tanglei.name
 .tanglib.com
 .tangmi.net
@@ -70820,7 +70788,6 @@ xz.pphimalayanrt.com
 .tao1.co
 .tao123.com
 .tao168.com
-.tao616.com
 .tao800.com
 .tao8090.com
 .taoa.com
@@ -70989,6 +70956,7 @@ xz.pphimalayanrt.com
 .tarsier-infra.com
 .tarsocial.com
 .tartscenter.com
+.tarvengeful.com
 .tasaiwang.com
 .taschb.com
 .tasiyun.com
@@ -73301,6 +73269,7 @@ xz.pphimalayanrt.com
 .ttyuyin.com
 .ttyyuuoo.com
 .ttz.com
+.ttzubao.com
 .ttzyw.com
 .tu8.cc
 .tu93.biz
@@ -74793,7 +74762,6 @@ xz.pphimalayanrt.com
 .uzaicdn.com
 .uzhix.com
 .uzhuangji.net
-.uzing.net
 .uzise.com
 .uzshare.com
 .uzy.xyz
@@ -75335,6 +75303,7 @@ xz.pphimalayanrt.com
 .vishining.com
 .vishoor.com
 .visinextek.com
+.vision-systems-china.com
 .visionandview.com
 .visionbbs.com
 .visionchinashow.net
@@ -75387,7 +75356,6 @@ xz.pphimalayanrt.com
 .vk8.co
 .vkaijiang.com
 .vkehu.com
-.vkelai.com
 .vkemai.com
 .vkjsq.com
 .vklaua.com
@@ -76068,7 +76036,6 @@ xz.pphimalayanrt.com
 .wangid.com
 .wangjianshuo.com
 .wangjiezhe.com
-.wangjinle.com
 .wangjubao.com
 .wangjumeng.xin
 .wangjunwei.com
@@ -76179,7 +76146,6 @@ xz.pphimalayanrt.com
 .wanhunet.com
 .wanimal1983.org
 .wanjia.org
-.wanjia108.com
 .wanjiachupin.com
 .wanjiashe.com
 .wanjidashi.com
@@ -77177,7 +77143,6 @@ xz.pphimalayanrt.com
 .wenytao.com
 .wenyu6.com
 .wenyucdn.com
-.wenyw.com
 .wenzaizhibo.com
 .wenzhangba.com
 .wenzhanghui.com
@@ -78377,7 +78342,6 @@ xz.pphimalayanrt.com
 .wotula.com
 .wouju.com
 .wouu.net
-.wowant.com
 .wowcat.net
 .wowchina.com
 .wowenda.com
@@ -78873,7 +78837,6 @@ xz.pphimalayanrt.com
 .wuxiatools.com
 .wuxibus.com
 .wuxicxl.com
-.wuxihuahan.com
 .wuxijia.com
 .wuxijiekang.com
 .wuximarathon.com
@@ -79330,7 +79293,6 @@ xz.pphimalayanrt.com
 .x431.com
 .x4dp.com
 .x5dj.com
-.x6130f.xyz
 .x64go.com
 .x64pro.com
 .x66597.com
@@ -79681,6 +79643,7 @@ xz.pphimalayanrt.com
 .xdsipo.com
 .xdsp.mobi
 .xdter.com
+.xdtev.com
 .xdtos.com
 .xduoo.com
 .xduoyu.com
@@ -80385,7 +80348,6 @@ xz.pphimalayanrt.com
 .xiaoshouhudong.com
 .xiaoshourc.com
 .xiaoshouyi.com
-.xiaoshu168.com
 .xiaoshuapp.com
 .xiaoshuiguo.com
 .xiaoshujiang.com
@@ -81024,6 +80986,7 @@ xz.pphimalayanrt.com
 .xinpure.com
 .xinqigu.com
 .xinqing.com
+.xinqiucc.com
 .xinqiyejia.com
 .xinqtech.com
 .xinquanedu.com
@@ -82312,6 +82275,7 @@ xz.pphimalayanrt.com
 .xueli9.com
 .xuemh.com
 .xueming.li
+.xuenarui.com
 .xuenb.com
 .xuepaijie.com
 .xuepingx.com
@@ -82521,7 +82485,6 @@ xz.pphimalayanrt.com
 .xuyalipin.com
 .xuyangny.com
 .xuyi.net
-.xuyilx.com
 .xuyu56.com
 .xuyueswkj.com
 .xuzai.com
@@ -84433,7 +84396,6 @@ xz.pphimalayanrt.com
 .yisuoyi.com
 .yit.com
 .yitai17.com
-.yitaicloud.com
 .yitaifang.com
 .yitaihdbf.com
 .yitanyun.com
@@ -84531,7 +84493,6 @@ xz.pphimalayanrt.com
 .yiyaojd.com
 .yiyaojie.com
 .yiyayans.com
-.yiybb.com
 .yiye-a.com
 .yiye-h.com
 .yiye-v.com
@@ -85050,7 +85011,6 @@ xz.pphimalayanrt.com
 .yolexi.com
 .yolinkmob.com
 .yolipai.net
-.yoloboo.com
 .yoloho.com
 .yoloogames.com
 .yolyon.com
@@ -85489,6 +85449,7 @@ xz.pphimalayanrt.com
 .youyeetoo.com
 .youyegame.com
 .youyi-game.com
+.youyi800.com
 .youyigame.com
 .youyijifen.com
 .youyijiu.com
@@ -86834,7 +86795,6 @@ xz.pphimalayanrt.com
 .yydsmh.com
 .yydzh.com
 .yyearth.com
-.yyes.shop
 .yyestar.com
 .yyfangchan.com
 .yyfax.com
@@ -86975,6 +86935,7 @@ xz.pphimalayanrt.com
 .yzja.com
 .yzjjw.net
 .yzjsxy.com
+.yzjtech.com
 .yzkhfw.com
 .yzkimage.com
 .yzkjpcb.com
@@ -87942,7 +87903,6 @@ xz.pphimalayanrt.com
 .zhanshi.biz
 .zhanshi888.com
 .zhanshiren.com
-.zhanst.com
 .zhansu.com
 .zhantai.com
 .zhantuo.com
@@ -89167,7 +89127,6 @@ xz.pphimalayanrt.com
 .zikeys.com
 .zikoo.com
 .zikui-design.com
-.zilanwl.com
 .zilhua.com
 .zilian5.com
 .ziliao8.cc
@@ -90499,7 +90458,6 @@ xz.pphimalayanrt.com
 .zxxxkj.com
 .zxxyedu.com
 .zxyee.com
-.zxyswhcm.com
 .zxz.ee
 .zxzhijia.com
 .zxzmail.com
@@ -90774,6 +90732,7 @@ xz.pphimalayanrt.com
 .zzyugang.com
 .zzyyds.com
 .zzyyrl.com
+.zzz.xxx
 .zzz4.com
 .zzzdc.com
 .zzzdm.com
