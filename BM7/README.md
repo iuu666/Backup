@@ -4,8 +4,8 @@
 
 ## 数据来源
 
-- **[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)**
-- **[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge)** 
+- **[blackmatrix7-QuantumultX](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)**
+- **[blackmatrix7-Surge](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge)** 
 
 
 
