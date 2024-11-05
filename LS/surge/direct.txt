@@ -92,6 +92,7 @@ clientflow.apple.com.akadns.net
 clientservices.googleapis.com
 cma.itunes.apple.com
 cn-smp-paymentservices.apple.com
+cn.download.nvidia.com
 cn.widevine.com
 cn.windowssearch.com
 cnappinstall.googleadapis.com
@@ -10206,6 +10207,7 @@ xz.pphimalayanrt.com
 .aliyunduncc.com
 .aliyundunwaf.com
 .aliyunedu.net
+.aliyunfile.com
 .aliyunfuwuqi.com
 .aliyunga0017.com
 .aliyunga0018.com
@@ -12246,6 +12248,7 @@ xz.pphimalayanrt.com
 .bamatea.com
 .bamaying.com
 .bamboo18.com
+.bambulab.com
 .bamengame.com
 .bamensq.com
 .bamenzhushou.com
@@ -12663,6 +12666,7 @@ xz.pphimalayanrt.com
 .bbk000.com
 .bbkantu.com
 .bbkys.com
+.bblmw.com
 .bblskj.com
 .bbmuwwxyk.com
 .bbmy.net
@@ -13217,6 +13221,7 @@ xz.pphimalayanrt.com
 .bestpeng.com
 .bestqliang.com
 .bestreplicheitalia.com
+.bestrhy.com
 .bestsdwan.com
 .bestshinhwa.com
 .bestsign.info
@@ -28204,6 +28209,8 @@ xz.pphimalayanrt.com
 .fenbeijinfu.com
 .fenbeitong.com
 .fenbi.com
+.fenbike.com
+.fenbilantian.com
 .fenbu.net
 .fenby.com
 .fencescn.com
@@ -28471,6 +28478,7 @@ xz.pphimalayanrt.com
 .filcochina.com
 .file001.com
 .filediag.com
+.filez.com
 .filfox.info
 .fillersmart.com
 .fillseo.com
@@ -29600,6 +29608,7 @@ xz.pphimalayanrt.com
 .fxpan.com
 .fxqrf.com
 .fxsw.net
+.fxt365.com
 .fxtrip.com
 .fxtrips.com
 .fxw.la
@@ -31365,6 +31374,7 @@ xz.pphimalayanrt.com
 .gmtv.cc
 .gmtzy.com
 .gmugmu.com
+.gmw.com
 .gmwiki.com
 .gmxmym.ren
 .gmyihua.com
@@ -37912,6 +37922,7 @@ xz.pphimalayanrt.com
 .hnbits.com
 .hnblc.com
 .hnbljy.com
+.hnbntv.com
 .hnbrush.com
 .hnbwsd.com
 .hnccpit.org
@@ -39721,6 +39732,7 @@ xz.pphimalayanrt.com
 .huming.com
 .hummcars.com
 .hunancatv.com
+.hunaniptv.com
 .hunanliantong.com
 .hunanpea.com
 .hunantv.com
@@ -45600,6 +45612,7 @@ xz.pphimalayanrt.com
 .jsdzb.com
 .jseduinfo.com
 .jseepub.com
+.jsehealth.com
 .jseoptics.com
 .jser.io
 .jsf1990.site
@@ -49512,6 +49525,7 @@ xz.pphimalayanrt.com
 .lenovo.net
 .lenovocloudos.com
 .lenovoeservice.com
+.lenovofile.com
 .lenovogame.com
 .lenovohci.com
 .lenovohuishang.com
@@ -49520,6 +49534,7 @@ xz.pphimalayanrt.com
 .lenovomobile.com
 .lenovonetapp.com
 .lenovonowgo.com
+.lenovopoc.com
 .lenovoprinter.com
 .lenovoprinter.net
 .lenovosj.com
@@ -53528,6 +53543,7 @@ xz.pphimalayanrt.com
 .mepcec.com
 .mepoem.com
 .meppon.com
+.merach.com
 .mercedes-benzarena.com
 .mercitime.com
 .mereith.com
@@ -53771,6 +53787,7 @@ xz.pphimalayanrt.com
 .miaoweijianfei.com
 .miaowutech.com
 .miaoxiazai.com
+.miaoyanai.com
 .miaoyun.link
 .miaozao.com
 .miaozhen.com
@@ -70685,6 +70702,8 @@ xz.pphimalayanrt.com
 .taicent.com
 .taichi-graphics.com
 .taichi-maker.com
+.taichuan.com
+.taichuan.net
 .taichyfood.com
 .taici.com
 .taicihome.com
@@ -86608,6 +86627,7 @@ xz.pphimalayanrt.com
 .yunzhizao.net
 .yunzhonghe.com
 .yunzhu100.com
+.yunzhuxue.com
 .yunzmall.com
 .yunzongnet.com
 .yunzujia.com
