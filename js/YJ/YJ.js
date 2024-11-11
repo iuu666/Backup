@@ -1,5 +1,5 @@
 const params = getParams($argument);
-const provinceName = params.provname || "江苏";
+const provinceName = params.provname || "山东";
 const apiUrls = [
   `https://apis.tianapi.com/oilprice/index?key=231de491563c35731436829ac52aad43&prov=${encodeURIComponent(provinceName)}`,
   `https://apis.tianapi.com/oilprice/index?key=a2bc7a0e01be908881ff752677cf94b7&prov=${encodeURIComponent(provinceName)}`,
