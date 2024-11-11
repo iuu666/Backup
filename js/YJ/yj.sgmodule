@@ -1,7 +1,8 @@
-#!name=油价
-#!desc=油价
+#!name=实时油价
+#!desc=
 
 [Panel]
 YJ = script-name=YJ,update-interval=43200
+
 [Script]
 YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js, argument=hubei/wuhan
