@@ -1,5 +1,5 @@
-#!name=实时油价
-#!desc=
+#!name=今日油价
+#!desc=最新油价信息
 
 [Panel]
 YJ = script-name=YJ,update-interval=86400
