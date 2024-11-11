@@ -1,5 +1,5 @@
 #!name=解锁检测
-#!desc=
+#!desc=Youtube/Netflix/Disney/ChatGpt
 
 [Panel]
 策略面板 = script-name=解锁检测
