@@ -1,5 +1,5 @@
 #!name=解锁检测
-#!desc=Youtube/Netflix/Disney/
+#!desc=
 
 [Panel]
 策略面板 = script-name=解锁检测,update-interval=7200
