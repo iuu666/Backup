@@ -4,9 +4,9 @@
 [Panel]
 YJ = script-name=YJ,update-interval=43200
 [Script]
-YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js,argument=shanxi-3/xian
+YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js,argument=shandong
 */
-var region = 'shanxi-3/xian'
+var region = 'shandong'
 
 if (typeof $argument !== 'undefined' && $argument !== '') {
     region = $argument
