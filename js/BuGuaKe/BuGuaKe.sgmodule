@@ -1,0 +1,5 @@
+[Script]
+BuGuaKe = type=http-response,pattern=^https:\/\/appwk\.baidu\.com\/bgk\/(user\/getinfo|doc\/(getdocdownloadcopywriter|quedocsearch\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/BuGuaKe/BuGuaKe.js
+
+[MITM]
+hostname = %APPEND% appwk.baidu.com
