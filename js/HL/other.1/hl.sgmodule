@@ -1,0 +1,9 @@
+#!name=汇率监控
+#!desc=实时监控汇率变化
+#!icon=arrow.left.arrow.right.circle
+
+[Script]
+汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/yourusername/YourRepo/master/exchange.js,argument=base=CNY&digits=2
+
+[Panel]
+汇率面板=script-name=汇率监控,update-interval=3600
