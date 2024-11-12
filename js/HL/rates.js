@@ -1,4 +1,5 @@
-const url = "https://api.exchangerate-api.com/v4/latest/CNY";
+const apiKey = getParams($argument).api_key;
+const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/CNY`;
 const params = getParams($argument);
 
 $httpClient.get(url, function(error, response, data) {
