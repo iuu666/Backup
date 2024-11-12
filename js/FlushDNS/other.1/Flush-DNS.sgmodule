@@ -7,4 +7,4 @@
 FlushDNS = script-name=FlushDNS,update-interval=600
 
 [Script]
-FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js,argument=title={{{TITLE}}}&icon={{{ICON}}}&color={{{COLOR}}}&server=false
+FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/FlushDNS/other.1/flushDNS.js,argument=title={{{TITLE}}}&icon={{{ICON}}}&color={{{COLOR}}}&server=false
