@@ -3,7 +3,7 @@
 #!icon=arrow.left.arrow.right.circle
 
 [Script]
-汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/yourusername/YourRepo/master/exchange.js,argument=base=CNY&digits=2
+汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/other.1/exchange.js,argument=base=CNY&digits=2
 
 [Panel]
 汇率面板=script-name=汇率监控,update-interval=3600
