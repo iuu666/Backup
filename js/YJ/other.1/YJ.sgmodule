@@ -2,7 +2,7 @@
 #!desc=
 
 [Script]
-油价=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/YJ/YJ.js,argument=icon=car&color=#c932a9
+油价=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/YJ/other.1/YJ.js,argument=icon=car&color=#c932a9
 
 [Panel]
 油价 = script-name=油价, update-interval=600
