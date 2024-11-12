@@ -1,11 +1,8 @@
 #!name=当前汇率
 #!desc=汇率面板
-#!arguments=APIKEY:填写Apikey
-#!arguments-desc=[参数设置]\n⓵ APIKEY: 填写Apikey,申请地址：https://app.exchangerate-api.com/dashboard (该接口每年免费1500次调用额度);
-
 
 [Panel]
 当前汇率=script-name=当前汇率,update-interval=43200
 
 [Script]
-当前汇率=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/rates.js,argument=icon=yensign.circle&color=#D4AF37&api_key={{{APIKEY}}}
+当前汇率=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/rates.js,argument=icon=yensign.circle&color=#D4AF37
