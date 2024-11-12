@@ -12,7 +12,7 @@ DOMAIN,is.snssdk.com,REJECT
 ^https:\/\/sf3-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/renderer\/package\.json data-type=text data="{}"
 
 [Script]
-番茄小说 = type=http-response,pattern=^https:\/\/lf-cdn-tos\.bytescm\.com\/obj\/static\/ad\/play-comp\/playable-component-sdk\/package\.ugen\.json,requires-body=1,max-size=0,binary-body-mode=0,debug=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Fq_Ad.js
+番茄小说 = type=http-response,pattern=^https:\/\/lf-cdn-tos\.bytescm\.com\/obj\/static\/ad\/play-comp\/playable-component-sdk\/package\.ugen\.json,requires-body=1,max-size=0,binary-body-mode=0,debug=1,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/FanQie/other.1/Fq_Ad.js
 
 [MITM]
 hostname = %APPEND% api-access.pangolin-sdk-toutiao*.com, sf3-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
