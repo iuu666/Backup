@@ -1,5 +1,6 @@
 #!name=贴吧净化
 #!desc=贴吧官方App净化
+# https://github.com/Rabbit-Spec/Surge/blob/Master/Module/Spec/Tieba/Moore/Tieba.sgmodule
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/TieBa/tieba-ad.list,REJECT-DROP
