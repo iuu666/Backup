@@ -14,4 +14,4 @@
 force-http-engine-hosts = %APPEND% *.example.com:0
 
 [Script]
-云盘挂载 = type=http-request,pattern=^http:\/\/(aliyun|quark|pikpak)\.example\.com,requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/fileball.js
+云盘挂载 = type=http-request,pattern=^http:\/\/(aliyun|quark|pikpak)\.example\.com,requires-body=1,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/Fileball/fileball.js
