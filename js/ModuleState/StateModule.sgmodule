@@ -1,5 +1,5 @@
-#!name=moduleState
-#!desc=一键快速开/关指定模块，适用于需要临时开启但又不想翻模块列表时。
+#!name=StateModule
+#!desc=一键快速开/关指定模块，适用于需要临时开启但又不想翻模块列表。
 #!arguments=TITLE:Open Module,MODULE:Cookie获取,ICON:person.icloud.fill,COLOR1:#008080,COLOR2:#994714,UPDATE_INTERVAL:43200
 #!arguments-desc=[参数设置]\n⓵ TITLE: 自定义模块标题,如不设置则默认显示"Open Module";\n⓶ MODULE:自定义需要控制的模块名字,不设置默认为"Cookie获取";\n⓷ ICON: 自定义模块图标,需为有效的SFSymbolName,如不设置则默认为"fuelpump.circle.fill";\n⓸ COLOR1: 自定义模块关闭时显示的图标颜色,需为颜色的HEX编码,如不设置则默认为"#008080";\n⓹ COLOR2: 自定义模块开启时显示的图标颜色,需为颜色的HEX编码,如不设置则默认为"#994714";\n⓺ UPDATE_INTERVAL: 自定义刷新间隔时间,单位为秒,如不设置则默认为每43200秒刷新一次;\n
 
