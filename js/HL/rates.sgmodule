@@ -1,5 +1,8 @@
 #!name=当前汇率
 #!desc=汇率面板
+#!arguments=APIKEY:填写Apikey
+#!arguments-desc=[参数设置]\n⓵ APIKEY: 填写Apikey,申请地址：https://app.exchangerate-api.com/dashboard (该接口每年免费1500次调用额度);
+
 
 [Panel]
 当前汇率=script-name=当前汇率,update-interval=43200
