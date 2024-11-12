@@ -3,7 +3,7 @@
 
 
 [Map Local]
-^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ data="https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/html/index.html" header="Content-Type: text/html; charset=utf-8"
+^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ data="https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/Baidu/index.html" header="Content-Type: text/html; charset=utf-8"
 
 [MITM]
 hostname = %APPEND% m.baidu.com,www.baidu.com
