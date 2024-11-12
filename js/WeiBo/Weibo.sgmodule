@@ -1,5 +1,6 @@
 #!name= 微博净化
 #!desc=微博官方App净化
+# https://github.com/Rabbit-Spec/Surge/blob/Master/Module/Spec/Weibo/Moore/Weibo.sgmodule
 
 [Map Local]
 # > 微博
