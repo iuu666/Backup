@@ -1,18 +1,24 @@
 const url = "https://api.exchangerate-api.com/v4/latest/CNY";
-const params = getParams($argument);  // 确保$argument已经传入
+const params = getParams($argument);
+
 $httpClient.get(url, function(error, response, data) {
-  if (error) {
+  if (error || response.status !== 200) {
     $done({
       title: "Error",
       content: "无法获取汇率信息，请稍后再试。",
-      icon: "✖️",  // 错误图标
+      icon: "✖️",
       "icon-color": "red"
     });
     return;
   }
   
   try {
-    const rates = JSON.parse(data).rates;
+    const ratesData = JSON.parse(data);
+    const rates = ratesData.rates;
+    
+    if (!rates.USD || !rates.HKD || !rates.JPY || !rates.KRW || !rates.EUR || !rates.GBP || !rates.TRY) {
+      throw new Error("缺少必要的汇率数据");
+    }
 
     const usdToCny = (1 / rates.USD).toFixed(2);
     const cnyToHkd = rates.HKD.toFixed(2);
@@ -41,8 +47,8 @@ $httpClient.get(url, function(error, response, data) {
     const panel = {
       title: `当前汇率信息 ${timestamp}`,
       content: content,
-      icon: params.icon || "💵",  // 提供默认图标
-      "icon-color": params.color || "green"  // 提供默认颜色
+      icon: params.icon || "💵",
+      "icon-color": params.color || "green"
     };
 
     $done(panel);
@@ -58,7 +64,7 @@ $httpClient.get(url, function(error, response, data) {
 });
 
 function getParams(param) {
-  if (!param) return {};  // 防止$argument为空时出错
+  if (!param) return {};
   return Object.fromEntries(
     param
       .split("&")
