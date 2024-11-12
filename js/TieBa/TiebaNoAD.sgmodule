@@ -5,7 +5,7 @@
 # 仓库地址 https://github.com/app2smile/rules/blob/master/module/tieba.sgmodule
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list,REJECT-DROP
+RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/TieBa/tieba-ad.list,REJECT-DROP
 
 [MITM]
 hostname = %APPEND% tiebac.baidu.com
