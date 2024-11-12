@@ -30,7 +30,7 @@ $httpClient.get(url, function(error, response, data) {
   `;
 
   const panel = {
-    title: `🪙当前汇率信息 ${timestamp}`,
+    title: `当前汇率信息 ${timestamp}`,
     content: content,
 	        icon: params.icon,
         "icon-color": params.color
