@@ -2,14 +2,11 @@
 #!desc=一键快速开/关指定模块，适用于需要临时开启但又不想翻模块列表时。
 #!arguments=TITLE:Open Module,MODULE:Cookie获取,ICON:person.icloud.fill,COLOR1:#008080,COLOR2=#994714&,UPDATE_INTERVAL:43200
 #!arguments-desc=[参数设置]\n⓵ TITLE: 自定义模块标题,如不设置则默认显示"Open Module";\n⓶ MODULE:自定义需要控制的模块名字,不设置默认为Cookie获取;\n⓷ICON: 自定义模块图标,需为有效的SFSymbolName,如不设置则默认为"fuelpump.circle.fill";\n⓸ COLOR1: 自定义模块关闭时显示的图标颜色,需为颜色的HEX编码,如不设置则默认为"#008080";\n⓹ COLOR2: 自定义模块开启时显示的图标颜色,需为颜色的HEX编码,如不设置则默认为"#994714";\n⓺ UPDATE_INTERVAL: 自定义刷新间隔时间,单位为秒,如不设置则默认为每43200秒刷新一次;\n
-#module 参数可以自定义需要控制的使用的模块；
-#title 参数可以自定义显示名称，缺省时使用模块名称；
-#icon 参数可以自定义显示图标；目前模块显示的图标：person.icloud.fill,arrow.clockwise
-#color1 参数可以自定义图标颜色，为模块关闭时显示颜色；
-#color2 参数可以自定义图标颜色，为模块开启时显示颜色。
 
-[Script]
-{{{TITLE}}} = type={{{TITLE}}},timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ModuleState/moduleState.js,argument=title={{{TITLE}}}&module={{{MODULE}}}&icon={{{ICON}}}&color1={{{COLOR1}}}&color2={{{COLOR2}}}&color2={{{COLOR2}}}
 
 [Panel]
-moduleState = script-name={{{TITLE}}},update-interval={{{UPDATE_INTERVAL}}}
+{{{TITLE}}} = script-name={{{TITLE}}},update-interval={{{UPDATE_INTERVAL}}}
+
+[Script]
+{{{TITLE}}} = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ModuleState/moduleState.js,argument=title={{{TITLE}}}&module={{{MODULE}}}&icon={{{ICON}}}&color1={{{COLOR1}}}&color2={{{COLOR2}}}&color2={{{COLOR2}}}
+
