@@ -48,7 +48,7 @@ URL-REGEX,^https?:\/\/.*\.xima.*\.com\/ting\/(loading|feed|home)?,REJECT,pre-mat
 
 [Script]
 # 首页滚动_Ad、Tab页滚动_Ad、我的页面_Ad
-喜马拉雅 = type=http-response,pattern=^https?:\/\/mobile\.ximalaya\.com\/focus-mobile|(discovery-category|mobile-user)\/v\d\/(mix|category|homePage),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/xmly_json.js,script-update-interval=0
+喜马拉雅 = type=http-response,pattern=^https?:\/\/mobile\.ximalaya\.com\/focus-mobile|(discovery-category|mobile-user)\/v\d\/(mix|category|homePage),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/XMLY/xmly_json.js,script-update-interval=0
 
 [MITM]
 hostname = %APPEND% *.xima*.*, *.xmcdn.*
