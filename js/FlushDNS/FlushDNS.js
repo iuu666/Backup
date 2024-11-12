@@ -1,10 +1,12 @@
 /*
- * 由@zZPiglet编写
- * 原脚本地址：https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js
- * 由@Rabbit-Spec修改
- # 更新日期：2024.08.03
- # 版本：2.0
- */
+[Script]
+flushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js
+// use "title" or "icon" or "color" or "server" in "argument":
+// flushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b&server=false
+
+[Panel]
+flushDNS = script-name=flushDNS,update-interval=600
+*/
 
 !(async () => {
     let panel = { title: "Flush DNS" },
@@ -23,7 +25,7 @@
     }
     if ($trigger == "button") await httpAPI("/v1/dns/flush");
     let delay = ((await httpAPI("/v1/test/dns_delay")).delay * 1000).toFixed(0);
-    panel.content = `DNS延迟: ${delay}ms${dnsCache ? `\nserver:\n${dnsCache}` : ""}`;
+    panel.content = `delay: ${delay}ms${dnsCache ? `\nserver:\n${dnsCache}` : ""}`;
     $done(panel);
 })();
 
