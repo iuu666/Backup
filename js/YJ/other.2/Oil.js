@@ -5,7 +5,7 @@ Surge Panel：https://raw.githubusercontent.com/githubdulong/Script/master/Surge
 */
 
 const params = getParams($argument);
-const provinceName = params.provname || "湖南";
+const provinceName = params.provname || "山东";
 const apiKey = params.apikey;  // 使用模块参数填写Apikey.申请地址：https://www.tianapi.com/apiview/104 (该接口普通会员每天赠送100次调用额度);
 
 const apiUrls = [
