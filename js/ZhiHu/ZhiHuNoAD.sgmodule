@@ -3,7 +3,7 @@
 # 仓库地址 https://github.com/app2smile/rules/blob/master/module/zhihu.sgmodule
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/zhihu-ad.list,REJECT-DROP
+RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZhiHu/zhihu-ad.list,REJECT-DROP
 
 [MITM]
 hostname = %APPEND% api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com
