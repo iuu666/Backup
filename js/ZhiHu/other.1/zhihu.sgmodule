@@ -20,7 +20,7 @@ URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation,REJECT-TINYGI
 URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v4/(questions|anwsers)\/\d+/related-readings,REJECT-TINYGIF
 URL-REGEX,^https?:\/\/api\.zhihu\.com\/moments\/recent,REJECT-TINYGIF
 URL-REGEX,^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation,REJECT-TINYGIF
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_remove_ads.list,REJECT-NO-DROP
+RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZhiHu/other.1/zhihu_remove_ads.list,REJECT-NO-DROP
 
 [Map Local]
 # 知乎去除Tab页关注人头像
