@@ -6323,6 +6323,7 @@ ztedevices.com
 .charticulator.com
 .chase.ac.uk
 .chasestudy.ac.uk
+.chat.com
 .chat.lmsys.org
 .chatango.com
 .chatgpt.com
@@ -14078,6 +14079,7 @@ ztedevices.com
 .icl-fi.org
 .icloud-content.com
 .icloud-isupport.com
+.icloud-sandbox.com
 .icloud.ch
 .icloud.com
 .icloud.de
