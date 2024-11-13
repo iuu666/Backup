@@ -1,6 +1,6 @@
 #!name=知乎增强
 #!desc=各知乎规则整合
-#!category=zqzess
+# https://github.com/zqzess/rule_for_quantumultX/blob/master/Surge/Module/zhihu.sgmodule
 
 [Rule]
 DOMAIN,118.89.204.198,REJECT
