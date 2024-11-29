@@ -2,6 +2,7 @@
 #!desc=定时查询, Panel 面板, 抓包
 #!arguments=cronexp:*/5 * * * *,cron:10010v4-cron,capture:10010v4-capture,panel:10010v4-panel
 #!arguments-desc=cronexp\n\n定时任务\n默认为每 5 分钟\n\ncron\n\n自定义定时任务名\n若设为 # 可取消定时任务\n\npanel\n\n自定义面板名\n若设为 # 可取消面板\n\ncapture\n\n自定义抓包脚本名\n若设为 # 可取消抓包
+# https://github.com/ChinaTelecomOperators/ChinaUnicom
 
 [General]
 force-http-engine-hosts = %APPEND% 10010v4.com, m.client.10010.com
