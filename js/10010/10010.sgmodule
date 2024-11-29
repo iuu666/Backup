@@ -8,7 +8,7 @@ force-http-engine-hosts = %APPEND% 10010v4.com, m.client.10010.com
 
 [Script]
 # > Response
-{{{capture}}} = type=http-response,pattern=^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js,requires-body=true,max-size=0,timeout=120
+{{{capture}}} = type=http-response,pattern=^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/10010/10010_capture.js,requires-body=true,max-size=0,timeout=120
 
 # > Cron
 {{{cron}}} = type=cron,cronexp="{{{cronexp}}}",timeout=120,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/10010/10010.js
