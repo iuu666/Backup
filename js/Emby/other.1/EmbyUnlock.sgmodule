@@ -1,0 +1,12 @@
+#!name=Emby Premiere
+#!desc=Emby Premiere Unlock解锁
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id992180193
+
+[Script]
+# > Emby Premiere Unlock解锁
+unlock_emby = type=http-response,pattern=^http(s?):\/\/(www\.|)mb3admin\.com\/.*$,script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/Emby/JS/Emby.js,max-size=131072,requires-body=true,timeout=10,debug=false,enable=true
+
+[MITM]
+hostname = %APPEND% mb3admin.com, www.mb3admin.com
