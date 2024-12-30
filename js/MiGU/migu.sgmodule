@@ -1,0 +1,19 @@
+#!name=咪咕音乐
+#!desc=咪咕音乐vip、音质、下载  软件版本：7.41.16
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://music.migu.cn/v3
+
+[Map Local]
+^https://app\.c.nf\.migu\.cn/payment/watch-ad data-type=text data=" " status-code=200
+
+[URL Rewrite]
+^https://app\.c\.nf\.migu\.cn/member/api/marketing/text - reject
+
+[Script]
+# > 咪咕音乐vip、音质、下载
+miguyinyue = type=http-response, pattern=^https?:\/\/(u|c|app).(musicapp|c.nf).migu.cn.*(user\/(queryUserInfo.do|member\/center))|(column\/(startup-pic-with-ad|marketing\/advertising)|\/resource\/skin\/list\/).*$, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/miguyinyue/JS/miguyinyue.js, requires-body=true, max-size=-1, timeout=60
+miguyinyue = type=http-request, pattern=^https?:\/\/app.(c|pd).nf.migu.cn\/.*\/(listen-url|music\/batchQueryMusicPolicy|download-url).*$, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/miguyinyue/JS/miguyinyue.js, timeout=60
+
+[MITM]
+hostname = %APPEND% *.migu.cn
