@@ -1,8 +1,12 @@
-#!name=XT
-#!desc=醒图解锁
+#!name=醒图解锁会员
+#!desc=醒图解锁会员  应用版本：7.3.0
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id1500526240
 
 [Script]
+# > 醒图解锁会员
 RetouchPicsVipCrack = type=http-request, pattern=^https?:\/\/commerce-api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/RetouchPics/JS/RetouchPicsVipCrack.js, timeout=60
 
-[mitm] 
+[MITM]
 hostname = %APPEND% commerce-api.faceu.mobi, api3-misc-lf.retouchpics.com
