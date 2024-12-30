@@ -1,3 +1,5 @@
+#!name=美颜相机
+#!desc=解锁
 
 [MITM]
 hostname =  %APPEND% *.meiyan.com *.meitu.com
