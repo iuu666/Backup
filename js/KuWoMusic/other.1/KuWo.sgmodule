@@ -1,0 +1,12 @@
+#!name=酷我音乐
+#!desc=酷我音乐解锁会员皮肤、会员音频(最高无损)、听书权限, 配合其他去广告脚本达到最佳效果
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id588673713
+
+[Script]
+# > 酷我音乐解锁会员皮肤、会员音频(最高无损)、听书权限
+KuWo = type=http-response, pattern=^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/KuWoMusic/JS/KuWo.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *.kuwo.cn
