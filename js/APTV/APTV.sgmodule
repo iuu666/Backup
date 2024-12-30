@@ -1,0 +1,13 @@
+#!name=APTV-+解锁订阅
+#!desc=APTV-+解锁订阅  软件版本：1.0.16
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id1630403500
+
+
+[Script]
+# > APTV-+解锁订阅
+APTV = type=http-response, pattern=https://api.revenuecat.com/v1/(receipts|subscribers)/*, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/APTV/JS/APTV.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
