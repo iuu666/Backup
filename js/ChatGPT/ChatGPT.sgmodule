@@ -1,0 +1,12 @@
+#!name=ChatGPT解锁Plus订阅
+#!desc=ChatGPT 解锁 Plus 订阅  软件版本：1.2023.21
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id6448311069
+
+[Script]
+# > ChatGPT 解锁 Plus 订阅
+ChatGPTPlusCrack = type=http-response, pattern=^https?:\/\/ios\.chat\.openai\.com\/backend-api\/(accounts\/check\/|models), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ChatGPT/JS/ChatGPTPlusCrack.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% ios.chat.openai.com
