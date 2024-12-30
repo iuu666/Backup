@@ -1,0 +1,13 @@
+#!name=iMe
+#!desc=iMe解锁Premium(非Tg)。使用此脚本，会导致AppleStore无法切换账户，解决方法[关闭QX切换账户，或关闭MITM，或删除脚本，或去设置媒体与购买项目处切换ID]
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/iMe.png
+#!openUrl=https://apps.apple.com/app/id1450480822
+
+[Script]
+# > iMe解锁Premium(非Tg)
+iMe解锁Premium(非Tg) = type=http-response, pattern=https:\/\/api\.imem\.apple\.app\/api\/premium\/getOwnStatus, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/iMe/JS/iMe.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% -api.imem.app
