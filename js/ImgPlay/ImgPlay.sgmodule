@@ -1,0 +1,13 @@
+#!name=ImgPlay
+#!desc=ImgPlay gif制作器 & 表情包制作 & 动图  年度会员订阅.打开软件 > 自动解锁 ，若未解锁成功，手动点击右下角皇冠「已购买」.⚠️⚠️⚠️同类型解锁脚本不可共存。
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/ImgPlay.png
+#!openUrl=https://apps.apple.com/app/id989843523
+
+[Script]
+# > ImgPlay gif制作器 & 表情包制作 & 动图  年度会员订阅
+ImgPlay = type=http-response, pattern=https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ImgPlay/JS/ImgPlay.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com
