@@ -1,5 +1,5 @@
-#!name=MYXJ
-#!desc=解锁
+#!name=MY
+#!desc=美颜相机解锁
 
 [MITM]
 hostname = %APPEND% *.meiyan.com
