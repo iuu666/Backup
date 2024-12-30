@@ -1,0 +1,12 @@
+#!name=VDIT
+#!desc=VDIT 年度会员订阅.打开软件 > 自动解锁 ，若未解锁成功，手动点击左上角皇冠「已购买」
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id1483410865
+
+[Script]
+# > VDIT 年度会员订阅
+VDIT = type=http-response, pattern=https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/VDIT/JS/VDIT.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com
