@@ -1,32 +1,36 @@
 /*
-石墨文档解锁VIP
-https://shimo.im/lizard-api/users/me
-mitm= shimo.im
+# 石墨文档 - 在线文档协作编辑和表格制作  解锁超级会员
+# https://apps.apple.com/cn/app/id1013727678?uo=4
+
+
+[rewrite_local]
+https://shimo.im/lizard-api/users/me url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/shimowendang.js
+
+[mitm]
+hostname = shimo.im
 */
 
-let obj = JSON.parse($response.body);
-    obj.membership = {
-    "accountTypeExpiredAt": "2099-12-30T16:00:00.000Z",
-    "accountTypeCreatedAt": "2020-03-25T13:09:31.000Z",
-    "accountType": "personal_premium",
-    "isEnterprisePremium": true,
-    "isExpired": false,
-    "isNewDing": false,
-    "isOfficial": true
-  }
-  obj.accountMetadata= {
-    "isDingtalk" : false,
-    "isFreeEnterprise" : false,
-    "isTrial" : false,
-    "expiredAt" : {
-      "seconds" : 4102415999,
-      "nanos" : 55173442
-    },
-    "isWework" : false,
-    "isExpired" : false,
-    "isEnterprise" : false,
-    "isPersonalPremium" : true,
-    "isEnterprisePremium" : true,
-    "isEnterpriseLight" : false
-  }
-$done({body: JSON.stringify(obj)});
+var body = $response.body;
+
+
+body = body.replace(/"isEnterpriseLight":\w+/g, '"isEnterpriseLight":true');
+
+
+body = body.replace(/"isEnterprisePremium":\w+/g, '"isEnterprisePremium":true');
+
+body = body.replace(/"isPersonalPremium":\w+/g, '"isPersonalPremium":true');
+
+body = body.replace(/"isTrial":\w+/g, '"isTrial":true');
+
+
+body = body.replace(/"isWework":\s*false/g, '"isWework":true');
+
+
+// 是否为企业
+body = body.replace(/"isEnterprise":\s*false/g, '"isEnterprise":true');
+
+body = body.replace(/"isDingtalk":\s*false/g, '"isDingtalk":true');
+
+body = body.replace(/"isFreeEnterprise":\s*false/g, '"isFreeEnterprise":true');
+
+$done({ body });
