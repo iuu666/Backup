@@ -9,7 +9,7 @@
 
 [Script]
 # > ScanScan(BaiMiao)白描解锁黄金会员
-BaiMiaoGoldVipCrack = type=http-response, pattern=^https?:\/\/baimiao\.uzero\.cn\/api\/v2\.user\/appLaunchWithUser, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/BaiMiao/JS/BaiMiaoGoldVipCrack.js, requires-body=true, max-size=-1, timeout=60
+BaiMiaoGoldVipCrack = type=http-response, pattern=^https?:\/\/baimiao\.uzero\.cn\/api\/v2\.user\/appLaunchWithUser, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/BaiMiao/BaiMiaoGoldVipCrack.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% baimiao.uzero.cn
