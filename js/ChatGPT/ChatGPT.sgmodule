@@ -6,7 +6,7 @@
 
 [Script]
 # > ChatGPT 解锁 Plus 订阅
-ChatGPTPlusCrack = type=http-response, pattern=^https?:\/\/ios\.chat\.openai\.com\/backend-api\/(accounts\/check\/|models), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ChatGPT/JS/ChatGPTPlusCrack.js, requires-body=true, max-size=-1, timeout=60
+ChatGPTPlusCrack = type=http-response, pattern=^https?:\/\/ios\.chat\.openai\.com\/backend-api\/(accounts\/check\/|models), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ChatGPT/ChatGPTPlusCrack.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% ios.chat.openai.com
