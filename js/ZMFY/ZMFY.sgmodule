@@ -7,17 +7,17 @@
 
 [Script]
 # > 字幕翻译作者全家桶解锁永久会员Vip
-ZMFY = type=http-response, pattern=^https?:\/\/yp\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/ai\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/jys\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/ly\.autvideo\.com\/api\/user\/index, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/lp\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/pth\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/hb\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/zimu\.yunmiaomiao\.cn\/api\/user\/index, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/vedio\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/bz\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
-ZMFY = type=http-response, pattern=^https?:\/\/xpc\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZiMuFanYi/JS/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/yp\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/ai\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/jys\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/ly\.autvideo\.com\/api\/user\/index, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/lp\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/pth\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/hb\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/zimu\.yunmiaomiao\.cn\/api\/user\/index, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/vedio\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/bz\.yunmiao\.tech\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
+ZMFY = type=http-response, pattern=^https?:\/\/xpc\.autvideo\.com\/api\/user\/my, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZMFY/ZMFY.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% *.yunmiao.tech, *.autvideo.com, *.yunmiaomiao.cn
