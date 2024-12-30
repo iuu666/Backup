@@ -1,8 +1,13 @@
 #!name=石墨文档
-#!desc=石墨文档解锁
+#!desc=石墨文档-在线文档协作编辑和表格制作 解锁超级会员
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/ShiMoWenDang.png
+#!openUrl=https://apps.apple.com/app/id1013727678
+
+[Script]
+# > 石墨文档-在线文档协作编辑和表格制作 解锁超级会员
+石墨文档 解锁超级会员 = type=http-response, pattern=https://shimo.im/lizard-api/users/me, script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ShiMo/smwd.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% shimo.im
-
-[Script]
-石墨文档=type=http-response,pattern=^https:\//shimo.im\/lizard-api\/users\/me,requires-body=1,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/ShiMo/smwd.js
