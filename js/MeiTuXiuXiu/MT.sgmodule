@@ -6,4 +6,4 @@
 hostname = %APPEND% *.xiuxiu.meitu.com, api.posters.meitu.com, api-*.meitu.com
 
 [Script]
-美图秀秀 = type=http-response,pattern=^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtxx.js
+美图秀秀 = type=http-response,pattern=^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/MeiTuXiuXiu/mtxx.js
