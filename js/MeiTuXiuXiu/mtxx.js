@@ -1,16 +1,15 @@
 /*************************************
 
-项目名称：美图秀秀 解锁SVIP
+项目名称：美图秀秀 解锁SVIP 获取ai擦除照片
+https://apps.apple.com/cn/app/%E7%BE%8E%E5%9B%BE%E7%A7%80%E7%A7%80/id416048305
 下载地址：https://t.cn/AiN3YLHl
-脚本作者：chxm1023
-电报频道：https://t.me/chxm1023
-使用声明：⚠️仅供参考，🈲转载与售卖！
+脚本作者：chxm,小一
 
 **************************************
 
 [rewrite_local]
-^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtxx.js
-
+^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) url script-response-body https://raw.githubusercontent.com/Yu9191/Script/main/mtxx.js
+https?:\/\/api\.posters\.meitu\.com\/matting\/znxc\.json  url script-response-body https://raw.githubusercontent.com/Yu9191/Script/main/mtxx2.js
 [mitm]
 hostname = *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com
 
