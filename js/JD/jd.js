@@ -4,6 +4,7 @@
 #适用于京东App版本V13.8.2
 # 脚本修改来源 https://raw.githubusercontent.com/githubdulong/Script/master/jd_price2.sgmodule
 # 脚本修改来源 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+# https://github.com/mw418/Loon/blob/main/script/jd_price.js
 
 # 1. 修复比价接口
 # 2. 之前只能QX，Surge，更换为Env,兼容Loon等，仅测试QX
