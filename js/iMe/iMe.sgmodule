@@ -7,7 +7,7 @@
 
 [Script]
 # > iMe解锁Premium(非Tg)
-iMe解锁Premium(非Tg) = type=http-response, pattern=https:\/\/api\.imem\.apple\.app\/api\/premium\/getOwnStatus, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/iMe/JS/iMe.js, requires-body=true, max-size=-1, timeout=60
+iMe解锁Premium(非Tg) = type=http-response, pattern=https:\/\/api\.imem\.apple\.app\/api\/premium\/getOwnStatus, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/iMe/iMe.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% -api.imem.app
