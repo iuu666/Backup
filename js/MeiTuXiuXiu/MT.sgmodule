@@ -1,8 +1,14 @@
-#!name=MT
-#!desc=美图秀秀解锁
-
-[MITM]
-hostname = %APPEND% *.xiuxiu.meitu.com, api.posters.meitu.com, api-*.meitu.com
+#!name=美图秀秀
+#!desc=美图秀秀 解锁SVIP 获取ai擦除照片
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/MeiTuXiuXiu.png
+#!openUrl=https://apps.apple.com/app/id416048305
 
 [Script]
-美图秀秀 = type=http-response,pattern=^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/MeiTuXiuXiu/mtxx.js
+# > 美图秀秀 解锁SVIP 获取ai擦除照片
+美图秀秀 解锁SVIP 获取ai擦除照片 = type=http-response, pattern=^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/MeiTuXiuXiu/mtxx.js, requires-body=true, max-size=-1, timeout=60
+美图秀秀 解锁SVIP 获取ai擦除照片 = type=http-response, pattern=https?:\/\/api\.posters\.meitu\.com\/matting\/znxc\.json, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/MeiTuXiuXiu/mtxx.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com
