@@ -7,7 +7,7 @@
 
 [Script]
 # > 爱剪辑-解锁会员-登陆后解锁
-爱剪辑-解锁会员-登陆后解锁 = type=http-response, pattern=^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/AiJianJi/JS/AiJianJi.js, requires-body=true, max-size=-1, timeout=60
+爱剪辑-解锁会员-登陆后解锁 = type=http-response, pattern=^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/AiJianJi/AiJianJi.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% api.open.loveclip.site
