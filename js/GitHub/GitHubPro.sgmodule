@@ -1,0 +1,12 @@
+#!name=GitHubPro
+#!desc=GitHub解锁永久订阅.GitHub 1.142.1除了Ai功能，其他功能都可用.
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id1477376905
+
+[Script]
+# > GitHub解锁永久订阅
+GithubPro = type=http-response, pattern=https://api.github.com/graphql, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/Github/JS/GithubPro.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.github.com
