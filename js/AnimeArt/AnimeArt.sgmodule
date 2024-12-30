@@ -7,8 +7,8 @@
 
 [Script]
 # > Anime Waifu-AI画画解锁订阅
-AnimeArt = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/AnimeArt/JS/AnimeArt.js, requires-body=true, max-size=-1, timeout=60
-AnimeArt = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/AnimeArt/JS/AnimeArt.js, timeout=60
+AnimeArt = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/AnimeArt/AnimeArt.js, requires-body=true, max-size=-1, timeout=60
+AnimeArt = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/AnimeArt/AnimeArt.js, timeout=60
 
 
 [MITM]
