@@ -1,0 +1,15 @@
+#!name=书旗小说
+#!desc=书旗小说-超级会员特权 解锁任意付费及会员章节
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/ShuQi.png
+#!openUrl=https://apps.apple.com/app/id733689509
+
+[Script]
+# > 书旗小说-会员中心
+书旗小说-会员中心 = type=http-response, pattern=^https:\/\/ocean\.shuqireader\.com\/sqios\/render\/render\/page\/bookstore, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ShuQi/JS/ShuQi.js, requires-body=true, max-size=-1, timeout=60
+# > 书旗小说-用户中心
+书旗小说-用户中心 = type=http-request, pattern=^https:\/\/ocean\.shuqireader\.com\/api\/jspend\/iosapi\/userinfo\/info, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ShuQi/JS/ShuQi.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% ocean.shuqireader.com
