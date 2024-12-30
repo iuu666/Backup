@@ -1,0 +1,20 @@
+#!name=起点读书
+#!desc=起点读书-解锁会员专享-付费未解锁。特别说明：付费未解锁，可以用mcdasheng的task签到 广告任务：https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.js
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/QiDianDuShu.png
+#!openUrl=https://apps.apple.com/app/id534174796
+
+[Map Local]
+# > 测评去除
+^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\/getadvlistbatch\?positions data-type=text data=" " status-code=200
+^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh data-type=text data=" " status-code=200
+
+[Script]
+# > 起点读书-解锁会员专享-付费未解锁
+qidiantk = type=http-request, pattern=^https:\/\/magev6\.if\.qidian\.com, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/QiDianDuShu/JS/qidiantk.js, timeout=60
+# > 重组个人界面
+qidianbd = type=http-response, pattern=^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v3\/user\/getaccountpage, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/QiDianDuShu/JS/qidianbd.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% magev6.if.qidian.com
