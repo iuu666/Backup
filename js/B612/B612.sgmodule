@@ -7,7 +7,7 @@
 
 [Script]
 # > B612解锁VIP
-B612解锁VIP = type=http-response, pattern=^https:\/\/user-b612-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/B612/JS/B612.js, requires-body=true, max-size=-1, timeout=60
+B612解锁VIP = type=http-response, pattern=^https:\/\/user-b612-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/B612/b612.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% user-b612-api.snow.me
