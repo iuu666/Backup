@@ -1,7 +1,6 @@
 #!name=MTXX
 #!desc=美图秀秀解锁
 
-
 [MITM]
 hostname = %APPEND% *.xiuxiu.meitu.com, api.posters.meitu.com, api-*.meitu.com
 
