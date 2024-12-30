@@ -19,7 +19,7 @@
 
 [Script]
 # > 追书神器VIP/净化
-http-response ^https?:\/\/.*\.zhuishushenqi\.com\/(user|charge\/voice\/state|pay\/products|advert_center|push\/pop-config|book\/recommend-pop|api|video\/adConfig|book\/bookshelf.*|activity\/popup\/scenes\/init) script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZhuiShuShenQi/JS/ZSSQ.js, requires-body=true, timeout=60, tag=追书神器VIP/净化
+http-response ^https?:\/\/.*\.zhuishushenqi\.com\/(user|charge\/voice\/state|pay\/products|advert_center|push\/pop-config|book\/recommend-pop|api|video\/adConfig|book\/bookshelf.*|activity\/popup\/scenes\/init) script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/ZhuiShuShenQi/ZSSQ.js, requires-body=true, timeout=60, tag=追书神器VIP/净化
 
 [Mitm]
 hostname = *.zhuishushenqi.com, *.pangolin-sdk-toutiao*.com, mhjk.1391.com, opencloud.wostore.cn, open.e.kuaishou.com, mi.gdt.qq.com, mobads.baidu.com, ios.bugly.qq.com, sdk.e.qq.com, analytics.oceanengine.com
