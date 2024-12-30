@@ -10,7 +10,7 @@ hostname = %APPEND% *.docer.wps.cn, vipapi.wps.cn, account.wps.cn, *.wps.cn
 [Script]
 # > WPS解锁稻壳会员
 WPSDocerVIPuserCrack = type=http-response, pattern=^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/Wps/other.1/WPSDocerVIPuserCrack.js, requires-body=true, max-size=-1, timeout=60
-WPSDocerVIPowerCrack = type=http-request, pattern=^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/WPS/JS/WPSDocerVIPowerCrack.js, timeout=60
+WPSDocerVIPowerCrack = type=http-request, pattern=^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail), script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/Wps/other.1/WPSDocerVIPowerCrack.js, timeout=60
 
 # > WPS 解锁超级会员 Pro
 WPSuperVIPuserCrack = type=http-response, pattern=^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/WPS/JS/WPSuperVIPuserCrack.js, requires-body=true, max-size=-1, timeout=60
