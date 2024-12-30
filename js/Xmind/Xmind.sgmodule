@@ -1,0 +1,12 @@
+#!name=XMind思维导图+解锁VIP
+#!desc=XMind思维导图+解锁VIP  软件版本：23.06
+#!date=2024-11-01
+#!category=😍BOBO Premium
+#!openUrl=https://apps.apple.com/app/id1286983622
+
+[Script]
+# > XMind思维导图+解锁VIP
+Xmind = type=http-response, pattern=^https?:\/\/(?:www\.)?xmind\..*\/.+\/(devices|token\/.+), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/Xmind/JS/Xmind.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *xmind.*
