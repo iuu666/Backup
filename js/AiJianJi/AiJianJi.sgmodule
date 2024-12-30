@@ -1,0 +1,13 @@
+#!name=爱剪辑-视频剪辑&视频编辑vlog制作
+#!desc=爱剪辑-解锁会员-登陆后解锁
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/AiJianJi.png
+#!openUrl=https://apps.apple.com/app/id1449230057
+
+[Script]
+# > 爱剪辑-解锁会员-登陆后解锁
+爱剪辑-解锁会员-登陆后解锁 = type=http-response, pattern=^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail), script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/AiJianJi/JS/AiJianJi.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.open.loveclip.site
