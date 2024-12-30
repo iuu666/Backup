@@ -1,0 +1,25 @@
+#!name=追书神器
+#!desc=追书神器-小说电子书阅读解锁Vip
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/ZhuiShuShenQi.png
+#!openUrl=https://apps.apple.com/app/id575826903
+
+[Rewrite]
+# 开屏广告/也可去除其他APP的广告，用处广泛
+^https?:\/\/.*\.pangolin-sdk-toutiao.*\.com reject
+^https?:\/\/mhjk\.1391\.com reject-200
+^https?:\/\/opencloud\.wostore\.cn reject-200
+^https?:\/\/open\.e\.kuaishou\.com reject-200
+^https?:\/\/mi\.gdt\.qq\.com reject-200
+^https?:\/\/mobads\.baidu\.com reject-200
+^https?:\/\/ios\.bugly\.qq\.com reject-200
+^https?:\/\/sdk\.e\.qq\.com reject-200
+^https?:\/\/analytics\.oceanengine\.com reject-200
+
+[Script]
+# > 追书神器VIP/净化
+http-response ^https?:\/\/.*\.zhuishushenqi\.com\/(user|charge\/voice\/state|pay\/products|advert_center|push\/pop-config|book\/recommend-pop|api|video\/adConfig|book\/bookshelf.*|activity\/popup\/scenes\/init) script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/ZhuiShuShenQi/JS/ZSSQ.js, requires-body=true, timeout=60, tag=追书神器VIP/净化
+
+[Mitm]
+hostname = *.zhuishushenqi.com, *.pangolin-sdk-toutiao*.com, mhjk.1391.com, opencloud.wostore.cn, open.e.kuaishou.com, mi.gdt.qq.com, mobads.baidu.com, ios.bugly.qq.com, sdk.e.qq.com, analytics.oceanengine.com
