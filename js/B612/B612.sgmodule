@@ -1,0 +1,13 @@
+#!name=B612
+#!desc=B612解锁VIP
+#!category=😍BOBO Premium
+#!homepage=https://github.com/BOBOLAOSHIV587/Rules
+#!icon=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/Icons/AppIcons/Image/App/B612.png
+#!openUrl=https://apps.apple.com/app/id904209370
+
+[Script]
+# > B612解锁VIP
+B612解锁VIP = type=http-response, pattern=^https:\/\/user-b612-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status, script-path=https://raw.githubusercontent.com/BOBOLAOSHIV587/Rules/main/JS/B612/JS/B612.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% user-b612-api.snow.me
