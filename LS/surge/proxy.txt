@@ -1443,6 +1443,7 @@ ztedevices.com
 .adobesigncdn.com
 .adobespark.com
 .adobess.com
+.adobestats.io
 .adobestock.com
 .adobetag.com
 .adobetarget.com
@@ -4201,6 +4202,7 @@ ztedevices.com
 .bestrecipes.com.au
 .bestsexcam.com
 .bestshoesale2014.net
+.bestsrv.de
 .besttitstube.com
 .bestvpn.com
 .bestvpnanalysis.com
@@ -12276,6 +12278,7 @@ ztedevices.com
 .goodreads.com
 .goodsdunk.net
 .goodsexporn.org
+.goodsrv.de
 .goodtv.com.tw
 .goodtv.tv
 .goofind.com
@@ -12901,6 +12904,7 @@ ztedevices.com
 .happymeal.com
 .happymeal.com.au
 .happymealdigital.com
+.happysrv.de
 .haproxy.org
 .hardcore-sex-filme.com
 .hardcoregayblog.com
@@ -13377,6 +13381,7 @@ ztedevices.com
 .heywire.com
 .heyzo.com
 .hf-iphone.com
+.hf.co
 .hfaes.ac.uk
 .hfals.ac.uk
 .hfma.ac.uk
@@ -13738,6 +13743,7 @@ ztedevices.com
 .hotsexydolls.com
 .hotshame.com
 .hotspotshield.com
+.hotsrv.de
 .hotstar-cdn.net
 .hotstar-labs.com
 .hotstar.com
@@ -15427,6 +15433,8 @@ ztedevices.com
 .itasoftware.com
 .itcanwait.com
 .itcfonts.com
+.itch.io
+.itch.zone
 .itchen.ac.uk
 .iteach.ac.uk
 .itec.ac.uk
@@ -17960,6 +17968,7 @@ ztedevices.com
 .megapornpics.com
 .megaproxy.com
 .megarotic.com
+.megasrv.de
 .megatitsminka.com
 .megavideo.com
 .meguk.ac.uk
@@ -19978,6 +19987,7 @@ ztedevices.com
 .niceanimegames.com
 .niceporn.tv
 .nicer.ac.uk
+.nicesrv.de
 .nicesshop.net
 .nichepornsite.com
 .nichepornsites.com
@@ -21013,6 +21023,7 @@ ztedevices.com
 .opencreate.org
 .opendemocracy.net
 .opendn.xyz
+.opendns.com
 .opendroneid.org
 .opened.ac.uk
 .openengineeringlaboratory.ac.uk
@@ -21028,6 +21039,7 @@ ztedevices.com
 .openmaps.org
 .openreality.com
 .openresty.org
+.openrouter.ai
 .opensciencelab.ac.uk
 .opensciencelaboratory.ac.uk
 .opensea.io
@@ -22528,6 +22540,7 @@ ztedevices.com
 .powershape-e.com
 .powershape.com
 .powershellgallery.com
+.powersrv.de
 .powersunitedvr.com
 .powia.ac.uk
 .pp-soc.com
@@ -22957,6 +22970,7 @@ ztedevices.com
 .quickconnect.to
 .quickiepage.com
 .quickoffice.com
+.quicksrv.de
 .quicktake.video
 .quicktime.cc
 .quicktime.com
@@ -27934,12 +27948,14 @@ ztedevices.com
 .ultimaonline.com
 .ultradonkey.com
 .ultralab.ac.uk
+.ultrasrv.de
 .ultrasurf.us
 .ultravpn.com
 .ultravpn.fr
 .ultraxs.com
 .umagazine.com.hk
 .umass.edu
+.umbrella.com
 .umds.ac.uk
 .umich.edu
 .umis.ac.uk
@@ -29604,6 +29620,7 @@ ztedevices.com
 .whystudylanguages.ac.uk
 .whystudymaterials.ac.uk
 .whyx.org
+.wi-fi.org
 .wias.ac.uk
 .wicn.ac.uk
 .widevine.com
