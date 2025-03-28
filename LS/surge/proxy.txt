@@ -37,6 +37,7 @@ aod-pod-uk-live.akamaized.net
 api-p.videomarket.jp
 api.viu.now.com
 apl-hamivideo.cdn.hinet.net
+apple-tv-plus-press.apple.com
 apple.com.akadns.net
 appleworldwidedeveloper.hb-api.omtrdc.net
 appleworldwidedeveloper.sc.omtrdc.net
@@ -179,6 +180,8 @@ heads4-ak-spotify-com.akamaized.net
 himalaya-exchange.zendesk.com
 hl2rcv.adobe.com
 hlrcv.stage.adobe.com
+hls-amt.itunes.apple.com
+hls.itunes.apple.com
 homebrew.bintray.com
 hpefonts.s3.amazonaws.com
 hpstore.corpmerchandise.com
@@ -220,6 +223,7 @@ netflix.com.edgesuite.net
 notary-submissions-prod.s3-accelerate.amazonaws.com
 notary-submissions-prod.s3.us-west-2.amazonaws.com
 notify.ppy.sh
+np-edge.itunes.apple.com
 ntp-b.nist.gov
 ntp-c.colorado.edu
 ntp-d.nist.gov
@@ -250,6 +254,7 @@ p16-tiktokcdn-com.akamaized.net
 paper-attachments.s3.amazonaws.com
 pchomeonline.com.tw
 pki.google.com
+play-edge.itunes.apple.com
 poshtestgallery.cloudapp.net
 pplx-res.cloudinary.com
 practivate.adobe
@@ -405,6 +410,7 @@ time4.facebook.com
 time4.google.com
 time5.facebook.com
 tmdb-image-prod.b-cdn.net
+tv.applemusic.com
 tvcastlive-hamivideo.cdn.hinet.net
 ubisoft-orbit-savegames.s3.amazonaws.com
 ubisoft-uplay-savegames.s3.amazonaws.com
@@ -416,6 +422,7 @@ ut1-wwv.nist.gov
 utcnist.colorado.edu
 utcnist2.colorado.edu
 utcnist3.colorado.edu
+uts-api.itunes.apple.com
 ve-dash-uk-live.akamaized.net
 ve-uhd-push-uk-live.akamaized.net
 venmo.s3.amazonaws.com
@@ -728,6 +735,9 @@ ztedevices.com
 .1mobile.com
 .1mobile.tw
 .1monsterbeatsbydreus.com
+.1password.ca
+.1password.com
+.1password.eu
 .1point3acres.com
 .1pondo.tv
 .1pornlist.com
@@ -1162,6 +1172,7 @@ ztedevices.com
 .aabb1803.com
 .aacrjournals.org
 .aadmv.com
+.aadrm.com
 .aaex.uk
 .aalah.me
 .aamacau.com
@@ -1602,6 +1613,7 @@ ztedevices.com
 .agemys.org
 .agendaweek.com
 .agenet.ac.uk
+.agilebits.com
 .agnesb.fr
 .agocg.ac.uk
 .agoogleaday.com
@@ -8240,7 +8252,9 @@ ztedevices.com
 .dify.ai
 .digicert-cn.com
 .digicert-validation.com
+.digicert.co.jp
 .digicert.com
+.digicert.eu
 .digiland.tw
 .digimap.ac.uk
 .digisfera.com
@@ -9695,6 +9709,8 @@ ztedevices.com
 .enterprisepaging.com
 .enterpriseresearch.ac.uk
 .enterprisessl.com
+.entrust.cn
+.entrust.com
 .entrust.net
 .entrustdatacard.com
 .enveast.ac.uk
@@ -15515,6 +15531,7 @@ ztedevices.com
 .iwyn138.com
 .ixnxx.tv
 .ixquick.com
+.ixsystems.com
 .ixxx.com
 .iyalc.com
 .iyf.tv
@@ -18166,6 +18183,7 @@ ztedevices.com
 .microsoftadvertisingregionalawards.com
 .microsoftaffiliates.com
 .microsoftapp.net
+.microsoftazuread-sso.com
 .microsoftazuresponsorships.com
 .microsoftcloud.com
 .microsoftcloudsummit.com
@@ -21259,6 +21277,9 @@ ztedevices.com
 .ozeex.com
 .ozodi.org
 .ozodlik.org
+.ozon.ru
+.ozone.ru
+.ozonusercontent.com
 .ozvoice.org
 .ozxw.com
 .ozyoyo.com
@@ -21988,6 +22009,8 @@ ztedevices.com
 .playcover.io
 .player.fm
 .playerjs.io
+.playfab.com
+.playfabapi.com
 .playforceone.com
 .playhearthstone.com
 .playmation.com
@@ -26219,6 +26242,7 @@ ztedevices.com
 .syhacked.com
 .sylfoundation.org
 .symantec.com
+.symauth.com
 .symcb.com
 .symcd.com
 .symonds.ac.uk
@@ -27344,6 +27368,7 @@ ztedevices.com
 .truedepth3d.com
 .truedwg.com
 .truefi.io
+.truenas.com
 .trulyergonomic.com
 .trunest.com
 .truro-penwith.ac.uk
@@ -28743,6 +28768,7 @@ ztedevices.com
 .visabank.org
 .visabg.com
 .visabusinessinsights.com
+.visaca.com
 .visacarddesignlab.com
 .visacards.com
 .visacheckout.net
