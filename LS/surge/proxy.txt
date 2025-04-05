@@ -21043,6 +21043,7 @@ ztedevices.com
 .opencollective.com
 .opencreate.org
 .opendemocracy.net
+.opendesktop.org
 .opendn.xyz
 .opendns.com
 .opendroneid.org
