@@ -12,6 +12,7 @@ admob-cn.com
 adservice.google.com
 ai.ytimg.com
 ai.zhaomi.cn
+alibaba.cdn.steampipe.steamcontent.com
 amp-api-edge-lb-cn.itunes-apple.com.akadns.net
 amp-api-edge-lb.itunes-apple.com.akadns.net
 amp-api-edge.apps.apple.com
@@ -268,6 +269,7 @@ learn.microsoft.com
 logger-dev.corp.google.com
 logger.corp.google.com
 login.corp.google.com
+lv.queniujq.cn
 manga.bilibili.com
 maps.apple.com
 menu-static.gog-statics.com
@@ -33653,6 +33655,7 @@ xz.pphimalayanrt.com
 .forestfood.com
 .forestmusicnanjing.com
 .forestpolice.org
+.forevernine.com
 .foreveross.com
 .foreweld.com
 .forface3d.com
@@ -36872,6 +36875,8 @@ xz.pphimalayanrt.com
 .golenpower.com
 .golfvv.com
 .golink.com
+.golinkapi.com
+.golinkcn.com
 .golinksworld.com
 .golive-tv.com
 .golivetv.tv
@@ -48984,6 +48989,7 @@ xz.pphimalayanrt.com
 .imlianai.com
 .imliuyi.com
 .immeee.com
+.immersivetranslate.com
 .immfast.com
 .immi520.com
 .immiexpo.com
@@ -75175,6 +75181,7 @@ xz.pphimalayanrt.com
 .rm.run
 .rmb.sh
 .rmbbk.com
+.rmbgame.net
 .rmbrate.net
 .rmburl.com
 .rmcaribbean.com
@@ -81885,6 +81892,7 @@ xz.pphimalayanrt.com
 .stdout.pub
 .stdwp.com
 .ste56.com
+.steam302.xyz
 .steambang.com
 .steambig.com
 .steamboxs.com
