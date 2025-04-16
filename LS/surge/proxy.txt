@@ -13382,6 +13382,7 @@ ztedevices.com
 .hetzner.com
 .hetzner.company
 .hetzner.de
+.hetzner.social
 .heungkongdiscuss.com
 .hew.ac.uk
 .hewit.ac.uk
