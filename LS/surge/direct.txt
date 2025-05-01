@@ -30970,6 +30970,7 @@ xz.pphimalayanrt.com
 .djiang.net
 .djiavip.com
 .djicdn.com
+.djiits.com
 .djiops.com
 .djiservice.org
 .djjgj.com
@@ -71271,6 +71272,7 @@ xz.pphimalayanrt.com
 .mored.com
 .moredian.com
 .morefood.com
+.morefreegame.com
 .morefun-philippines.com
 .moregy.com
 .moreless.io
@@ -105394,6 +105396,7 @@ xz.pphimalayanrt.com
 .xiaomeiti.com
 .xiaomeng1235.com
 .xiaomi.com
+.xiaomi.eu
 .xiaomi.hk
 .xiaomi.net
 .xiaomi.org
