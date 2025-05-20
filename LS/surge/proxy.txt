@@ -19079,6 +19079,7 @@ ztedevices.com
 .msft.info
 .msft.net
 .msftauth.net
+.msftauthimages.net
 .msftconnecttest.com
 .msfteducation.ca
 .msftncsi.com
