@@ -20387,7 +20387,6 @@ ztedevices.com
 .nocn.ac.uk
 .nocs.ac.uk
 .nodejs.org
-.nodeloc.com
 .nodes.ac.uk
 .nodeseek.com
 .nodesource.com
@@ -30143,6 +30142,7 @@ ztedevices.com
 .www.m-sport.co.uk
 .www.monlamit.org
 .www.moztw.org
+.www.nodeloc.com
 .www.orchidbbs.com
 .www.owind.com
 .www.oxid.it
