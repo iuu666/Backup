@@ -234,6 +234,7 @@ ntp-b.nist.gov
 ntp-c.colorado.edu
 ntp-d.nist.gov
 ntp-wwv.nist.gov
+ntp.ubuntu.com
 ntp0.ntp-servers.net
 ntp1.ntp-servers.net
 ntp2.ntp-servers.net
@@ -402,10 +403,12 @@ time-e-g.nist.gov
 time-e-wwv.nist.gov
 time.apple.com
 time.aws.com
+time.cloudflare.com
 time.euro.apple.com
 time.facebook.com
 time.google.com
 time.nist.gov
+time.windows.com
 time1.facebook.com
 time1.google.com
 time2.facebook.com
@@ -2435,7 +2438,6 @@ ztedevices.com
 .api-extractor.com
 .api.ai
 .api.linksalpha.com
-.api.nebula-emby.com
 .api.news
 .apiary.io
 .apibay.org
@@ -14328,7 +14330,16 @@ ztedevices.com
 .ibiblio.org
 .ibis.ac.uk
 .ibit.am
+.ibkr.ca
+.ibkr.co.in
+.ibkr.co.uk
 .ibkr.com
+.ibkr.com.au
+.ibkr.com.hk
+.ibkr.com.sg
+.ibkr.eu
+.ibkr.ie
+.ibkrguides.com
 .iblist.com
 .ibllc.com
 .iblogserv-f.net
@@ -19049,6 +19060,7 @@ ztedevices.com
 .mqxd.org
 .mr-apple.com.tw
 .mr-tireman.jp
+.mradx.net
 .mray.club
 .mrbasic.com
 .mrbdsm.com
@@ -23727,6 +23739,7 @@ ztedevices.com
 .rosetta.ac.uk
 .roshy.tv
 .roslin.ac.uk
+.rostaxi.org
 .rothamsted.ac.uk
 .rotherham-coll.ac.uk
 .rotherham.ac.uk
@@ -28952,6 +28965,7 @@ ztedevices.com
 .vizvaz.com
 .vjav.com
 .vjmedia.com.hk
+.vk-analytics.ru
 .vk-apps.com
 .vk-apps.ru
 .vk-cdn.me
@@ -29508,7 +29522,6 @@ ztedevices.com
 .web-instagram.net
 .web.app
 .web.dev
-.web.nebula-emby.com
 .web2project.net
 .webappfieldguide.com
 .webbang.net
@@ -30929,6 +30942,8 @@ ztedevices.com
 .yamoon.club
 .yande.re
 .yandex
+.yandex-bank.net
+.yandex-images.clstorage.net
 .yandex.aero
 .yandex.az
 .yandex.by
@@ -30960,7 +30975,10 @@ ztedevices.com
 .yandex.tm
 .yandex.ua
 .yandex.uz
+.yandexadexchange.net
 .yandexcloud.net
+.yandexcom.net
+.yandexwebcache.org
 .yanghengjun.com
 .yangjianli.com
 .yantaqu.com
