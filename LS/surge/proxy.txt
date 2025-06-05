@@ -6381,6 +6381,7 @@ ztedevices.com
 .cdn-telegram.org
 .cdn-terapeak.com
 .cdn.ac.uk
+.cdn.arstechnica.net
 .cdn.assets.lfpcontent.com
 .cdn.printfriendly.com
 .cdn.seatguru.com
@@ -6854,6 +6855,7 @@ ztedevices.com
 .cias.ac.uk
 .ciattackers.com
 .cib.ac.uk
+.cici.com
 .ciciai.com
 .cicl.ac.uk
 .cied.ac.uk
