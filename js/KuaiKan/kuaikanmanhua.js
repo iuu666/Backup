@@ -12,8 +12,8 @@
 *******************************
 [rewrite_local]
 # >快看漫画 解锁VIP,去广告+提前看
-^https?:\/\/.*kkmh.com\/v1\/vip\/me url script-response-body https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuaiKan/kuaikanmanhua.js
-^https?:\/\/.*kkmh.com\/v2\/comic\/detail\/get url script-request-header https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuaiKan/kuaikanmanhua.js
+^https?:\/\/.*kkmh.com\/v1\/vip\/me url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/kuaikanmanhua.js
+^https?:\/\/.*kkmh.com\/v2\/comic\/detail\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/kuaikanmanhua.js
 # >去广告
 ^https?://.*kkmh.com\/v3\/ad\/show url reject-dict
 
