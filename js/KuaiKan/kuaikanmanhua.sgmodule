@@ -1,0 +1,15 @@
+#!name=快看漫画
+#!desc=解锁VIP+去广告+提前看
+
+[Map Local]
+# >去广告
+^https?://.*kkmh.com\/v3\/ad\/show data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+# >快看漫画 解锁VIP,去广告+提前看
+kuaikanmanhua = type=http-response, pattern=^https?:\/\/.*kkmh.com\/v1\/vip\/me, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuaiKan/kuaikanmanhua.js, requires-body=true, max-size=-1, timeout=60
+
+kuaikanmanhua = type=http-request, pattern=^https?:\/\/.*kkmh.com\/v2\/comic\/detail\/get, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuaiKan/kuaikanmanhua.js, timeout=60
+
+[MITM]
+hostname = %APPEND% *.kkmh.com, *kkmh.com
