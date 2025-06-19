@@ -3,7 +3,7 @@
 
 按下面配置完之后，打开阿里云盘获取token（如获取不到，等一段时间再打开），下面配置只验证过surge的，其他的自行测试
 ⚠️只测试过surge没有其他app自行测试
-
+https://github.com/lowking/Scripts/blob/master/ali/aliYunPanCheckIn.js
 ************************
 Surge 4.2.0+ 脚本配置(其他APP自行转换配置):
 ************************
