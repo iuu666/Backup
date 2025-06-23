@@ -2915,6 +2915,7 @@ ztedevices.com
 .artsy.net
 .aru.ac.uk
 .arupoc.ac.uk
+.arvanstorage.ir
 .arxiv.org
 .arzon.jp
 .as-hp.ca
@@ -12487,6 +12488,7 @@ ztedevices.com
 .gotrusted.com
 .gotw.ca
 .gouri.xyz
+.gov.ir
 .gov.taipei
 .gov.tw
 .governmentengineer.com
@@ -15202,6 +15204,7 @@ ztedevices.com
 .iqq2.cc
 .iqq3.cc
 .iqqtv.net
+.irangov.ir
 .iranianboobs.com
 .iranlms.ir
 .iransextv.com
@@ -15214,6 +15217,7 @@ ztedevices.com
 .iridiumbrowser.de
 .iris.ac.uk
 .iriss.ac.uk
+.irna.ir
 .ironna.jp
 .ironpython.net
 .ironsocket.com
@@ -22377,6 +22381,7 @@ ztedevices.com
 .presentation.new
 .presentationzen.com
 .presidencylondoncollege.ac.uk
+.president.ir
 .presidentlee.tw
 .press.vin
 .prestige-av.com
