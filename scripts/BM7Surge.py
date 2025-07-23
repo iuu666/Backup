@@ -23,6 +23,7 @@ YouTube = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surg
 Netflix = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Netflix/Netflix.list"
 Disney = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Disney/Disney.list"
 DouYin = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/DouYin/DouYin.list"
+Gemini = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Gemini/Gemini.list"
 ChinaMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/ChinaMedia/ChinaMedia.list"
 GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list"
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list"
@@ -75,6 +76,7 @@ fetch_and_save(YouTube, "YouTube.list")
 fetch_and_save(Netflix, "Netflix.list")
 fetch_and_save(Disney, "Disney.list")
 fetch_and_save(DouYin, "DouYin.list")
+fetch_and_save(DouYin, "Gemini.list")
 fetch_and_save(ChinaMedia, "ChinaMedia.list")
 fetch_and_save(GlobalMedia, "GlobalMedia_All_No_Resolve.list")
 fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")
