@@ -49,7 +49,6 @@ function formatRate(value, cur) {
   return ["JPY", "KRW"].includes(cur) ? value.toFixed(0) : value.toFixed(2);
 }
 
-// 国旗 Emoji 对照表（支持默认币种和监控币种）
 const flagMap = {
   USD: "🇺🇸",
   EUR: "🇪🇺",
@@ -158,7 +157,6 @@ const messages = {
         continue;
       }
 
-      // 计算显示汇率
       let displayRate;
       if (["USD", "EUR", "GBP"].includes(cur)) {
         displayRate = 1 / rates[cur];
@@ -168,7 +166,6 @@ const messages = {
 
       const roundedRate = formatRate(displayRate, cur);
 
-      // 波动计算与通知
       const cacheKey = `exrate_${cur}`;
       const prevRate = readCache(cacheKey);
       if (prevRate !== null) {
@@ -182,8 +179,7 @@ const messages = {
       }
       writeCache(cacheKey, displayRate);
 
-      // 拼接紧凑的面板内容（带国旗）
-      rateArr.push(`${flagMap[cur] || ""}${cur}:${roundedRate}`);
+      rateArr.push(`${flagMap[cur] || ""}${cur}: ${roundedRate}`);
     }
 
     const timestamp = new Date().toLocaleTimeString(
@@ -204,7 +200,7 @@ const messages = {
       );
     }
 
-    const content = rateArr.join(", ") + `\n${msg.dataSource}`;
+    const content = rateArr.join("\n") + `\n${msg.dataSource}`;
 
     $done({
       title: `${msg.currentRateInfo} ${timestamp}`,
