@@ -1,23 +1,63 @@
-// 默认基准货币是人民币（CNY）
-const defaultBase = "CNY";
-// 默认监控币种列表
-const defaultCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
-// 波动提醒阈值（百分比），默认1%
-const defaultThreshold = 1.0;
-// 缓存过期时间，单位毫秒，默认24小时
-const cacheExpireMs = 24 * 60 * 60 * 1000;
+/**
+ * 汇率监控完整版脚本（支持波动提醒+复制提示+缓存+多参数+国际化）
+ *
+ * 功能说明：
+ * 1. 支持自定义基准币种（base参数），默认CNY
+ * 2. 支持自定义监控币种列表（currencies参数）
+ * 3. 支持波动阈值提醒（threshold参数，单位%）
+ * 4. 支持语言切换（lang参数，zh或en）
+ * 5. 支持面板图标和颜色自定义（icon、color参数）
+ * 6. 使用$persistentStore缓存历史汇率，防止频繁请求和误报波动
+ * 7. 发送波动提醒通知，通知中带复制提示文案（适合Surge通知复制操作）
+ * 8. 格式化数字显示（部分币种无小数位）
+ * 9. 网络请求错误和解析异常处理
+ * 10. 显示面板时间戳，固定亚洲上海时区（北京时间）
+ */
 
-// 解析传入参数
-const params = getParams($argument);
+function getParams(param) {
+  // 解析 argument 参数字符串，转为键值对象
+  try {
+    return Object.fromEntries(
+      (param || "")
+        .split("&")
+        .filter(Boolean)
+        .map(item => item.split("="))
+        .map(([k, v]) => [k, decodeURIComponent(v)])
+    );
+  } catch {
+    return {};
+  }
+}
 
-// 国际化支持，默认中文，参数lang=en可切换英文
-const lang = (params.lang || "zh").toLowerCase();
+function readCache(key, expireMs = 24 * 3600 * 1000) {
+  // 从持久缓存读取数据，超时返回null
+  let str = $persistentStore.read(key);
+  if (!str) return null;
+  try {
+    let obj = JSON.parse(str);
+    if (Date.now() - obj.timestamp > expireMs) return null;
+    return obj.value;
+  } catch {
+    return null;
+  }
+}
+
+function writeCache(key, value) {
+  // 写入持久缓存，带时间戳
+  let obj = { value: value, timestamp: Date.now() };
+  $persistentStore.write(JSON.stringify(obj), key);
+}
+
+function formatRate(value, cur) {
+  // 格式化汇率数字，JPY和KRW无小数位，其他保留2位
+  return ["JPY", "KRW"].includes(cur) ? value.toFixed(0) : value.toFixed(2);
+}
 
 const messages = {
   zh: {
     fetchFail: "汇率获取失败",
     requestError: "请求错误：",
-    parseError: "数据解析异常",
+    parseError: "数据解析失败",
     noRates: "返回数据无汇率信息",
     fluctuationTitle: "汇率波动提醒",
     up: "上涨",
@@ -38,230 +78,159 @@ const messages = {
     dataSource: "Data source: exchangerate.host",
     copyHint: "(Tap to copy)"
   }
-}[lang];
+};
 
-// 基准货币参数（默认CNY）
-const baseCurrency = params.base ? params.base.toUpperCase() : defaultBase;
-// 波动阈值参数（默认1%）
-const threshold = params.threshold ? parseFloat(params.threshold) : defaultThreshold;
-// 监控币种列表参数（默认列表）
-const currencies = params.currencies
-  ? params.currencies.split(",").map(c => c.trim().toUpperCase())
-  : defaultCurrencies;
+(async () => {
+  // 解析参数
+  const params = getParams($argument);
 
-// 图标参数，默认bitcoinsign.circle
-const icon = params.icon || "bitcoinsign.circle";
-// 图标颜色，默认橙色
-const iconColor = params.color || "#EF8F1C";
-// API Key（预留接口支持，目前无效）
-const apiKey = params.apiKey || "";
+  // 基准币种，默认为人民币CNY
+  const baseCurrency = (params.base || "CNY").toUpperCase();
 
-// 组装请求地址，带API Key参数（如果有）
-const url = apiKey
-  ? `https://api.exchangerate.host/latest?base=${baseCurrency}&apikey=${apiKey}`
-  : `https://api.exchangerate.host/latest?base=${baseCurrency}`;
+  // 汇率波动提醒阈值，默认1%
+  const threshold = params.threshold ? parseFloat(params.threshold) : 1.0;
 
-console.log(`[INFO] Fetching rates from: ${url}`);
+  // 监控币种列表，默认美元、欧元、英镑、港币、日元、韩元、土耳其里拉
+  const currencies = params.currencies
+    ? params.currencies.split(",").map(c => c.trim().toUpperCase())
+    : ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 
-// 发送HTTP GET请求
-$httpClient.get(url, (error, response, data) => {
-  if (error) {
-    // 网络请求失败时提示
-    console.log(`[ERROR] Network error: ${error}`);
-    $done({
-      title: messages.fetchFail,
-      content: messages.requestError + error,
-      icon: "xmark.octagon",
-      "icon-color": "#FF3B30"
-    });
-    return;
-  }
-  if (!response || response.status !== 200) {
-    // HTTP状态码非200时提示
-    console.log(`[ERROR] HTTP status: ${response ? response.status : "null"}`);
-    $done({
-      title: messages.fetchFail,
-      content: `HTTP状态码：${response ? response.status : "null"}`,
-      icon: "xmark.octagon",
-      "icon-color": "#FF3B30"
-    });
-    return;
-  }
+  // 面板图标和颜色自定义，默认橙色比特币符号
+  const icon = params.icon || "bitcoinsign.circle";
+  const iconColor = params.color || "#EF8F1C";
 
-  let parsed;
-  try {
-    // 解析JSON数据
-    parsed = JSON.parse(data);
-  } catch (e) {
-    // JSON解析异常时提示
-    console.log(`[ERROR] JSON parse error: ${e}`);
-    $done({
-      title: messages.fetchFail,
-      content: messages.parseError,
-      icon: "xmark.octagon",
-      "icon-color": "#FF3B30"
-    });
-    return;
-  }
+  // 语言选择，默认中文
+  const lang = (params.lang || "zh").toLowerCase();
+  const msg = messages[lang] || messages.zh;
 
-  if (!parsed.rates) {
-    // 返回数据没有rates字段时提示
-    console.log("[ERROR] No rates field in response");
-    $done({
-      title: messages.fetchFail,
-      content: messages.noRates,
-      icon: "xmark.octagon",
-      "icon-color": "#FF3B30"
-    });
-    return;
-  }
+  // 请求API地址（ExchangeRate.host免费接口）
+  const url = `https://api.exchangerate.host/latest?base=${baseCurrency}`;
 
-  const rates = parsed.rates;
+  // 发起网络请求获取最新汇率
+  $httpClient.get(url, (error, response, data) => {
+    if (error) {
+      // 网络请求错误，返回错误面板
+      $done({
+        title: msg.fetchFail,
+        content: msg.requestError + error,
+        icon: "xmark.octagon",
+        "icon-color": "#FF3B30"
+      });
+      return;
+    }
 
-  // 格式化数字保留小数位
-  function formatRate(value, decimals = 2) {
-    return Number(value).toFixed(decimals);
-  }
+    if (!response || response.status !== 200) {
+      // HTTP状态码非200，返回错误面板
+      $done({
+        title: msg.fetchFail,
+        content: `HTTP状态码：${response ? response.status : "null"}`,
+        icon: "xmark.octagon",
+        "icon-color": "#FF3B30"
+      });
+      return;
+    }
 
-  // 存放所有波动信息，待合并通知
-  const fluctuations = [];
-
-  // 面板展示内容字符串
-  let content = "";
-
-  // 当前时间戳（毫秒）
-  const now = Date.now();
-
-  // 读取缓存，带过期判断，过期返回null
-  // 缓存格式：{"value":数字,"timestamp":时间戳}
-  function readCache(key) {
-    const str = $persistentStore.read(key);
-    if (!str) return null;
+    let json;
     try {
-      const obj = JSON.parse(str);
-      if (now - obj.timestamp > cacheExpireMs) {
-        console.log(`[INFO] Cache expired for ${key}`);
-        return null;
-      }
-      return obj.value;
+      json = JSON.parse(data);
     } catch {
-      return null;
-    }
-  }
-
-  // 写缓存，存储当前时间戳
-  function writeCache(key, value) {
-    const obj = { value, timestamp: now };
-    $persistentStore.write(JSON.stringify(obj), key);
-  }
-
-  // 监控的币种中，针对每个币种进行处理
-  for (const cur of currencies) {
-    const rateRaw = rates[cur];
-    if (rateRaw === undefined) {
-      // 如果API未返回该币种汇率，则提示数据缺失
-      content += `${cur}: 数据缺失\n`;
-      continue;
+      // JSON解析失败，返回错误面板
+      $done({
+        title: msg.fetchFail,
+        content: msg.parseError,
+        icon: "xmark.octagon",
+        "icon-color": "#FF3B30"
+      });
+      return;
     }
 
-    // 计算显示的汇率
-    // 对于USD、EUR、GBP，显示1单位外币兑换多少基准币（如人民币）
-    // 对于其他币种，显示1基准币兑换多少该币种
-    let displayRate;
-    let label;
-    let decimals = 2;
-
-    // 对于日元和韩元，常用整数显示
-    const zeroDecimalCurrencies = ["JPY", "KRW"];
-
-    if (cur === baseCurrency) {
-      // 跳过基准货币本身
-      continue;
+    if (!json.rates) {
+      // 返回数据中无汇率字段，返回错误面板
+      $done({
+        title: msg.fetchFail,
+        content: msg.noRates,
+        icon: "xmark.octagon",
+        "icon-color": "#FF3B30"
+      });
+      return;
     }
 
-    if (["USD", "EUR", "GBP"].includes(cur)) {
-      displayRate = 1 / rateRaw;
-      label = `${cur}兑${baseCurrency}`;
-    } else {
-      displayRate = rateRaw;
-      label = `${baseCurrency}兑${cur}`;
-    }
+    const rates = json.rates;
+    let content = "";
+    let fluctuations = [];
 
-    decimals = zeroDecimalCurrencies.includes(cur) ? 0 : 2;
-    const rounded = formatRate(displayRate, decimals);
+    // 遍历监控币种，准备面板内容和波动检测
+    for (const cur of currencies) {
+      if (!(cur in rates)) {
+        content += `${cur}: 数据缺失\n`;
+        continue;
+      }
 
-    // 读取上一次缓存汇率
-    const cacheKey = `exrate_${cur}`;
-    const prev = readCache(cacheKey);
+      // USD, EUR, GBP 显示 1单位该币种兑换基准币率（反转）
+      // 其他币种显示基准币种兑换该币种汇率
+      let displayRate;
+      if (["USD", "EUR", "GBP"].includes(cur)) {
+        displayRate = 1 / rates[cur];
+      } else {
+        displayRate = rates[cur];
+      }
 
-    // 计算波动幅度
-    if (prev !== null) {
-      const change = ((displayRate - prev) / prev) * 100;
-      if (Math.abs(change) >= threshold) {
-        // 波动超过阈值，加入波动列表待通知
-        const symbol = change > 0 ? "📈" : "📉";
-        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
+      const roundedRate = formatRate(displayRate, cur);
 
-        fluctuations.push({
-          name: cur,
-          change,
-          text: `${cur}汇率${change > 0 ? messages.up : messages.down}：${changeStr}`,
-          copyText: `${cur}兑${baseCurrency}：${rounded}`
-        });
+      // 缓存键名，用于存储该币种历史汇率
+      const cacheKey = `exrate_${cur}`;
+      const prevRate = readCache(cacheKey);
+
+      // 如果有缓存，计算波动百分比，判断是否超过阈值
+      if (prevRate !== null) {
+        const changePercent = ((displayRate - prevRate) / prevRate) * 100;
+        if (Math.abs(changePercent) >= threshold) {
+          const symbol = changePercent > 0 ? "📈" : "📉";
+          const direction = changePercent > 0 ? msg.up : msg.down;
+          const fluctuationText = `${cur}汇率${direction}：${symbol}${Math.abs(changePercent).toFixed(2)}%`;
+          fluctuations.push(fluctuationText);
+        }
+      }
+
+      // 更新缓存汇率
+      writeCache(cacheKey, displayRate);
+
+      // 拼接面板显示文本
+      if (["USD", "EUR", "GBP"].includes(cur)) {
+        content += `1${cur} = ${roundedRate}${baseCurrency}\n`;
+      } else {
+        content += `1${baseCurrency} = ${roundedRate}${cur}\n`;
       }
     }
 
-    // 更新缓存汇率
-    writeCache(cacheKey, displayRate);
+    // 获取当前时间，格式为HH:mm，使用北京时间时区
+    const timestamp = new Date().toLocaleTimeString(
+      lang === "zh" ? "zh-CN" : "en-US",
+      {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Asia/Shanghai"
+      }
+    );
 
-    // 拼接面板显示内容
-    content += `${label}：${rounded}\n`;
-  }
-
-  // 格式化显示时间
-  const timestamp = new Date().toLocaleString(lang === "zh" ? "zh-CN" : "en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    timeZone: "Asia/Shanghai"
-  });
-
-  // 如果有波动，发送合并通知
-  if (fluctuations.length > 0) {
-    const notifyTitle = `${messages.fluctuationTitle} (${timestamp})`;
-    const notifyContent = fluctuations.map(f => f.text).join("\n");
-
-    $notification.post(notifyTitle, notifyContent, `${messages.copyHint}`);
-
-    // 支持Quantumult X自动写剪贴板，复制第一个波动币种信息
-    if (typeof $clipboard !== "undefined") {
-      $clipboard.write(fluctuations[0].copyText);
+    // 有波动时发送通知，带复制提示（适合Surge）
+    if (fluctuations.length > 0) {
+      $notification.post(
+        `${msg.fluctuationTitle} ${timestamp}`,
+        fluctuations.join("\n"),
+        msg.copyHint
+      );
     }
 
-    // 面板内容增加波动提示
-    content += `\n${messages.fluctuationTitle}：\n${fluctuations.map(f => f.text).join("\n")}`;
-  }
+    content += `\n${msg.dataSource}`;
 
-  // 输出面板内容
-  $done({
-    title: `${messages.currentRateInfo} ${timestamp}`,
-    content: `${content}\n${messages.dataSource}`,
-    icon: icon,
-    "icon-color": iconColor
+    // 输出面板内容
+    $done({
+      title: `${msg.currentRateInfo} ${timestamp}`,
+      content,
+      icon,
+      "icon-color": iconColor
+    });
   });
-});
-
-// 解析参数函数，输入格式："key1=val1&key2=val2"
-function getParams(param) {
-  try {
-    return Object.fromEntries(
-      (param || "")
-        .split("&")
-        .filter(Boolean)
-        .map(item => item.split("="))
-        .map(([k, v]) => [k, decodeURIComponent(v)])
-    );
-  } catch (e) {
-    return {};
-  }
-}
+})();
