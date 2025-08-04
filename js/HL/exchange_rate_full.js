@@ -63,7 +63,7 @@ const messages = {
     up: "上涨",
     down: "下跌",
     currentRateInfo: "当前汇率信息",
-    dataSource: "数据来源：exchangerate.host",
+    dataSource: "数据来源：open.er-api.com",
     copyHint: "（点击复制）"
   },
   en: {
@@ -75,7 +75,7 @@ const messages = {
     up: "Increase",
     down: "Decrease",
     currentRateInfo: "Current Exchange Rates",
-    dataSource: "Data source: exchangerate.host",
+    dataSource: "Data source: open.er-api.com",
     copyHint: "(Tap to copy)"
   }
 };
@@ -103,8 +103,8 @@ const messages = {
   const lang = (params.lang || "zh").toLowerCase();
   const msg = messages[lang] || messages.zh;
 
-  // 请求API地址（ExchangeRate.host免费接口）
-  const url = `https://api.exchangerate.host/latest?base=${baseCurrency}`;
+  // 请求API地址（open.er-api.com免费接口）
+  const url = `https://open.er-api.com/v6/latest/${baseCurrency}`;
 
   // 发起网络请求获取最新汇率
   $httpClient.get(url, (error, response, data) => {
@@ -144,8 +144,14 @@ const messages = {
       return;
     }
 
-    if (!json.rates) {
-      // 返回数据中无汇率字段，返回错误面板
+    // open.er-api.com 返回格式示例：
+    // {
+    //   "result":"success",
+    //   "base_code":"USD",
+    //   "rates":{...}
+    // }
+    if (json.result !== "success" || !json.rates) {
+      // 返回数据中无汇率字段或状态不成功，返回错误面板
       $done({
         title: msg.fetchFail,
         content: msg.noRates,
