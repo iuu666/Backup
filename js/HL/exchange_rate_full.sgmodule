@@ -7,4 +7,4 @@
 当前汇率 = script-name=当前汇率监控, update-interval=3600
 
 [Script]
-当前汇率监控 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/你的用户名/你的仓库/main/exchange_rate_full.js, argument=icon=bitcoinsign.circle&color=%23EF8F1C&base=CNY&threshold=1&currencies=USD,EUR,GBP,HKD,JPY,KRW,TRY&lang=zh
+当前汇率监控 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange_rate_full.js, argument=icon=bitcoinsign.circle&color=%23EF8F1C&base=CNY&threshold=1&currencies=USD,EUR,GBP,HKD,JPY,KRW,TRY&lang=zh
