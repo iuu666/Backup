@@ -1,8 +1,8 @@
 #!name=当前汇率监控
-#!desc=带波动提醒的汇率面板，支持自定义刷新频率和API Key
+#!desc=带波动提醒的汇率面板，可自定义刷新频率和 API Key
 #!category=Third Party Module
 #!arguments=UPDATE_INTERVAL:3600,ACCESS_KEY:
-#!arguments-desc=[参数设置]\n⓵ UPDATE_INTERVAL: 刷新间隔（单位秒），默认3600秒\n⓶ ACCESS_KEY: 汇率API Key（可留空）
+#!arguments-desc=[参数设置]\n⓵ UPDATE_INTERVAL: 刷新间隔（单位秒）\n⓶ ACCESS_KEY: exchangerate API Key（可留空）
 
 [Panel]
 当前汇率 = script-name=当前汇率监控, update-interval={{{UPDATE_INTERVAL}}}
