@@ -15,6 +15,7 @@
  */
 
 function getParams(param) {
+  // 解析 argument 参数字符串，转为键值对象
   try {
     return Object.fromEntries(
       (param || "")
@@ -29,6 +30,7 @@ function getParams(param) {
 }
 
 function readCache(key, expireMs = 24 * 3600 * 1000) {
+  // 从持久缓存读取数据，超时返回null
   let str = $persistentStore.read(key);
   if (!str) return null;
   try {
@@ -41,11 +43,13 @@ function readCache(key, expireMs = 24 * 3600 * 1000) {
 }
 
 function writeCache(key, value) {
+  // 写入持久缓存，带时间戳
   let obj = { value: value, timestamp: Date.now() };
   $persistentStore.write(JSON.stringify(obj), key);
 }
 
 function formatRate(value, cur) {
+  // 格式化汇率数字，JPY和KRW无小数位，其他保留2位
   return ["JPY", "KRW"].includes(cur) ? value.toFixed(0) : value.toFixed(2);
 }
 
@@ -70,7 +74,7 @@ const messages = {
     up: "上涨",
     down: "下跌",
     currentRateInfo: "当前汇率信息",
-    dataSource: "数据来源：exchangerate-api.com",
+    dataSource: "数据来源：exchangerate.host",
     copyHint: "（点击复制）"
   },
   en: {
@@ -82,27 +86,44 @@ const messages = {
     up: "Increase",
     down: "Decrease",
     currentRateInfo: "Current Exchange Rates",
-    dataSource: "Data source: exchangerate-api.com",
+    dataSource: "Data source: exchangerate.host",
     copyHint: "(Tap to copy)"
   }
 };
 
 (async () => {
+  // 解析脚本调用时传入的参数
   const params = getParams($argument);
 
+  // 基准币种，默认人民币 CNY
   const baseCurrency = (params.base || "CNY").toUpperCase();
+
+  // 汇率波动提醒阈值，默认 1%
   const threshold = params.threshold ? parseFloat(params.threshold) : 1.0;
+
+  // 监控币种列表，默认美元、欧元、英镑、港币、日元、韩元、土耳其里拉
   const currencies = params.currencies
     ? params.currencies.split(",").map(c => c.trim().toUpperCase())
     : ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 
+  // 面板图标和颜色自定义
   const icon = params.icon || "bitcoinsign.circle";
   const iconColor = params.color || "#EF8F1C";
+
+  // 语言选择，默认中文
   const lang = (params.lang || "zh").toLowerCase();
   const msg = messages[lang] || messages.zh;
 
-  const url = `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`;
+  // API key，可空（部分接口需要）
+  const accessKey = params.access_key || "";
 
+  // 构建请求地址，带上 base 和 access_key
+  let url = `https://api.exchangerate.host/latest?base=${baseCurrency}`;
+  if (accessKey) {
+    url += `&access_key=${accessKey}`;
+  }
+
+  // 发起请求
   $httpClient.get(url, (error, response, data) => {
     if (error) {
       $done({
@@ -153,10 +174,12 @@ const messages = {
 
     for (const cur of currencies) {
       if (!(cur in rates)) {
-        rateArr.push(`${cur}:缺失`);
+        rateArr.push(`${cur}: 数据缺失`);
         continue;
       }
 
+      // USD, EUR, GBP 显示 1单位该币种兑换基准币率（反转）
+      // 其他币种显示基准币种兑换该币种汇率
       let displayRate;
       if (["USD", "EUR", "GBP"].includes(cur)) {
         displayRate = 1 / rates[cur];
@@ -166,8 +189,11 @@ const messages = {
 
       const roundedRate = formatRate(displayRate, cur);
 
+      // 缓存键名，存储历史汇率
       const cacheKey = `exrate_${cur}`;
       const prevRate = readCache(cacheKey);
+
+      // 如果有缓存，判断波动是否超阈值
       if (prevRate !== null) {
         const changePercent = ((displayRate - prevRate) / prevRate) * 100;
         if (Math.abs(changePercent) >= threshold) {
@@ -177,11 +203,19 @@ const messages = {
           fluctuations.push(fluctuationText);
         }
       }
+
+      // 更新缓存
       writeCache(cacheKey, displayRate);
 
-      rateArr.push(`${flagMap[cur] || ""}${cur}: ${roundedRate}`);
+      // 拼接面板显示内容
+      if (["USD", "EUR", "GBP"].includes(cur)) {
+        rateArr.push(`${flagMap[cur] || ""}1${cur} = ${roundedRate}${baseCurrency}`);
+      } else {
+        rateArr.push(`${flagMap[baseCurrency] || ""}1${baseCurrency} = ${roundedRate}${cur}`);
+      }
     }
 
+    // 获取北京时间格式时间 HH:mm
     const timestamp = new Date().toLocaleTimeString(
       lang === "zh" ? "zh-CN" : "en-US",
       {
@@ -192,6 +226,7 @@ const messages = {
       }
     );
 
+    // 有波动提醒则发通知
     if (fluctuations.length > 0) {
       $notification.post(
         `${msg.fluctuationTitle} ${timestamp}`,
@@ -200,12 +235,14 @@ const messages = {
       );
     }
 
-    const content = rateArr.join("\n") + `\n${msg.dataSource}`;
+    // 拼接面板文本，加数据源
+    const content = rateArr.join("\n") + `\n\n${msg.dataSource}`;
 
+    // 输出面板
     $done({
       title: `${msg.currentRateInfo} ${timestamp}`,
-      content,
-      icon,
+      content: content,
+      icon: icon,
       "icon-color": iconColor
     });
   });
