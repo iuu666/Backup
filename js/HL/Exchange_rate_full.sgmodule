@@ -1,11 +1,11 @@
 #!name=当前汇率监控
-#!desc=带波动提醒及复制提示的汇率面板，支持本地填写 API Key、更新间隔和监控币种
+#!desc=带波动提醒的汇率面板，支持自定义刷新频率和API Key
 #!category=Third Party Module
-#!arguments=TITLE:当前汇率监控,ICON:bitcoinsign.circle,COLOR:#EF8F1C,BASE:CNY,CURRENCIES:USD,EUR,GBP,HKD,JPY,KRW,TRY,THRESHOLD:1,LANG:zh,UPDATE_INTERVAL:3600,ACCESS_KEY:填写API Key
-#!arguments-desc=[参数设置]\n⓵ TITLE: 自定义模块标题\n⓶ ICON: 自定义模块图标，SFSymbol名称\n⓷ COLOR: 自定义图标颜色，HEX格式\n⓸ BASE: 基准币种，如CNY\n⓹ CURRENCIES: 监控币种列表，逗号分隔\n⓺ THRESHOLD: 汇率波动提醒阈值（%）\n⓻ LANG: 语言，zh或en\n⓼ UPDATE_INTERVAL: 刷新间隔，单位秒\n⓽ ACCESS_KEY: 汇率API Key（可不填）
+#!arguments=UPDATE_INTERVAL:3600,ACCESS_KEY:
+#!arguments-desc=[参数设置]\n⓵ UPDATE_INTERVAL: 刷新间隔（单位秒），默认3600秒\n⓶ ACCESS_KEY: 汇率API Key（可留空）
 
 [Panel]
-{{{TITLE}}} = script-name={{{TITLE}}},update-interval={{{UPDATE_INTERVAL}}}
+当前汇率 = script-name=当前汇率监控, update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-{{{TITLE}}} = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange_rate_full.js,argument=icon={{{ICON}}}&color={{{COLOR}}}&base={{{BASE}}}&currencies={{{CURRENCIES}}}&threshold={{{THRESHOLD}}}&lang={{{LANG}}}&access_key={{{ACCESS_KEY}}}
+当前汇率监控 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/yourname/repo/main/exchange.js, argument=access_key={{{ACCESS_KEY}}}&icon=bitcoinsign.circle&color=%23EF8F1C&base=CNY&threshold=1&currencies=USD,EUR,GBP,HKD,JPY,KRW,TRY&lang=zh
