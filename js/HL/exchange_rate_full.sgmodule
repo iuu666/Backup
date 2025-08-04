@@ -1,10 +1,10 @@
 #!name=当前汇率监控
-#!desc=带波动提醒及复制提示的汇率面板，支持本地填写 API key
+#!desc=带波动提醒及复制提示的汇率面板，支持本地填写 API key 和更新间隔
 #!icon=bitcoinsign.circle
 #!icon-color=#EF8F1C
 
 [Panel]
-当前汇率 = script-name=当前汇率监控, update-interval=3600
+当前汇率 = script-name=当前汇率监控, update-interval={{{UPDATE-INTERVAL}}}
 
 [Script]
-当前汇率监控 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange_rate_full.js, argument=access_key=你的API密钥&icon=bitcoinsign.circle&color=%23EF8F1C&base=CNY&threshold=1&currencies=USD,EUR,GBP,HKD,JPY,KRW,TRY&lang=zh
+当前汇率监控 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/yourname/repo/main/exchange.js, argument=access_key={{{ACCESS-KEY}}}&icon=bitcoinsign.circle&color=%23EF8F1C&base=CNY&threshold=1&currencies=USD,EUR,GBP,HKD,JPY,KRW,TRY&lang=zh
