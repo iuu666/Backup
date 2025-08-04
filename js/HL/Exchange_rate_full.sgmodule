@@ -8,4 +8,4 @@
 {{{TITLE}}} = script-name={{{TITLE}}},update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-{{{TITLE}}} = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/yourname/repo/main/exchange_rate_full.js,argument=icon={{{ICON}}}&color={{{COLOR}}}&base={{{BASE}}}&currencies={{{CURRENCIES}}}&threshold={{{THRESHOLD}}}&lang={{{LANG}}}&access_key={{{ACCESS_KEY}}}
+{{{TITLE}}} = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange_rate_full.js,argument=icon={{{ICON}}}&color={{{COLOR}}}&base={{{BASE}}}&currencies={{{CURRENCIES}}}&threshold={{{THRESHOLD}}}&lang={{{LANG}}}&access_key={{{ACCESS_KEY}}}
