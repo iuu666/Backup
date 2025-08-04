@@ -1,8 +1,14 @@
 #!name=当前汇率监控
 #!desc=带波动提醒及复制提示的汇率面板，支持本地填写 API Key、更新间隔和监控币种
 #!category=Third Party Module
-#!arguments=TITLE:当前汇率监控,ICON:bitcoinsign.circle,COLOR:#EF8F1C,BASE:CNY,CURRENCIES:USD,EUR,GBP,HKD,JPY,KRW,TRY,THRESHOLD:1,LANG:zh,UPDATE_INTERVAL:3600,ACCESS_KEY:填写API Key
-#!arguments-desc=[参数设置]\n⓵ UPDATE_INTERVAL: 刷新间隔（单位秒），默认3600秒\n⓶ ACCESS_KEY: 汇率API Key（可留空）
+#!arguments=TITLE:当前汇率监控,ICON:bitcoinsign.circle,COLOR:#EF8F1C,BASE:CNY,CURRENCIES:USD,EUR,GBP,HKD,JPY,KRW,TRY,THRESHOLD:1,LANG:zh,UPDATE_INTERVAL:1800,ACCESS_KEY:填写API Key
+#!arguments-desc=[参数设置]
+⓵ UPDATE_INTERVAL: 刷新间隔（单位秒），默认1800秒（30分钟）
+⓶ ACCESS_KEY: 汇率API Key（可留空），未填写时仅显示默认数据
+⓷ BASE: 基准货币代码（默认CNY）
+⓸ CURRENCIES: 监控的目标币种（逗号分隔，例如USD,EUR,JPY）
+⓹ THRESHOLD: 汇率波动提醒阈值（百分比，默认1%）
+⓺ LANG: 语言（支持zh和en，默认zh）
 
 [Panel]
 当前汇率 = script-name=当前汇率监控,update-interval={{{UPDATE_INTERVAL}}}
