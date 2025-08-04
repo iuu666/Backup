@@ -8,4 +8,4 @@
 {{{TITLE}}} = script-name={{{TITLE}}},update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-{{{TITLE}}} = type=generic,timeout=30,engine=webview,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/YJ/other.2/oil.js,argument=title={{{TITLE}}}&icon={{{ICON}}}&color={{{COLOR}}}&provname={{{PROVNAME}}}&apikey={{{APIKEY}}}
+{{{TITLE}}} = type=generic,timeout=30,engine=webview,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/YJ/other.2/Oil.js,argument=title={{{TITLE}}}&icon={{{ICON}}}&color={{{COLOR}}}&provname={{{PROVNAME}}}&apikey={{{APIKEY}}}
