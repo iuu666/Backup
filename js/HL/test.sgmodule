@@ -1,0 +1,12 @@
+#!name=当前汇率监控
+#!desc=多API汇率波动监控，支持自定义兑换基数，面板显示汇率和更新时间
+#!author=okk
+#!update=2025-08-06
+#!arguments=threshold:0.3,notify:true,icon:bitcoinsign.circle,color:#EF8F1C,UPDATE_INTERVAL:86400,base_amount:1
+#!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\nbase_amount: 自定义兑换数量，默认1
+
+[Panel]
+当前汇率=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
+
+[Script]
+汇率监控=type=generic,script-path=https://你的脚本路径/exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}&base_amount={{{base_amount}}}
