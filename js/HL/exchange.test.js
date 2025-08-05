@@ -1,14 +1,3 @@
-/**
- * 汇率监控脚本（多接口，支持open.er-api.com、exchangerate-api.com、frankfurter.app）
- * 统一时间格式，显示北京时间中文格式，自动切换接口
- * 
- * 参数支持：
- * threshold - 波动阈值，默认0.3
- * notify - 是否开启通知，true或false，默认true
- * icon - 面板图标
- * color - 图标颜色
- */
-
 const urls = [
   "https://open.er-api.com/v6/latest/CNY",
   "https://api.exchangerate-api.com/v4/latest/CNY",
@@ -22,18 +11,9 @@ const enableNotify = (params.notify || "true").toLowerCase() === "true";
 console.log(`[Exchange] 脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 console.log(`[Exchange] 通知开关状态：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 
-/**
- * 统一时间格式转换，支持多种格式，输出北京时间中文标准格式
- * @param {string|number} timeInput - 时间输入，支持UTC字符串、ISO字符串、Unix时间戳秒、日期字符串
- * @returns {string} 北京时间格式，格式如 2025-08-05 08:00:00；格式错误返回“时间格式异常”；空或无效返回“未知”
- */
 function formatTimeToBeijing(timeInput) {
-  if (timeInput === undefined || timeInput === null || timeInput === "" || timeInput === "未知") {
-    return "未知";
-  }
-
+  if (timeInput === undefined || timeInput === null || timeInput === "" || timeInput === "未知") return "未知";
   let date;
-
   if ((typeof timeInput === "number") || (/^\d{9,}$/.test(timeInput))) {
     date = new Date(Number(timeInput) * 1000);
   } else if (/^\d{4}-\d{2}-\d{2}$/.test(timeInput)) {
@@ -41,9 +21,7 @@ function formatTimeToBeijing(timeInput) {
   } else {
     date = new Date(timeInput);
   }
-
   if (isNaN(date)) return "时间格式异常";
-
   return date.toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     year: "numeric",
@@ -58,6 +36,7 @@ function formatTimeToBeijing(timeInput) {
 
 function fetchWithFallback(urls, index = 0) {
   if (index >= urls.length) {
+    console.log("[Exchange] ❌ 所有接口请求均失败，脚本结束");
     $done({
       title: "汇率获取失败",
       content: "所有接口请求均失败",
@@ -67,6 +46,7 @@ function fetchWithFallback(urls, index = 0) {
     return;
   }
   const url = urls[index];
+  console.log(`[Exchange] 正在请求接口：${url}`);
   $httpClient.get(url, (error, response, data) => {
     if (error || !data) {
       console.log(`[Exchange] 请求失败：${error || "无响应"}, 切换下一个接口`);
@@ -76,7 +56,6 @@ function fetchWithFallback(urls, index = 0) {
     try {
       const parsed = JSON.parse(data);
       let rates, lastUpdate, nextUpdate;
-
       if (url.includes("open.er-api.com")) {
         rates = parsed.rates;
         lastUpdate = formatTimeToBeijing(parsed.time_last_update_utc);
@@ -92,10 +71,9 @@ function fetchWithFallback(urls, index = 0) {
       } else {
         throw new Error("未知接口格式");
       }
-
+      console.log(`[Exchange] 数据获取成功，接口：${url.match(/https?:\/\/([^/]+)/)[1]}`);
       console.log(`[Exchange] 数据最后更新时间（北京时间）：${lastUpdate}`);
       console.log(`[Exchange] 预计下一次更新时间（北京时间）：${nextUpdate}`);
-
       processData(rates, lastUpdate, nextUpdate, url);
     } catch (e) {
       console.log(`[Exchange] 数据解析异常：${e.message || e}, 尝试下一个接口`);
@@ -110,9 +88,7 @@ function formatRate(value, decimals = 2) {
 
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   const sourceDomain = sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl;
-
   let content = "";
-
   const displayRates = [
     { key: "USD", label: "🇺🇸1美元兑换人民币", value: () => 1 / rates.USD, suffix: "🇨🇳", decimals: 2 },
     { key: "EUR", label: "🇪🇺1欧元兑换人民币", value: () => 1 / rates.EUR, suffix: "🇨🇳", decimals: 2 },
@@ -122,11 +98,10 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "KRW", label: "🇨🇳1人民币兑换韩元", value: () => rates.KRW, suffix: "🇰🇷", decimals: 0 },
     { key: "TRY", label: "🇨🇳1人民币兑换土耳其里拉", value: () => rates.TRY, suffix: "🇹🇷", decimals: 2 }
   ];
-
   let fluctuations = [];
-
   for (const item of displayRates) {
     if (!(item.key in rates)) {
+      console.log(`[Exchange] 警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
@@ -145,23 +120,22 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
             "",
             `当前汇率：${item.label} ${rounded}${item.suffix}`
           );
+          console.log(`[Exchange] 通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
         }
       }
     }
     $persistentStore.write(String(current), "exrate_" + item.key);
+    console.log(`[Exchange] 缓存写入：${item.key} = ${rounded}`);
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
-
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
     console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
     console.log("[Exchange] ✅ 无汇率波动超出阈值");
   }
-
-  // 内容末尾空一行，显示数据来源和时间信息
   content += `\n数据来源：${sourceDomain}\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
-
+  console.log(`[Exchange] 刷新面板，内容如下：\n${content}`);
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour: "2-digit",
@@ -169,7 +143,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     second: "2-digit",
     hour12: false
   });
-
   $done({
     title: `当前汇率信息 ${beijingTime}`,
     content: content.trim(),
@@ -192,5 +165,4 @@ function getParams(paramStr) {
   }
 }
 
-// 脚本入口，开始请求
 fetchWithFallback(urls);
