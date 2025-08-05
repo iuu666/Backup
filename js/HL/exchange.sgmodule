@@ -7,7 +7,7 @@
 #!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nicon: 面板图标名\ncolor: 图标颜色
 
 [Panel]
-当前汇率=script-name=当前汇率监控（带通知开关）,update-interval=3600
+当前汇率=script-name=当前汇率监控（带通知开关）,update-interval=43200
 
 [Script]
 当前汇率监控（带通知开关）=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange.js,argument=threshold=0.3&notify=true&icon=bitcoinsign.circle&color=#EF8F1C
