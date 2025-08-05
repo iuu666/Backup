@@ -1,19 +1,3 @@
-/**
- * 汇率监控脚本 - 多API+波动提醒+自定义兑换基数+通知冷却
- * 
- * 功能说明：
- * 1. 支持3个备选接口请求，失败自动切换；
- * 2. 支持自定义汇率波动阈值（threshold），默认0.3%；
- * 3. 支持开启/关闭通知推送（notify），默认开启；
- * 4. 支持自定义兑换基数（base_amount），默认1；
- * 5. 支持人民币基准，显示常用货币汇率（美元、欧元、英镑、港币、日元、韩元、土耳其里拉）；
- * 6. 汇率波动检测基于缓存上次数据，超过阈值时发送通知提醒；
- * 7. 时间统一格式化为北京时间（Asia/Shanghai）中文时间字符串；
- * 8. 面板显示汇率详情、波动提醒、数据来源、更新时间、下次更新时间；
- * 9. 详尽日志，异常和错误处理健壮；
- * 10. 支持通知冷却，避免短时间重复通知。
- */
-
 const urls = [
   "https://open.er-api.com/v6/latest/CNY",
   "https://api.exchangerate-api.com/v4/latest/CNY",
@@ -21,10 +5,16 @@ const urls = [
 ];
 
 const params = getParams($argument);
-const threshold = parseFloat(params.threshold) || 0.3;
+const thresholdRaw = parseFloat(params.threshold);
+const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.3 : thresholdRaw;
+
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
-const baseAmount = parseFloat(params.base_amount) || 1;
-const notifyCooldownMinutes = parseInt(params.notify_cooldown) || 30; // 通知冷却时间，单位分钟
+
+const baseAmountRaw = parseFloat(params.base_amount);
+const baseAmount = (isNaN(baseAmountRaw) || baseAmountRaw <= 0) ? 1 : baseAmountRaw;
+
+const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown);
+const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw;
 
 logInfo(`脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 logInfo(`通知推送开关：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
@@ -35,28 +25,32 @@ logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
 
-  let date;
+  let date = null;
+
   if (typeof timeInput === "number") {
     if (timeInput > 1e12) {
+      date = new Date(timeInput);
+    } else if (timeInput > 1e10) {
       date = new Date(timeInput);
     } else {
       date = new Date(timeInput * 1000);
     }
-  } else if (/^\d{10,13}$/.test(timeInput)) {
-    if (timeInput.length === 13) {
-      date = new Date(Number(timeInput));
-    } else if (timeInput.length === 10) {
-      date = new Date(Number(timeInput) * 1000);
+  } else if (typeof timeInput === "string") {
+    const s = timeInput.trim();
+    if (/^\d{10,13}$/.test(s)) {
+      if (s.length === 13) {
+        date = new Date(Number(s));
+      } else if (s.length === 10) {
+        date = new Date(Number(s) * 1000);
+      }
+    } else if (/^\d{4}-\d{2}-\d{2}(T.*)?(Z|[\+\-]\d{2}:?\d{2})?$/.test(s)) {
+      date = new Date(s);
     } else {
-      date = new Date(timeInput);
+      date = new Date(s);
     }
-  } else if (/^\d{4}-\d{2}-\d{2}$/.test(timeInput)) {
-    date = new Date(timeInput + "T00:00:00Z");
-  } else {
-    date = new Date(timeInput);
   }
 
-  if (isNaN(date)) return "时间格式异常";
+  if (!(date instanceof Date) || isNaN(date)) return "时间格式异常";
 
   return date.toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
@@ -71,7 +65,11 @@ function formatTimeToBeijing(timeInput) {
 }
 
 function logInfo(message) {
-  console.log(`[Exchange] ${message}`);
+  const timeStr = new Date().toLocaleTimeString("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    hour12: false
+  });
+  console.log(`[Exchange ${timeStr}] ${message}`);
 }
 
 function canNotify(key) {
@@ -123,7 +121,7 @@ function fetchWithFallback(urls, index = 0) {
         nextUpdate = formatTimeToBeijing(parsed.time_next_update_utc);
       } else if (url.includes("api.exchangerate-api.com")) {
         rates = parsed.rates;
-        lastUpdate = formatTimeToBeijing(parsed.time_last_updated);
+        lastUpdate = formatTimeToBeijing(parsed.time_last_updated * 1000 || parsed.time_last_updated);
         nextUpdate = "未知";
       } else if (url.includes("api.frankfurter.app")) {
         rates = parsed.rates;
@@ -154,13 +152,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   let content = "";
 
   const displayRates = [
-    { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
-    { key: "EUR", label: "欧元", isBaseForeign: true, decimals: 2 },
-    { key: "GBP", label: "英镑", isBaseForeign: true, decimals: 2 },
+    { key: "USD", label: "美元", isBaseForeign: false, decimals: 2 },
+    { key: "EUR", label: "欧元", isBaseForeign: false, decimals: 2 },
+    { key: "GBP", label: "英镑", isBaseForeign: false, decimals: 2 },
     { key: "HKD", label: "港币", isBaseForeign: false, decimals: 2 },
     { key: "JPY", label: "日元", isBaseForeign: false, decimals: 0 },
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
-    { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
+    { key: "TRY", label: "土耳其里拉", isBaseForeign: false, decimals: 2 }
   ];
 
   const flagMap = {
@@ -177,23 +175,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       continue;
     }
 
-    let amount, rateValue, text;
-
-    if (item.isBaseForeign) {
-      amount = baseAmount;
-      rateValue = baseAmount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
-    } else {
-      amount = baseAmount;
-      rateValue = baseAmount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
-    }
+    const amount = baseAmount;
+    const rateValue = rates[item.key] * baseAmount;
+    const text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
 
     logInfo(`汇率信息：${text}`);
 
     let prev = NaN;
     try {
-      prev = parseFloat($persistentStore.read("exrate_" + item.key));
+      const cacheStr = $persistentStore.read("exrate_" + item.key);
+      prev = cacheStr !== null ? parseFloat(cacheStr) : NaN;
     } catch {
       prev = NaN;
     }
@@ -240,10 +231,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
-    hour12: false
+    second: "2-digit"
   });
 
   $done({
