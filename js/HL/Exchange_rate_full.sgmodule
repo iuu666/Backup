@@ -1,17 +1,102 @@
-#!name=当前汇率监控
-#!desc=带波动提醒及复制提示的汇率面板，支持本地填写 API Key、更新间隔和监控币种
-#!category=Third Party Module
-#!arguments=TITLE:当前汇率监控,ICON:bitcoinsign.circle,COLOR:#EF8F1C,BASE:CNY,CURRENCIES:USD,EUR,GBP,HKD,JPY,KRW,TRY,THRESHOLD:1,LANG:zh,UPDATE_INTERVAL:1800,ACCESS_KEY:填写API Key
-#!arguments-desc=[参数设置]
-⓵ UPDATE_INTERVAL: 刷新间隔（单位秒），默认1800秒（30分钟）
-⓶ ACCESS_KEY: 汇率API Key（可留空），未填写时仅显示默认数据
-⓷ BASE: 基准货币代码（默认CNY）
-⓸ CURRENCIES: 监控的目标币种（逗号分隔，例如USD,EUR,JPY）
-⓹ THRESHOLD: 汇率波动提醒阈值（百分比，默认1%）
-⓺ LANG: 语言（支持zh和en，默认zh）
+const url = "https://api.exchangerate-api.com/v4/latest/CNY";
+const params = getParams($argument);
 
-[Panel]
-当前汇率 = script-name=当前汇率监控,update-interval={{{UPDATE_INTERVAL}}}
+$httpClient.get(url, function (error, response, data) {
+  if (error) {
+    $done({
+      title: "汇率获取失败",
+      content: "请求错误：" + error,
+      icon: "xmark.octagon",
+      "icon-color": "#FF3B30"
+    });
+    return;
+  }
 
-[Script]
-当前汇率监控 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange_rate_full.js,argument=icon={{{ICON}}}&color={{{COLOR}}}&base={{{BASE}}}&currencies={{{CURRENCIES}}}&threshold={{{THRESHOLD}}}&lang={{{LANG}}}&access_key={{{ACCESS_KEY}}}
+  let rates;
+  try {
+    const parsed = JSON.parse(data);
+    rates = parsed.rates;
+    if (!rates) throw new Error("No rates field");
+  } catch (e) {
+    $done({
+      title: "汇率获取失败",
+      content: "数据解析异常",
+      icon: "xmark.octagon",
+      "icon-color": "#FF3B30"
+    });
+    return;
+  }
+
+  function formatRate(value, decimals = 2) {
+    return Number(value).toFixed(decimals);
+  }
+
+  const displayRates = [
+    { key: "USD", label: "🇺🇸1美元兑换", value: () => 1 / rates.USD, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "EUR", label: "🇪🇺1欧元兑换", value: () => 1 / rates.EUR, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "GBP", label: "🇬🇧1英镑兑换", value: () => 1 / rates.GBP, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "HKD", label: "🇨🇳1人民币兑换", value: () => rates.HKD, suffix: "🇭🇰港币", decimals: 2 },
+    { key: "JPY", label: "🇨🇳1人民币兑换", value: () => rates.JPY, suffix: "🇯🇵日元", decimals: 0 },
+    { key: "KRW", label: "🇨🇳1人民币兑换", value: () => rates.KRW, suffix: "🇰🇷韩元", decimals: 0 },
+    { key: "TRY", label: "🇨🇳1人民币兑换", value: () => rates.TRY, suffix: "🇹🇷里拉", decimals: 2 }
+  ];
+
+  let content = "";
+  let fluctuations = [];
+
+  for (const item of displayRates) {
+    const current = item.value();
+    const rounded = formatRate(current, item.decimals);
+    const prev = $persistentStore.read("exrate_" + item.key);
+
+    // 汇率变动检测
+    if (prev) {
+      const change = ((current - prev) / prev) * 100;
+      if (change !== 0) {
+        const symbol = change > 0 ? "📈" : "📉";
+        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
+        fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+      }
+    }
+
+    // 存储当前值
+    $persistentStore.write(String(current), "exrate_" + item.key);
+
+    // 添加显示行
+    content += `${item.label} ${rounded}${item.suffix}\n`;
+  }
+
+  const timestamp = new Date().toLocaleString("zh-CN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Shanghai"
+  });
+
+  if (fluctuations.length > 0) {
+    content += "\n💱 汇率波动提醒：\n" + fluctuations.join("\n");
+  }
+
+  const panel = {
+    title: `当前汇率信息 ${timestamp}`,
+    content: content.trim(),
+    icon: params.icon || "bitcoinsign.circle",
+    "icon-color": params.color || "#EF8F1C"
+  };
+
+  $done(panel);
+});
+
+function getParams(param) {
+  try {
+    return Object.fromEntries(
+      ($argument || "")
+        .split("&")
+        .filter(Boolean)
+        .map(item => item.split("="))
+        .map(([k, v]) => [k, decodeURIComponent(v)])
+    );
+  } catch (e) {
+    return {};
+  }
+}
