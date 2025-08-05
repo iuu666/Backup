@@ -7,12 +7,9 @@ const urls = [
 const params = getParams($argument);
 const thresholdRaw = parseFloat(params.threshold);
 const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.3 : thresholdRaw;
-
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
-
 const baseAmountRaw = parseFloat(params.base_amount);
 const baseAmount = (isNaN(baseAmountRaw) || baseAmountRaw <= 0) ? 1 : baseAmountRaw;
-
 const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown);
 const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw;
 
@@ -24,9 +21,7 @@ logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
-
   let date = null;
-
   if (typeof timeInput === "number") {
     if (timeInput > 1e12) {
       date = new Date(timeInput);
@@ -49,9 +44,7 @@ function formatTimeToBeijing(timeInput) {
       date = new Date(s);
     }
   }
-
   if (!(date instanceof Date) || isNaN(date)) return "时间格式异常";
-
   return date.toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     year: "numeric",
@@ -65,18 +58,14 @@ function formatTimeToBeijing(timeInput) {
 }
 
 function logInfo(message) {
-  const timeStr = new Date().toLocaleTimeString("zh-CN", {
-    timeZone: "Asia/Shanghai",
-    hour12: false
-  });
+  const timeStr = new Date().toLocaleTimeString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
   console.log(`[Exchange ${timeStr}] ${message}`);
 }
 
 function canNotify(key) {
   try {
     const lastNotify = parseInt($persistentStore.read("notify_time_" + key)) || 0;
-    const now = Date.now();
-    return now - lastNotify > notifyCooldownMinutes * 60 * 1000;
+    return Date.now() - lastNotify > notifyCooldownMinutes * 60 * 1000;
   } catch {
     return true;
   }
@@ -101,10 +90,8 @@ function fetchWithFallback(urls, index = 0) {
     });
     return;
   }
-
   const url = urls[index];
   logInfo(`请求接口：${url}`);
-
   $httpClient.get(url, (error, response, data) => {
     if (error || !data) {
       logInfo(`请求失败：${error || "无响应"}，尝试下一个接口`);
@@ -114,7 +101,6 @@ function fetchWithFallback(urls, index = 0) {
     try {
       const parsed = JSON.parse(data);
       let rates, lastUpdate, nextUpdate;
-
       if (url.includes("open.er-api.com")) {
         rates = parsed.rates;
         lastUpdate = formatTimeToBeijing(parsed.time_last_update_utc);
@@ -130,11 +116,9 @@ function fetchWithFallback(urls, index = 0) {
       } else {
         throw new Error("未知接口格式");
       }
-
       logInfo(`数据获取成功，接口：${url.match(/https?:\/\/([^/]+)/)[1]}`);
       logInfo(`数据最后更新时间（北京时间）：${lastUpdate}`);
       logInfo(`预计下一次更新时间（北京时间）：${nextUpdate}`);
-
       processData(rates, lastUpdate, nextUpdate, url);
     } catch (e) {
       logInfo(`数据解析异常：${e.message || e}，尝试下一个接口`);
@@ -150,22 +134,19 @@ function formatRate(value, decimals = 2) {
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   const sourceDomain = sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl;
   let content = "";
-
   const displayRates = [
-    { key: "USD", label: "美元", isBaseForeign: false, decimals: 2 },
-    { key: "EUR", label: "欧元", isBaseForeign: false, decimals: 2 },
-    { key: "GBP", label: "英镑", isBaseForeign: false, decimals: 2 },
+    { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
+    { key: "EUR", label: "欧元", isBaseForeign: true, decimals: 2 },
+    { key: "GBP", label: "英镑", isBaseForeign: true, decimals: 2 },
     { key: "HKD", label: "港币", isBaseForeign: false, decimals: 2 },
     { key: "JPY", label: "日元", isBaseForeign: false, decimals: 0 },
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
-    { key: "TRY", label: "土耳其里拉", isBaseForeign: false, decimals: 2 }
+    { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
-
   const flagMap = {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
   };
-
   let fluctuations = [];
 
   for (const item of displayRates) {
@@ -175,9 +156,15 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       continue;
     }
 
-    const amount = baseAmount;
-    const rateValue = rates[item.key] * baseAmount;
-    const text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+    let amount = baseAmount;
+    let rateValue, text;
+    if (item.isBaseForeign) {
+      rateValue = baseAmount / rates[item.key];
+      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+    } else {
+      rateValue = baseAmount * rates[item.key];
+      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+    }
 
     logInfo(`汇率信息：${text}`);
 
@@ -195,7 +182,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
-
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
             `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
@@ -226,7 +212,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   }
 
   content += `\n数据来源：${sourceDomain}\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
-
   logInfo(`刷新面板内容：\n${content}`);
 
   const beijingTime = new Date().toLocaleString("zh-CN", {
