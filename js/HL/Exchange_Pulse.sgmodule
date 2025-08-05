@@ -7,7 +7,7 @@
 #!arguments-desc=[参数设置]\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nnotify_cooldown: 推送通知冷却（分钟，默认5）\nbase_strong:强势币种基数（面板前3个，如USD/EUR，默认 1）\nbase_weak:弱势币种基数（面板后4个，如JPY/KRW，默认 1）
 
 [Panel]
-当前汇率=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
+汇率信息=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
 汇率监控=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_strong={{{base_strong}}}&base_weak={{{base_weak}}}
