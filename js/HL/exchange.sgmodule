@@ -1,0 +1,8 @@
+#!name=当前汇率
+#!desc=每日定时刷新，带阈值波动提醒的汇率面板
+
+[Panel]
+当前汇率 = script-name=当前汇率, update-interval=43200
+
+[Script]
+当前汇率 = type=generic, script-path=https://raw.githubusercontent.com/你的用户名/你的仓库名/分支名/exchange.js, argument=threshold=0.3&icon=yensign.circle&color=#D4AF37
