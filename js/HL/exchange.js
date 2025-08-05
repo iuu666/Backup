@@ -91,7 +91,7 @@ $httpClient.get(url, function (error, response, data) {
     return Number(value).toFixed(decimals);
   }
 
-  // 需要显示的币种及其兑换计算规则配置，label更清晰
+  // 需要显示的币种及其兑换计算规则配置
   const displayRates = [
     { key: "USD", label: "🇺🇸1美元兑换人民币", value: () => 1 / rates.USD, suffix: "🇨🇳", decimals: 2 },
     { key: "EUR", label: "🇪🇺1欧元兑换人民币", value: () => 1 / rates.EUR, suffix: "🇨🇳", decimals: 2 },
