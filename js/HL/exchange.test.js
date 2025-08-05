@@ -126,7 +126,17 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
     $persistentStore.write(String(current), "exrate_" + item.key);
     console.log(`[Exchange] 缓存写入：${item.key} = ${rounded}`);
+    // 显示1单位基准币种换算目标币种（如 1人民币换港币）
     content += `${item.label} ${rounded}${item.suffix}\n`;
+
+    // 支持unit参数，自定义换算单位（非基准币种），显示N单位兑换人民币
+    if (item.key !== "CNY") {
+      const unit = parseFloat(params[`unit_${item.key}`] || "1");
+      const converted = item.key === "HKD" || item.key === "JPY" || item.key === "KRW" || item.key === "TRY" 
+        ? (unit / rates[item.key]) // N单位外币兑换人民币（如港币、日元、韩元、土耳其里拉）
+        : (unit / rates[item.key]); // 对美元、欧元、英镑等反转率也是这样计算
+      content += `${unit}${item.key}兑换人民币 ${formatRate(converted, 2)} 🇨🇳\n`;
+    }
   }
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
