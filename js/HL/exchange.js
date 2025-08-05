@@ -1,23 +1,17 @@
 /**
- * 汇率监控脚本（适用于 Surge 面板）
+ * 汇率监控脚本（每次都提醒版）
  * 
- * ✅ 功能说明：
- * 1. 获取人民币(CNY)汇率数据，支持多币种显示；
- * 2. 每日首次检测时，如果波动超过阈值（默认0.3%），触发提醒；
- * 3. 每次运行都会刷新面板显示，记录是否提醒；
- * 4. 日志中输出提醒状态，面板中显示提醒信息；
- * 5. 支持参数配置 threshold / icon / color。
+ * ✅ 功能：
+ * - 每次运行都检测汇率是否波动超出阈值（默认 0.3%）
+ * - 只要有波动就会提醒（不限制一天只提醒一次）
+ * - 面板内容展示汇率和📈📉波动提醒
+ * - 支持自定义参数 threshold / icon / color
  */
 
 const url = "https://open.er-api.com/v6/latest/CNY";
 const params = getParams($argument);
 const threshold = parseFloat(params.threshold || "0.3");
-const today = new Date().toISOString().slice(0, 10);
-const remindKey = "exrate_daily_reminded";
-const lastRemindDate = $persistentStore.read(remindKey);
-const remindedToday = lastRemindDate === today;
 
-// ✅ 打印当前执行时间
 console.log(`[Exchange] 脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 
 $httpClient.get(url, function (error, response, data) {
@@ -72,31 +66,24 @@ $httpClient.get(url, function (error, response, data) {
 
     if (!isNaN(prev)) {
       const change = ((current - prev) / prev) * 100;
-      if (Math.abs(change) >= threshold && !remindedToday) {
+      if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
       }
     }
 
+    // 存储当前汇率以供下次比较
     $persistentStore.write(String(current), "exrate_" + item.key);
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
-  // ✅ 添加提醒状态到日志 & 面板内容
-  if (!remindedToday) {
-    if (fluctuations.length > 0) {
-      console.log(`[Exchange] ✅ 今日首次提醒，内容如下：\n${fluctuations.join("\n")}`);
-      content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}`;
-      content += `\n✅ 今日首次提醒（已发送通知）`;
-    } else {
-      console.log("[Exchange] 🟡 今日首次执行，但无汇率波动，未发送提醒");
-      content += `\n⏳ 今日首次执行，无波动，无需提醒`;
-    }
-    $persistentStore.write(today, remindKey);
+  // ✅ 如果有波动，添加提醒内容
+  if (fluctuations.length > 0) {
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}`;
+    console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
-    console.log("[Exchange] 🔄 今日已提醒过，跳过重复提醒");
-    content += `\n✅ 今日已提醒`;
+    console.log("[Exchange] ✅ 无汇率波动超出阈值");
   }
 
   const timestamp = new Date().toLocaleString("zh-CN", {
