@@ -6,8 +6,8 @@ const remindKey = "exrate_daily_reminded";
 const lastRemindDate = $persistentStore.read(remindKey);
 const remindedToday = lastRemindDate === today;
 
-// 调试日志，确认脚本是否执行
-console.log(`[Exchange] 脚本执行时间：${new Date().toLocaleString()}`);
+// ✅ 打印日志确认脚本是否运行
+console.log(`[Exchange] 脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 
 $httpClient.get(url, function (error, response, data) {
   if (error) {
@@ -53,7 +53,6 @@ $httpClient.get(url, function (error, response, data) {
 
   let content = "";
   let fluctuations = [];
-  let shouldRemind = false;
 
   for (const item of displayRates) {
     const current = item.value();
@@ -62,11 +61,10 @@ $httpClient.get(url, function (error, response, data) {
 
     if (!isNaN(prev)) {
       const change = ((current - prev) / prev) * 100;
-      if (Math.abs(change) >= threshold) {
+      if (Math.abs(change) >= threshold && !remindedToday) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
-        shouldRemind = true;
       }
     }
 
@@ -74,16 +72,16 @@ $httpClient.get(url, function (error, response, data) {
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
+  // ✅ 每天首次运行时，记录提醒
   if (!remindedToday) {
-    shouldRemind = true;
     $persistentStore.write(today, remindKey);
   }
 
-  // 这里加上动态时间戳，确保内容每次都变
+  // ✅ 每次都刷新面板（即使没有波动）
   const timestamp = new Date().toLocaleString("zh-CN", {
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",  // 多显示秒，方便测试刷新
+    second: "2-digit",
     hour12: false,
     timeZone: "Asia/Shanghai"
   });
@@ -99,13 +97,8 @@ $httpClient.get(url, function (error, response, data) {
     "icon-color": params.color || "#EF8F1C"
   };
 
-  if (shouldRemind) {
-    console.log("[Exchange] 面板刷新，内容如下：\n" + content);
-    $done(panel);
-  } else {
-    console.log("[Exchange] 无需提醒，不刷新面板");
-    $done();
-  }
+  console.log("[Exchange] 刷新面板，内容如下：\n" + content);
+  $done(panel);
 });
 
 function getParams(param) {
