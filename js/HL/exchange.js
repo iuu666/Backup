@@ -91,15 +91,15 @@ $httpClient.get(url, function (error, response, data) {
     return Number(value).toFixed(decimals);
   }
 
-  // 需要显示的币种及其兑换计算规则配置
+  // 需要显示的币种及其兑换计算规则配置，label更清晰
   const displayRates = [
-    { key: "USD", label: "🇺🇸1美元兑换", value: () => 1 / rates.USD, suffix: "🇨🇳人民币", decimals: 2 },
-    { key: "EUR", label: "🇪🇺1欧元兑换", value: () => 1 / rates.EUR, suffix: "🇨🇳人民币", decimals: 2 },
-    { key: "GBP", label: "🇬🇧1英镑兑换", value: () => 1 / rates.GBP, suffix: "🇨🇳人民币", decimals: 2 },
-    { key: "HKD", label: "🇨🇳1人民币兑换", value: () => rates.HKD, suffix: "🇭🇰港币", decimals: 2 },
-    { key: "JPY", label: "🇨🇳1人民币兑换", value: () => rates.JPY, suffix: "🇯🇵日元", decimals: 0 },
-    { key: "KRW", label: "🇨🇳1人民币兑换", value: () => rates.KRW, suffix: "🇰🇷韩元", decimals: 0 },
-    { key: "TRY", label: "🇨🇳1人民币兑换", value: () => rates.TRY, suffix: "🇹🇷里拉", decimals: 2 }
+    { key: "USD", label: "🇺🇸1美元兑换人民币", value: () => 1 / rates.USD, suffix: "🇨🇳", decimals: 2 },
+    { key: "EUR", label: "🇪🇺1欧元兑换人民币", value: () => 1 / rates.EUR, suffix: "🇨🇳", decimals: 2 },
+    { key: "GBP", label: "🇬🇧1英镑兑换人民币", value: () => 1 / rates.GBP, suffix: "🇨🇳", decimals: 2 },
+    { key: "HKD", label: "🇨🇳1人民币兑换港币", value: () => rates.HKD, suffix: "🇭🇰", decimals: 2 },
+    { key: "JPY", label: "🇨🇳1人民币兑换日元", value: () => rates.JPY, suffix: "🇯🇵", decimals: 0 },
+    { key: "KRW", label: "🇨🇳1人民币兑换韩元", value: () => rates.KRW, suffix: "🇰🇷", decimals: 0 },
+    { key: "TRY", label: "🇨🇳1人民币兑换土耳其里拉", value: () => rates.TRY, suffix: "🇹🇷", decimals: 2 }
   ];
 
   let content = ""; // 面板币种信息内容累积
@@ -136,7 +136,7 @@ $httpClient.get(url, function (error, response, data) {
 
     // 缓存当前汇率，供下次比较使用
     $persistentStore.write(String(current), "exrate_" + item.key);
-    // 拼接币种汇率信息文本
+    // 拼接币种汇率信息文本（保持你原有的格式不变）
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
