@@ -11,17 +11,3 @@
 [Script]
 汇率监控=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/Exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_amount={{{base_amount}}}
 
-
-
-#!name=汇率监控
-#!desc=多API汇率波动监控，支持通知冷却和自定义参数
-#!icon=bitcoinsign.circle
-#!icon-color=#EF8F1C
-#!author=YourName
-#!update=2025-08-06
-
-[Panel]
-汇率面板 = script-name=汇率监控, update-interval=1800, argument=threshold=0.3&notify=true&base_amount=1&notify_cooldown=30&icon=bitcoinsign.circle&color=#EF8F1C
-
-[Script]
-汇率监控 = type=generic, script-path=https://raw.githubusercontent.com/yourname/repo/main/exchange_rate.js, requires-body=false
