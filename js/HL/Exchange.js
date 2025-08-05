@@ -160,7 +160,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "HKD", label: "港币", isBaseForeign: false, decimals: 2 },
     { key: "JPY", label: "日元", isBaseForeign: false, decimals: 0 },
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
-    { key: "TRY", label: "土耳其里拉", isBaseForeign: false, decimals: 2 }
+    { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
   const flagMap = {
