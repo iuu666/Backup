@@ -1,11 +1,10 @@
 /**
- * 汇率监控脚本（每次都提醒版）
- * 
- * ✅ 功能：
- * - 每次运行都检测汇率是否波动超出阈值（默认 0.3%）
- * - 只要有波动就会提醒（不限制一天只提醒一次）
- * - 面板内容展示汇率和📈📉波动提醒
- * - 支持自定义参数 threshold / icon / color
+ * 汇率监控脚本（每次都提醒 + 本地通知）
+ *
+ * ✅ 每次运行都检测波动，超过 threshold（默认 0.3%）就发送通知
+ * ✅ 面板中展示汇率和波动 📈📉
+ * ✅ 日志中打印提醒内容
+ * ✅ 本地推送提醒中展示汇率和涨跌幅
  */
 
 const url = "https://open.er-api.com/v6/latest/CNY";
@@ -69,19 +68,29 @@ $httpClient.get(url, function (error, response, data) {
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+        fluctuations.push({
+          title: `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+          detail: `当前汇率：${item.label} ${rounded}${item.suffix}`
+        });
+
+        // 本地推送通知
+        $notification.post(
+          `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+          "",
+          `当前汇率：${item.label} ${rounded}${item.suffix}`
+        );
       }
     }
 
-    // 存储当前汇率以供下次比较
+    // 存储当前汇率供下次比较
     $persistentStore.write(String(current), "exrate_" + item.key);
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
-  // ✅ 如果有波动，添加提醒内容
+  // 添加波动提醒到面板内容
   if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}`;
-    console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.join("\n")}`);
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.map(f => f.title).join("\n")}`;
+    console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.map(f => f.title).join("\n")}`);
   } else {
     console.log("[Exchange] ✅ 无汇率波动超出阈值");
   }
