@@ -1,7 +1,7 @@
-#!name=当前汇率监控（带通知开关）
+#!name=当前汇率监控
 #!desc=监控汇率波动，超过阈值发送通知，面板展示汇率信息
 #!icon=bitcoinsign.circle
-#!author=YourName
+#!author=okk
 #!update=2025-08-05
 #!arguments=threshold:0.3,notify:true,icon:bitcoinsign.circle,color:#EF8F1C
 #!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nicon: 面板图标名\ncolor: 图标颜色
