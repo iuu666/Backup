@@ -1,13 +1,13 @@
 #!name=当前汇率监控
-#!desc=监控汇率波动，超过阈值发送通知，面板展示汇率信息
-#!icon=bitcoinsign.circle
+#!desc=多API监控汇率波动，面板展示汇率信息，支持波动提醒（显示在 Surge 面板中），超过阈值发送通知（系统推送提醒），兼容 Surge 模块参数调节
 #!author=okk
-#!update=2025-08-05
-#!arguments=threshold:0.3,notify:true,icon:bitcoinsign.circle,color:#EF8F1C,UPDATE_INTERVAL:43200
-#!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认43200）
+#!update=2025-08-06
+#!arguments=threshold:0.3,notify:true,icon:bitcoinsign.circle,color:#EF8F1C,UPDATE_INTERVAL:86400
+#!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）
 
 [Panel]
-当前汇率=script-name=当前汇率监控（带通知开关）,update-interval={{{UPDATE_INTERVAL}}}
+当前汇率=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-当前汇率监控（带通知开关）=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange.test.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange.test.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+
