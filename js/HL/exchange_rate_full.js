@@ -49,20 +49,26 @@ $httpClient.get(url, function (error, response, data) {
     const rounded = formatRate(current, item.decimals);
     const prev = $persistentStore.read("exrate_" + item.key);
 
-    // 汇率变动检测
     if (prev) {
       const change = ((current - prev) / prev) * 100;
       if (change !== 0) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+
+        // 🔔 发送系统通知
+        $notification.post(
+          `${item.key} 汇率变动`,
+          `${symbol === "📈" ? "上涨" : "下跌"}了 ${Math.abs(change).toFixed(2)}%`,
+          `${item.label} ${rounded}${item.suffix}`
+        );
       }
     }
 
-    // 存储当前值
+    // 写入当前汇率作为下一次对比的基准
     $persistentStore.write(String(current), "exrate_" + item.key);
 
-    // 添加显示行
+    // 汇总到面板内容
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
