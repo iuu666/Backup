@@ -8,15 +8,17 @@ const params = getParams($argument);
 const thresholdRaw = parseFloat(params.threshold);
 const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.3 : thresholdRaw;
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
-const baseAmountRaw = parseFloat(params.base_amount);
-const baseAmount = (isNaN(baseAmountRaw) || baseAmountRaw <= 0) ? 1 : baseAmountRaw;
+const strongAmountRaw = parseFloat(params.base_strong);
+const strongAmount = (isNaN(strongAmountRaw) || strongAmountRaw <= 0) ? 1 : strongAmountRaw;
+const weakAmountRaw = parseFloat(params.base_weak);
+const weakAmount = (isNaN(weakAmountRaw) || weakAmountRaw <= 0) ? 1 : weakAmountRaw;
 const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown);
 const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw;
 
 logInfo(`脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 logInfo(`通知推送开关：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 logInfo(`汇率波动阈值：${threshold}%`);
-logInfo(`自定义兑换基数：${baseAmount}`);
+logInfo(`兑换基数（强势币）：${strongAmount}，兑换基数（弱势币）：${weakAmount}`);
 logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
 function formatTimeToBeijing(timeInput) {
@@ -156,13 +158,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       continue;
     }
 
-    let amount = baseAmount;
+    const amount = item.isBaseForeign ? strongAmount : weakAmount;
     let rateValue, text;
     if (item.isBaseForeign) {
-      rateValue = baseAmount / rates[item.key];
+      rateValue = amount / rates[item.key];
       text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
-      rateValue = baseAmount * rates[item.key];
+      rateValue = amount * rates[item.key];
       text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
