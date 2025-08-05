@@ -3,11 +3,10 @@
 #!author=okk
 #!update=2025-08-06
 #!arguments=threshold:0.3,notify:true,notify_cooldown:5,icon:bitcoinsign.circle,color:#EF8F1C,UPDATE_INTERVAL:86400,base_amount:1
-#!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nnotify_cooldown: 推送通知冷却时间（分钟，默认5）\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\nbase_amount: 兑换基数（支持小数，默认1）  
+#!arguments-desc=[参数设置]\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nnotify_cooldown: 推送通知冷却时间（默认5分钟）\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\nbase_amount: 兑换基数（支持小数，默认1）  
 
 [Panel]
 当前汇率=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-汇率监控=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/Exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_amount={{{base_amount}}}
-
+汇率监控=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_amount={{{base_amount}}}
