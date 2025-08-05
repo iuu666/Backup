@@ -146,12 +146,15 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (item.isBaseForeign) {
       amount = baseAmount;
       rateValue = baseAmount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+      text = `${amount}${item.label}${flagMap[item.key]} ➡️ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
       amount = baseAmount;
       rateValue = baseAmount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      text = `${amount}人民币${flagMap.CNY} ➡️ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
+
+    // 这里新增：同步日志打印带箭头的兑换信息
+    logInfo(`汇率信息：${text}`);
 
     const prev = parseFloat($persistentStore.read("exrate_" + item.key));
     if (!isNaN(prev)) {
