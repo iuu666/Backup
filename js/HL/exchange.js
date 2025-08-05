@@ -1,17 +1,18 @@
 /**
- * 汇率监控脚本（每次都提醒 + 本地通知）
+ * 汇率监控脚本（每次都提醒 + 本地通知可选）
  *
- * ✅ 每次运行都检测波动，超过 threshold（默认 0.3%）就发送通知
- * ✅ 面板中展示汇率和波动 📈📉
- * ✅ 日志中打印提醒内容
- * ✅ 本地推送提醒中展示汇率和涨跌幅
+ * ✅ 每次运行检测波动，超过 threshold 就提醒（可选是否通知）
+ * ✅ 面板展示所有汇率 + 波动 📈📉
+ * ✅ 可通过参数 notify=true/false 控制是否推送通知
  */
 
 const url = "https://open.er-api.com/v6/latest/CNY";
 const params = getParams($argument);
 const threshold = parseFloat(params.threshold || "0.3");
+const enableNotify = (params.notify || "true").toLowerCase() === "true";
 
 console.log(`[Exchange] 脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
+console.log(`[Exchange] 通知开关状态：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 
 $httpClient.get(url, function (error, response, data) {
   if (error) {
@@ -68,29 +69,27 @@ $httpClient.get(url, function (error, response, data) {
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push({
-          title: `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
-          detail: `当前汇率：${item.label} ${rounded}${item.suffix}`
-        });
+        const detail = `当前汇率：${item.label} ${rounded}${item.suffix}`;
+        fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
 
-        // 本地推送通知
-        $notification.post(
-          `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
-          "",
-          `当前汇率：${item.label} ${rounded}${item.suffix}`
-        );
+        // ✅ 推送通知（如果启用）
+        if (enableNotify) {
+          $notification.post(
+            `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            "",
+            detail
+          );
+        }
       }
     }
 
-    // 存储当前汇率供下次比较
     $persistentStore.write(String(current), "exrate_" + item.key);
     content += `${item.label} ${rounded}${item.suffix}\n`;
   }
 
-  // 添加波动提醒到面板内容
   if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.map(f => f.title).join("\n")}`;
-    console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.map(f => f.title).join("\n")}`);
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}`;
+    console.log(`[Exchange] 🚨 检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
     console.log("[Exchange] ✅ 无汇率波动超出阈值");
   }
