@@ -182,11 +182,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (item.isBaseForeign) {
       amount = baseAmount;
       rateValue = baseAmount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} ➡️ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
       amount = baseAmount;
       rateValue = baseAmount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} ➡️ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
     logInfo(`汇率信息：${text}`);
