@@ -27,7 +27,7 @@ console.log(`[Exchange] 通知开关状态：${enableNotify ? "开启 ✅" : "�
  * @param {string|number} timeInput - 时间输入，支持UTC字符串、ISO字符串、Unix时间戳秒、日期字符串
  * @returns {string} 北京时间格式，格式如 2025-08-05 08:00:00；格式错误返回“时间格式异常”；空或无效返回“未知”
  */
-function formatAnyToBeijing(timeInput) {
+function formatTimeToBeijing(timeInput) {
   if (timeInput === undefined || timeInput === null || timeInput === "" || timeInput === "未知") {
     return "未知";
   }
@@ -37,7 +37,6 @@ function formatAnyToBeijing(timeInput) {
   if ((typeof timeInput === "number") || (/^\d{9,}$/.test(timeInput))) {
     date = new Date(Number(timeInput) * 1000);
   } else if (/^\d{4}-\d{2}-\d{2}$/.test(timeInput)) {
-    // frankfurter只提供日期，默认当日0点UTC时间，转北京时间
     date = new Date(timeInput + "T00:00:00Z");
   } else {
     date = new Date(timeInput);
@@ -57,9 +56,6 @@ function formatAnyToBeijing(timeInput) {
   });
 }
 
-/**
- * 递归请求接口，失败自动切换
- */
 function fetchWithFallback(urls, index = 0) {
   if (index >= urls.length) {
     $done({
@@ -73,7 +69,7 @@ function fetchWithFallback(urls, index = 0) {
   const url = urls[index];
   $httpClient.get(url, (error, response, data) => {
     if (error || !data) {
-      console.log(`[Exchange] 第${index + 1}个接口请求失败，切换下一个`);
+      console.log(`[Exchange] 请求失败：${error || "无响应"}, 切换下一个接口`);
       fetchWithFallback(urls, index + 1);
       return;
     }
@@ -83,42 +79,35 @@ function fetchWithFallback(urls, index = 0) {
 
       if (url.includes("open.er-api.com")) {
         rates = parsed.rates;
-        lastUpdate = formatAnyToBeijing(parsed.time_last_update_utc);
-        nextUpdate = formatAnyToBeijing(parsed.time_next_update_utc);
+        lastUpdate = formatTimeToBeijing(parsed.time_last_update_utc);
+        nextUpdate = formatTimeToBeijing(parsed.time_next_update_utc);
       } else if (url.includes("api.exchangerate-api.com")) {
         rates = parsed.rates;
-        lastUpdate = formatAnyToBeijing(parsed.time_last_updated);
+        lastUpdate = formatTimeToBeijing(parsed.time_last_updated);
         nextUpdate = "未知";
       } else if (url.includes("api.frankfurter.app")) {
         rates = parsed.rates;
-        lastUpdate = formatAnyToBeijing(parsed.date);
+        lastUpdate = formatTimeToBeijing(parsed.date);
         nextUpdate = "未知";
       } else {
         throw new Error("未知接口格式");
       }
 
+      console.log(`[Exchange] 数据最后更新时间（北京时间）：${lastUpdate}`);
+      console.log(`[Exchange] 预计下一次更新时间（北京时间）：${nextUpdate}`);
+
       processData(rates, lastUpdate, nextUpdate, url);
-    } catch {
-      console.log(`[Exchange] 数据解析异常或格式错误，尝试下一个接口`);
+    } catch (e) {
+      console.log(`[Exchange] 数据解析异常：${e.message || e}, 尝试下一个接口`);
       fetchWithFallback(urls, index + 1);
     }
   });
 }
 
-/**
- * 格式化数字，默认保留2位小数
- */
 function formatRate(value, decimals = 2) {
   return Number(value).toFixed(decimals);
 }
 
-/**
- * 汇率处理及波动检测，生成面板数据
- * @param {*} rates 汇率对象
- * @param {*} lastUpdate 更新时间字符串
- * @param {*} nextUpdate 下次更新时间字符串
- * @param {*} sourceUrl 当前接口URL
- */
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   const sourceDomain = sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl;
 
@@ -170,7 +159,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     console.log("[Exchange] ✅ 无汇率波动超出阈值");
   }
 
-  // 在内容最后加空行，再拼数据来源和时间
+  // 内容末尾空一行，显示数据来源和时间信息
   content += `\n数据来源：${sourceDomain}\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
 
   const beijingTime = new Date().toLocaleString("zh-CN", {
@@ -189,9 +178,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   });
 }
 
-/**
- * 解析脚本传入参数
- */
 function getParams(paramStr) {
   try {
     return Object.fromEntries(
@@ -206,5 +192,5 @@ function getParams(paramStr) {
   }
 }
 
-// 启动请求
+// 脚本入口，开始请求
 fetchWithFallback(urls);
