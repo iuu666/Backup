@@ -1,9 +1,3 @@
-/**
- * Google 汇率监控脚本
- * 支持多基准币种、多目标币种
- * 通过 Google 搜索解析汇率（非官方API，可能不稳定）
- */
-
 const params = getParams($argument);
 const base = (params.base || "CNY").toUpperCase();
 const currencies = (params.currencies || "USD,EUR,JPY").toUpperCase().split(",");
@@ -15,21 +9,11 @@ console.log(`[GoogleRate] 目标币种: ${currencies.join(", ")}`);
 console.log(`[GoogleRate] 通知开关: ${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 
 const headers = {
-  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
   "Accept-Language": "zh-CN,zh;q=0.9",
-  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-};
-
-// 币种国旗和中文名映射
-const currencyMap = {
-  USD: { name: "美元", flag: "🇺🇸" },
-  CNY: { name: "人民币", flag: "🇨🇳" },
-  EUR: { name: "欧元", flag: "🇪🇺" },
-  JPY: { name: "日元", flag: "🇯🇵" },
-  HKD: { name: "港币", flag: "🇭🇰" },
-  KRW: { name: "韩元", flag: "🇰🇷" },
-  GBP: { name: "英镑", flag: "🇬🇧" },
-  TRY: { name: "里拉", flag: "🇹🇷" }
+  "Accept-Encoding": "gzip, deflate, br",
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
 };
 
 (async () => {
@@ -41,29 +25,22 @@ const currencyMap = {
     try {
       const html = await httpGet(url, headers);
 
-      // 尝试匹配格式如 "1 Chinese Yuan equals 0.14 United States Dollar"
-      // 或 Google 页面中动态渲染部分，匹配浮点数汇率
-      const regex = /(?:\d[\d,.]*)\s*(?:<span[^>]*>)?([A-Z]{3})/g;
+      // 调试：打印HTML前500字符，方便确认内容
+      console.log(`[GoogleRate] ${base}→${target} 页面内容预览：\n${html.slice(0, 500)}`);
 
-      // 这里改为用更稳定的解析，先找第一个浮点数，再找目标币种
-      // 解析汇率的常用方法：查找 "1 base = rate target"
-      const matchRate = html.match(/(?:1\s+)(?:[A-Za-z\s]+)\s+=\s+([\d,.]+)/i) || html.match(/([\d,.]+)\s+([A-Z]{3})/i);
+      // 用更稳健的正则匹配汇率：寻找形如 "1 USD = 7.24 CNY" 中的数字
+      const regex = new RegExp(`1\\s+${base}\\s*=\\s*([\\d,.]+)`, "i");
+      let match = html.match(regex);
+
       let rate = null;
-
-      if (matchRate) {
-        rate = parseFloat(matchRate[1].replace(/,/g, ""));
+      if (match) {
+        rate = parseFloat(match[1].replace(/,/g, ""));
       }
 
-      // 备用方案：用自定义正则抓第一组数字
-      if (rate === null || isNaN(rate)) {
-        // 尝试匹配页面里的第一个数字
-        const fallbackMatch = html.match(/[\d,.]+/);
-        rate = fallbackMatch ? parseFloat(fallbackMatch[0].replace(/,/g, "")) : null;
+      if (!rate || isNaN(rate)) {
+        throw new Error("解析汇率失败");
       }
 
-      if (rate === null || isNaN(rate)) throw new Error("无法解析汇率");
-
-      // 读取上次缓存
       const key = `google_rate_${base}_${target}`;
       const prev = parseFloat($persistentStore.read(key));
       const change = !isNaN(prev) ? ((rate - prev) / prev) * 100 : null;
@@ -73,20 +50,17 @@ const currencyMap = {
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         if (enableNotify) {
           $notification.post(
-            `${symbol} ${currencyMap[base]?.name || base} → ${currencyMap[target]?.name || target} 汇率${change > 0 ? "上涨" : "下跌"}`,
+            `${symbol} ${base} → ${target} 汇率${change > 0 ? "上涨" : "下跌"}`,
             "",
             `当前汇率: 1 ${base} = ${rate} ${target} (${changeStr})`
           );
         }
-        fluctuations.push(`${currencyMap[base]?.name || base}→${currencyMap[target]?.name || target} ${changeStr}`);
+        fluctuations.push(`${base}→${target} ${changeStr}`);
       }
 
       $persistentStore.write(String(rate), key);
 
-      // 格式化显示
-      const fromName = `${currencyMap[base]?.flag || ""}${currencyMap[base]?.name || base}`;
-      const toName = `${currencyMap[target]?.flag || ""}${currencyMap[target]?.name || target}`;
-      results.push(`${fromName} → ${toName}：${rate}`);
+      results.push(`1 ${base} = ${rate} ${target}`);
 
     } catch (e) {
       results.push(`❌ 1 ${base} = ? ${target}`);
