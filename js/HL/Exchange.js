@@ -1,5 +1,5 @@
 /**
- * 汇率监控脚本 - 多接口请求+波动提醒+自定义兑换基数
+ * 汇率监控脚本 - 多API+波动提醒+自定义兑换基数
  * 
  * 功能说明：
  * 1. 支持三个备选汇率API接口，自动轮询请求，单个接口失败自动切换到下一个，提升数据获取成功率；
@@ -34,15 +34,32 @@ logInfo(`自定义兑换基数：${baseAmount}`);
 
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
+
   let date;
-  if (typeof timeInput === "number" || (/^\d{9,}$/.test(timeInput))) {
-    date = new Date(Number(timeInput) * 1000);
+  if (typeof timeInput === "number") {
+    if (timeInput > 1e12) {
+      // 毫秒时间戳（13位左右）
+      date = new Date(timeInput);
+    } else {
+      // 秒时间戳（10位左右）
+      date = new Date(timeInput * 1000);
+    }
+  } else if (/^\d{10,13}$/.test(timeInput)) {
+    if (timeInput.length === 13) {
+      date = new Date(Number(timeInput));
+    } else if (timeInput.length === 10) {
+      date = new Date(Number(timeInput) * 1000);
+    } else {
+      date = new Date(timeInput);
+    }
   } else if (/^\d{4}-\d{2}-\d{2}$/.test(timeInput)) {
     date = new Date(timeInput + "T00:00:00Z");
   } else {
     date = new Date(timeInput);
   }
+
   if (isNaN(date)) return "时间格式异常";
+
   return date.toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     year: "numeric",
@@ -90,6 +107,7 @@ function fetchWithFallback(urls, index = 0) {
         nextUpdate = formatTimeToBeijing(parsed.time_next_update_utc);
       } else if (url.includes("api.exchangerate-api.com")) {
         rates = parsed.rates;
+        // 该接口time_last_updated为秒级时间戳
         lastUpdate = formatTimeToBeijing(parsed.time_last_updated);
         nextUpdate = "未知";
       } else if (url.includes("api.frankfurter.app")) {
@@ -147,19 +165,26 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     let amount, rateValue, text;
 
     if (item.isBaseForeign) {
+      // 以人民币为基准，换算外币： amount人民币 / 汇率 = 外币数量
       amount = baseAmount;
       rateValue = baseAmount / rates[item.key];
       text = `${amount}${item.label}${flagMap[item.key]} ➡️ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
+      // 以人民币为基准，换算外币： amount人民币 * 汇率 = 外币数量
       amount = baseAmount;
       rateValue = baseAmount * rates[item.key];
       text = `${amount}人民币${flagMap.CNY} ➡️ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
-    // 这里新增：同步日志打印带箭头的兑换信息
     logInfo(`汇率信息：${text}`);
 
-    const prev = parseFloat($persistentStore.read("exrate_" + item.key));
+    let prev = NaN;
+    try {
+      prev = parseFloat($persistentStore.read("exrate_" + item.key));
+    } catch {
+      prev = NaN;
+    }
+
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
       if (Math.abs(change) >= threshold) {
