@@ -1,19 +1,17 @@
 /**
- * 汇率监控脚本 - 多API+波动提醒+自定义兑换基数
+ * 汇率监控脚本 - 多API+波动提醒+自定义兑换基数+通知冷却
  * 
  * 功能说明：
- * 1. 支持三个备选汇率API接口，自动轮询请求，单个接口失败自动切换到下一个，提升数据获取成功率；
- * 2. 支持自定义汇率波动阈值（threshold，默认0.3%），超过阈值时触发通知提醒，避免频繁通知；
- * 3. 支持开启或关闭通知推送（notify，默认开启），满足不同用户需求；
- * 4. 支持自定义兑换基数（base_amount，默认1），实现多金额换算展示；
- * 5. 默认以人民币（CNY）为基准货币，显示美元（USD）、欧元（EUR）、英镑（GBP）、港币（HKD）、日元（JPY）、韩元（KRW）、土耳其里拉（TRY）等常用货币的汇率换算；
- * 6. 汇率波动监控基于持久化缓存的上次汇率数据，精准检测汇率变化；
- * 7. 时间统一格式化为北京时间（Asia/Shanghai）中文时间字符串，适合中国用户阅读习惯；
- * 8. 脚本输出面板内容详细，包括各货币汇率详情、汇率波动提醒、数据来源、数据最后更新时间、预计下次更新时间；
- * 9. 详尽日志记录，便于调试与问题排查，包含请求接口、数据解析、缓存读写及通知发送情况；
- * 10. 具备良好异常和错误处理机制，保证脚本稳定运行，接口请求失败自动切换、数据解析异常重试；
- * 11. 面板刷新时自动显示当前北京时间，提升用户体验；
- * 12. 支持脚本参数传入，可灵活定制通知开关、波动阈值、兑换基数、面板图标及颜色。
+ * 1. 支持3个备选接口请求，失败自动切换；
+ * 2. 支持自定义汇率波动阈值（threshold），默认0.3%；
+ * 3. 支持开启/关闭通知推送（notify），默认开启；
+ * 4. 支持自定义兑换基数（base_amount），默认1；
+ * 5. 支持人民币基准，显示常用货币汇率（美元、欧元、英镑、港币、日元、韩元、土耳其里拉）；
+ * 6. 汇率波动检测基于缓存上次数据，超过阈值时发送通知提醒；
+ * 7. 时间统一格式化为北京时间（Asia/Shanghai）中文时间字符串；
+ * 8. 面板显示汇率详情、波动提醒、数据来源、更新时间、下次更新时间；
+ * 9. 详尽日志，异常和错误处理健壮；
+ * 10. 支持通知冷却，避免短时间重复通知。
  */
 
 const urls = [
@@ -26,11 +24,13 @@ const params = getParams($argument);
 const threshold = parseFloat(params.threshold) || 0.3;
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
 const baseAmount = parseFloat(params.base_amount) || 1;
+const notifyCooldownMinutes = parseInt(params.notify_cooldown) || 30; // 通知冷却时间，单位分钟
 
 logInfo(`脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 logInfo(`通知推送开关：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 logInfo(`汇率波动阈值：${threshold}%`);
 logInfo(`自定义兑换基数：${baseAmount}`);
+logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
@@ -38,10 +38,8 @@ function formatTimeToBeijing(timeInput) {
   let date;
   if (typeof timeInput === "number") {
     if (timeInput > 1e12) {
-      // 毫秒时间戳（13位左右）
       date = new Date(timeInput);
     } else {
-      // 秒时间戳（10位左右）
       date = new Date(timeInput * 1000);
     }
   } else if (/^\d{10,13}$/.test(timeInput)) {
@@ -76,6 +74,24 @@ function logInfo(message) {
   console.log(`[Exchange] ${message}`);
 }
 
+function canNotify(key) {
+  try {
+    const lastNotify = parseInt($persistentStore.read("notify_time_" + key)) || 0;
+    const now = Date.now();
+    return now - lastNotify > notifyCooldownMinutes * 60 * 1000;
+  } catch {
+    return true;
+  }
+}
+
+function setNotifyTime(key) {
+  try {
+    $persistentStore.write(String(Date.now()), "notify_time_" + key);
+  } catch (e) {
+    logInfo(`通知时间写入异常：${e.message || e}`);
+  }
+}
+
 function fetchWithFallback(urls, index = 0) {
   if (index >= urls.length) {
     logInfo("❌ 所有接口请求均失败，脚本结束");
@@ -107,7 +123,6 @@ function fetchWithFallback(urls, index = 0) {
         nextUpdate = formatTimeToBeijing(parsed.time_next_update_utc);
       } else if (url.includes("api.exchangerate-api.com")) {
         rates = parsed.rates;
-        // 该接口time_last_updated为秒级时间戳
         lastUpdate = formatTimeToBeijing(parsed.time_last_updated);
         nextUpdate = "未知";
       } else if (url.includes("api.frankfurter.app")) {
@@ -165,12 +180,10 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     let amount, rateValue, text;
 
     if (item.isBaseForeign) {
-      // 以人民币为基准，换算外币： amount人民币 / 汇率 = 外币数量
       amount = baseAmount;
       rateValue = baseAmount / rates[item.key];
       text = `${amount}${item.label}${flagMap[item.key]} ➡️ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
-      // 以人民币为基准，换算外币： amount人民币 * 汇率 = 外币数量
       amount = baseAmount;
       rateValue = baseAmount * rates[item.key];
       text = `${amount}人民币${flagMap.CNY} ➡️ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
@@ -192,13 +205,14 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
         fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
 
-        if (enableNotify) {
+        if (enableNotify && canNotify(item.key)) {
           $notification.post(
             `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
           logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
+          setNotifyTime(item.key);
         }
       }
     }
