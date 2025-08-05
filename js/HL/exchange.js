@@ -127,7 +127,7 @@ $httpClient.get(url, function (error, response, data) {
   });
 
   const panel = {
-    title: `当前汇率信息 ${beijingTime}\n更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`,
+    title: `当前汇率信息 ${beijingTime}\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`,
     content: content.trim(),
     icon: params.icon || "bitcoinsign.circle",
     "icon-color": params.color || "#EF8F1C"
