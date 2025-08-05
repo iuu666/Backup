@@ -1,5 +1,5 @@
 #!name=汇率监控
-#!desc=多API监控汇率波动，支持波动提醒与系统通知推送，自定义兑换基数，面板展示详细汇率信息
+#!desc=多API监控汇率波动，面板展示详细汇率信息，支持波动提醒（显示在 Surge 面板中），超过阈值发送通知（系统推送提醒），自定义兑换基数，Surge 模块参数调节
 #!author=okk
 #!update=2025-08-06
 #!arguments=threshold:0.3,notify:true,icon:bitcoinsign.circle,color:#EF8F1C,UPDATE_INTERVAL:86400,base_amount:1
