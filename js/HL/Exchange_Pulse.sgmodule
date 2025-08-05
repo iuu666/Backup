@@ -1,14 +1,13 @@
 #!name=💱汇率监控
-#!desc=多API监控汇率波动，面板展示详细汇率信息，支持波动提醒（显示在 Surge 面板中），超过阈值发送通知（系统推送提醒），自定义货币/基数，Surge 模块参数调节
+#!desc=多API监控汇率波动，面板展示详细汇率信息，支持波动提醒（面板显示）、系统通知提醒、自定义货币与基数，模块参数灵活调节
 #!author=okk
 #!version=2025.08.06
 
 #!arguments=icon:arrow.left.arrow.right.circle,color:#EF8F1C,UPDATE_INTERVAL:86400,threshold:0.3,notify:true,notify_cooldown:5,strongs:USD,EUR,GBP,base_strong:1,weaks:HKD,JPY,KRW,base_weak:1
-#!arguments-desc=[参数设置]\nicon: 面板图标名\ncolor: 图标颜色\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\nnotify: 是否推送通知（true或false，默认true）\nnotify_cooldown: 推送通知冷却（分钟，默认5）\nstrongs:强势币种（自查）\nbase_strong:强势币种基数（面板前3个，如USD/EUR，默认 1）\nweaks:弱势币种（自查）\nbase_weak:弱势币种基数（面板后3个，如JPY/KRW，默认 1）
+#!arguments-desc=[参数设置]\\nicon: 面板图标（SF Symbols 名称）\\ncolor: 图标颜色（HEX 格式）\\nUPDATE_INTERVAL: 面板刷新间隔（秒，默认86400）\\nthreshold: 汇率波动提醒阈值（百分比，默认0.3）\\nnotify: 是否推送通知（true/false）\\nnotify_cooldown: 通知冷却时间（分钟，默认5）\\nstrongs: 强势币种列表（如 USD,EUR）\\nbase_strong: 强势币种兑换基数（面板前3个，如USD/EUR，默认 1）\\nweaks: 弱势币种列表（如 JPY,KRW）\\nbase_weak: 弱势币种兑换基数（面板后3个，如JPY/KRW，默认 1）
 
 [Panel]
-汇率信息=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
+汇率信息 = script-name=汇率监控, update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-汇率监控=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&strongs={{{strongs}}}&base_strong={{{base_strong}}}&weaks={{{weaks}}}&base_weak={{{base_weak}}}
-
+汇率监控 = type=generic, script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange.js, argument=threshold={{{threshold}}}&notify={{{notify}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&strongs={{{strongs}}}&base_strong={{{base_strong}}}&weaks={{{weaks}}}&base_weak={{{base_weak}}}
