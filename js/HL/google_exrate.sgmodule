@@ -13,10 +13,10 @@
 人民币兑港元日元韩元里拉=script-name=📊 Google 汇率监控-人民币兑多币种,update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-📊 Google 汇率监控-美元兑人民币=type=generic,script-path=https://raw.githubusercontent.com/你的用户名/你的仓库/main/google_exrate.js,argument=base=USD&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+📊 Google 汇率监控-美元兑人民币=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/google_exrate.js,argument=base=USD&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
 
-📊 Google 汇率监控-欧元兑人民币=type=generic,script-path=https://raw.githubusercontent.com/你的用户名/你的仓库/main/google_exrate.js,argument=base=EUR&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+📊 Google 汇率监控-欧元兑人民币=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/google_exrate.js,argument=base=EUR&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
 
-📊 Google 汇率监控-英镑兑人民币=type=generic,script-path=https://raw.githubusercontent.com/你的用户名/你的仓库/main/google_exrate.js,argument=base=GBP&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+📊 Google 汇率监控-英镑兑人民币=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/google_exrate.js,argument=base=GBP&currencies=CNY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
 
-📊 Google 汇率监控-人民币兑多币种=type=generic,script-path=https://raw.githubusercontent.com/你的用户名/你的仓库/main/google_exrate.js,argument=base=CNY&currencies=HKD,JPY,KRW,TRY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+📊 Google 汇率监控-人民币兑多币种=type=generic,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/google_exrate.js,argument=base=CNY&currencies=HKD,JPY,KRW,TRY&threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
