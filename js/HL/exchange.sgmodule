@@ -9,5 +9,5 @@
 当前汇率=script-name=汇率监控,update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
-汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange.test.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
+汇率监控=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/HL/exchange.js,argument=threshold={{{threshold}}}&notify={{{notify}}}&icon={{{icon}}}&color={{{color}}}
 
