@@ -32,18 +32,39 @@ $httpClient.get(url, function (error, response, data) {
   }
 
   const displayRates = [
-    { label: "🇺🇸1美元兑换", value: () => 1 / rates.USD, suffix: "🇨🇳人民币", decimals: 2 },
-    { label: "🇪🇺1欧元兑换", value: () => 1 / rates.EUR, suffix: "🇨🇳人民币", decimals: 2 },
-    { label: "🇬🇧1英镑兑换", value: () => 1 / rates.GBP, suffix: "🇨🇳人民币", decimals: 2 },
-    { label: "🇨🇳1人民币兑换", value: () => rates.HKD, suffix: "🇭🇰港币", decimals: 2 },
-    { label: "🇨🇳1人民币兑换", value: () => rates.JPY, suffix: "🇯🇵日元", decimals: 0 },
-    { label: "🇨🇳1人民币兑换", value: () => rates.KRW, suffix: "🇰🇷韩元", decimals: 0 },
-    { label: "🇨🇳1人民币兑换", value: () => rates.TRY, suffix: "🇹🇷里拉", decimals: 2 }
+    { key: "USD", label: "🇺🇸1美元兑换", value: () => 1 / rates.USD, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "EUR", label: "🇪🇺1欧元兑换", value: () => 1 / rates.EUR, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "GBP", label: "🇬🇧1英镑兑换", value: () => 1 / rates.GBP, suffix: "🇨🇳人民币", decimals: 2 },
+    { key: "HKD", label: "🇨🇳1人民币兑换", value: () => rates.HKD, suffix: "🇭🇰港币", decimals: 2 },
+    { key: "JPY", label: "🇨🇳1人民币兑换", value: () => rates.JPY, suffix: "🇯🇵日元", decimals: 0 },
+    { key: "KRW", label: "🇨🇳1人民币兑换", value: () => rates.KRW, suffix: "🇰🇷韩元", decimals: 0 },
+    { key: "TRY", label: "🇨🇳1人民币兑换", value: () => rates.TRY, suffix: "🇹🇷里拉", decimals: 2 }
   ];
 
-  const content = displayRates.map(item =>
-    `${item.label} ${formatRate(item.value(), item.decimals)}${item.suffix}`
-  ).join("\n");
+  let content = "";
+  let fluctuations = [];
+
+  for (const item of displayRates) {
+    const current = item.value();
+    const rounded = formatRate(current, item.decimals);
+    const prev = $persistentStore.read("exrate_" + item.key);
+
+    // 汇率变动检测
+    if (prev) {
+      const change = ((current - prev) / prev) * 100;
+      if (change !== 0) {
+        const symbol = change > 0 ? "📈" : "📉";
+        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
+        fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+      }
+    }
+
+    // 存储当前值
+    $persistentStore.write(String(current), "exrate_" + item.key);
+
+    // 添加显示行
+    content += `${item.label} ${rounded}${item.suffix}\n`;
+  }
 
   const timestamp = new Date().toLocaleString("zh-CN", {
     hour: "2-digit",
@@ -52,9 +73,13 @@ $httpClient.get(url, function (error, response, data) {
     timeZone: "Asia/Shanghai"
   });
 
+  if (fluctuations.length > 0) {
+    content += "\n💱 汇率波动提醒：\n" + fluctuations.join("\n");
+  }
+
   const panel = {
     title: `当前汇率信息 ${timestamp}`,
-    content: content,
+    content: content.trim(),
     icon: params.icon || "bitcoinsign.circle",
     "icon-color": params.color || "#EF8F1C"
   };
