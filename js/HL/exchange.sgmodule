@@ -1,5 +1,5 @@
 #!name=当前汇率
-#!desc=每日定时刷新，带阈值波动提醒的汇率面板
+#!desc=每日汇率提醒（带波动分析）
 
 [Panel]
 当前汇率 = script-name=当前汇率, update-interval=43200
