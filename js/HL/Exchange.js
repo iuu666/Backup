@@ -228,7 +228,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   });
 
   $done({
-    title: `当前汇率信息 ${beijingTime}`,
+    title: `汇率信息 ${beijingTime}`,
     content: content.trim(),
     icon: params.icon || "bitcoinsign.circle",
     "icon-color": params.color || "#EF8F1C"
