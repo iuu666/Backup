@@ -336,16 +336,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   // 显示更新时间（分别显示网页和API的）
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `数据更新时间（WEB）：${globalGoogleResult.lastUpdate}\n`;
+    lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    lastUpdateContent += `数据更新时间（API）：${globalApiResult.lastUpdate}\n`;
+    lastUpdateContent += `LastUpdate（API）：${globalApiResult.lastUpdate}\n`;
   }
   if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `下次更新时间（WEB）：${globalGoogleResult.nextUpdate}\n`;
+    lastUpdateContent += `NextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
-    lastUpdateContent += `下次更新时间（API）：${globalApiResult.nextUpdate}\n`;
+    lastUpdateContent += `NextUpdate（API）：${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
 
