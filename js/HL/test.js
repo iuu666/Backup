@@ -419,8 +419,11 @@ function setNotifyTime(key) {
 }
 
 function logInfo(msg) {
-  if (typeof $console !== "undefined" && $console.info) {
-    $console.info("[汇率监控]" + msg);
+  const prefix = "[汇率监控] ";
+  if (typeof console !== "undefined" && console.log) {
+    console.log(prefix + msg);
+  } else if (typeof $console !== "undefined" && $console.info) {
+    $console.info(prefix + msg);
   }
 }
 
