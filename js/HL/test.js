@@ -1,4 +1,7 @@
-const urls = [
+const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
+const baseCurrency = "CNY";
+
+const apiUrls = [
   "https://open.er-api.com/v6/latest/CNY",
   "https://api.exchangerate-api.com/v4/latest/CNY",
   "https://api.frankfurter.app/latest?from=CNY"
@@ -21,160 +24,92 @@ logInfo(`汇率波动阈值：${threshold}%`);
 logInfo(`兑换基数（强势币）：${strongAmount}，兑换基数（弱势币）：${weakAmount}`);
 logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
-/**
- * 格式化时间为北京时间字符串
- */
-function formatTimeToBeijing(timeInput) {
-  if (!timeInput || timeInput === "未知") return "未知";
-  let date = null;
-  if (typeof timeInput === "number") {
-    if (timeInput > 1e12) {
-      date = new Date(timeInput);
-    } else if (timeInput > 1e10) {
-      date = new Date(timeInput);
-    } else {
-      date = new Date(timeInput * 1000);
-    }
-  } else if (typeof timeInput === "string") {
-    const s = timeInput.trim();
-    if (/^\d{10,13}$/.test(s)) {
-      if (s.length === 13) {
-        date = new Date(Number(s));
-      } else if (s.length === 10) {
-        date = new Date(Number(s) * 1000);
-      }
-    } else if (/^\d{4}-\d{2}-\d{2}(T.*)?(Z|[\+\-]\d{2}:?\d{2})?$/.test(s)) {
-      date = new Date(s);
-    } else {
-      date = new Date(s);
-    }
+// 主入口，先尝试谷歌财经抓取
+fetchFromGoogle(result => {
+  if (result) {
+    processData(result.rates, result.lastUpdate, result.nextUpdate, result.source);
+  } else {
+    logInfo("谷歌财经抓取失败，开始使用API接口fallback");
+    fetchWithFallback(apiUrls, 0);
   }
-  if (!(date instanceof Date) || isNaN(date)) return "时间格式异常";
-  return date.toLocaleString("zh-CN", {
-    timeZone: "Asia/Shanghai",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false
-  });
-}
+});
 
-/**
- * 日志输出（北京时间）
- */
-function logInfo(message) {
-  const timeStr = new Date().toLocaleTimeString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
-  console.log(`[Exchange ${timeStr}] ${message}`);
-}
-
-/**
- * 通知冷却检测
- */
-function canNotify(key) {
-  try {
-    const lastNotify = parseInt($persistentStore.read("notify_time_" + key)) || 0;
-    return Date.now() - lastNotify > notifyCooldownMinutes * 60 * 1000;
-  } catch {
-    return true;
-  }
-}
-
-/**
- * 设置通知时间
- */
-function setNotifyTime(key) {
-  try {
-    $persistentStore.write(String(Date.now()), "notify_time_" + key);
-  } catch (e) {
-    logInfo(`通知时间写入异常：${e.message || e}`);
-  }
-}
-
-/**
- * 格式化汇率小数位
- */
-function formatRate(value, decimals = 2) {
-  return Number(value).toFixed(decimals);
-}
-
-/**
- * 从谷歌财经网页抓取汇率数据（优先抓取）
- * 
- * 解析谷歌汇率网页HTML，抽取汇率数据
- * 返回格式：{ rates: {...}, lastUpdate: 'xxxx', nextUpdate: '未知' }
- */
+// 从谷歌财经抓取汇率函数，异步请求多个页面
 function fetchFromGoogle(callback) {
-  const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
+  const results = {};
+  let completed = 0;
+  let hasError = false;
+  let lastUpdateTimestamp = 0;
 
-  // google财经URL示例（基于人民币CNY对USD的汇率）
-  // 这里只抓取CNY对各币种的汇率，转换方式要注意
-  // 通过https://www.google.com/finance/quote/{from}-{to}可以查询汇率
-  // 为了减少请求，选用单个固定汇率URL再提取多个汇率数据较难，改为依次请求
-
-  // 为了效率，只请求CNY-USD这个汇率页面，抓取美元兑人民币汇率，再用API补充其他？但要求优先全部谷歌，故需要多次请求
-  // 但多次请求不合适，改为抓一个通用网页解析多个汇率，改用汇率对CNY的转换价（直接用USD/CNY，EUR/CNY等）
-  // 目前谷歌财经没提供单页多货币对的API，只能单独请求
-
-  // 这里采用多接口依次请求方式，或者改成抓谷歌汇率对人民币的网页（例如：https://www.google.com/search?q=CNY+to+USD）
-  // 这里示例仅请求单页谷歌汇率的HTML，需在实际环境中运行验证
-
-  // 由于Surge环境httpClient限制，这里示范一个单URL抓取，然后解析汇率的思路
-  const googleUrl = "https://www.google.com/finance/quote/USD-CNY";
-
-  logInfo(`尝试从谷歌财经抓取汇率，URL：${googleUrl}`);
-
-  $httpClient.get(googleUrl, (error, response, data) => {
-    if (error || !data) {
-      logInfo(`谷歌财经请求失败：${error || "无响应"}`);
-      callback(null);
-      return;
-    }
-
-    try {
-      // 用正则提取汇率数字，谷歌网页的价格标签：<div class="YMlKec fxKbKc">7.2719</div>（class可能变化，需动态适配）
-      // 这里只能示范简单提取USD-CNY汇率，其他币种需单独请求或另外处理
-
-      // 示例正则，匹配第一个class="YMlKec fxKbKc"后的数字
-      const match = data.match(/<div[^>]*class="YMlKec fxKbKc"[^>]*>([\d\.]+)<\/div>/);
-      if (!match) throw new Error("无法解析谷歌汇率数据");
-
-      const usdToCny = parseFloat(match[1]);
-      if (isNaN(usdToCny)) throw new Error("解析到的汇率不是数字");
-
-      // 因为谷歌给的是 USD -> CNY 汇率，即 1 USD = usdToCny CNY
-      // 我们的基准是 CNY ，所以 CNY->USD = 1 / usdToCny
-
-      // 这里暂时只示范USD汇率，其他币种交给API fallback
-      const rates = { USD: 1 / usdToCny };
-
-      // 其他币种数据空缺，让API补充
-      const lastUpdate = formatTimeToBeijing(new Date());
+  function tryFinish() {
+    completed++;
+    if (completed === googleCurrencies.length) {
+      if (hasError && Object.keys(results).length === 0) {
+        callback(null);
+        return;
+      }
+      // 转换成基准CNY的rates（人民币为基准）
+      const rates = {};
+      for (const curr of googleCurrencies) {
+        if (curr === baseCurrency) {
+          rates[curr] = 1;
+        } else if (results[curr]) {
+          rates[curr] = 1 / results[curr]; // CNY基准，CNY->币种 = 1 / 币种->CNY
+        }
+      }
+      const lastUpdate = formatTimeToBeijing(lastUpdateTimestamp * 1000);
       const nextUpdate = "未知";
-
-      logInfo(`谷歌财经抓取成功，USD汇率(基于CNY): ${rates.USD}`);
-
+      logInfo(`谷歌财经所有币种汇率抓取完成，时间：${lastUpdate}`);
       callback({ rates, lastUpdate, nextUpdate, source: "谷歌财经" });
-    } catch (e) {
-      logInfo(`谷歌财经数据解析异常：${e.message || e}`);
-      callback(null);
     }
-  });
+  }
+
+  for (const curr of googleCurrencies) {
+    if (curr === baseCurrency) {
+      results[curr] = 1;
+      tryFinish();
+      continue;
+    }
+    const url = `https://www.google.com/finance/quote/${curr}-${baseCurrency}`;
+    logInfo(`请求谷歌财经汇率页面：${url}`);
+    $httpClient.get(url, (error, response, data) => {
+      if (error || !data) {
+        logInfo(`谷歌财经请求失败：${curr} - ${error || "无响应"}`);
+        hasError = true;
+        tryFinish();
+        return;
+      }
+      try {
+        const regex = /<div[^>]*data-source="(\w+)"[^>]*data-target="(\w+)"[^>]*data-last-price="([\d\.]+)"[^>]*data-last-normal-market-timestamp="(\d+)"[^>]*>/g;
+        let match, foundRate = null, foundTimestamp = null;
+        while ((match = regex.exec(data)) !== null) {
+          const [_, source, target, priceStr, tsStr] = match;
+          if (source === curr && target === baseCurrency) {
+            foundRate = parseFloat(priceStr);
+            foundTimestamp = parseInt(tsStr);
+            break;
+          }
+        }
+        if (foundRate === null) {
+          logInfo(`未找到${curr}->${baseCurrency}汇率`);
+          hasError = true;
+        } else {
+          results[curr] = foundRate;
+          if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp;
+          logInfo(`谷歌财经抓取${curr}->${baseCurrency}汇率成功：${foundRate}`);
+        }
+      } catch (e) {
+        logInfo(`解析${curr}汇率异常：${e.message || e}`);
+        hasError = true;
+      }
+      tryFinish();
+    });
+  }
 }
 
-/**
- * API接口抓取汇率（备用方案）
- */
-function fetchWithFallback(urls, index = 0, googleRates = null) {
+// 失败时用API接口fallback抓取
+function fetchWithFallback(urls, index = 0) {
   if (index >= urls.length) {
-    if (googleRates) {
-      // 谷歌成功但部分币种缺失时使用谷歌数据（目前只USD有）
-      logInfo("API接口请求失败，使用谷歌财经数据（部分币种）");
-      processData(googleRates.rates, googleRates.lastUpdate, googleRates.nextUpdate, googleRates.source);
-      return;
-    }
     logInfo("❌ 所有接口请求均失败，脚本结束");
     $done({
       title: "汇率获取失败",
@@ -184,17 +119,14 @@ function fetchWithFallback(urls, index = 0, googleRates = null) {
     });
     return;
   }
-
   const url = urls[index];
   logInfo(`请求接口：${url}`);
-
   $httpClient.get(url, (error, response, data) => {
     if (error || !data) {
       logInfo(`请求失败：${error || "无响应"}，尝试下一个接口`);
-      fetchWithFallback(urls, index + 1, googleRates);
+      fetchWithFallback(urls, index + 1);
       return;
     }
-
     try {
       const parsed = JSON.parse(data);
       let rates, lastUpdate, nextUpdate;
@@ -213,49 +145,19 @@ function fetchWithFallback(urls, index = 0, googleRates = null) {
       } else {
         throw new Error("未知接口格式");
       }
-
-      // 如果谷歌有部分汇率，合并补充，优先API数据
-      if (googleRates) {
-        for (const key in googleRates.rates) {
-          if (!(key in rates)) {
-            rates[key] = googleRates.rates[key];
-          }
-        }
-      }
-
       logInfo(`数据获取成功，接口：${url.match(/https?:\/\/([^/]+)/)[1]}`);
       logInfo(`数据最后更新时间（北京时间）：${lastUpdate}`);
       logInfo(`预计下一次更新时间（北京时间）：${nextUpdate}`);
-
       processData(rates, lastUpdate, nextUpdate, url);
     } catch (e) {
       logInfo(`数据解析异常：${e.message || e}，尝试下一个接口`);
-      fetchWithFallback(urls, index + 1, googleRates);
+      fetchWithFallback(urls, index + 1);
     }
   });
 }
 
-/**
- * 主流程，先尝试谷歌抓取，失败则调用API接口
- */
-function main() {
-  fetchFromGoogle((googleResult) => {
-    if (googleResult) {
-      // 谷歌抓取成功，继续用API接口补充其余币种
-      fetchWithFallback(urls, 0, googleResult);
-    } else {
-      // 谷歌抓取失败，直接用API接口
-      fetchWithFallback(urls, 0, null);
-    }
-  });
-}
-
-/**
- * 处理汇率数据，计算、日志、通知、缓存、构造面板文本
- */
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
-  const sourceDomain = typeof sourceUrl === "string" ? (sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl) : sourceUrl.source || "未知来源";
-
+  const sourceDomain = sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl;
   let content = "";
   const displayRates = [
     { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
@@ -282,11 +184,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     const amount = item.isBaseForeign ? strongAmount : weakAmount;
     let rateValue, text;
     if (item.isBaseForeign) {
+      // 美元、欧元、英镑: 币种兑换人民币
       rateValue = amount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}（来源：${sourceDomain}）`;
+      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
+      // 港币、日元、韩元、里拉: 人民币兑换币种
       rateValue = amount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}（来源：${sourceDomain}）`;
+      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
     logInfo(`汇率信息：${text}`);
@@ -356,9 +260,71 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   });
 }
 
-/**
- * 解析参数
- */
+// 工具函数，格式化时间为北京时间字符串
+function formatTimeToBeijing(timeInput) {
+  if (!timeInput || timeInput === "未知") return "未知";
+  let date = null;
+  if (typeof timeInput === "number") {
+    if (timeInput > 1e12) {
+      date = new Date(timeInput);
+    } else if (timeInput > 1e10) {
+      date = new Date(timeInput);
+    } else {
+      date = new Date(timeInput * 1000);
+    }
+  } else if (typeof timeInput === "string") {
+    const s = timeInput.trim();
+    if (/^\d{10,13}$/.test(s)) {
+      if (s.length === 13) {
+        date = new Date(Number(s));
+      } else if (s.length === 10) {
+        date = new Date(Number(s) * 1000);
+      }
+    } else if (/^\d{4}-\d{2}-\d{2}(T.*)?(Z|[\+\-]\d{2}:?\d{2})?$/.test(s)) {
+      date = new Date(s);
+    } else {
+      date = new Date(s);
+    }
+  }
+  if (!(date instanceof Date) || isNaN(date)) return "时间格式异常";
+  return date.toLocaleString("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+}
+
+// 工具函数，日志打印
+function logInfo(message) {
+  const timeStr = new Date().toLocaleTimeString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
+  console.log(`[Exchange ${timeStr}] ${message}`);
+}
+
+// 通知冷却判定
+function canNotify(key) {
+  try {
+    const lastNotify = parseInt($persistentStore.read("notify_time_" + key)) || 0;
+    return Date.now() - lastNotify > notifyCooldownMinutes * 60 * 1000;
+  } catch {
+    return true;
+  }
+}
+
+// 记录通知时间
+function setNotifyTime(key) {
+  try {
+    $persistentStore.write(String(Date.now()), "notify_time_" + key);
+  } catch (e) {
+    logInfo(`通知时间写入异常：${e.message || e}`);
+  }
+}
+
+// 解析参数
 function getParams(paramStr) {
   try {
     return Object.fromEntries(
@@ -373,4 +339,7 @@ function getParams(paramStr) {
   }
 }
 
-main();
+// 格式化数字汇率
+function formatRate(value, decimals = 2) {
+  return Number(value).toFixed(decimals);
+}
