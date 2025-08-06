@@ -91,12 +91,12 @@ function fetchFromGoogle(callback) {
           }
         }
         if (foundRate === null) {
-          logInfo(`未找到${curr}->${baseCurrency}汇率`);
+          logInfo(`未找到${curr}≈${baseCurrency}汇率`);
           hasError = true;
         } else {
           results[curr] = foundRate;
           if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp;
-          logInfo(`谷歌财经抓取${curr}->${baseCurrency}汇率成功：${foundRate}`);
+          logInfo(`谷歌财经抓取${curr}≈${baseCurrency}汇率成功：${foundRate}`);
         }
       } catch (e) {
         logInfo(`解析${curr}汇率异常：${e.message || e}`);
@@ -187,11 +187,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (item.isBaseForeign) {
       // 美元、欧元、英镑: 币种兑换人民币
       rateValue = amount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+      text = `${amount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
       // 港币、日元、韩元、里拉: 人民币兑换币种
       rateValue = amount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      text = `${amount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
     // 加上来源标记
@@ -240,7 +240,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     logInfo("无汇率波动超出阈值");
   }
 
-  content += `\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
+  content += `\n数据更新时间：${lastUpdate}`;
+  if (nextUpdate && nextUpdate !== "未知") {
+    content += `\n下次更新时间：${nextUpdate}`;
+  }
+
   logInfo(`刷新面板内容：\n${content}`);
 
   const beijingTime = new Date().toLocaleString("zh-CN", {
