@@ -1,3 +1,41 @@
+/**
+ * 📈 汇率监控脚本（支持 Surge）
+ *
+ * 👤 作者：okk
+ * 🕒 更新时间：北京时间 2025-08-07
+ * 🧩 适配平台：仅测试于 Surge，其他平台（如 Loon、Quantumult X）暂未验证
+ *
+ * 📌 功能概述：
+ * 1. 获取人民币（CNY）与多个主要币种（USD, EUR, GBP, HKD, JPY, KRW, TRY）的汇率数据
+ * 2. 优先从谷歌财经抓取数据，若缺失或失败则回退至多个公共汇率 API 补充或替代
+ * 3. 自动换算为：
+ *    - 强势币（如美元、欧元）等价于多少人民币
+ *    - 人民币等价于多少单位的弱势币（如日元、韩元等）
+ * 4. 支持设置汇率波动阈值（百分比），当某币种汇率与上次缓存值相比波动超出阈值时触发通知
+ * 5. 通知支持冷却时间控制，防止重复推送
+ * 6. 支持显示数据来源（WEB / API）、上次更新时间
+ * 7. 参数支持自定义，包含以下：
+ *    - threshold: 触发通知的波动百分比阈值（默认 0.3）
+ *    - notify: 是否启用通知（true/false）
+ *    - base_strong: 强势币种用于换算的单位（默认 1）
+ *    - base_weak: 弱势币种用于换算的人民币数量（默认 1）
+ *    - notify_cooldown: 通知冷却时间（单位：分钟，默认 5）
+ *    - debug: 是否输出调试信息到控制台
+ *    - icon, color: 自定义通知图标与颜色
+ *
+ * 💡 参数示例：
+ * threshold:0.5,notify:true,base_strong:1,base_weak:100,notify_cooldown:10
+ *
+ * 📊 汇率数据来源：
+ * - 谷歌财经：https://www.google.com/finance
+ * - Open ER API：https://open.er-api.com
+ * - ExchangeRate API：https://api.exchangerate-api.com
+ * - Frankfurter API：https://api.frankfurter.app
+ *
+ * 🧠 缓存机制：
+ * - 使用 $persistentStore 存储上次汇率与通知时间，供后续对比与节流
+ */
+
 const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 const baseCurrency = "CNY";
 const apiUrls = [
