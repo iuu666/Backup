@@ -272,7 +272,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     let sourceLabel = "";
     // 优先用谷歌汇率
     if (googleRates[item.key] !== undefined) {
-      sourceLabel = "网页";
+      sourceLabel = "WEB";
       rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
