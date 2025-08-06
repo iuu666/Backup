@@ -27,7 +27,7 @@ logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 // 主入口，先尝试谷歌财经抓取
 fetchFromGoogle(result => {
   if (result) {
-    processData(result.rates, result.lastUpdate, result.nextUpdate, result.source);
+    processData(result.rates, result.lastUpdate, result.nextUpdate, "https://www.google.com");
   } else {
     logInfo("谷歌财经抓取失败，开始使用API接口fallback");
     fetchWithFallback(apiUrls, 0);
@@ -60,7 +60,7 @@ function fetchFromGoogle(callback) {
       const lastUpdate = formatTimeToBeijing(lastUpdateTimestamp * 1000);
       const nextUpdate = "未知";
       logInfo(`谷歌财经所有币种汇率抓取完成，时间：${lastUpdate}`);
-      callback({ rates, lastUpdate, nextUpdate, source: "谷歌财经" });
+      callback({ rates, lastUpdate, nextUpdate });
     }
   }
 
@@ -157,7 +157,8 @@ function fetchWithFallback(urls, index = 0) {
 }
 
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
-  const sourceDomain = sourceUrl.match(/https?:\/\/([^/]+)/)?.[1] || sourceUrl;
+  const sourceLabel = (typeof sourceUrl === "string" && sourceUrl.toLowerCase().includes("google")) ? "网页" : "API";
+
   let content = "";
   const displayRates = [
     { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
@@ -184,17 +185,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     const amount = item.isBaseForeign ? strongAmount : weakAmount;
     let rateValue, text;
     if (item.isBaseForeign) {
-      // 美元、欧元、英镑: 币种≈人民币
+      // 美元、欧元、英镑: 币种兑换人民币
       rateValue = amount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
-      // 港币、日元、韩元、里拉: 人民币≈币种
+      // 港币、日元、韩元、里拉: 人民币兑换币种
       rateValue = amount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
     // 加上来源标记
-    const sourceLabel = sourceDomain.includes("google") ? "网页" : "API";
     content += `${text} （${sourceLabel}）\n`;
 
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
