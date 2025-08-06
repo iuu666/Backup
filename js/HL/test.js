@@ -1,4 +1,3 @@
-// 汇率监控（重构优化版）By ChatGPT @OpenAI 2025
 const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 const baseCurrency = "CNY";
 const apiUrls = [
