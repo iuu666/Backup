@@ -184,13 +184,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     const amount = item.isBaseForeign ? strongAmount : weakAmount;
     let rateValue, text;
     if (item.isBaseForeign) {
-      // 美元、欧元、英镑: 币种兑换人民币
+      // 美元、欧元、英镑: 币种≈人民币
       rateValue = amount / rates[item.key];
-      text = `${amount}${item.label}${flagMap[item.key]} 兑换 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
+      text = `${amount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`;
     } else {
-      // 港币、日元、韩元、里拉: 人民币兑换币种
+      // 港币、日元、韩元、里拉: 人民币≈币种
       rateValue = amount * rates[item.key];
-      text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      text = `${amount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
     // 加上来源标记
