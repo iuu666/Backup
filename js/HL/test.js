@@ -24,24 +24,27 @@ logInfo(`汇率波动阈值：${threshold}%`);
 logInfo(`兑换基数（强势币）：${strongAmount}，兑换基数（弱势币）：${weakAmount}`);
 logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
+let globalGoogleResult = null;  // 记录谷歌结果
+let globalApiResult = null;     // 记录API补充结果
+
 // 主入口，先尝试谷歌财经抓取所有币种
 fetchFromGoogle((googleResult) => {
   if (googleResult && Object.keys(googleResult.rates).length > 0) {
+    globalGoogleResult = googleResult;
     // 检查哪些币种缺失
     const missingCurrencies = googleCurrencies.filter(c => !(c in googleResult.rates));
     if (missingCurrencies.length === 0) {
       // 全部抓取成功，直接处理
       logInfo("谷歌财经所有币种均抓取成功，无需API补充");
-      processData(googleResult.rates, googleResult.lastUpdate, googleResult.nextUpdate, "https://www.google.com");
+      processData(googleResult.rates, googleResult.lastUpdate, googleResult.nextUpdate, null);
     } else {
       logInfo(`谷歌财经部分币种缺失，开始用API补充缺失币种：${missingCurrencies.join(", ")}`);
       // 用API补充缺失币种
       fetchFromApiForCurrencies(missingCurrencies, (apiResult) => {
+        globalApiResult = apiResult;
         // 合并谷歌和API结果（以API补充缺失币种）
         const combinedRates = { ...googleResult.rates, ...apiResult.rates };
-        const lastUpdate = googleResult.lastUpdate !== "未知" ? googleResult.lastUpdate : apiResult.lastUpdate;
-        const nextUpdate = googleResult.nextUpdate !== "未知" ? googleResult.nextUpdate : apiResult.nextUpdate;
-        processData(combinedRates, lastUpdate, nextUpdate, "混合来源（谷歌+API）");
+        processData(combinedRates, null, null, null); // 数据更新时间统一在 processData 里单独处理
       });
     }
   } else {
@@ -51,8 +54,7 @@ fetchFromGoogle((googleResult) => {
   }
 });
 
-
-// 重新定义 fetchFromGoogle ，获取所有币种汇率（CNY为基准），保持不变
+// 从谷歌财经抓取函数，保持不变
 function fetchFromGoogle(callback) {
   const results = {};
   let completed = 0;
@@ -125,14 +127,12 @@ function fetchFromGoogle(callback) {
   }
 }
 
-// 新增函数：用API补充部分币种汇率
+// 用API补充部分币种汇率
 function fetchFromApiForCurrencies(currencyList, callback) {
-  // 先按优先顺序尝试每个API接口，拿到包含这些币种的汇率，逐币种提取
   let apiIndex = 0;
 
   function tryApiFetch() {
     if (apiIndex >= apiUrls.length) {
-      // 全部接口都失败，返回空结果
       logInfo("❌ 所有接口请求均失败，补充币种失败");
       callback({ rates: {}, lastUpdate: "未知", nextUpdate: "未知" });
       return;
@@ -164,7 +164,6 @@ function fetchFromApiForCurrencies(currencyList, callback) {
         } else {
           throw new Error("未知接口格式");
         }
-        // 过滤只要缺失的币种汇率
         const filteredRates = {};
         for (const cur of currencyList) {
           if (cur === baseCurrency) {
@@ -173,7 +172,6 @@ function fetchFromApiForCurrencies(currencyList, callback) {
             filteredRates[cur] = ratesRaw[cur];
           }
         }
-        // 如果部分币种成功了，返回结果
         if (Object.keys(filteredRates).length > 0) {
           logInfo(`补充接口数据获取成功，接口：${url.match(/https?:\/\/([^/]+)/)[1]}`);
           callback({
@@ -196,7 +194,6 @@ function fetchFromApiForCurrencies(currencyList, callback) {
 
   tryApiFetch();
 }
-
 
 // 失败时用API接口fallback抓取（整体抓取），保持不变
 function fetchWithFallback(urls, index = 0) {
@@ -247,8 +244,15 @@ function fetchWithFallback(urls, index = 0) {
   });
 }
 
+// 修改processData，增加同时显示网页和API更新时间和下次更新时间
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
-  const sourceLabel = (typeof sourceUrl === "string" && sourceUrl.toLowerCase().includes("google")) ? "网页" : (sourceUrl === "混合来源（谷歌+API）" ? "网页+API" : "API");
+  // 区分数据来源
+  // 传入的 sourceUrl 在补充合并时可能是 null
+  // 这里使用全局变量 globalGoogleResult 和 globalApiResult 来区分更新时间
+
+  const sourceLabel = (typeof sourceUrl === "string" && sourceUrl.toLowerCase().includes("google")) ? "网页" :
+    (sourceUrl && sourceUrl.toLowerCase().includes("api")) ? "API" :
+    (globalGoogleResult && globalApiResult) ? "网页+API" : "API";
 
   let content = "";
   const displayRates = [
@@ -323,6 +327,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
   }
 
+  // 添加波动提醒内容
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
     logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
@@ -330,13 +335,24 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     logInfo("无汇率波动超出阈值");
   }
 
-  content += `\n数据更新时间：${lastUpdate}`;
-  if (nextUpdate && nextUpdate !== "未知") {
-    content += `\n下次更新时间：${nextUpdate}`;
+  // ======= 新增：同时显示网页和API的更新时间，未知不显示 =======
+  let lastUpdateContent = "";
+  if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
+    lastUpdateContent += `数据更新时间（网页）：${globalGoogleResult.lastUpdate}\n`;
   }
+  if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
+    lastUpdateContent += `数据更新时间（API）：${globalApiResult.lastUpdate}\n`;
+  }
+  if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
+    lastUpdateContent += `下次更新时间（网页）：${globalGoogleResult.nextUpdate}\n`;
+  }
+  if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
+    lastUpdateContent += `下次更新时间（API）：${globalApiResult.nextUpdate}\n`;
+  }
+  content += `\n${lastUpdateContent.trim()}`;
+  // ======= 新增结束 =======
 
-  logInfo(`刷新面板内容：\n${content}`);
-
+  // panel 标题时间显示北京时间
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour12: false,
@@ -355,8 +371,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     "icon-color": params.color || "#EF8F1C"
   });
 }
-
-// 其他工具函数保持不变
 
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
