@@ -193,7 +193,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       text = `${amount}人民币${flagMap.CNY} 兑换 ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
     }
 
-    logInfo(`汇率信息：${text}`);
+    // 加上来源标记
+    const sourceLabel = sourceDomain.includes("google") ? "网页" : "API";
+    content += `${text} （${sourceLabel}）\n`;
+
+    logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
     let prev = NaN;
     try {
@@ -227,8 +231,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     } catch (e) {
       logInfo(`缓存写入异常：${e.message || e}`);
     }
-
-    content += text + "\n";
   }
 
   if (fluctuations.length > 0) {
@@ -238,7 +240,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     logInfo("无汇率波动超出阈值");
   }
 
-  content += `\n数据来源：${sourceDomain}\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
+  content += `\n数据更新时间：${lastUpdate}\n下次更新时间：${nextUpdate}`;
   logInfo(`刷新面板内容：\n${content}`);
 
   const beijingTime = new Date().toLocaleString("zh-CN", {
