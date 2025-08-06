@@ -6,7 +6,6 @@ const apiUrls = [
   "https://api.frankfurter.app/latest?from=CNY"
 ];
 
-// 参数解析
 const params = getParams($argument);
 const threshold = Math.max(parseFloat(params.threshold) || 0.3, 0.01);
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
@@ -14,11 +13,9 @@ const strongAmount = Math.max(parseFloat(params.base_strong) || 1, 0.01);
 const weakAmount = Math.max(parseFloat(params.base_weak) || 1, 0.01);
 const notifyCooldownMinutes = Math.max(parseInt(params.notify_cooldown) || 5, 1);
 
-// 全局变量
 let globalGoogleResult = null;
 let globalApiResult = null;
 
-// 启动
 main();
 
 async function main() {
@@ -46,8 +43,6 @@ async function main() {
     await fetchWithFallback(apiUrls);
   }
 }
-
-// =================== 数据获取 ===================
 
 async function fetchFromGoogleAsync() {
   const results = {};
@@ -138,8 +133,6 @@ async function fetchWithFallback(urls) {
   });
 }
 
-// =================== 数据处理 ===================
-
 function processData(rates, lastUpdate, nextUpdate) {
   const displayRates = [
     { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
@@ -212,8 +205,6 @@ function processData(rates, lastUpdate, nextUpdate) {
   });
 }
 
-// =================== 工具函数 ===================
-
 function parseApiRates(url, parsed) {
   if (url.includes("open.er-api.com")) {
     return {
@@ -284,6 +275,10 @@ function formatTimeToBeijing(input) {
 
 function nowCN() {
   return new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" });
+}
+
+function formatRate(val, decimals = 2) {
+  return Number(val).toFixed(decimals);
 }
 
 function logInfo(msg) {
