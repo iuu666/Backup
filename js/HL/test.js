@@ -1,6 +1,5 @@
 const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 const baseCurrency = "CNY";
-
 const apiUrls = [
   "https://open.er-api.com/v6/latest/CNY",
   "https://api.exchangerate-api.com/v4/latest/CNY",
@@ -121,7 +120,6 @@ function fetchFromGoogle(callback) {
 
 function fetchFromApiForCurrencies(currencyList, callback) {
   let apiIndex = 0;
-
   function tryApiFetch() {
     if (apiIndex >= apiUrls.length) {
       logInfo("❌ 所有接口请求均失败，补充币种失败");
@@ -182,7 +180,6 @@ function fetchFromApiForCurrencies(currencyList, callback) {
       }
     });
   }
-
   tryApiFetch();
 }
 
@@ -234,8 +231,6 @@ function fetchWithFallback(urls, index = 0) {
   });
 }
 
-// 其余 processData / formatTimeToBeijing / logInfo / canNotify 等函数无需变动
-
 function httpGetWithRetry(url, retries, callback) {
   const maxRetries = retries || 2;
   let attempt = 0;
@@ -268,6 +263,3 @@ function getParams(arg) {
   });
   return obj;
 }
-
-// 保留 processData 等原函数
-// 若你还需我整合完整的压缩版本（用于 Surge 规则中复制粘贴），可以告诉我
