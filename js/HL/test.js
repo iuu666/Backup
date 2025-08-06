@@ -272,7 +272,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     let sourceLabel = "";
     // 优先用谷歌汇率
     if (googleRates[item.key] !== undefined) {
-      sourceLabel = "WEB";
+      sourceLabel = "网页";
       rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
@@ -336,16 +336,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   // 显示更新时间（分别显示网页和API的）
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
+    lastUpdateContent += `数据更新时间（网页）：${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate（API）：${globalApiResult.lastUpdate}\n`;
+    lastUpdateContent += `数据更新时间（API）：${globalApiResult.lastUpdate}\n`;
   }
   if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
+    lastUpdateContent += `下次更新时间（网页）：${globalGoogleResult.nextUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate（API）：${globalApiResult.nextUpdate}\n`;
+    lastUpdateContent += `下次更新时间（API）：${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
 
