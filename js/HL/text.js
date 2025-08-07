@@ -1,3 +1,4 @@
+// 1.0
 const currencies = [
   { key: "USD", label: "美元", decimals: 2 },
   { key: "EUR", label: "欧元", decimals: 2 },
