@@ -1,7 +1,7 @@
 /**
  * 汇率监控脚本（基准货币：CNY）
  * Author: okk
- * Version: 1.2
+ * Version: 1.3
  * Last Updated: 2025-08-07
  * Environment: Surge,其他未知
  *
@@ -75,6 +75,7 @@
  * - 不建议执行频率过高，避免频繁通知或接口限流
  *
  */
+
 // 汇率源配置与基准币种设置 
 const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"]; // 要抓取的币种列表，基准是CNY
 const baseCurrency = "CNY"; // 基准币种，人民币
