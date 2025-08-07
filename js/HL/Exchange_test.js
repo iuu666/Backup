@@ -85,8 +85,20 @@ const apiUrls = [
   "https://api.exchangerate-api.com/v4/latest/CNY",
   "https://api.frankfurter.app/latest?from=CNY"
 ];
+// ✅ 推荐的参数解析，兼容 Surge 的模块参数传入格式
+const params = (() => {
+  if (typeof $argument !== "undefined") {
+    return Object.fromEntries(
+      $argument.split("&").map(p => {
+        const [key, value = ""] = p.split("=");
+        return [key.trim(), decodeURIComponent(value)];
+      })
+    );
+  }
+  return {};
+})();
+
 // 参数解析与默认值设置 
-const params = getParams($argument);
 const thresholdRaw = parseFloat(params.threshold);
 const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.1 : thresholdRaw;
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
@@ -97,11 +109,13 @@ const weakAmount = (isNaN(weakAmountRaw) || weakAmountRaw <= 0) ? 1 : weakAmount
 const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown);
 const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw;
 
+// 调试日志
 logInfo(`脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
 logInfo(`通知推送开关：${enableNotify ? "开启 ✅" : "关闭 🚫"}`);
 logInfo(`汇率波动阈值：${threshold}%`);
 logInfo(`兑换基数（强势币）：${strongAmount}，兑换基数（弱势币）：${weakAmount}`);
 logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
+
 
 let globalGoogleResult = null;  // 记录谷歌结果
 let globalApiResult = null;     // 记录API补充结果
