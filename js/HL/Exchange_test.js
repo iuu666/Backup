@@ -346,24 +346,28 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   let content = "";
   let fluctuations = [];
 
+  logInfo(`强势币基数 strongAmount=${strongAmount}，弱势币基数 weakAmount=${weakAmount}`);
+
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
 
     if (googleRates[item.key] !== undefined) {
       sourceLabel = "WEB";
-      const rate = googleRates[item.key];
-      const cnyToForeign = 1 / rate;
+      const rate = googleRates[item.key];       // 1 外币 = rate 人民币
+      const cnyToForeign = 1 / rate;             // 1 人民币 = cnyToForeign 外币
       rateValue = item.isBaseForeign
-        ? strongAmount * cnyToForeign
-        : weakAmount * rate;
+        ? strongAmount * cnyToForeign           // 强势币基数乘人民币兑外币汇率
+        : weakAmount * rate;                     // 弱势币基数乘外币兑人民币汇率
+      logInfo(`[WEB] ${item.key} 汇率：${rate}，计算后值：${rateValue}`);
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
       const rate = apiRates[item.key];
-      // 如果 API 返回的是人民币兑外币汇率，请用下面逻辑：
+      // 假设API给的是人民币兑外币，如果不是，调整这里逻辑
       rateValue = item.isBaseForeign
         ? strongAmount * rate
         : weakAmount * (1 / rate);
+      logInfo(`[API] ${item.key} 汇率：${rate}，计算后值：${rateValue}`);
     } else {
       logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
@@ -376,6 +380,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     content += `${text} （${sourceLabel}）\n`;
 
+    // 读取缓存
     let prev = NaN;
     try {
       const cacheStr = $persistentStore.read("exrate_" + item.key);
@@ -387,17 +392,17 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
       if (Math.abs(change) >= threshold) {
-        const arrow = change > 0 ? "↑" : "↓";
-        const sign = change > 0 ? "+" : "-";
-        const changeStr = `${sign}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${nameMap[item.key]} ${arrow} ${changeStr}`);
+        const symbol = change > 0 ? "📈" : "📉";
+        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
+        fluctuations.push(`${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
 
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${arrow} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${symbol} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
+          logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
           setNotifyTime(item.key);
         }
       }
@@ -405,14 +410,19 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     try {
       $persistentStore.write(String(rateValue), "exrate_" + item.key);
-    } catch {}
+      logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
+    } catch (e) {
+      logInfo(`缓存写入异常：${e.message || e}`);
+    }
   }
 
   if (fluctuations.length > 0) {
-    content += `\n📈 汇率变动提醒：\n${fluctuations.join("\n")}\n`;
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
+    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
+  } else {
+    logInfo("无汇率波动超出阈值");
   }
 
-  // 追加更新时间信息（可根据你的需求保留）
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
