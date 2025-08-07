@@ -333,8 +333,8 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "EUR", label: "欧元", isBaseForeign: true, decimals: 2 },
     { key: "GBP", label: "英镑", isBaseForeign: true, decimals: 2 },
     { key: "HKD", label: "港币", isBaseForeign: false, decimals: 2 },
-    { key: "JPY", label: "日元", isBaseForeign: false, decimals: 0 },
-    { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
+    { key: "JPY", label: "日元", isBaseForeign: false, decimals: 2 },
+    { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 2 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
