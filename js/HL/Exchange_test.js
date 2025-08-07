@@ -352,19 +352,42 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   let fluctuations = [];
 
   for (const item of displayRates) {
-    let rateValue;
-    let sourceLabel = "";
-    if (googleRates[item.key] !== undefined) {
-      sourceLabel = "WEB";
-      rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
-    } else if (apiRates[item.key] !== undefined) {
-      sourceLabel = "API";
-      rateValue = item.isBaseForeign ? strongAmount / apiRates[item.key] : weakAmount * apiRates[item.key];
-    } else {
-      logInfo(`警告：${item.key} 数据缺失`);
-      content += `${item.label} 数据缺失\n`;
-      continue;
+  let rateValue;
+  let sourceLabel = "";
+
+  if (googleRates[item.key] !== undefined) {
+    sourceLabel = "WEB";
+    rateValue = item.isBaseForeign
+      ? strongAmount / googleRates[item.key]
+      : weakAmount * googleRates[item.key];
+
+    // 👇调试输出：确认是否正确乘上基数
+    if (item.key === "KRW") {
+      logInfo(`【调试】KRW 使用 Google 数据`);
+      logInfo(`【调试】KRW weakAmount = ${weakAmount}`);
+      logInfo(`【调试】KRW googleRate = ${googleRates["KRW"]}`);
+      logInfo(`【调试】KRW 显示结果 = ${rateValue}`);
     }
+
+  } else if (apiRates[item.key] !== undefined) {
+    sourceLabel = "API";
+    rateValue = item.isBaseForeign
+      ? strongAmount / apiRates[item.key]
+      : weakAmount * apiRates[item.key];
+
+    // 👇调试输出：如果没有 Google，使用 API 的情况
+    if (item.key === "KRW") {
+      logInfo(`【调试】KRW 使用 API 数据`);
+      logInfo(`【调试】KRW weakAmount = ${weakAmount}`);
+      logInfo(`【调试】KRW apiRate = ${apiRates["KRW"]}`);
+      logInfo(`【调试】KRW 显示结果 = ${rateValue}`);
+    }
+
+  } else {
+    logInfo(`警告：${item.key} 数据缺失`);
+    content += `${item.label} 数据缺失\n`;
+    continue;
+  }
 
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
