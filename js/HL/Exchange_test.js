@@ -1,7 +1,7 @@
 /**
  * 汇率监控脚本（基准货币：CNY）
  * Author: okk
- * Version: 1.3
+ * Version: 1.4
  * Last Updated: 2025-08-07
  * Environment: Surge,其他未知
  *
