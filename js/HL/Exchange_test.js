@@ -9,7 +9,7 @@ const apiUrls = [
 
 const params = getParams($argument);
 const thresholdRaw = parseFloat(params.threshold);
-const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.3 : thresholdRaw;
+const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.1 : thresholdRaw;
 const enableNotify = (params.notify || "true").toLowerCase() === "true";
 const strongAmountRaw = parseFloat(params.base_strong);
 const strongAmount = (isNaN(strongAmountRaw) || strongAmountRaw <= 0) ? 1 : strongAmountRaw;
