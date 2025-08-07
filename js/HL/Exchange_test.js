@@ -324,7 +324,6 @@ function fetchWithFallback(urls, index = 0) {
 }
 
 // 处理汇率数据并生成面板内容，逐条显示数据来源
-// 处理汇率数据并生成面板内容，逐条显示数据来源
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   const googleRates = globalGoogleResult?.rates || {};
   const apiRates = globalApiResult?.rates || {};
@@ -334,8 +333,8 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "EUR", label: "欧元", isBaseForeign: true, decimals: 2 },
     { key: "GBP", label: "英镑", isBaseForeign: true, decimals: 2 },
     { key: "HKD", label: "港币", isBaseForeign: false, decimals: 2 },
-    { key: "JPY", label: "日元", isBaseForeign: false, decimals: 2 },
-    { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 2 },
+    { key: "JPY", label: "日元", isBaseForeign: false, decimals: 0 },
+    { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
@@ -350,13 +349,23 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
+
     if (googleRates[item.key] !== undefined) {
       sourceLabel = "WEB";
-      rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
+      const rate = googleRates[item.key];
+      const cnyToForeign = 1 / rate;
+      rateValue = item.isBaseForeign
+        ? strongAmount * cnyToForeign
+        : weakAmount * rate;
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
-      rateValue = item.isBaseForeign ? strongAmount / apiRates[item.key] : weakAmount * apiRates[item.key];
+      const rate = apiRates[item.key];
+      // 如果 API 返回的是人民币兑外币汇率，请用下面逻辑：
+      rateValue = item.isBaseForeign
+        ? strongAmount * rate
+        : weakAmount * (1 / rate);
     } else {
+      logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
