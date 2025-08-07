@@ -133,7 +133,7 @@ fetchFromGoogle((googleResult) => {
   }
 });
 
-// 从谷歌财经抓取函数，保持不变
+// 从谷歌财经抓取函数
 function fetchFromGoogle(callback) {
   const results = {};
   let completed = 0;
@@ -323,9 +323,8 @@ function fetchWithFallback(urls, index = 0) {
   });
 }
 
-// 完整的 processData 函数，逐条显示数据来源
+// 处理汇率数据并生成面板内容，逐条显示数据来源
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
-  // 从全局拿谷歌和API的汇率对象
   const googleRates = globalGoogleResult?.rates || {};
   const apiRates = globalApiResult?.rates || {};
 
@@ -344,7 +343,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
   };
 
-  // 新增币种中文名称映射
   const nameMap = {
     USD: "美元", EUR: "欧元", GBP: "英镑",
     HKD: "港币", JPY: "日元", KRW: "韩元", TRY: "里拉"
@@ -356,7 +354,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
-    // 优先用谷歌汇率
     if (googleRates[item.key] !== undefined) {
       sourceLabel = "WEB";
       rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
@@ -377,7 +374,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
-    // 波动检测与通知
     let prev = NaN;
     try {
       const cacheStr = $persistentStore.read("exrate_" + item.key);
@@ -391,7 +387,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        // 这里改成显示国旗+中文名
         fluctuations.push(`${flagMap[item.key]} ${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
@@ -420,7 +415,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     logInfo("无汇率波动超出阈值");
   }
 
-  // 显示更新时间（分别显示网页和API的）
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
@@ -436,7 +430,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   }
   content += `\n${lastUpdateContent.trim()}`;
 
-  // 面板时间（北京时间）
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour12: false,
@@ -456,6 +449,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   });
 }
 
+// 格式化时间为北京时间字符串
 function formatTimeToBeijing(timeInput) {
   if (!timeInput || timeInput === "未知") return "未知";
   let date = null;
@@ -487,6 +481,7 @@ function formatTimeToBeijing(timeInput) {
   return date.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" });
 }
 
+// 判断是否可以发送通知（是否冷却完成）
 function canNotify(key) {
   try {
     const lastTimeStr = $persistentStore.read("notify_time_" + key);
@@ -499,12 +494,14 @@ function canNotify(key) {
   }
 }
 
+// 设置通知发送时间
 function setNotifyTime(key) {
   try {
     $persistentStore.write(new Date().toISOString(), "notify_time_" + key);
   } catch { }
 }
 
+// 日志打印辅助函数
 function logInfo(msg) {
   const prefix = "[汇率监控] ";
   if (typeof console !== "undefined" && console.log) {
@@ -514,6 +511,7 @@ function logInfo(msg) {
   }
 }
 
+// 解析脚本参数
 function getParams(arg) {
   if (!arg) return {};
   const obj = {};
@@ -524,6 +522,7 @@ function getParams(arg) {
   return obj;
 }
 
+// 格式化汇率数值
 function formatRate(num, decimals = 2) {
   if (typeof num !== "number" || isNaN(num)) return "未知";
   return num.toFixed(decimals);
