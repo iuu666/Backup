@@ -1,7 +1,8 @@
+
 /**
  * 汇率监控脚本（基准货币：CNY）
  * Author: okk
- * Version: 1.5
+ * Version: 1.4
  * Last Updated: 2025-08-07
  * Environment: Surge,其他未知
  *
@@ -436,7 +437,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (!isNaN(prev)) { // 计算波动百分比
       const change = ((rateValue - prev) / prev) * 100;
 
-      // —— 波动提醒格式替换开始 —— 
+      // —— 这里是波动提醒格式替换开始 —— 
       if (Math.abs(change) >= threshold) { // 超过阈值则触发提醒
         const symbol = change > 0 ? "↑" : "↓"; // 使用 ↑ 和 ↓ 表示涨跌
         const sign = change > 0 ? "+" : "-";  // 显示正负号
@@ -446,21 +447,14 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         // 构造波动提醒文本，例如：美元：↑ +0.45%
         fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
 
-        // ✅ 加强通知逻辑（保留原逻辑，加日志）
-        if (enableNotify) {
-          if (canNotify(item.key)) {
-            $notification.post(
-              `${symbol} ${nameMap[item.key]} ${sign}${absChange}%`,
-              "",
-              `当前汇率：${text}`
-            );
-            logInfo(`✅ 通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
-            setNotifyTime(item.key); // 设置通知时间，防止短时间重复通知
-          } else {
-            logInfo(`⚠️ 通知未发送：${item.key} 处于冷却中`);
-          }
-        } else {
-          logInfo(`🔕 通知未启用`);
+        if (enableNotify && canNotify(item.key)) { // 符合条件则推送通知
+          $notification.post(
+            `${symbol} ${nameMap[item.key]} ${sign}${absChange}%`,
+            "",
+            `当前汇率：${text}`
+          );
+          logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
+          setNotifyTime(item.key); // 设置通知时间，防止短时间重复通知
         }
       }
       // —— 波动提醒格式替换结束 —— 
@@ -474,20 +468,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       logInfo(`缓存写入异常：${e.message || e}`);
     }
   }
-
-  // 更新面板内容
-  const title = fluctuations.length > 0 ? "📈 汇率波动提醒" : "💱 当前汇率";
-  const icon = fluctuations.length > 0 ? "exclamationmark.arrow.triangle.2.circlepath" : "dollarsign.circle";
-  const iconColor = fluctuations.length > 0 ? "#ff9f0a" : "#007aff";
-  const panelContent = fluctuations.length > 0 ? fluctuations.join("\n") : content;
-
-  $done({
-    title,
-    content: panelContent,
-    icon,
-    "icon-color": iconColor,
-  });
-}
 
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`; // 汇率波动提醒信息
@@ -611,4 +591,3 @@ function formatRate(num, decimals = 2) {
   if (typeof num !== "number" || isNaN(num)) return "未知";
   return num.toFixed(decimals);
 }
-
