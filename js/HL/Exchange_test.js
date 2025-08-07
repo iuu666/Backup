@@ -338,9 +338,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
+
   const flagMap = {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
+  };
+
+  // 新增币种中文名称映射
+  const nameMap = {
+    USD: "美元", EUR: "欧元", GBP: "英镑",
+    HKD: "港币", JPY: "日元", KRW: "韩元", TRY: "里拉"
   };
 
   let content = "";
@@ -384,10 +391,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${item.key} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+        // 这里改成显示国旗+中文名
+        fluctuations.push(`${flagMap[item.key]} ${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${symbol} ${item.key} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${symbol} ${flagMap[item.key]} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
