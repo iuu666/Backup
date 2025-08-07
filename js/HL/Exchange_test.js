@@ -1,7 +1,7 @@
 /**
  * 汇率监控脚本（基准货币：CNY）
  * Author: okk
- * Version: 1.2
+ * Version: 1.0
  * Last Updated: 2025-08-07
  * Environment: Surge,其他未知
  *
@@ -338,6 +338,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
+  const flagMap = {
+    CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
+    HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
+  };
+
   const nameMap = {
     USD: "美元", EUR: "欧元", GBP: "英镑",
     HKD: "港币", JPY: "日元", KRW: "韩元", TRY: "里拉"
@@ -346,76 +351,55 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   let content = "";
   let fluctuations = [];
 
-  logInfo(`【基数】强势币基数：${strongAmount}，弱势币基数：${weakAmount}`);
-
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
-    let rawRate = null;
-
     if (googleRates[item.key] !== undefined) {
       sourceLabel = "WEB";
-      rawRate = googleRates[item.key]; // 谷歌：外币兑人民币，例1 USD = 7 CNY
-
-      if (item.isBaseForeign) {
-        // 强势币种：基数 * 汇率（外币兑人民币）
-        rateValue = strongAmount * rawRate;
-      } else {
-        // 弱势币种：基数 * 1 / 汇率
-        rateValue = weakAmount * (1 / rawRate);
-      }
+      rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
-      rawRate = apiRates[item.key]; // API：人民币兑外币，例1 CNY = 0.14 USD
-
-      if (item.isBaseForeign) {
-        // 强势币种：基数 / 汇率
-        rateValue = strongAmount / rawRate;
-      } else {
-        // 弱势币种：基数 * 汇率
-        rateValue = weakAmount * rawRate;
-      }
+      rateValue = item.isBaseForeign ? strongAmount / apiRates[item.key] : weakAmount * apiRates[item.key];
     } else {
-      logInfo(`⚠️ 缺失数据：${item.key}`);
+      logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
 
-    logInfo(`[${sourceLabel}] ${item.label} 原始汇率: ${rawRate}, 计算后值: ${rateValue}`);
-
     const text = item.isBaseForeign
-      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
-      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
+      ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
+      : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
 
     content += `${text} （${sourceLabel}）\n`;
 
-    // 读取缓存汇率值，计算波动
+    logInfo(`汇率信息：${text} （${sourceLabel}）`);
+
     let prev = NaN;
     try {
       const cacheStr = $persistentStore.read("exrate_" + item.key);
       prev = cacheStr !== null ? parseFloat(cacheStr) : NaN;
-    } catch { prev = NaN; }
+    } catch {
+      prev = NaN;
+    }
 
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
-
+        fluctuations.push(`${flagMap[item.key]} ${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${symbol} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${symbol} ${flagMap[item.key]} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
-          logInfo(`通知：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
+          logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
           setNotifyTime(item.key);
         }
       }
     }
 
-    // 缓存最新汇率值
     try {
       $persistentStore.write(String(rateValue), "exrate_" + item.key);
       logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
@@ -426,80 +410,26 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-    logInfo(`检测波动：\n${fluctuations.join("\n")}`);
+    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
-    logInfo("无超阈值波动");
+    logInfo("无汇率波动超出阈值");
   }
 
-  // 更新时间信息
   let lastUpdateContent = "";
-  if (globalGoogleResult?.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
+  if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
   }
-  if (globalApiResult?.lastUpdate && globalApiResult.lastUpdate !== "未知") {
+  if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（API）：${globalApiResult.lastUpdate}\n`;
   }
-  if (globalGoogleResult?.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
+  if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
     lastUpdateContent += `NextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
   }
-  if (globalApiResult?.nextUpdate && globalApiResult.nextUpdate !== "未知") {
+  if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
     lastUpdateContent += `NextUpdate（API）：${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
 
-  // 北京时间格式化显示
-  const beijingTime = new Date().toLocaleString("zh-CN", {
-    timeZone: "Asia/Shanghai",
-    hour12: false,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  });
-
-  $done({
-    title: `汇率信息 ${beijingTime}`,
-    content: content.trim(),
-    icon: params.icon || "bitcoinsign.circle",
-    "icon-color": params.color || "#EF8F1C"
-  });
-}
-
-    // 缓存最新汇率
-    try {
-      $persistentStore.write(String(rateValue), "exrate_" + item.key);
-      logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
-    } catch (e) {
-      logInfo(`缓存写入异常：${e.message || e}`);
-    }
-  }
-
-  if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-    logInfo(`检测波动：\n${fluctuations.join("\n")}`);
-  } else {
-    logInfo("无超阈值波动");
-  }
-
-  // 显示更新时间
-  let lastUpdateContent = "";
-  if (globalGoogleResult?.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
-  }
-  if (globalApiResult?.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    lastUpdateContent += `LastUpdate（API）：${globalApiResult.lastUpdate}\n`;
-  }
-  if (globalGoogleResult?.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `NextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
-  }
-  if (globalApiResult?.nextUpdate && globalApiResult.nextUpdate !== "未知") {
-    lastUpdateContent += `NextUpdate（API）：${globalApiResult.nextUpdate}\n`;
-  }
-  content += `\n${lastUpdateContent.trim()}`;
-
-  // 北京时间显示
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour12: false,
