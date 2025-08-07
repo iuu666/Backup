@@ -350,7 +350,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     let rateValue;
     let sourceLabel = "";
     if (googleRates[item.key] !== undefined) {
-      sourceLabel = "Google";
+      sourceLabel = "WEB";
       rateValue = item.isBaseForeign ? strongAmount / googleRates[item.key] : weakAmount * googleRates[item.key];
     } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
@@ -407,13 +407,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `LastUpdate（Google）：${globalGoogleResult.lastUpdate}\n`;
+    lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（API）：${globalApiResult.lastUpdate}\n`;
   }
   if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `NextUpdate（Google）：${globalGoogleResult.nextUpdate}\n`;
+    lastUpdateContent += `NextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
     lastUpdateContent += `NextUpdate（API）：${globalApiResult.nextUpdate}\n`;
