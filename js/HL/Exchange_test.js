@@ -169,7 +169,8 @@ function fetchFromGoogle(callback) {
       tryFinish();
       continue;
     }
-    const url = `https://www.google.com/finance/quote/${curr}-${baseCurrency}`;
+    // 改成 CNY-币种 方向，跟 API 保持一致
+    const url = `https://www.google.com/finance/quote/${baseCurrency}-${curr}`;
     logInfo(`请求谷歌财经汇率页面：${url}`);
     $httpClient.get(url, (error, response, data) => {
       if (error || !data) {
@@ -180,14 +181,9 @@ function fetchFromGoogle(callback) {
       }
       try {
         // 解析新的 HTML 结构，找 data-source="CNY" && data-target=curr 的 div
-        // 由于你给的是 CNY->USD，为了通用，我们需要匹配 data-source="CNY" data-target=curr
-        // 但url是curr-CNY的组合，注意匹配方向反了，需要动态调整匹配方向：
-
-        // 定义正确匹配源与目标
         const sourceCurrency = baseCurrency;   // CNY
         const targetCurrency = curr;           // 目标货币，比如 USD
 
-        // 解析时找 <div ... data-source="CNY" data-target="USD" data-last-price="..." ...>
         const regex = new RegExp(
           `<div[^>]*data-source="${sourceCurrency}"[^>]*data-target="${targetCurrency}"[^>]*data-last-price="([\\d\\.]+)"[^>]*data-last-normal-market-timestamp="(\\d+)"`,
           'i'
@@ -198,9 +194,9 @@ function fetchFromGoogle(callback) {
         if (match) {
           const foundRate = parseFloat(match[1]);
           const foundTimestamp = parseInt(match[2]);
-          results[curr] = foundRate; // 这里是 CNY->外币，直接存储
+          results[curr] = foundRate; // 这里是 CNY->外币，直接存储，无需倒数转换
           if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp;
-          logInfo(`谷歌财经抓取${curr}≈${baseCurrency}汇率成功：${foundRate}`);
+          logInfo(`谷歌财经抓取${curr}≈${sourceCurrency}汇率成功：${foundRate}`);
         } else {
           logInfo(`未找到${sourceCurrency}≈${targetCurrency}汇率`);
           hasError = true;
