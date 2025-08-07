@@ -324,6 +324,7 @@ function fetchWithFallback(urls, index = 0) {
 }
 
 // 处理汇率数据并生成面板内容，逐条显示数据来源
+// 处理汇率数据并生成面板内容，逐条显示数据来源
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   const googleRates = globalGoogleResult?.rates || {};
   const apiRates = globalApiResult?.rates || {};
@@ -337,11 +338,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
-
-  const flagMap = {
-    CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
-    HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
-  };
 
   const nameMap = {
     USD: "美元", EUR: "欧元", GBP: "英镑",
@@ -361,7 +357,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       sourceLabel = "API";
       rateValue = item.isBaseForeign ? strongAmount / apiRates[item.key] : weakAmount * apiRates[item.key];
     } else {
-      logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
@@ -371,8 +366,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
 
     content += `${text} （${sourceLabel}）\n`;
-
-    logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
     let prev = NaN;
     try {
@@ -385,16 +378,17 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
       if (Math.abs(change) >= threshold) {
-        const symbol = change > 0 ? "📈" : "📉";
-        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+        const arrow = change > 0 ? "↑" : "↓";
+        const sign = change > 0 ? "+" : "-";
+        const changeStr = `${sign}${Math.abs(change).toFixed(2)}%`;
+        fluctuations.push(`${nameMap[item.key]} ${arrow} ${changeStr}`);
+
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${symbol} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${arrow} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
-          logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
           setNotifyTime(item.key);
         }
       }
@@ -402,19 +396,14 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     try {
       $persistentStore.write(String(rateValue), "exrate_" + item.key);
-      logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
-    } catch (e) {
-      logInfo(`缓存写入异常：${e.message || e}`);
-    }
+    } catch {}
   }
 
   if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
-  } else {
-    logInfo("无汇率波动超出阈值");
+    content += `\n📈 汇率变动提醒：\n${fluctuations.join("\n")}\n`;
   }
 
+  // 追加更新时间信息（可根据你的需求保留）
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
