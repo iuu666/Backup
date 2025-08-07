@@ -76,7 +76,7 @@
  *
  */
 
-
+// 汇率源配置与基准币种设置
 const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
 const baseCurrency = "CNY";
 
