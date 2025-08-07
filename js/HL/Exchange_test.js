@@ -1,7 +1,7 @@
 /**
  * 汇率监控脚本（基准货币：CNY）
  * Author: okk
- * Version: 1.0
+ * Version: 1.1
  * Last Updated: 2025-08-07
  * Environment: Surge,其他未知
  *
@@ -147,13 +147,13 @@ function fetchFromGoogle(callback) {
         callback(null);
         return;
       }
-      // 转换成基准CNY的rates
+      // 这里直接是 CNY->外币 汇率，无需倒数转换
       const rates = {};
       for (const curr of googleCurrencies) {
         if (curr === baseCurrency) {
           rates[curr] = 1;
-        } else if (results[curr]) {
-          rates[curr] = 1 / results[curr];
+        } else if (results[curr] !== undefined) {
+          rates[curr] = results[curr];
         }
       }
       const lastUpdate = formatTimeToBeijing(lastUpdateTimestamp * 1000);
@@ -179,23 +179,31 @@ function fetchFromGoogle(callback) {
         return;
       }
       try {
-        const regex = /<div[^>]*data-source="(\w+)"[^>]*data-target="(\w+)"[^>]*data-last-price="([\d\.]+)"[^>]*data-last-normal-market-timestamp="(\d+)"[^>]*>/g;
-        let match, foundRate = null, foundTimestamp = null;
-        while ((match = regex.exec(data)) !== null) {
-          const [_, source, target, priceStr, tsStr] = match;
-          if (source === curr && target === baseCurrency) {
-            foundRate = parseFloat(priceStr);
-            foundTimestamp = parseInt(tsStr);
-            break;
-          }
-        }
-        if (foundRate === null) {
-          logInfo(`未找到${curr}≈${baseCurrency}汇率`);
-          hasError = true;
-        } else {
-          results[curr] = foundRate;
+        // 解析新的 HTML 结构，找 data-source="CNY" && data-target=curr 的 div
+        // 由于你给的是 CNY->USD，为了通用，我们需要匹配 data-source="CNY" data-target=curr
+        // 但url是curr-CNY的组合，注意匹配方向反了，需要动态调整匹配方向：
+
+        // 定义正确匹配源与目标
+        const sourceCurrency = baseCurrency;   // CNY
+        const targetCurrency = curr;           // 目标货币，比如 USD
+
+        // 解析时找 <div ... data-source="CNY" data-target="USD" data-last-price="..." ...>
+        const regex = new RegExp(
+          `<div[^>]*data-source="${sourceCurrency}"[^>]*data-target="${targetCurrency}"[^>]*data-last-price="([\\d\\.]+)"[^>]*data-last-normal-market-timestamp="(\\d+)"`,
+          'i'
+        );
+
+        const match = data.match(regex);
+
+        if (match) {
+          const foundRate = parseFloat(match[1]);
+          const foundTimestamp = parseInt(match[2]);
+          results[curr] = foundRate; // 这里是 CNY->外币，直接存储
           if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp;
           logInfo(`谷歌财经抓取${curr}≈${baseCurrency}汇率成功：${foundRate}`);
+        } else {
+          logInfo(`未找到${sourceCurrency}≈${targetCurrency}汇率`);
+          hasError = true;
         }
       } catch (e) {
         logInfo(`解析${curr}汇率异常：${e.message || e}`);
