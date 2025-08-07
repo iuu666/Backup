@@ -85,7 +85,7 @@ const apiUrls = [
   "https://api.exchangerate-api.com/v4/latest/CNY",
   "https://api.frankfurter.app/latest?from=CNY"
 ];
-
+// 参数解析与默认值设置 
 const params = getParams($argument);
 const thresholdRaw = parseFloat(params.threshold);
 const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.1 : thresholdRaw;
