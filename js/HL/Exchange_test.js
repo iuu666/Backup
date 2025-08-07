@@ -367,8 +367,8 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
 
     const text = item.isBaseForeign
-      ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
-      : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
+      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
+      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
 
     content += `${text} （${sourceLabel}）\n`;
 
@@ -387,10 +387,10 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "📈" : "📉";
         const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${flagMap[item.key]} ${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+        fluctuations.push(`${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${symbol} ${flagMap[item.key]} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${symbol} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
             "",
             `当前汇率：${text}`
           );
