@@ -346,11 +346,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   let content = "";
   let fluctuations = [];
 
-  const upArrow = "🟢↑";
-  const downArrow = "🔴↓";
-  const upNotify = "🟢📈";
-  const downNotify = "🔴📉";
-
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
@@ -361,7 +356,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       sourceLabel = "API";
       rateValue = item.isBaseForeign ? strongAmount / apiRates[item.key] : weakAmount * apiRates[item.key];
     } else {
-      logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
@@ -376,34 +370,27 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     let trendSymbol = "";
     if (!isNaN(prev)) {
-      const change = ((rateValue - prev) / prev) * 100;
-      if (change > 0) {
-        trendSymbol = upArrow;
-      } else if (change < 0) {
-        trendSymbol = downArrow;
-      }
+      if (rateValue > prev) trendSymbol = " ↑";
+      else if (rateValue < prev) trendSymbol = " ↓";
     }
 
     const text = item.isBaseForeign
-      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)} ${trendSymbol} （${sourceLabel}）`
-      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)} ${trendSymbol} （${sourceLabel}）`;
+      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${trendSymbol} （${sourceLabel}）`
+      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${trendSymbol} （${sourceLabel}）`;
 
-    content += `${text}\n`;
-    logInfo(`汇率信息：${text}`);
+    content += text + "\n";
 
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
       if (Math.abs(change) >= threshold) {
-        const notifySymbol = change > 0 ? upNotify : downNotify;
-        const changeStr = `${notifySymbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${nameMap[item.key]} 汇率${change > 0 ? "上涨" : "下跌"}：${changeStr}`);
+        const arrow = change > 0 ? "📈" : "📉";
+        fluctuations.push(`${nameMap[item.key]} 汇率${change > 0 ? "上涨" : "下跌"}：${arrow}${Math.abs(change).toFixed(2)}%`);
         if (enableNotify && canNotify(item.key)) {
           $notification.post(
-            `${notifySymbol} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${arrow} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${Math.abs(change).toFixed(2)}%`,
             "",
             `当前汇率：${text}`
           );
-          logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
           setNotifyTime(item.key);
         }
       }
@@ -411,33 +398,29 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     try {
       $persistentStore.write(String(rateValue), "exrate_" + item.key);
-      logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
-    } catch (e) {
-      logInfo(`缓存写入异常：${e.message || e}`);
-    }
+    } catch (e) { }
   }
-
-  content = `📊 当前汇率：\n${content.trim()}\n`;
 
   if (fluctuations.length > 0) {
-    content += `\n📈 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
-  } else {
-    logInfo("无汇率波动超出阈值");
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
   }
 
-  let updateTimes = [];
+  let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    updateTimes.push(globalGoogleResult.lastUpdate);
+    lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    updateTimes.push(globalApiResult.lastUpdate);
+    lastUpdateContent += `LastUpdate（API）：${globalApiResult.lastUpdate}\n`;
   }
-  const beijingTime = updateTimes.length > 0 ? updateTimes.sort().reverse()[0] : "未知";
+  if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
+    lastUpdateContent += `NextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
+  }
+  if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
+    lastUpdateContent += `NextUpdate（API）：${globalApiResult.nextUpdate}\n`;
+  }
+  content += `\n${lastUpdateContent.trim()}`;
 
-  content += `\n🕐 更新时间（北京时间）：${beijingTime}`;
-
-  const beijingNow = new Date().toLocaleString("zh-CN", {
+  const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour12: false,
     year: 'numeric',
@@ -449,7 +432,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   });
 
   $done({
-    title: `汇率信息 ${beijingNow}`,
+    title: `汇率信息 ${beijingTime}`,
     content: content.trim(),
     icon: params.icon || "bitcoinsign.circle",
     "icon-color": params.color || "#EF8F1C"
