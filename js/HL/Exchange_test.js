@@ -499,7 +499,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   $done({
     title: `汇率信息 ${beijingTime}`,
     content: content.trim(),
-    icon: params.icon || "bitcoinsign.circle",
+    icon: params.icon || "arrow.left.arrow.right.circle",
     "icon-color": params.color || "#EF8F1C"
   });
 }
