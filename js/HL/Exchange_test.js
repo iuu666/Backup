@@ -435,13 +435,20 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     if (!isNaN(prev)) { // 计算波动百分比
       const change = ((rateValue - prev) / prev) * 100;
+
+      // —— 这里是波动提醒格式替换开始 —— 
       if (Math.abs(change) >= threshold) { // 超过阈值则触发提醒
-        const symbol = change > 0 ? "📈" : "📉"; // 上涨或下跌符号
-        const changeStr = `${symbol}${Math.abs(change).toFixed(2)}%`;
-        fluctuations.push(`${flagMap[item.key]} ${nameMap[item.key]} 汇率${symbol === "📈" ? "上涨" : "下跌"}：${changeStr}`);
+        const symbol = change > 0 ? "↑" : "↓"; // 使用 ↑ 和 ↓ 表示涨跌
+        const sign = change > 0 ? "+" : "-";  // 显示正负号
+        const absChange = Math.abs(change).toFixed(2); // 保留两位小数的绝对变化值
+        const changeStr = `${symbol} ${sign}${absChange}%`; // 拼接符号和数值，符号后带空格
+
+        // 构造波动提醒文本，例如：美元：↑ +0.45%
+        fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
+
         if (enableNotify && canNotify(item.key)) { // 符合条件则推送通知
           $notification.post(
-            `${symbol} ${flagMap[item.key]} ${nameMap[item.key]} ${change > 0 ? "上涨" : "下跌"}：${changeStr}`,
+            `${symbol} ${nameMap[item.key]} ${sign}${absChange}%`,
             "",
             `当前汇率：${text}`
           );
@@ -449,6 +456,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
           setNotifyTime(item.key); // 设置通知时间，防止短时间重复通知
         }
       }
+      // —— 波动提醒格式替换结束 —— 
     }
 
     try {
