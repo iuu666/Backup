@@ -315,7 +315,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
       : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
-    /* 不显示国旗，同时注释掉上面的flagMap
+    /* 不显示国旗，需要同时注释掉上面的国旗emoji
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
       : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
