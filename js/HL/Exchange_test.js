@@ -69,47 +69,47 @@ fetchFromGoogle((googleResult) => {
   }
 });
 
-// 从谷歌财经抓取函数，参数是回调函数callback
+// 从网页抓取函数
 function fetchFromGoogle(callback) {
-  const results = {};          // 保存抓取到的汇率，单位是基准币种的倒数（google结果是curr->baseCurrency）
-  let completed = 0;           // 完成计数，等待所有请求结束
-  let hasError = false;        // 是否有错误发生
-  let lastUpdateTimestamp = 0; // 记录最新更新时间戳（秒）
+  const results = {};
+  let completed = 0;
+  let hasError = false;
+  let lastUpdateTimestamp = 0;
 
   // 请求完成后调用此函数检测是否所有请求都完成
   function tryFinish() {
     completed++;
-    if (completed === googleCurrencies.length) { // 全部请求完成
+    if (completed === googleCurrencies.length) {
       if (hasError && Object.keys(results).length === 0) {
-        callback(null); // 都失败了，回调null
+        callback(null);
         return;
       }
-      // 转换成基准CNY的rates（谷歌数据是币种兑CNY汇率，这里转为CNY兑币种汇率）
+      // 转换成基准CNY的rates（网页数据是币种兑CNY汇率，这里转为CNY兑币种汇率）
       const rates = {};
       for (const curr of googleCurrencies) {
         if (curr === baseCurrency) {
-          rates[curr] = 1; // 基准币种对自身汇率固定为1
+          rates[curr] = 1;
         } else if (results[curr]) {
-          rates[curr] = 1 / results[curr]; // 转换成 CNY 对该币种的汇率
+          rates[curr] = 1 / results[curr];
         }
       }
-      const lastUpdate = formatTimeToBeijing(lastUpdateTimestamp * 1000); // 转换时间戳为北京时间字符串
-      const nextUpdate = "未知"; // 谷歌无下一次更新时间信息
+      const lastUpdate = formatTimeToBeijing(lastUpdateTimestamp * 1000);
+      const nextUpdate = "未知";
       logInfo(`谷歌财经所有币种汇率抓取完成，时间：${lastUpdate}`);
-      callback({ rates, lastUpdate, nextUpdate }); // 回调结果对象
+      callback({ rates, lastUpdate, nextUpdate });
     }
   }
 
-  // 对每个币种请求谷歌财经对应页面
+  // 对每个币种请求对应的网页页面
   for (const curr of googleCurrencies) {
     if (curr === baseCurrency) {
-      results[curr] = 1; // 基准币种直接赋值1
-      tryFinish();       // 请求计数+1
+      results[curr] = 1;
+      tryFinish();
       continue;
     }
-    const url = `https://www.google.com/finance/quote/${curr}-${baseCurrency}`; // 谷歌财经汇率页面URL
+    const url = `https://www.google.com/finance/quote/${curr}-${baseCurrency}`;
     logInfo(`请求谷歌财经汇率页面：${url}`);
-    $httpClient.get(url, (error, response, data) => { // 发送HTTP GET请求
+    $httpClient.get(url, (error, response, data) => {
       if (error || !data) {
         logInfo(`谷歌财经请求失败：${curr} - ${error || "无响应"}`);
         hasError = true;
@@ -117,14 +117,13 @@ function fetchFromGoogle(callback) {
         return;
       }
       try {
-        // 正则匹配页面中含汇率的div标签，提取币种、目标币种、汇率和时间戳
         const regex = /<div[^>]*data-source="(\w+)"[^>]*data-target="(\w+)"[^>]*data-last-price="([\d\.]+)"[^>]*data-last-normal-market-timestamp="(\d+)"[^>]*>/g;
         let match, foundRate = null, foundTimestamp = null;
         while ((match = regex.exec(data)) !== null) {
           const [_, source, target, priceStr, tsStr] = match;
           if (source === curr && target === baseCurrency) {
-            foundRate = parseFloat(priceStr);       // 汇率
-            foundTimestamp = parseInt(tsStr);       // 时间戳（秒）
+            foundRate = parseFloat(priceStr);
+            foundTimestamp = parseInt(tsStr);
             break;
           }
         }
@@ -132,28 +131,28 @@ function fetchFromGoogle(callback) {
           logInfo(`未找到${curr}≈${baseCurrency}汇率`);
           hasError = true;
         } else {
-          results[curr] = foundRate; // 保存汇率（单位是curr对baseCurrency）
-          if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp; // 取最大更新时间
+          results[curr] = foundRate;
+          if (foundTimestamp > lastUpdateTimestamp) lastUpdateTimestamp = foundTimestamp;
           logInfo(`谷歌财经抓取${curr}≈${baseCurrency}汇率成功：${foundRate}`);
         }
       } catch (e) {
         logInfo(`解析${curr}汇率异常：${e.message || e}`);
         hasError = true;
       }
-      tryFinish(); // 当前请求结束，计数+1
+      tryFinish();
     });
   }
 }
 
 // 用API补充部分币种汇率，参数是缺失币种列表和回调函数
 function fetchFromApiForCurrencies(currencyList, callback) {
-  let apiIndex = 0; // 当前尝试的API接口索引
+  let apiIndex = 0;
 
   // 尝试用当前API接口请求数据
   function tryApiFetch() {
-    if (apiIndex >= apiUrls.length) { // 全部API接口尝试完毕仍失败
+    if (apiIndex >= apiUrls.length) {
       logInfo("❌ 所有接口请求均失败，补充币种失败");
-      callback({ rates: {}, lastUpdate: "未知", nextUpdate: "未知" }); // 返回空结果
+      callback({ rates: {}, lastUpdate: "未知", nextUpdate: "未知" });
       return;
     }
     const url = apiUrls[apiIndex];
@@ -166,7 +165,7 @@ function fetchFromApiForCurrencies(currencyList, callback) {
         return;
       }
       try {
-        const parsed = JSON.parse(data); // 解析JSON数据
+        const parsed = JSON.parse(data);
         let ratesRaw, lastUpdateRaw, nextUpdateRaw;
         if (url.includes("open.er-api.com")) {
           ratesRaw = parsed.rates;
@@ -183,7 +182,6 @@ function fetchFromApiForCurrencies(currencyList, callback) {
         } else {
           throw new Error("未知接口格式");
         }
-        // 过滤只要目标缺失币种的汇率数据
         const filteredRates = {};
         for (const cur of currencyList) {
           if (cur === baseCurrency) {
@@ -212,7 +210,7 @@ function fetchFromApiForCurrencies(currencyList, callback) {
     });
   }
 
-  tryApiFetch(); // 启动API补充请求
+  tryApiFetch();
 }
 
 // 失败时用API接口fallback抓取（整体抓取所有币种）
@@ -232,7 +230,7 @@ function fetchWithFallback(urls, index = 0) {
   $httpClient.get(url, (error, response, data) => {
     if (error || !data) {
       logInfo(`请求失败：${error || "无响应"}，尝试下一个接口`);
-      fetchWithFallback(urls, index + 1); // 递归请求下一个接口
+      fetchWithFallback(urls, index + 1);
       return;
     }
     try {
@@ -256,20 +254,19 @@ function fetchWithFallback(urls, index = 0) {
       logInfo(`数据获取成功，接口：${url.match(/https?:\/\/([^/]+)/)[1]}`);
       logInfo(`数据最后更新时间（北京时间）：${lastUpdate}`);
       logInfo(`预计下一次更新时间（北京时间）：${nextUpdate}`);
-      processData(rates, lastUpdate, nextUpdate, url); // 处理抓取的数据
+      processData(rates, lastUpdate, nextUpdate, url);
     } catch (e) {
       logInfo(`数据解析异常：${e.message || e}，尝试下一个接口`);
-      fetchWithFallback(urls, index + 1); // 解析失败尝试下一个接口
+      fetchWithFallback(urls, index + 1);
     }
   });
 }
 
 // 处理汇率数据并生成面板内容，逐条显示数据来源
 function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
-  const googleRates = globalGoogleResult?.rates || {}; // 谷歌汇率数据
-  const apiRates = globalApiResult?.rates || {};       // API汇率数据
+  const googleRates = globalGoogleResult?.rates || {};
+  const apiRates = globalApiResult?.rates || {};
 
-  // 定义要展示的币种及其属性
   const displayRates = [
     { key: "USD", label: "美元", isBaseForeign: true, decimals: 2 },
     { key: "EUR", label: "欧元", isBaseForeign: true, decimals: 2 },
@@ -280,69 +277,48 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
-  // 币种对应国旗emoji映射
   const flagMap = {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
   };
 
-  // 币种中文名映射
   const nameMap = {
     USD: "美元", EUR: "欧元", GBP: "英镑",
     HKD: "港币", JPY: "日元", KRW: "韩元", TRY: "里拉"
   };
 
-  let content = "";           // 最终面板文本内容
-  let fluctuations = [];      // 汇率波动提醒列表
+  let content = "";
+  let fluctuations = [];
 
   for (const item of displayRates) {
     let rateValue;
     let sourceLabel = "";
 
-    if (googleRates[item.key] !== undefined) { // 优先使用谷歌汇率
+    if (googleRates[item.key] !== undefined) {
       sourceLabel = "WEB";
       rateValue = item.isBaseForeign
-        ? strongAmount / googleRates[item.key] // 外币兑人民币，强势币处理
-        : weakAmount * googleRates[item.key];  // 人民币兑外币，弱势币处理
-
-      // 👇调试输出：确认是否正确乘上基数（主要针对韩元）
-      if (item.key === "KRW") {
-        logInfo(`【调试】KRW 使用 Google 数据`);
-        logInfo(`【调试】KRW weakAmount = ${weakAmount}`);
-        logInfo(`【调试】KRW googleRate = ${googleRates["KRW"]}`);
-        logInfo(`【调试】KRW 显示结果 = ${rateValue}`);
-      }
-
-    } else if (apiRates[item.key] !== undefined) { // 没有谷歌数据，使用API数据
+        ? strongAmount / googleRates[item.key]
+        : weakAmount * googleRates[item.key];
+    } else if (apiRates[item.key] !== undefined) {
       sourceLabel = "API";
       rateValue = item.isBaseForeign
         ? strongAmount / apiRates[item.key]
         : weakAmount * apiRates[item.key];
-
-      // 👇调试输出：如果没有 Google，使用 API 的情况
-      if (item.key === "KRW") {
-        logInfo(`【调试】KRW 使用 API 数据`);
-        logInfo(`【调试】KRW weakAmount = ${weakAmount}`);
-        logInfo(`【调试】KRW apiRate = ${apiRates["KRW"]}`);
-        logInfo(`【调试】KRW 显示结果 = ${rateValue}`);
-      }
-
     } else {
-      logInfo(`警告：${item.key} 数据缺失`); // 两边都无数据，提示缺失
+      logInfo(`警告：${item.key} 数据缺失`);
       content += `${item.label} 数据缺失\n`;
       continue;
     }
 
-    // 根据币种强弱构造显示文本，带国旗符号
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
       : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
 
-    content += `${text} （${sourceLabel}）\n`; // 添加显示内容
+    content += `${text} （${sourceLabel}）\n`;
 
-    logInfo(`汇率信息：${text} （${sourceLabel}）`); // 打印日志
+    logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
-    let prev = NaN; // 读取缓存中的之前汇率
+    let prev = NaN;
     try {
       const cacheStr = $persistentStore.read("exrate_" + item.key);
       prev = cacheStr !== null ? parseFloat(cacheStr) : NaN;
@@ -350,34 +326,33 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       prev = NaN;
     }
 
-    if (!isNaN(prev)) { // 计算波动百分比
+    if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
 
       // —— 这里是波动提醒格式替换开始 —— 
-      if (Math.abs(change) >= threshold) { // 超过阈值则触发提醒
-        const symbol = change > 0 ? "↑" : "↓"; // 使用 ↑ 和 ↓ 表示涨跌
-        const sign = change > 0 ? "+" : "-";  // 显示正负号
-        const absChange = Math.abs(change).toFixed(2); // 保留两位小数的绝对变化值
-        const changeStr = `${symbol} ${sign}${absChange}%`; // 拼接符号和数值，符号后带空格
+      if (Math.abs(change) >= threshold) {
+        const symbol = change > 0 ? "↑" : "↓";
+        const sign = change > 0 ? "+" : "-";
+        const absChange = Math.abs(change).toFixed(2);
+        const changeStr = `${symbol} ${sign}${absChange}%`;
 
         // 构造波动提醒文本，例如：美元：↑ +0.45%
         fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
 
-        if (enableNotify && canNotify(item.key)) { // 符合条件则推送通知
+        if (enableNotify && canNotify(item.key)) {
           $notification.post(
             `${symbol} ${nameMap[item.key]} ${sign}${absChange}%`,
             "",
             `当前汇率：${text}`
           );
           logInfo(`通知发送：${item.key} ${change > 0 ? "上涨" : "下跌"} ${changeStr}`);
-          setNotifyTime(item.key); // 设置通知时间，防止短时间重复通知
+          setNotifyTime(item.key);
         }
       }
       // —— 波动提醒格式替换结束 —— 
     }
 
     try {
-      // 写入缓存，保存当前汇率数据
       $persistentStore.write(String(rateValue), "exrate_" + item.key);
       logInfo(`缓存写入：${item.key} = ${formatRate(rateValue, item.decimals)}`);
     } catch (e) {
@@ -386,14 +361,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
   }
 
   if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`; // 汇率波动提醒信息
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
     logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
     logInfo("无汇率波动超出阈值");
   }
 
   let lastUpdateContent = "";
-  // 显示更新时间信息，谷歌和API分别显示
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
     lastUpdateContent += `LastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
   }
@@ -435,21 +409,21 @@ function formatTimeToBeijing(timeInput) {
   let date = null;
   if (typeof timeInput === "number") {
     if (timeInput > 1e12) {
-      date = new Date(timeInput); // 毫秒时间戳
+      date = new Date(timeInput);
     } else if (timeInput > 1e10) {
       date = new Date(timeInput);
     } else {
-      date = new Date(timeInput * 1000); // 秒时间戳转毫秒
+      date = new Date(timeInput * 1000);
     }
   } else if (typeof timeInput === "string") {
     const s = timeInput.trim();
-    if (/^\d{10,13}$/.test(s)) { // 纯数字时间戳字符串
+    if (/^\d{10,13}$/.test(s)) {
       if (s.length === 13) {
         date = new Date(Number(s));
       } else if (s.length === 10) {
         date = new Date(Number(s) * 1000);
       }
-    } else if (/^\d{4}-\d{2}-\d{2}(T.*)?/.test(s)) { // 日期格式字符串
+    } else if (/^\d{4}-\d{2}-\d{2}(T.*)?/.test(s)) {
       date = new Date(s);
     } else {
       date = new Date(s);
@@ -457,20 +431,20 @@ function formatTimeToBeijing(timeInput) {
   } else {
     date = new Date(timeInput);
   }
-  if (!date || isNaN(date.getTime())) return "未知"; // 非法时间返回未知
-  return date.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" }); // 转换为北京时间字符串
+  if (!date || isNaN(date.getTime())) return "未知";
+  return date.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" });
 }
 
 // 判断是否可以发送通知（是否达到冷却时间）
 function canNotify(key) {
   try {
-    const lastTimeStr = $persistentStore.read("notify_time_" + key); // 读取上次通知时间
-    if (!lastTimeStr) return true; // 从未通知过
+    const lastTimeStr = $persistentStore.read("notify_time_" + key);
+    if (!lastTimeStr) return true;
     const lastTime = new Date(lastTimeStr);
     const now = new Date();
-    return (now - lastTime) / 60000 >= notifyCooldownMinutes; // 判断是否超过冷却分钟数
+    return (now - lastTime) / 60000 >= notifyCooldownMinutes;
   } catch {
-    return true; // 出错则允许通知
+    return true;
   }
 }
 
