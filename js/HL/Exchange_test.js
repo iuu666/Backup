@@ -1,15 +1,3 @@
-// 汇率源配置与基准币种设置 
-const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
-const baseCurrency = "CNY";
-
-// 汇率API接口列表，依次备用
-const apiUrls = [
-  "https://open.er-api.com/v6/latest/CNY",
-  "https://api.exchangerate-api.com/v4/latest/CNY",
-  "https://api.frankfurter.app/latest?from=CNY"
-];
-
-// 推荐的参数解析，兼容 Surge 的模块参数传入格式
 const params = (() => {
   if (typeof $argument !== "undefined") {
     return Object.fromEntries(
@@ -21,6 +9,20 @@ const params = (() => {
   }
   return {};
 })();
+
+// 是否显示国旗
+const showFlag = (params.show_flag || "true").toLowerCase() === "true";
+
+// 币种设置 
+const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
+const baseCurrency = "CNY";
+
+// 汇率API接口列表，依次备用
+const apiUrls = [
+  "https://open.er-api.com/v6/latest/CNY",
+  "https://api.exchangerate-api.com/v4/latest/CNY",
+  "https://api.frankfurter.app/latest?from=CNY"
+];
 
 // 参数解析与默认值设置 
 const thresholdRaw = parseFloat(params.threshold);
@@ -277,11 +279,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
   
-  //国旗emoji
-  const flagMap = {
+  // 国旗 emoji —— 受 showFlag 控制
+  const flagMap = showFlag ? {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
-  };
+  } : {};
 
   const nameMap = {
     USD: "美元", EUR: "欧元", GBP: "英镑",
@@ -311,15 +313,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       continue;
     }
     
-    //显示国旗
+    // 根据 showFlag 安全拼接国旗（使用回退避免 undefined）
     const text = item.isBaseForeign
-      ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
-      : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
-    /* 不显示国旗，需要同时注释掉上面的国旗emoji
-    const text = item.isBaseForeign
-      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
-      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
-    */
+      ? `${strongAmount}${item.label}${flagMap[item.key] || ""} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY || ""}`
+      : `${weakAmount}人民币${flagMap.CNY || ""} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key] || ""}`;
+
     content += `${text} （${sourceLabel}）\n`;
 
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
@@ -330,7 +328,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       prev = cacheStr !== null ? parseFloat(cacheStr) : NaN;
     } catch {
       prev = NaN;
-    }
+    } 
 
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
