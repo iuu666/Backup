@@ -44,31 +44,26 @@ logInfo(`兑换基数（强势币）：${strongAmount}，兑换基数（弱势�
 // 打印通知冷却时间
 logInfo(`通知冷却时间：${notifyCooldownMinutes} 分钟`);
 
-let globalGoogleResult = null;  // 全局变量保存谷歌抓取结果
-let globalApiResult = null;     // 全局变量保存API补充结果
+let globalGoogleResult = null;
+let globalApiResult = null;
 
-// 主入口，先尝试谷歌财经抓取所有币种汇率
+// 主入口，网页抓取所有币种汇率，用API补充缺失币种数据
 fetchFromGoogle((googleResult) => {
   if (googleResult && Object.keys(googleResult.rates).length > 0) {
-    globalGoogleResult = googleResult; // 保存谷歌数据结果
-    // 找出谷歌抓取中缺失的币种
+    globalGoogleResult = googleResult;
     const missingCurrencies = googleCurrencies.filter(c => !(c in googleResult.rates));
     if (missingCurrencies.length === 0) {
-      // 谷歌抓取全部成功，无需补充，直接处理数据
       logInfo("谷歌财经所有币种均抓取成功，无需API补充");
       processData(googleResult.rates, googleResult.lastUpdate, googleResult.nextUpdate, null);
     } else {
-      // 部分币种缺失，用API补充缺失币种数据
       logInfo(`谷歌财经部分币种缺失，开始用API补充缺失币种：${missingCurrencies.join(", ")}`);
       fetchFromApiForCurrencies(missingCurrencies, (apiResult) => {
-        globalApiResult = apiResult; // 保存API补充结果
-        // 合并谷歌与API结果，API补充缺失币种
+        globalApiResult = apiResult;
         const combinedRates = { ...googleResult.rates, ...apiResult.rates };
-        processData(combinedRates, null, null, null); // 统一处理数据，更新时间单独处理
+        processData(combinedRates, null, null, null);
       });
     }
   } else {
-    // 谷歌财经抓取失败，整体用API接口fallback获取汇率
     logInfo("谷歌财经抓取失败，开始使用API接口fallback");
     fetchWithFallback(apiUrls, 0);
   }
