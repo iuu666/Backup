@@ -1,6 +1,6 @@
 // 汇率源配置与基准币种设置 
-const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"]; // 要抓取的币种列表，基准是CNY
-const baseCurrency = "CNY"; // 基准币种，人民币
+const googleCurrencies = ["USD", "EUR", "GBP", "HKD", "JPY", "KRW", "TRY"];
+const baseCurrency = "CNY";
 
 // 汇率API接口列表，依次备用
 const apiUrls = [
@@ -9,29 +9,29 @@ const apiUrls = [
   "https://api.frankfurter.app/latest?from=CNY"
 ];
 
-// ✅ 推荐的参数解析，兼容 Surge 的模块参数传入格式
+// 推荐的参数解析，兼容 Surge 的模块参数传入格式
 const params = (() => {
   if (typeof $argument !== "undefined") {
     return Object.fromEntries(
       $argument.split("&").map(p => {
-        const [key, value = ""] = p.split("="); // 拆分key=value
-        return [key.trim(), decodeURIComponent(value)]; // 去空白并解码value
+        const [key, value = ""] = p.split("=");
+        return [key.trim(), decodeURIComponent(value)];
       })
     );
   }
-  return {}; // 如果没有参数，返回空对象
+  return {};
 })();
 
 // 参数解析与默认值设置 
-const thresholdRaw = parseFloat(params.threshold); // 解析波动阈值，字符串转浮点数
-const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.1 : thresholdRaw; // 无效则默认0.1%
-const enableNotify = (params.notify || "true").toLowerCase() === "true"; // 是否开启通知，默认开启
-const strongAmountRaw = parseFloat(params.base_strong); // 强势币兑换基数，浮点数
-const strongAmount = (isNaN(strongAmountRaw) || strongAmountRaw <= 0) ? 1 : strongAmountRaw; // 默认1
-const weakAmountRaw = parseFloat(params.base_weak); // 弱势币兑换基数，浮点数
-const weakAmount = (isNaN(weakAmountRaw) || weakAmountRaw <= 0) ? 1 : weakAmountRaw; // 默认1
-const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown); // 通知冷却时间，整数分钟
-const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw; // 默认5分钟冷却
+const thresholdRaw = parseFloat(params.threshold);
+const threshold = (isNaN(thresholdRaw) || thresholdRaw <= 0) ? 0.1 : thresholdRaw;
+const enableNotify = (params.notify || "true").toLowerCase() === "true";
+const strongAmountRaw = parseFloat(params.base_strong);
+const strongAmount = (isNaN(strongAmountRaw) || strongAmountRaw <= 0) ? 1 : strongAmountRaw;
+const weakAmountRaw = parseFloat(params.base_weak);
+const weakAmount = (isNaN(weakAmountRaw) || weakAmountRaw <= 0) ? 1 : weakAmountRaw;
+const notifyCooldownMinutesRaw = parseInt(params.notify_cooldown);
+const notifyCooldownMinutes = (isNaN(notifyCooldownMinutesRaw) || notifyCooldownMinutesRaw <= 0) ? 5 : notifyCooldownMinutesRaw;
 
 // 调试日志，打印脚本执行时间（北京时间）
 logInfo(`脚本执行时间：${new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`);
