@@ -442,12 +442,32 @@ function canNotify(key) {
     const lastTimeStr = $persistentStore.read("notify_time_" + key);
     logInfo(`通知冷却读取：${key} 上次通知时间 ${lastTimeStr}`);
     if (!lastTimeStr) return true;
-    const lastTime = new Date(lastTimeStr);
+
+    let lastTime;
+    if (/^\d+$/.test(lastTimeStr)) {
+      if (lastTimeStr.length === 13) {
+        lastTime = new Date(Number(lastTimeStr));
+      } else if (lastTimeStr.length === 10) {
+        lastTime = new Date(Number(lastTimeStr) * 1000);
+      } else {
+        lastTime = new Date(lastTimeStr);
+      }
+    } else {
+      lastTime = new Date(lastTimeStr);
+    }
+
     const now = new Date();
+
+    if (isNaN(lastTime.getTime())) {
+      logInfo(`警告：上次通知时间转换无效，允许发送通知`);
+      return true;
+    }
+
     const diffMinutes = (now - lastTime) / 60000;
     logInfo(`通知冷却时间差（分钟）：${diffMinutes}`);
+
     return diffMinutes >= notifyCooldownMinutes;
-  } catch(e) {
+  } catch (e) {
     logInfo(`canNotify异常：${e.message || e}`);
     return true;
   }
@@ -456,9 +476,10 @@ function canNotify(key) {
 // 设置通知发送时间，写入当前时间
 function setNotifyTime(key) {
   try {
-    $persistentStore.write(new Date().toISOString(), "notify_time_" + key);
-    logInfo(`通知时间写入成功：${key}`);
-  } catch(e) {
+    const nowIso = new Date().toISOString();
+    $persistentStore.write(nowIso, "notify_time_" + key);
+    logInfo(`通知时间写入成功：${key} ${nowIso}`);
+  } catch (e) {
     logInfo(`通知时间写入失败：${key}，${e.message || e}`);
   }
 }
