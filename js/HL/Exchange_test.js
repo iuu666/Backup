@@ -440,11 +440,15 @@ function formatTimeToBeijing(timeInput) {
 function canNotify(key) {
   try {
     const lastTimeStr = $persistentStore.read("notify_time_" + key);
+    logInfo(`通知冷却读取：${key} 上次通知时间 ${lastTimeStr}`);
     if (!lastTimeStr) return true;
     const lastTime = new Date(lastTimeStr);
     const now = new Date();
-    return (now - lastTime) / 60000 >= notifyCooldownMinutes;
-  } catch {
+    const diffMinutes = (now - lastTime) / 60000;
+    logInfo(`通知冷却时间差（分钟）：${diffMinutes}`);
+    return diffMinutes >= notifyCooldownMinutes;
+  } catch(e) {
+    logInfo(`canNotify异常：${e.message || e}`);
     return true;
   }
 }
