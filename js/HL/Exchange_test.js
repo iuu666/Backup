@@ -1,7 +1,7 @@
 /**
  * 汇率监控
  * Author: okk
- * Version: 1.8
+ * Version: 1.9
  * Last Updated: 2025-08-12
  * 
  * 待更新内容：
@@ -318,7 +318,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
 
-  // 国旗 emoji —— 受 showFlag 控制
   const flagMap = showFlag ? {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
@@ -357,6 +356,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       : `${weakAmount}人民币${flagMap.CNY || ""} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key] || ""}`;
 
     content += `${text} （${sourceLabel}）\n`;
+
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
     let prev = NaN;
@@ -369,12 +369,15 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
+
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "↑" : "↓";
         const sign = change > 0 ? "+" : "-";
         const absChange = Math.abs(change).toFixed(2);
         const changeStr = `${symbol} ${sign}${absChange}%`;
-        fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
+
+        // 加上当前汇率方便手机通知查看
+        fluctuations.push(`${nameMap[item.key]}：${changeStr}，当前汇率：${formatRate(rateValue, item.decimals)}`);
       }
     }
 
@@ -386,15 +389,14 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
   }
 
-  // 把波动信息拼接到面板内容
+  // 拼接波动信息到面板内容
   if (fluctuations.length > 0) {
     content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
   } else {
     logInfo("无汇率波动超出阈值");
   }
 
-  // 统一发送通知（多条波动合并）
+  // 统一发送通知（多条波动合并且含当前汇率）
   if (enableNotify && fluctuations.length > 0) {
     const notifyKeys = [];
     for (const item of displayRates) {
@@ -411,8 +413,6 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         return notifyKeys.includes(key);
       }).join("\n");
 
-      logInfo(`准备发送通知，币种列表：${notifyKeys.join(", ")}`);
-
       $notification.post(
         `💱 汇率波动提醒（>${threshold}%）`,
         "",
@@ -426,7 +426,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       logInfo("所有币种通知冷却中，未发送波动通知");
     }
   } else {
-    logInfo("无汇率波动超出阈值或通知关闭");
+    logInfo("通知关闭或无汇率波动超出阈值");
   }
 
   let lastUpdateContent = "";
