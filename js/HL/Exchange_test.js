@@ -1,7 +1,7 @@
 /**
  * 汇率监控
  * Author: okk
- * Version: 1.9
+ * Version: 2.0
  * Last Updated: 2025-08-12
  * 
  * 待更新内容：
@@ -376,7 +376,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         const absChange = Math.abs(change).toFixed(2);
         const changeStr = `${symbol} ${sign}${absChange}%`;
 
-        // 加上当前汇率方便手机通知查看
+        // 带当前汇率的完整提醒文本，用于手机通知
         fluctuations.push(`${nameMap[item.key]}：${changeStr}，当前汇率：${formatRate(rateValue, item.decimals)}`);
       }
     }
@@ -389,14 +389,13 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
   }
 
-  // 拼接波动信息到面板内容
+  // 面板波动提醒，只显示百分比
   if (fluctuations.length > 0) {
-    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
-  } else {
-    logInfo("无汇率波动超出阈值");
+    const panelFluctuations = fluctuations.map(f => f.replace(/，当前汇率：.*$/, ""));
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${panelFluctuations.join("\n")}\n`;
   }
 
-  // 统一发送通知（多条波动合并且含当前汇率）
+  // 统一发送通知，保留百分比和当前汇率
   if (enableNotify && fluctuations.length > 0) {
     const notifyKeys = [];
     for (const item of displayRates) {
@@ -420,13 +419,12 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       );
 
       notifyKeys.forEach(k => setNotifyTime(k));
-
       logInfo(`发送汇率波动通知：\n${notifyContent}`);
     } else {
       logInfo("所有币种通知冷却中，未发送波动通知");
     }
-  } else {
-    logInfo("通知关闭或无汇率波动超出阈值");
+  } else if (fluctuations.length === 0) {
+    logInfo("无汇率波动超出阈值或通知关闭");
   }
 
   let lastUpdateContent = "";
