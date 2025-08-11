@@ -370,16 +370,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate（WEB）：${globalGoogleResult.lastUpdate}\n`;
+    lastUpdateContent += `lastUpdate-WEB:${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate（API）：${globalApiResult.lastUpdate}\n`;
+    lastUpdateContent += `lastUpdate-API:${globalApiResult.lastUpdate}\n`;
   }
   if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate（WEB）：${globalGoogleResult.nextUpdate}\n`;
+    lastUpdateContent += `nextUpdate-WEB:${globalGoogleResult.nextUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate（API）：${globalApiResult.nextUpdate}\n`;
+    lastUpdateContent += `nextUpdate-API:${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
 
