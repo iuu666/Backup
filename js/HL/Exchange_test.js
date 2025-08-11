@@ -340,6 +340,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
 
         if (enableNotify && canNotify(item.key)) {
+          logInfo(`准备发送通知：${item.key}`);
           $notification.post(
             `${symbol} ${nameMap[item.key]} ${sign}${absChange}%`,
             "",
@@ -452,7 +453,10 @@ function canNotify(key) {
 function setNotifyTime(key) {
   try {
     $persistentStore.write(new Date().toISOString(), "notify_time_" + key);
-  } catch { }
+    logInfo(`通知时间写入成功：${key}`);
+  } catch(e) {
+    logInfo(`通知时间写入失败：${key}，${e.message || e}`);
+  }
 }
 
 // 日志打印辅助函数，兼容多环境
