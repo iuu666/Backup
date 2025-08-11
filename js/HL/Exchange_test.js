@@ -370,16 +370,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
 
   let lastUpdateContent = "";
   if (globalGoogleResult && globalGoogleResult.lastUpdate && globalGoogleResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate-WEB：${globalGoogleResult.lastUpdate}\n`;
+    lastUpdateContent += `WEB更新时间：${globalGoogleResult.lastUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.lastUpdate && globalApiResult.lastUpdate !== "未知") {
-    lastUpdateContent += `lastUpdate-API：${globalApiResult.lastUpdate}\n`;
+    lastUpdateContent += `API更新时间：${globalApiResult.lastUpdate}\n`;
   }
   if (globalGoogleResult && globalGoogleResult.nextUpdate && globalGoogleResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate-WEB：${globalGoogleResult.nextUpdate}\n`;
+    lastUpdateContent += `WEB下次更新：${globalGoogleResult.nextUpdate}\n`;
   }
   if (globalApiResult && globalApiResult.nextUpdate && globalApiResult.nextUpdate !== "未知") {
-    lastUpdateContent += `nextUpdate-API：${globalApiResult.nextUpdate}\n`;
+    lastUpdateContent += `API下次更新：${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
 
