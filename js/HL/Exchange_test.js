@@ -309,11 +309,12 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       content += `${item.label} 数据缺失\n`;
       continue;
     }
-
+    
+    //显示国旗
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
       : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
-    /* 不显示国旗
+    /* 不显示国旗，同时注释掉上面的flagMap
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
       : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
