@@ -1,5 +1,5 @@
 #!name=💱汇率监控
-#!desc=多源头监控汇率波动、面板展示详细汇率信息、支持波动提醒（面板显示）、模块多参数灵活调节：系统通知提醒、通知冷却时间、自定义货币基数、
+#!desc=多源头监控汇率波动、面板展示详细汇率信息、支持波动提醒（面板显示）、模块多参数灵活调节：系统通知提醒、通知冷却时间、自定义货币基数等...
 #!author=okk
 #!version=2025.08.12
 #!arguments=icon:arrow.left.arrow.right.circle,color:#EF8F1C,update_interval:43200,threshold:0.1,notify:true,show_flag:true,notify_cooldown:5,base_strong:1,base_weak:1
