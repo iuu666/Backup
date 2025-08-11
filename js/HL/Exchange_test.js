@@ -276,7 +276,8 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
-
+  
+  //国旗emoji
   const flagMap = {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
     HKD: "🇭🇰", JPY: "🇯🇵", KRW: "🇰🇷", TRY: "🇹🇷"
