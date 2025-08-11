@@ -313,7 +313,11 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key]} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY}`
       : `${weakAmount}人民币${flagMap.CNY} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key]}`;
-
+    /* 不显示国旗
+    const text = item.isBaseForeign
+      ? `${strongAmount}${item.label} ≈ 人民币 ${formatRate(rateValue, item.decimals)}`
+      : `${weakAmount}人民币 ≈ ${item.label} ${formatRate(rateValue, item.decimals)}`;
+    */
     content += `${text} （${sourceLabel}）\n`;
 
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
