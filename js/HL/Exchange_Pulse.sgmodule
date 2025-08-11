@@ -9,4 +9,4 @@
 汇率信息 = script-name=汇率监控, update-interval={{{update_interval}}}
 
 [Script]
-汇率监控 = type=generic, script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange_test.js, argument=threshold={{{threshold}}}&notify={{{notify}}}&show_flag={{{show_flag}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_strong={{{base_strong}}}&base_weak={{{base_weak}}}
+汇率监控 = type=generic, script-path=https://raw.githubusercontent.com/iuu666/Backup/main/js/HL/Exchange_test.js, argument=threshold={{{threshold}}}&notify={{{notify}}}&show_flag={{{show_flag}}}&notify_cooldown={{{notify_cooldown}}}&icon={{{icon}}}&color={{{color}}}&base_strong={{{base_strong}}}&base_weak={{{base_weak}}}&update_interval={{{update_interval}}}
