@@ -1,7 +1,7 @@
 /**
  * 汇率监控
  * Author: okk
- * Version: 1.7
+ * Version: 1.8
  * Last Updated: 2025-08-12
  * 
  * 待更新内容：
@@ -317,6 +317,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     { key: "KRW", label: "韩元", isBaseForeign: false, decimals: 0 },
     { key: "TRY", label: "里拉", isBaseForeign: false, decimals: 2 }
   ];
+
   // 国旗 emoji —— 受 showFlag 控制
   const flagMap = showFlag ? {
     CNY: "🇨🇳", USD: "🇺🇸", EUR: "🇪🇺", GBP: "🇬🇧",
@@ -350,13 +351,12 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       content += `${item.label} 数据缺失\n`;
       continue;
     }
-    // 根据 showFlag 安全拼接国旗（使用回退避免 undefined）
+
     const text = item.isBaseForeign
       ? `${strongAmount}${item.label}${flagMap[item.key] || ""} ≈ 人民币 ${formatRate(rateValue, item.decimals)}${flagMap.CNY || ""}`
       : `${weakAmount}人民币${flagMap.CNY || ""} ≈ ${item.label} ${formatRate(rateValue, item.decimals)}${flagMap[item.key] || ""}`;
 
     content += `${text} （${sourceLabel}）\n`;
-
     logInfo(`汇率信息：${text} （${sourceLabel}）`);
 
     let prev = NaN;
@@ -365,17 +365,15 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
       prev = cacheStr !== null ? parseFloat(cacheStr) : NaN;
     } catch {
       prev = NaN;
-    } 
+    }
 
     if (!isNaN(prev)) {
       const change = ((rateValue - prev) / prev) * 100;
-
       if (Math.abs(change) >= threshold) {
         const symbol = change > 0 ? "↑" : "↓";
         const sign = change > 0 ? "+" : "-";
         const absChange = Math.abs(change).toFixed(2);
         const changeStr = `${symbol} ${sign}${absChange}%`;
-
         fluctuations.push(`${nameMap[item.key]}：${changeStr}`);
       }
     }
@@ -388,9 +386,16 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     }
   }
 
+  // 把波动信息拼接到面板内容
+  if (fluctuations.length > 0) {
+    content += `\n💱 汇率波动提醒（>${threshold}%）：\n${fluctuations.join("\n")}\n`;
+    logInfo(`检测到汇率波动：\n${fluctuations.join("\n")}`);
+  } else {
+    logInfo("无汇率波动超出阈值");
+  }
+
   // 统一发送通知（多条波动合并）
   if (enableNotify && fluctuations.length > 0) {
-    // 筛选满足冷却的币种Key
     const notifyKeys = [];
     for (const item of displayRates) {
       if (fluctuations.find(f => f.startsWith(nameMap[item.key]))) {
@@ -405,6 +410,8 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
         const key = Object.keys(nameMap).find(k => nameMap[k] === f.split("：")[0]);
         return notifyKeys.includes(key);
       }).join("\n");
+
+      logInfo(`准备发送通知，币种列表：${notifyKeys.join(", ")}`);
 
       $notification.post(
         `💱 汇率波动提醒（>${threshold}%）`,
@@ -436,7 +443,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     lastUpdateContent += `API下次更新：${globalApiResult.nextUpdate}\n`;
   }
   content += `\n${lastUpdateContent.trim()}`;
-  // 当前北京时间字符串，用于面板标题时间
+
   const beijingTime = new Date().toLocaleString("zh-CN", {
     timeZone: "Asia/Shanghai",
     hour12: false,
@@ -447,7 +454,7 @@ function processData(rates, lastUpdate, nextUpdate, sourceUrl) {
     minute: "2-digit",
     second: "2-digit"
   });
-  // 调用$done结束脚本，传递面板显示内容及图标等信息
+
   $done({
     title: `汇率信息 ${beijingTime}`,
     content: content.trim(),
