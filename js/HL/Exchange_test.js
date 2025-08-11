@@ -1,3 +1,42 @@
+/**
+ * 汇率监控
+ * Author: okk
+ * Version: 1.6
+ * Last Updated: 2025-08-12
+ * 
+ * 待更新内容：
+ * 1.支持自定义货币代码
+ * 2.强势币与弱势币不写死，以兑换CNY是否大于1来界定
+ *  
+ * 功能说明：
+ * - 支持从谷歌财经网页抓取指定币种汇率，自动解析实时汇率与更新时间
+ * - 多接口API备选，补充缺失币种数据，接口请求失败时自动fallback切换
+ * - 支持强势币与弱势币兑换基数自定义，按不同基数计算并显示兑换结果
+ * - 支持显示国旗Emoji，支持面板图标与颜色自定义
+ * - 汇率波动阈值检测，超过阈值时触发推送通知，支持通知冷却时间避免频繁提醒
+ * - 缓存上次汇率数据，支持波动对比与提醒
+ * - 汇率与时间格式自动转换，统一显示北京时间
+ * - 日志打印兼容多环境，方便调试与跟踪
+ * - Surge面板展示汇率详情、波动提醒及数据更新时间信息
+ * 
+ * 参数示例（通过 $argument 传入）：
+ *  show_flag=true|false         // 是否显示国旗，默认true
+ *  threshold=0.1                // 汇率波动阈值（%），默认0.1
+ *  notify=true|false            // 是否开启通知推送，默认true
+ *  base_strong=1                // 强势币兑换基数，默认1
+ *  base_weak=1                  // 弱势币兑换基数，默认1
+ *  notify_cooldown=5            // 通知冷却时间（分钟），默认5
+ *  icon=icon_name               // 面板图标，默认arrow.left.arrow.right.circle
+ *  color=#EF8F1C                // 面板图标颜色，默认#EF8F1C
+ * 
+ * 支持币种列表：
+ *  USD（美元）、EUR（欧元）、GBP（英镑）、HKD（港币）、JPY（日元）、KRW（韩元）、TRY（土耳其里拉）
+ * 
+ * 环境：
+ *  仅测试 Surge 脚本环境，其他自测
+ * 
+ */
+
 const params = (() => {
   if (typeof $argument !== "undefined") {
     return Object.fromEntries(
