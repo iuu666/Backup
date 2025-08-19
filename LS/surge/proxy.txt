@@ -8052,6 +8052,7 @@ ztedevices.com
 .dengeamerika.com
 .dengiamerika.com
 .deno.com
+.deno.dev
 .deno.land
 .dentalhypotheses.com
 .dentalschoolscouncil.ac.uk
@@ -11479,6 +11480,7 @@ ztedevices.com
 .furhhdl.org
 .furinkan.com
 .furness.ac.uk
+.furrybar.com
 .furrypornvideos.com
 .furuke.com
 .fury.blog
