@@ -33,5 +33,4 @@ URL-REGEX,^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$,REJE
 [MITM]
 #hostname = %APPEND% www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
 
-# YouTube Music
 hostname = %APPEND% music.youtube.com, youtubei.googleapis.com, *.googlevideo.com, -redirector*.googlevideo.com
