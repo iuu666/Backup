@@ -179,6 +179,7 @@ gamedownloads-rockstargames-com.akamaized.net
 gamer-cds.cdn.hinet.net
 gamer2-cds.cdn.hinet.net
 gigabyte2.azureedge.net
+github-api.arkoselabs.com
 github-cloud.s3.amazonaws.com
 gitlab-assets.oss-cn-hongkong.aliyuncs.com
 google-ohttp-relay-safebrowsing.fastly-edge.com
@@ -396,6 +397,7 @@ statics-marketingsites-eus-ms-com.akamaized.net
 statics-marketingsites-wcus-ms-com.akamaized.net
 steambroadcast.akamaized.net
 steamcdn-a.akamaihd.net
+steamcloudsweden.blob.core.windows.net
 steamcommunity-a.akamaihd.net
 steamcommunity-a.akamaihd.net.edgesuite.net
 steammobile.akamaized.net
@@ -586,6 +588,7 @@ wwis-dubc1-vip98.adobe.com
 wwis-dubc1-vip99.adobe.com
 www-cdn.icloud.com.akadns.net
 yangzhi.app
+yt3.googleusercontent.com
 zeenews-fonts.s3.amazonaws.com
 ztedevices.com
 .000webhost.com
@@ -5250,6 +5253,7 @@ ztedevices.com
 .bnext.com.tw
 .bnn.co
 .bnrmetal.com
+.bntrace.com
 .bnu.ac.uk
 .boa.ac.uk
 .boardreader.com
@@ -6479,6 +6483,7 @@ ztedevices.com
 .ceramics-cadcam.com
 .cercia.ac.uk
 .cerdas.com
+.cerebras.ai
 .ceredigion.ac.uk
 .ceri.ac.uk
 .cerlim.ac.uk
@@ -6979,6 +6984,8 @@ ztedevices.com
 .classics.ac.uk
 .classymomsex.com
 .claude.ai
+.claude.com
+.claudemcpclient.com
 .claudeusercontent.com
 .clb.org.hk
 .clc-london.ac.uk
@@ -15692,6 +15699,7 @@ ztedevices.com
 .jav-angel.net
 .jav-subtitles.com
 .jav-vr.net
+.jav.app
 .jav.com
 .jav.dog
 .jav.gallery
@@ -17704,6 +17712,7 @@ ztedevices.com
 .marlin.ac.uk
 .marplecollege.ac.uk
 .marranazas.com
+.marscode.com
 .martau.com
 .martsangkagyuofficial.org
 .maruta.be
@@ -20044,6 +20053,7 @@ ztedevices.com
 .nfscdict.com
 .nfscofficial.com
 .nfsworld.com
+.nftstatic.com
 .nftstorage.link
 .nga.mil
 .ngc.ac.uk
@@ -27295,6 +27305,7 @@ ztedevices.com
 .tracking-location.com
 .tradevip1.com
 .tradingview.com
+.trae.ai
 .traffcoll.ac.uk
 .trafficmanager.net
 .trafford.ac.uk
