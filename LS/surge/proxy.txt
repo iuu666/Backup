@@ -7235,6 +7235,8 @@ ztedevices.com
 .cofacts.tw
 .coffeemanga.to
 .cogc.ac.uk
+.cohere.ai
+.cohere.com
 .coinalyze.net
 .coinbase.com
 .coinbene.com
@@ -26738,6 +26740,7 @@ ztedevices.com
 .tentowns.ac.uk
 .tenzinpalmo.com
 .terabox.com
+.teraboxcdn.com
 .terapeack.com
 .terapeak.ca
 .terapeak.com
