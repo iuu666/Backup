@@ -1,3 +1,14 @@
+# 主域名 & API
+DOMAIN,open.spotify.com
+DOMAIN,accounts.spotify.com
+DOMAIN,apresolve.spotify.com
+DOMAIN,cdn-spotify-experiments.conductrics.com
+DOMAIN,spotify.com.edgesuite.net
+DOMAIN,audio4-ak-spotify-com.akamaized.net
+DOMAIN,heads-ak-spotify-com.akamaized.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+
 DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,spoti.fi
 DOMAIN-SUFFIX,spotifycdn.com
@@ -8,27 +19,26 @@ DOMAIN-SUFFIX,spotifyforbrands.com
 DOMAIN-SUFFIX,spotifyjobs.com
 DOMAIN-SUFFIX,spotifydesign.com
 DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN,open.spotify.com
-DOMAIN,accounts.spotify.com
-DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,audio4-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,pscdn.co
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,spotify.map.fastly.net
-DOMAIN-SUFFIX,spotify.map.fastlylb.net
-DOMAIN,cdn-spotify-experiments.conductrics.com
-DOMAIN,spotify.com.edgesuite.net
+DOMAIN-SUFFIX,spotify.app.link
 DOMAIN-SUFFIX,spotilocal.com
 DOMAIN-SUFFIX,byspotify.com
 DOMAIN-SUFFIX,tospotify.com
 DOMAIN-SUFFIX,spotifynewsroom.jp
-DOMAIN,apresolve.spotify.com
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio4-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+
+# 关键词补全（未来新域名）
 DOMAIN-KEYWORD,spotify
+
+# IP 段（Google Cloud 播放服务器）
 IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
+
+# 客户端识别（可选）
 USER-AGENT,Spotify*
 PROCESS-NAME,Spotify
 PROCESS-NAME,com.spotify.music
