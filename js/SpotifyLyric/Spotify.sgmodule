@@ -1,10 +1,3 @@
-
-
-🍿️ DualSubs.Spotify.External.Lyrics.response.json = type=http-response, pattern=^https?:\/\/(gae\d-spclient|spclient\.wg).spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=External, requires-body=1, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/SpotifyLyric/External.Lyrics.response.bundle.js, argument=Types="{{{Types}}}"&Languages[0]="{{{Languages[0]}}}"&Languages[1]="{{{Languages[1]}}}"&Vendor="{{{Vendor}}}"&LrcVendor="{{{LrcVendor}}}"&LogLevel="{{{LogLevel}}}"
-🍿️ DualSubs.Spotify.External.Lyrics.response.proto = type=http-response, pattern=^https?:\/\/(gae\d-spclient|spclient\.wg).spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=External, requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/SpotifyLyric/External.Lyrics.response.bundle.js, argument=Types="{{{Types}}}"&Languages[0]="{{{Languages[0]}}}"&Languages[1]="{{{Languages[1]}}}"&Vendor="{{{Vendor}}}"&LrcVendor="{{{LrcVendor}}}"&LogLevel="{{{LogLevel}}}"
-
-
-
 #!name = 🍿️ DualSubs: 🎵 Spotify
 #!desc = Spotify 增强及双语歌词
 #!openUrl = http://boxjs.com/#/app/DualSubs.Spotify
