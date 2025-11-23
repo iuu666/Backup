@@ -1,0 +1,47 @@
+# 主站 & API
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spoti.fi
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,spotifydesign.com
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,open.spotify.com
+DOMAIN-SUFFIX,accounts.spotify.com
+
+# 音频流媒体（Akamai）
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio4-ak-spotify-com.akamaized.net
+
+# 内容交付网络（Fastly）
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spotify.map.fastly.net
+DOMAIN-SUFFIX,spotify.map.fastlylb.net
+
+# 回调 & 试验
+DOMAIN,cdn-spotify-experiments.conductrics.com
+DOMAIN,spotify.com.edgesuite.net
+
+# 客户端
+DOMAIN-SUFFIX,byspotify.com
+DOMAIN-SUFFIX,tospotify.com
+DOMAIN-SUFFIX,spotilocal.com
+DOMAIN-SUFFIX,spotifynewsroom.jp
+
+# 关键词捕获（适用于未知新域名）
+DOMAIN-KEYWORD,spotify
+
+# IP CIDR（主要用于旧版安卓和部分播放节点）
+IP-CIDR,104.154.127.126/32,no-resolve
+IP-CIDR,35.186.224.47/32,no-resolve
+
+# UA & 进程名（确保直连或代理时识别客户端）
+USER-AGENT,Spotify*
+PROCESS-NAME,com.spotify.music
