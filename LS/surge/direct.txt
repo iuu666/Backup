@@ -38556,7 +38556,6 @@ xz.pphimalayanrt.com
 .geekmaker.com
 .geekman.vip
 .geeknev.com
-.geekpark
 .geekpark.net
 .geekpwn.org
 .geeksblog.cc
@@ -77889,6 +77888,7 @@ xz.pphimalayanrt.com
 .qianvisa.com
 .qianwa.com
 .qianwanku.com
+.qianwen.com
 .qianxiangbank.com
 .qianxibj.net
 .qianximiye.com
