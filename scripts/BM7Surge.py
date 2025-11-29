@@ -28,6 +28,7 @@ ChinaMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/S
 GlobalMedia = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list"
 Proxy = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list"
 China = "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/China/China_All_No_Resolve.list"
+ChinaMax_All = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list"
 
 def fetch_and_save(url, file_name):
     try:
@@ -81,3 +82,4 @@ fetch_and_save(ChinaMedia, "ChinaMedia.list")
 fetch_and_save(GlobalMedia, "GlobalMedia_All_No_Resolve.list")
 fetch_and_save(Proxy, "Proxy_All_No_Resolve.list")
 fetch_and_save(China, "China_All_No_Resolve.list")
+fetch_and_save(ChinaMax_All, "ChinaMax_All.list")
