@@ -17529,6 +17529,8 @@ ztedevices.com
 .okinawabank.co.jp
 .okk.tw
 .okkisokuho.com
+.okko.sport
+.okko.tv
 .okpool.me
 .okx-dns.com
 .okx-dns1.com
@@ -18499,6 +18501,7 @@ ztedevices.com
 .playerjs.io
 .playfab.com
 .playfabapi.com
+.playfamily.ru
 .playforceone.com
 .playhearthstone.com
 .playmation.com
