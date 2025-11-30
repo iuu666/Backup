@@ -1,0 +1,4 @@
+DOMAIN-KEYWORD,dig.zjurl
+DOMAIN-KEYWORD,dig.bdurl
+AND,((DOMAIN-KEYWORD,zijieapi),(DOMAIN-KEYWORD,ads))
+DOMAIN-KEYWORD,snssdk.com
