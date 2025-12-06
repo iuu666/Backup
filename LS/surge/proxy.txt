@@ -22466,6 +22466,7 @@ zeenews-fonts.s3.amazonaws.com
 .tig-ol-bitties.live
 .tigervpn.com
 .tik-tokapi.com
+.tiktok-row.net
 .tiktok.com
 .tiktokcdn-eu.com
 .tiktokcdn-us.com
@@ -22473,6 +22474,8 @@ zeenews-fonts.s3.amazonaws.com
 .tiktokd.net
 .tiktokd.org
 .tiktokeu-cdn.com
+.tiktokglobalshopv.com
+.tiktokminis.us
 .tiktokrow-cdn.com
 .tiktokv.com
 .tiktokv.eu
@@ -26243,6 +26246,7 @@ zeenews-fonts.s3.amazonaws.com
 .zopim.com
 .zorglist.com
 .zorrovpn.com
+.zotero.org
 .zozotown.com
 .zpn.im
 .zqqpwz.com
