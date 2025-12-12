@@ -18581,7 +18581,6 @@ xz.pphimalayanrt.com
 .bytedanceapi.com
 .bytedancehermestest.com
 .bytedancevod.com
-.bytedapm.com
 .bytedcdn.com
 .bytedeliver.com
 .bytedgames.com
