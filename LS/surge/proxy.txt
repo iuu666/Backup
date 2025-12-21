@@ -7443,6 +7443,8 @@ zeenews-fonts.s3.amazonaws.com
 .dmed.technology
 .dmgmediaprivacy.co.uk
 .dmhy.org
+.dmit.io
+.dmit.sh
 .dml-lang.org
 .dmm-extension.com
 .dmm.co.jp
@@ -7883,6 +7885,7 @@ zeenews-fonts.s3.amazonaws.com
 .dynu.net
 .dynupdate.no-ip.com
 .dysfz.cc
+.dzcdn.net
 .dzen.ru
 .dzeninfra.ru
 .dzze.com
@@ -8364,6 +8367,7 @@ zeenews-fonts.s3.amazonaws.com
 .entrust.com
 .entrust.net
 .entrustdatacard.com
+.eotarchive.org
 .epac.to
 .epicbrowser.com
 .epicgames.com
@@ -10382,6 +10386,7 @@ zeenews-fonts.s3.amazonaws.com
 .ghcr.io
 .ghettotube.com
 .ghidra-sre.org
+.ghostarchive.org
 .ghostgames.com
 .ghostpath.com
 .ghut.org
@@ -15360,6 +15365,7 @@ zeenews-fonts.s3.amazonaws.com
 .meme111.com
 .memealerts.com
 .memehk.com
+.mementoweb.org
 .memes.tw
 .memri.org
 .memrijttm.org
@@ -18391,6 +18397,7 @@ zeenews-fonts.s3.amazonaws.com
 .perfecttitspics.com
 .periscope.tv
 .perl.org
+.perma.cc
 .perplexity.ai
 .perplexity.com
 .persagg.com
@@ -24553,6 +24560,7 @@ zeenews-fonts.s3.amazonaws.com
 .webcammedellin.co
 .webcams.tv
 .webcamtubexxx.com
+.webcitation.org
 .webevader.org
 .webex.ca
 .webex.co.in
