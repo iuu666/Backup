@@ -91,6 +91,7 @@ DOMAIN-SUFFIX,ai.azure.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,android.chat.openai.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.microsoftapp.net
@@ -99,6 +100,7 @@ DOMAIN-SUFFIX,api.statsig.com
 DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,app.launchdarkly.com
 DOMAIN-SUFFIX,apps.mzstatic.com
+DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,auth.openai.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,auth0.openai.com
@@ -135,12 +137,17 @@ DOMAIN-SUFFIX,claude.ai.com
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,clients4.google.com
+DOMAIN-SUFFIX,clients6.google.com
 DOMAIN-SUFFIX,clientstream.launchdarkly.com
 DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
+DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,codeium.com
 DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,colab.google.com
+DOMAIN-SUFFIX,colab.research.google.com
 DOMAIN-SUFFIX,compute-pipe.com
 DOMAIN-SUFFIX,conman.org
 DOMAIN-SUFFIX,copilot.cloud.microsoft
@@ -153,6 +160,7 @@ DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,desktop.chat.openai.com
+DOMAIN-SUFFIX,developerprofiles.google.com
 DOMAIN-SUFFIX,dictate.ms
 DOMAIN-SUFFIX,dify.a
 DOMAIN-SUFFIX,dify.ai
@@ -195,6 +203,7 @@ DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,images.workoscdn.com
+DOMAIN-SUFFIX,imgix.net
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,ios.chat.openai.com
@@ -208,6 +217,7 @@ DOMAIN-SUFFIX,livekit.cloud
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,masalladeloslimites.com
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,meta.com
 DOMAIN-SUFFIX,metademolab.com
 DOMAIN-SUFFIX,microsoftcloudsummit.com
 DOMAIN-SUFFIX,microsoftdiplomados.com
@@ -241,6 +251,7 @@ DOMAIN-SUFFIX,perplexity.com
 DOMAIN-SUFFIX,pki.goog
 DOMAIN-SUFFIX,platform.openai.com
 DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
 DOMAIN-SUFFIX,pplx.ai
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,prodregistryv2.org
@@ -269,6 +280,7 @@ DOMAIN-SUFFIX,vulpes.one
 DOMAIN-SUFFIX,windsurf.ai
 DOMAIN-SUFFIX,workos.com
 DOMAIN-SUFFIX,workos.imgix.net
+DOMAIN-SUFFIX,wp.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,x.com
 IP-ASN,14061
