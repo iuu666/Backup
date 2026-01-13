@@ -5133,6 +5133,7 @@ zeenews-fonts.s3.amazonaws.com
 .brotli.org
 .brourou.com
 .browser.kagi.com
+.browser.run
 .browserleaks.com
 .brucewang.net
 .brutalbdsmtube.com
@@ -5770,6 +5771,7 @@ zeenews-fonts.s3.amazonaws.com
 .cfargotunnel.com
 .cfblob.com
 .cfd-tv.com
+.cfdata.org
 .cfdesign.com
 .cfhks.org.hk
 .cfl.re
@@ -6192,26 +6194,34 @@ zeenews-fonts.s3.amazonaws.com
 .cloudflare-gateway.com
 .cloudflare-ipfs.com
 .cloudflare-quic.com
+.cloudflare-terms-of-service-abuse.com
 .cloudflare.com
+.cloudflare.dev
 .cloudflare.net
 .cloudflare.tv
 .cloudflareaccess.com
 .cloudflareapps.com
 .cloudflarebolt.com
+.cloudflarebrowser.com
+.cloudflarechallenge.com
 .cloudflareclient.com
+.cloudflarecp.com
 .cloudflareinsights.com
 .cloudflareok.com
 .cloudflarepartners.com
 .cloudflareportal.com
 .cloudflarepreview.com
 .cloudflareregistrar.com
+.cloudflareresearch.com
 .cloudflareresolve.com
 .cloudflaressl.com
 .cloudflarestatus.com
 .cloudflarestorage.com
 .cloudflarestream.com
+.cloudflaresupport.com
 .cloudflaretest.com
 .cloudflarewarp.com
+.cloudflareworkers.com
 .cloudfront.com
 .cloudfront.net
 .cloudfunctions.net
@@ -6717,6 +6727,7 @@ zeenews-fonts.s3.amazonaws.com
 .cutt.ly
 .cw.com.tw
 .cwcams.com
+.cxacg.com
 .cy22.tv
 .cyber-bay.info
 .cyber-bay.org
@@ -8398,6 +8409,7 @@ zeenews-fonts.s3.amazonaws.com
 .enbank.ir
 .encoretvb.com
 .encrypt.me
+.encryptedsni.com
 .encuentroscasualesoecuador.com
 .encyclopedia.com
 .enema-porn.com
@@ -8637,6 +8649,7 @@ zeenews-fonts.s3.amazonaws.com
 .espn.net
 .espncdn.com
 .espnqa.com
+.esports.gg
 .esposasymaridos.com
 .espressif.com
 .esri.com
@@ -10182,10 +10195,12 @@ zeenews-fonts.s3.amazonaws.com
 .game-platform.net
 .game-repack.site
 .game735.com
+.gameapps.hk
 .gamebase.com.tw
 .gamebeforethegame.com
 .gamebiz.jp
 .gamebusiness.jp
+.gamefocus.co.kr
 .gamejolt.com
 .gamemeca.com
 .gameon-masters.com
@@ -12598,6 +12613,7 @@ zeenews-fonts.s3.amazonaws.com
 .ig.me
 .igaychat.com
 .igayporn.tv
+.igcc.jp
 .igcd.net
 .igcdn.com
 .igetnaughty.com
@@ -12915,6 +12931,7 @@ zeenews-fonts.s3.amazonaws.com
 .inoreader.com
 .inote.tw
 .inporn.com
+.inquirer.net
 .insecam.org
 .inshot.cc
 .inshot.com
@@ -15045,6 +15062,7 @@ zeenews-fonts.s3.amazonaws.com
 .mahabodhi.org
 .mahajantech.com
 .mahjongsoul.com
+.maidonanews.jp
 .maiio.net
 .mail-archive.com
 .mail.com
@@ -16151,6 +16169,7 @@ zeenews-fonts.s3.amazonaws.com
 .modperl.pl
 .modrinth.com
 .modular.im
+.moedigi.com
 .moeero-library.com
 .moeerolibrary.com
 .moefuns.co
@@ -16654,6 +16673,7 @@ zeenews-fonts.s3.amazonaws.com
 .mymoe.moe
 .mymom.info
 .mymusclevideo.com
+.mynavi.jp
 .mynetav.net
 .mynetav.org
 .mynetname.net
@@ -17961,6 +17981,7 @@ zeenews-fonts.s3.amazonaws.com
 .openapiplatform.com
 .openapiservice.com
 .openart.ai
+.openbook.org.tw
 .opencas.io
 .opencollective.com
 .opencreate.org
@@ -20021,6 +20042,7 @@ zeenews-fonts.s3.amazonaws.com
 .renzhe.cloud
 .repe21.com
 .repo.new
+.repotama.com
 .repsils.no
 .repsneakermall.com
 .repswing.com
@@ -21603,6 +21625,7 @@ zeenews-fonts.s3.amazonaws.com
 .spyjinx.com
 .sqlite.org
 .sqlserveronlinux.com
+.sqool.net
 .squ1.com
 .squadbusters.com
 .squarecapital.com
@@ -22204,6 +22227,7 @@ zeenews-fonts.s3.amazonaws.com
 .talkonly.net
 .talksport.com
 .tamilsexvideos.cc
+.tampermonkey.net
 .tamtam.chat
 .tanc.org
 .tandberg-china.com
@@ -22983,6 +23007,7 @@ zeenews-fonts.s3.amazonaws.com
 .toxin-up.sbs
 .toxinzoo.sbs
 .toy-cadcam.com
+.toy-people.com
 .toycadcam.com
 .toyobank.co.jp
 .toypark.in
