@@ -311,6 +311,7 @@ prodforza.blob.core.windows.net
 production-openaicom-storage.azureedge.net
 psg-int-centralus.cloudapp.net
 psg-int-eastus.cloudapp.net
+pubg1.battleye.com
 public-us-pingsx.api.clonoth.com
 publicca.googleapis.com
 push-apple.com.akadns.net
@@ -2322,7 +2323,10 @@ zeenews-fonts.s3.amazonaws.com
 .ankarazirvesi2018.com
 .anm.co.uk
 .annamilk.com
+.annas-archive.in
+.annas-archive.li
 .annas-archive.org
+.annas-archive.pm
 .annas-archive.se
 .annatam.com
 .annstores.net
@@ -14355,6 +14359,7 @@ zeenews-fonts.s3.amazonaws.com
 .kpkuang.org
 .kpptoto.info
 .kqes.net
+.kraftonde.com
 .kraken.com
 .kraken.onl
 .krakenjs.com
@@ -18818,6 +18823,7 @@ zeenews-fonts.s3.amazonaws.com
 .playapex.com
 .playartifact.com
 .playbar.biz
+.playbattlegrounds.com
 .playboy.com
 .playboy.com.uk
 .playboyplus.com
@@ -19526,6 +19532,7 @@ zeenews-fonts.s3.amazonaws.com
 .ptzwx.com
 .pu82.vip
 .pub.dev
+.pubg.com
 .public-sex-porn.com
 .public-trust.com
 .publicagentxxx.com
