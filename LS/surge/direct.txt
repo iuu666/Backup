@@ -13871,6 +13871,7 @@ xz.pphimalayanrt.com
 .baimda.com
 .baimei.com
 .baimeidashu.com
+.baimiao.tech
 .baimiaoapp.com
 .baimin.com
 .baina.com
@@ -83052,6 +83053,7 @@ xz.pphimalayanrt.com
 .shineoptics.com
 .shineray-motors.com
 .shinerayad.com
+.shinescan.tech
 .shinetsu.shop
 .shineu.com
 .shineway.com
