@@ -648,6 +648,7 @@ zeenews-fonts.s3.amazonaws.com
 .101boyvideos.com
 .101tubeporn.com
 .101xxx.xyz
+.1024terabox.com
 .10beasts.net
 .10bet.com
 .10c10qoo.one
@@ -3925,6 +3926,7 @@ zeenews-fonts.s3.amazonaws.com
 .bestbuytradein.com
 .bestbuyus.com
 .bestcamsites.net
+.bestclouddrive.com
 .besterpornos.com
 .bestescortgirls.nl
 .bestfreecams.club
@@ -9864,6 +9866,7 @@ zeenews-fonts.s3.amazonaws.com
 .freessh.us
 .freessl.com
 .freetcp.com
+.freeterabox.com
 .freetibet.net
 .freetibet.org
 .freetibetanheroes.org
@@ -17908,6 +17911,7 @@ zeenews-fonts.s3.amazonaws.com
 .osmfoundation.org
 .ospray.net
 .ospray.org
+.ospserver.net
 .otaku-168.com
 .otaku18a.info
 .otaku55.xyz
@@ -22188,6 +22192,7 @@ zeenews-fonts.s3.amazonaws.com
 .tensorflow.org
 .tenzinpalmo.com
 .terabox.com
+.terabox1024.com
 .teraboxcdn.com
 .terapeack.com
 .terapeak.ca
