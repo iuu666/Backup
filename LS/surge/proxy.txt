@@ -293,6 +293,7 @@ origin-a.akamaihd.net
 osu.ppy.sh
 p-events-delivery.akamaized.net
 p16-tiktokcdn-com.akamaized.net
+packages.microsoft.com
 paper-attachments.s3.amazonaws.com
 pchomeonline.com.tw
 pki.google.com
@@ -5100,6 +5101,7 @@ zeenews-fonts.s3.amazonaws.com
 .brutaltgp.com
 .bs-adreview.com
 .bs-awh.ne.jp
+.bsappapi.com
 .bsi.ir
 .bsky.app
 .bsky.network
@@ -18608,6 +18610,7 @@ zeenews-fonts.s3.amazonaws.com
 .pjbyj.top
 .pjful-app.lol
 .pjgirls.com
+.pjsekai.sega.jp
 .pk.com
 .pki-post.ch
 .pki-posta.ch
@@ -22012,6 +22015,7 @@ zeenews-fonts.s3.amazonaws.com
 .taiav.com
 .tail-f.com
 .tailf.com
+.tails.net
 .tailscale.com
 .tailscale.io
 .tailwindtraders.com
