@@ -1,5 +1,5 @@
 /** 
-☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2026-01-12 10:07⟧
+☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2026-02-02 22:49⟧
 ----------------------------------------------------------
 🛠 发现 𝐁𝐔𝐆 请反馈: https://t.me/ShawnKOP_Parser_Bot
 ⛳️ 关注 🆃🅶 相关频道: https://t.me/QuanX_API
@@ -222,6 +222,7 @@ var Psession =  mark0 && para1.indexOf("tsession=") != -1 && version >= 771? par
 // 0/1 代表关闭 session-ticket/reuse，2 表示全部关闭。
 var Pmix = version>=844? 1 : 0 // allow rewrite and filter mix from version 844
 var Pjsonjq = version>=845? 0 : 1 // allow jsonjq from version 845
+var PNS=0 // 不支持的节点统计
 
 var RegoutList= [] ;//用于 regout参数删选提醒
 // URL-Scheme 增加配置
@@ -431,7 +432,7 @@ function ResourceParse() {
     total = total.length<100? total.filter( (ele,pos)=>total.indexOf(ele) == pos) : total
     total = total.join("\n")
   } else if (content0.trim() == "") {
-    $notify("‼️ 引用" + "⟦" + subtag + "⟧" + " 返回內容为空", "⁉️ 点通知跳转以确认链接是否失效", para.split("#")[0], nan_link);
+    $notify("‼️ 当前引用" + "⟦" + subtag + "⟧" + " 返回內容为空", "⁉️ 点通知跳转以确认链接是否失效", "如确认链接有效，请在链接后添加 ?flag=shadowrocket 或 &flag=shadowrocket ", nan_link);
     flag = 0;
   } else if (type0 == "sub-http") {
     let url = VCheck(String(Base64.decode(content0.split("sub://")[1].split("#")[0])+", opt-parser=true, tag="+(new Date()).getTime()))
@@ -499,8 +500,9 @@ function ResourceParse() {
       //$notify("before","haha",total)
       total = TagCheck_QX(total).join("\n") //节点名检查
       if (PUOT==1) { total = total.split("\n").map(UOT).join("\n")}
-      if (Pcnt == 1) {$notify("⟦" + subtag + "⟧"+"解析后最终返回内容" , "节点数量: " +total.split("\n").length, total)}
+      if (Pcnt == 1 && total!=undefined) {$notify("⟦" + subtag + "⟧"+"解析后最终返回内容" , "节点数量: " +total.split("\n").length, total)}
       total = PRelay==""? Base64.encode(total) : ServerRelay(total.split("\n"),PRelay) //强制节点类型 base64 加密后再导入 Quantumult X, 如果是relay，则转换成分流类型
+      if (PNS !=0) {$notify("⚠️ 存在Quantumult X不支持的节点类型", "⚠️ 已忽略相关节点数，共计："+PNS+" 条", "⚠️ 当前版本不支持 Hysteria2，Anytls 等类型"+"\n"+"⚠️ 也不支持“v2ray-http-upgrade” 类型vless")}
       if(Pflow==1) {
         //$notify("添加流量信息","xxx","xxxx")
         $done({ content: total, info: {bytes_used: 3073741824, bytes_remaining: 2147483648, expire_date: 1854193966}});
@@ -508,6 +510,7 @@ function ResourceParse() {
       } else { $done({ content: total });}
     } else {
       if(Perror == 0) {
+      if (PNS !=0) {$notify("⚠️ 存在Quantumult X不支持的节点类型", "⚠️ 已忽略相关节点数，共计："+PNS+" 条", "⚠️ 当前版本不支持 HY2，Anytls 等类型")}
       $notify("❓❓ 友情提示 ➟ "+ "⟦" + subtag + "⟧", "⚠️⚠️ 解析后无有效内容", "🚥🚥 请自行检查相关参数, 或者点击通知跳转并发送链接反馈", bug_link)
     }
       total = errornode
@@ -520,7 +523,7 @@ function ResourceParse() {
     total = content0
     $done({ content: content0 })
   } 
-  if (Pcnt == 1 && flag !=1) {$notify("解析后最终返回内容" , "总数量： " +total.split("\n").length, total)}
+  if (Pcnt == 1 && flag !=1 && total!=undefined) {$notify("解析后最终返回内容" , "总数量： " +total.split("\n").length, total)}
   return total
   
 }
@@ -627,7 +630,7 @@ function Type_Check(subs) {
       typec = "filter-list"
       type = (typeQ == "unsupported" || typeQ =="filter")? "Rule":"wrong-field";
       content0 = content0.split("\n").map(rule_list_handle).join("\n")
-    } else if (subi.indexOf("sub://") == 0) { // sub:// 类型
+    } else if (subi.indexOf("sub://") == 0 || subi.indexOf("subs://") == 0) { // sub:// 类型
       typec = "sub-http"
       type = "sub-http"
     } else if (typeQ == "filter" && subs.indexOf("payload:")!=-1) { // clash-provider 类型？
@@ -1641,7 +1644,7 @@ function Subs2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
                     }
                 } else if (type == "vless" && version<821) {
                   Perror = 1 ; // 无需反馈
-                  $notify("⚠️ 你的 Quantumult X 版本暂未支持 Vless 节点","请 ⚠️不要⚠️ 跑来 解析器🤖️ 反馈",list0[i])
+                  $notify("⚠️ 你的 Quantumult X 版本暂未支持 Vless 节点","请更新app到最新版本",list0[i])
                 } else if (type == "vless" ) { // version 150 support vless 
                   node=VL2QX(list0[i], Pudp, Ptfo, Pcert0, PTls13)
                 } else if (QuanXK.some(NodeCheck1)) { // QuanX type 
@@ -1650,7 +1653,9 @@ function Subs2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
                     node = QX_TLS(Surge2QX(list0[i])[0], Pcert0, PTls13)
                 } else if (LoonK.some(NodeCheck)) { // Loon type
                     node = Loon2QX(list0[i])
-                } 
+                } else if (type=="hysteria2" || type=="anytls") { //
+                  PNS=PNS+1 
+                }
               if (Pdbg) {$notify(i, type, node)}
             } catch (e) {
                 failedList.push(`<<<\nContent: ${list0[i]}\nError: ${e}`)
@@ -1922,6 +1927,8 @@ function V2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
       nss.push(ip, mtd, pwd, tfo, udp, caead, tag)
     } else if(obfs != "NOT-SUPPORTTED"){
       nss.push(ip, mtd, pwd, obfs, tfo, udp, caead, tag);
+    } else if(obfs == "NOT-SUPPORTTED"){
+      PNS=PNS+1
     }
     QX = nss.join(", ");
   }
@@ -2142,7 +2149,9 @@ function VL2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
       obfs = "obfs=http"
     } else if(cnt.indexOf("obfs=websocket")!=-1) {
       obfs = cnt.indexOf("tls=1") != -1? "obfs=wss" : "obfs=ws"
-    } 
+    } else { //不支持类型
+      type="NS"
+    }
   thost=cnt.indexOf("obfsParam=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("obfsParam=")[1].split("&")[0].split("#")[0]).replace(/\"|(Host\":)|\{|\}/g,"")
   thost=cnt.indexOf("sni=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("sni=")[1].split("&")[0].split("#")[0]).replace(/\"|(Host\":)|\{|\}/g,"")
   thost=cnt.indexOf("peer=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("peer=")[1].split("&")[0].split("#")[0]).replace(/\"|(Host\":)|\{|\}/g,"")
@@ -2155,9 +2164,7 @@ function VL2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
       obfs = cnt.indexOf("security=tls") != -1 || cnt.indexOf("security=reality")!=-1? "obfs=wss" : "obfs=ws" 
     } else if(cnt.indexOf("type=")==-1 || cnt.indexOf("type=tcp")!=-1) {
       obfs = "obfs=over-tls"
-    } else if(cnt.indexOf("security=xtls")!=-1) { //暂不支持类型
-    type="NS"
-  } else if(cnt.indexOf("type=")!=-1 && cnt.indexOf("type=tcp")==-1) {//暂不支持类型
+    } else if(cnt.indexOf("type=")!=-1 && cnt.indexOf("type=tcp")==-1) {//暂不支持类型
     type="NS"
   }
     thost=cnt.indexOf("&host=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("&host=")[1].split("&")[0].split("#")[0])
@@ -2179,6 +2186,7 @@ if(obfs=="obfs=wss" && obfs=="obfs=over-tls"){
   prlt= version>=891? Reality_Handle(cnt) : ""
   nvless.push(type + ip, pwd, mtd, obfs, pcert, thost, puri, pudp, ptfo, prlt, tag)
   QX = type!="NS"? nvless.filter(Boolean).join(", ")  : ""
+  PNS= type=="NS"? PNS+1 : PNS
   return QX
 }
 
@@ -3071,6 +3079,7 @@ function YAMLFix(cnt){
   cnt = cnt.indexOf("proxies:") != -1 && /\n\s{4}server/.test(cnt)  ? cnt.replace(/\n\s{4}(headers|path)/g,"\n      $1").replace(/\n\s{6}Host/g,"\n        Host").replace(/\t/g,""):cnt
   //console.log("part-fix:\n"+cnt.split("proxies:")[1])
   cnt = cnt.indexOf("proxies:") == -1? "proxies:\n" + cnt :"proxies:"+cnt.split("proxies:")[1]
+  cnt = cnt.replace(/>/g,"⟩") // 2026-02-02 部分奇葩问题
   console.log("after-fix\n"+cnt)
   if(Pdbg == 1) {
   $notify("After-Fix","this is", "After-fix:\n"+cnt)}
@@ -3149,12 +3158,117 @@ function YJSON(cnt) {
   return cnt
 }
 
+function reorderYamlByNesting(yamlString, decodeUnicode = true) {
+  // 如果需要，先解码 Unicode
+  if (decodeUnicode) {
+    yamlString = decodeUnicodeEscapes(yamlString);
+  }
+  
+  const lines = yamlString.split('\n');
+  const result = [];
+  let i = 0;
+  // 收集字段块（包括所有子级）
+  function collectFieldBlock(startIdx, parentIndent) {
+    const block = [lines[startIdx]];
+    let idx = startIdx + 1;
+    while (idx < lines.length) {
+      const line = lines[idx];
+      const indent = line.search(/\S/);
+      const trimmed = line.trim();
+      if (!trimmed) {
+        idx++;
+        continue;
+      }
+      if (indent <= parentIndent) {
+        break;
+      }
+      block.push(line);
+      idx++;
+    }
+    return { block, nextIdx: idx };
+  }
+  // 判断是否有子级
+  function hasChildren(block, parentIndent) {
+    return block.slice(1).some(line => {
+      const trimmed = line.trim();
+      return trimmed && line.search(/\S/) > parentIndent;
+    });
+  }
+  // 处理单个列表项
+  function processListItem(startIdx, listIndent) {
+    const simpleFields = [];
+    const nestedFields = [];
+    const fieldIndent = listIndent + 2;
+    let idx = startIdx;
+    while (idx < lines.length) {
+      const line = lines[idx];
+      const indent = line.search(/\S/);
+      const trimmed = line.trim();
+      if (!trimmed) {
+        idx++;
+        continue;
+      }
+      if (indent <= listIndent) {
+        break;
+      }
+      if (indent === fieldIndent && trimmed.includes(':')) {
+        const { block, nextIdx } = collectFieldBlock(idx, fieldIndent);
+        
+        if (hasChildren(block, fieldIndent)) {
+          nestedFields.push(...block);
+        } else {
+          simpleFields.push(block[0]);
+        }
+        
+        idx = nextIdx;
+      } else {
+        idx++;
+      }
+    }
+    return { simpleFields, nestedFields, endIdx: idx };
+  }
+  // 主循环
+  while (i < lines.length) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    if (trimmed.startsWith('- ')) {
+      const listIndent = line.search(/\S/);
+      result.push(line);
+      
+      const { simpleFields, nestedFields, endIdx } = processListItem(i + 1, listIndent);
+      result.push(...simpleFields, ...nestedFields);
+      
+      i = endIdx;
+    } else {
+      result.push(line);
+      i++;
+    }
+  }
+  return result.join('\n');
+}
+function decodeUnicodeEscapes(str) {
+  return str
+  .replace(/\\U([0-9A-Fa-f]{8})/g, (match, hex) => {
+    return String.fromCodePoint(parseInt(hex, 16));
+  })
+  .replace(/\\u\{([0-9A-Fa-f]+)\}/g, (match, hex) => {
+    return String.fromCodePoint(parseInt(hex, 16));
+  })
+  .replace(/\\u([0-9A-Fa-f]{4})/g, (match, hex) => {
+    return String.fromCodePoint(parseInt(hex, 16));
+  })
+  .replace(/\\x([0-9A-Fa-f]{2})/g, (match, hex) => {
+    return String.fromCharCode(parseInt(hex, 16));
+  });
+}
+
+
 
 // Clash parser
 function Clash2QX(cnt) {
   const yaml = new YAML()
   if (Pdbg==1) { $notify(" Before YAML Parse", "content", cnt)}
-  var aa = JSON.stringify(yaml.parse(YAMLFix(cnt))).replace(/yaml@bug𝟙/g,"[").replace(/冒号/gmi,":").replace(/yaml@bug𝟚/g,"*")
+  var aa = JSON.stringify(yaml.parse(reorderYamlByNesting(YAMLFix(cnt)))).replace(/yaml@bug𝟙/g,"[").replace(/冒号/gmi,":").replace(/yaml@bug𝟚/g,"*")
   for (var i=0;i<10;i++) {
     aa = aa.replace(new RegExp(patn[4][i], "gmi"),patn[0][i])
   }
@@ -3182,6 +3296,8 @@ function Clash2QX(cnt) {
         node = CS52QX(node)
       } else if (typecc == "vless"){
         node = CVL2QX(node)
+      } else { // not support type
+        PNS = PNS+1
       }
       node = Pudp0 != 0 ? XUDP(node,Pudp0) : node
       node = Ptfo0 != 0 ? XTFO(node,Ptfo0) : node
@@ -3393,7 +3509,13 @@ function CVL2QX(cnt){
   } else if (Pcert0 != 1 && cnt.tls) {
     cert = "tls-verification=false"
   }
-  node = "vless="+[ipt, pwd, mtd, udp, tfo, obfs, ohost, vfl, pbk, sid, cert, tag].filter(Boolean).join(", ")
+  const pspt = getValue(()=>cnt["ws-opts"]["v2ray-http-upgrade"])
+  if (pspt==true) {
+    PNS = PNS +1
+    node=""
+  } else {
+    node = "vless="+[ipt, pwd, mtd, udp, tfo, obfs, ohost, vfl, pbk, sid, cert, tag].filter(Boolean).join(", ")
+  }
   //console.log(node)
   return node
 }
