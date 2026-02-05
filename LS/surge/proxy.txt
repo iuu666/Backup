@@ -17927,6 +17927,7 @@ zeenews-fonts.s3.amazonaws.com
 .osiri-suki-club.com
 .osl.com
 .osm.org
+.osmand.net
 .osmfoundation.org
 .ospray.net
 .ospray.org
@@ -20417,6 +20418,7 @@ zeenews-fonts.s3.amazonaws.com
 .seeurlpcl.com
 .seevpn.com
 .seezone.net
+.sef.org.tw
 .sego8.cc
 .sego8.co
 .sego8.xyz
