@@ -12945,6 +12945,7 @@ zeenews-fonts.s3.amazonaws.com
 .jav.la
 .jav.land
 .jav.place
+.jav.sb
 .jav.si
 .jav.wine
 .jav01.cc
@@ -13018,6 +13019,7 @@ zeenews-fonts.s3.amazonaws.com
 .javher.com
 .javheroine.com
 .javhihi.com
+.javhub.com
 .javhub.me
 .javhub.net
 .javhuge.com
@@ -13053,6 +13055,7 @@ zeenews-fonts.s3.amazonaws.com
 .javpub.me
 .javpush.com
 .javqd.com
+.javquick.com
 .javrank.com
 .javrate.com
 .javrave.club
