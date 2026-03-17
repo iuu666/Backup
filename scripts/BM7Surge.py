@@ -23,7 +23,7 @@ def fetch_and_save(url, file_name, retry=3):
 
     for attempt in range(1, retry + 1):
         try:
-            r = requests.get(url, headers=HEADERS, timeout=15)
+            r = requests.get(url, headers=HEADERS, timeout=30)
             r.raise_for_status()
             text = r.text
 
