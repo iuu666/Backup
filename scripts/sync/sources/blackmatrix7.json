@@ -2,116 +2,226 @@
   {
     "name": "Direct",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list",
-    "output": "blackmatrix7/surge/Direct.list"
+    "output": "blackmatrix7/Surge/Direct.list"
   },
   {
     "name": "Hijacking",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Hijacking/Hijacking.list",
-    "output": "blackmatrix7/surge/Hijacking.list"
+    "output": "blackmatrix7/Surge/Hijacking.list"
   },
   {
     "name": "Privacy_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Privacy/Privacy_All_No_Resolve.list",
-    "output": "blackmatrix7/surge/Privacy_All_No_Resolve.list"
+    "output": "blackmatrix7/Surge/Privacy_All_No_Resolve.list"
   },
 
   {
     "name": "Apple_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list",
-    "output": "blackmatrix7/surge/Apple_All_No_Resolve.list"
+    "output": "blackmatrix7/Surge/Apple_All_No_Resolve.list"
   },
   {
     "name": "Microsoft",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list",
-    "output": "blackmatrix7/surge/Microsoft.list"
+    "output": "blackmatrix7/Surge/Microsoft.list"
   },
   {
     "name": "Google",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list",
-    "output": "blackmatrix7/surge/Google.list"
+    "output": "blackmatrix7/Surge/Google.list"
   },
   {
     "name": "GitHub",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
-    "output": "blackmatrix7/surge/GitHub.list"
+    "output": "blackmatrix7/Surge/GitHub.list"
   },
 
   {
     "name": "OpenAI",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
-    "output": "blackmatrix7/surge/OpenAI.list"
+    "output": "blackmatrix7/Surge/OpenAI.list"
   },
   {
     "name": "Gemini",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list",
-    "output": "blackmatrix7/surge/Gemini.list"
+    "output": "blackmatrix7/Surge/Gemini.list"
   },
 
   {
     "name": "Telegram",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list",
-    "output": "blackmatrix7/surge/Telegram.list"
+    "output": "blackmatrix7/Surge/Telegram.list"
   },
   {
     "name": "Instagram",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list",
-    "output": "blackmatrix7/surge/Instagram.list"
+    "output": "blackmatrix7/Surge/Instagram.list"
   },
   {
     "name": "TikTok",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list",
-    "output": "blackmatrix7/surge/TikTok.list"
+    "output": "blackmatrix7/Surge/TikTok.list"
   },
   {
     "name": "DouYin",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list",
-    "output": "blackmatrix7/surge/DouYin.list"
+    "output": "blackmatrix7/Surge/DouYin.list"
   },
 
   {
     "name": "Spotify",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list",
-    "output": "blackmatrix7/surge/Spotify.list"
+    "output": "blackmatrix7/Surge/Spotify.list"
   },
   {
     "name": "YouTube",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
-    "output": "blackmatrix7/surge/YouTube.list"
+    "output": "blackmatrix7/Surge/YouTube.list"
   },
   {
     "name": "Netflix",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list",
-    "output": "blackmatrix7/surge/Netflix.list"
+    "output": "blackmatrix7/Surge/Netflix.list"
   },
   {
     "name": "Disney",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list",
-    "output": "blackmatrix7/surge/Disney.list"
+    "output": "blackmatrix7/Surge/Disney.list"
   },
   {
     "name": "ChinaMedia",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list",
-    "output": "blackmatrix7/surge/ChinaMedia.list"
+    "output": "blackmatrix7/Surge/ChinaMedia.list"
   },
   {
     "name": "GlobalMedia_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list",
-    "output": "blackmatrix7/surge/GlobalMedia_All_No_Resolve.list"
+    "output": "blackmatrix7/Surge/GlobalMedia_All_No_Resolve.list"
   },
 
   {
     "name": "Proxy_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list",
-    "output": "blackmatrix7/surge/Proxy_All_No_Resolve.list"
+    "output": "blackmatrix7/Surge/Proxy_All_No_Resolve.list"
   },
   {
     "name": "China_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list",
-    "output": "blackmatrix7/surge/China_All_No_Resolve.list"
+    "output": "blackmatrix7/Surge/China_All_No_Resolve.list"
   },
   {
     "name": "ChinaMax_All",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list",
-    "output": "blackmatrix7/surge/ChinaMax_All.list"
-  }
+    "output": "blackmatrix7/Surge/ChinaMax_All.list"
+  },
+{
+  "name": "Direct",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list",
+  "output": "blackmatrix7/QuantumultX/Direct.list"
+},
+{
+  "name": "Hijacking",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list",
+  "output": "blackmatrix7/QuantumultX/Hijacking.list"
+},
+{
+  "name": "Privacy",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list",
+  "output": "blackmatrix7/QuantumultX/Privacy.list"
+},
+
+{
+  "name": "Apple",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
+  "output": "blackmatrix7/QuantumultX/Apple.list"
+},
+{
+  "name": "Microsoft",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list",
+  "output": "blackmatrix7/QuantumultX/Microsoft.list"
+},
+{
+  "name": "Google",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list",
+  "output": "blackmatrix7/QuantumultX/Google.list"
+},
+{
+  "name": "GitHub",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list",
+  "output": "blackmatrix7/QuantumultX/GitHub.list"
+},
+
+{
+  "name": "OpenAI",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list",
+  "output": "blackmatrix7/QuantumultX/OpenAI.list"
+},
+{
+  "name": "Gemini",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list",
+  "output": "blackmatrix7/QuantumultX/Gemini.list"
+},
+
+{
+  "name": "Telegram",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list",
+  "output": "blackmatrix7/QuantumultX/Telegram.list"
+},
+{
+  "name": "Instagram",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list",
+  "output": "blackmatrix7/QuantumultX/Instagram.list"
+},
+{
+  "name": "TikTok",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
+  "output": "blackmatrix7/QuantumultX/TikTok.list"
+},
+{
+  "name": "DouYin",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DouYin/DouYin.list",
+  "output": "blackmatrix7/QuantumultX/DouYin.list"
+},
+
+{
+  "name": "Spotify",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list",
+  "output": "blackmatrix7/QuantumultX/Spotify.list"
+},
+{
+  "name": "YouTube",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list",
+  "output": "blackmatrix7/QuantumultX/YouTube.list"
+},
+{
+  "name": "Netflix",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list",
+  "output": "blackmatrix7/QuantumultX/Netflix.list"
+},
+{
+  "name": "Disney",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list",
+  "output": "blackmatrix7/QuantumultX/Disney.list"
+},
+{
+  "name": "ChinaMedia",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaMedia/ChinaMedia.list",
+  "output": "blackmatrix7/QuantumultX/ChinaMedia.list"
+},
+{
+  "name": "GlobalMedia",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list",
+  "output": "blackmatrix7/QuantumultX/GlobalMedia.list"
+},
+
+{
+  "name": "Proxy",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list",
+  "output": "blackmatrix7/QuantumultX/Proxy.list"
+},
+{
+  "name": "China",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list",
+  "output": "blackmatrix7/QuantumultX/China.list"
+}
 ]
