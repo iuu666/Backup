@@ -37,7 +37,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Auto update rules - $(date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "Auto update rules - $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
           git push
 
       - name: Skip commit
