@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Apple",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Apple.list",
+    "output": "rules/ealyce/Apple.list"
+  },
+  {
+    "name": "Crypto",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Crypto.list",
+    "output": "rules/ealyce/Crypto.list"
+  },
+  {
+    "name": "CryptoDraft",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/CryptoDraft.list",
+    "output": "rules/ealyce/CryptoDraft.list"
+  },
+  {
+    "name": "FQNovelAdvertising",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/FQNovelAdvertising.list",
+    "output": "rules/ealyce/FQNovelAdvertising.list"
+  },
+  {
+    "name": "OpenAI",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/OpenAI.list",
+    "output": "rules/ealyce/OpenAI.list"
+  },
+  {
+    "name": "Oracle",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Oracle.list",
+    "output": "rules/ealyce/Oracle.list"
+  },
+  {
+    "name": "PayPal",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/PayPal.list",
+    "output": "rules/ealyce/PayPal.list"
+  },
+  {
+    "name": "Proxy",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Proxy.list",
+    "output": "rules/ealyce/Proxy.list"
+  },
+  {
+    "name": "Telegram",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Telegram.list",
+    "output": "rules/ealyce/Telegram.list"
+  }
+]
