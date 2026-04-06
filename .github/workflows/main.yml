@@ -2,29 +2,30 @@ name: Sync Rules
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 3 * * *'   # 每天运行（UTC时间）
   workflow_dispatch:
 
 jobs:
-  run:
+  sync:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
 
-      - name: Install
+      - name: Install dependencies
         run: pip install requests
 
-      - name: Run script
-        run: python sync.py
+      - name: Run sync script
+        run: python scripts/sync/sync.py
 
-      - name: Commit
+      - name: Commit changes
         run: |
-          git config user.name "bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
           git add .
-          git commit -m "update" || echo "no change"
+          git commit -m "Auto update rules" || echo "No changes"
           git push
