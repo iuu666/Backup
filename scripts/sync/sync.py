@@ -6,7 +6,7 @@ import time
 import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_FILE = os.path.join(BASE_DIR, "sources.json")
+CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 
 TIMEOUT = 20
 RETRY = 3
@@ -28,12 +28,25 @@ def fetch(url: str) -> bytes:
 def ensure_dir(path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
+def load_all_sources():
+    all_sources = []
+
+    for file in os.listdir(CONFIG_DIR):
+        if file.endswith(".json"):
+            path = os.path.join(CONFIG_DIR, file)
+            print(f"\n📦 Loading {file}")
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                all_sources.extend(data)
+
+    return all_sources
+
 def process(src, root_dir):
     name = src["name"]
     url = src["url"]
     output = src["output"]
 
-    print(f"\n🔍 Checking: {name}")
+    print(f"🔍 Checking: {name}")
 
     new = fetch(url)
     output_path = os.path.join(root_dir, output)
@@ -54,14 +67,9 @@ def process(src, root_dir):
     return True
 
 def main():
-    if not os.path.exists(CONFIG_FILE):
-        print("❌ sources.json not found")
-        sys.exit(1)
-
-    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
-        sources = json.load(f)
-
     root_dir = os.path.abspath(os.path.join(BASE_DIR, "../../"))
+
+    sources = load_all_sources()
 
     changed = False
 
@@ -70,12 +78,8 @@ def main():
             changed = True
 
     print("\n=== RESULT ===")
-    if changed:
-        print("🚀 Changes detected")
-    else:
-        print("😴 No changes")
+    print("🚀 Changes detected" if changed else "😴 No changes")
 
-    # 关键：写标志文件给 workflow 用
     with open(os.path.join(root_dir, ".changed"), "w") as f:
         f.write("1" if changed else "0")
 
