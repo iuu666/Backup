@@ -1,117 +1,117 @@
 [
   {
-    "name": "direct",
+    "name": "Direct",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list",
-    "output": "rules/basic/direct.list"
+    "output": "blackmatrix7/surge/Direct.list"
   },
   {
-    "name": "hijacking",
+    "name": "Hijacking",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Hijacking/Hijacking.list",
-    "output": "rules/basic/hijacking.list"
+    "output": "blackmatrix7/surge/Hijacking.list"
   },
   {
-    "name": "privacy",
+    "name": "Privacy_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Privacy/Privacy_All_No_Resolve.list",
-    "output": "rules/basic/privacy.list"
+    "output": "blackmatrix7/surge/Privacy_All_No_Resolve.list"
   },
 
   {
-    "name": "apple",
+    "name": "Apple_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list",
-    "output": "rules/system/apple.list"
+    "output": "blackmatrix7/surge/Apple_All_No_Resolve.list"
   },
   {
-    "name": "microsoft",
+    "name": "Microsoft",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list",
-    "output": "rules/system/microsoft.list"
+    "output": "blackmatrix7/surge/Microsoft.list"
   },
   {
-    "name": "google",
+    "name": "Google",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list",
-    "output": "rules/system/google.list"
+    "output": "blackmatrix7/surge/Google.list"
   },
   {
-    "name": "github",
+    "name": "GitHub",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
-    "output": "rules/system/github.list"
+    "output": "blackmatrix7/surge/GitHub.list"
   },
 
   {
-    "name": "openai",
+    "name": "OpenAI",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
-    "output": "rules/ai/openai.list"
+    "output": "blackmatrix7/surge/OpenAI.list"
   },
   {
-    "name": "gemini",
+    "name": "Gemini",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list",
-    "output": "rules/ai/gemini.list"
+    "output": "blackmatrix7/surge/Gemini.list"
   },
 
   {
-    "name": "telegram",
+    "name": "Telegram",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list",
-    "output": "rules/social/telegram.list"
+    "output": "blackmatrix7/surge/Telegram.list"
   },
   {
-    "name": "instagram",
+    "name": "Instagram",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list",
-    "output": "rules/social/instagram.list"
+    "output": "blackmatrix7/surge/Instagram.list"
   },
   {
-    "name": "tiktok",
+    "name": "TikTok",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list",
-    "output": "rules/social/tiktok.list"
+    "output": "blackmatrix7/surge/TikTok.list"
   },
   {
-    "name": "douyin",
+    "name": "DouYin",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list",
-    "output": "rules/social/douyin.list"
+    "output": "blackmatrix7/surge/DouYin.list"
   },
 
   {
-    "name": "spotify",
+    "name": "Spotify",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list",
-    "output": "rules/media/spotify.list"
+    "output": "blackmatrix7/surge/Spotify.list"
   },
   {
-    "name": "youtube",
+    "name": "YouTube",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
-    "output": "rules/media/youtube.list"
+    "output": "blackmatrix7/surge/YouTube.list"
   },
   {
-    "name": "netflix",
+    "name": "Netflix",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list",
-    "output": "rules/media/netflix.list"
+    "output": "blackmatrix7/surge/Netflix.list"
   },
   {
-    "name": "disney",
+    "name": "Disney",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list",
-    "output": "rules/media/disney.list"
+    "output": "blackmatrix7/surge/Disney.list"
   },
   {
-    "name": "china_media",
+    "name": "ChinaMedia",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list",
-    "output": "rules/media/china_media.list"
+    "output": "blackmatrix7/surge/ChinaMedia.list"
   },
   {
-    "name": "global_media",
+    "name": "GlobalMedia_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list",
-    "output": "rules/media/global_media.list"
+    "output": "blackmatrix7/surge/GlobalMedia_All_No_Resolve.list"
   },
 
   {
-    "name": "proxy",
+    "name": "Proxy_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list",
-    "output": "rules/network/proxy.list"
+    "output": "blackmatrix7/surge/Proxy_All_No_Resolve.list"
   },
   {
-    "name": "china",
+    "name": "China_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list",
-    "output": "rules/network/china.list"
+    "output": "blackmatrix7/surge/China_All_No_Resolve.list"
   },
   {
-    "name": "china_max",
+    "name": "ChinaMax_All",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list",
-    "output": "rules/network/china_max.list"
+    "output": "blackmatrix7/surge/ChinaMax_All.list"
   }
 ]
