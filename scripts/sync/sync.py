@@ -28,48 +28,57 @@ def fetch(url: str) -> bytes:
 def ensure_dir(path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
-def process(src):
+def process(src, root_dir):
     name = src["name"]
     url = src["url"]
     output = src["output"]
 
-    print(f"Checking {name}")
+    print(f"\n🔍 Checking: {name}")
 
     new = fetch(url)
-
-    # ⚠️ 输出路径改成基于仓库根目录
-    root_dir = os.path.abspath(os.path.join(BASE_DIR, "../../"))
     output_path = os.path.join(root_dir, output)
 
     if os.path.exists(output_path):
         with open(output_path, "rb") as f:
             old = f.read()
+
         if md5(old) == md5(new):
-            print("No change")
+            print("✔ No change")
             return False
 
     ensure_dir(output_path)
     with open(output_path, "wb") as f:
         f.write(new)
 
-    print("Updated")
+    print("✅ Updated")
     return True
 
 def main():
     if not os.path.exists(CONFIG_FILE):
-        print("sources.json not found")
+        print("❌ sources.json not found")
         sys.exit(1)
 
     with open(CONFIG_FILE, "r", encoding="utf-8") as f:
         sources = json.load(f)
 
+    root_dir = os.path.abspath(os.path.join(BASE_DIR, "../../"))
+
     changed = False
 
     for s in sources:
-        if process(s):
+        if process(s, root_dir):
             changed = True
 
-    print("Done")
+    print("\n=== RESULT ===")
+    if changed:
+        print("🚀 Changes detected")
+    else:
+        print("😴 No changes")
+
+    # 关键：写标志文件给 workflow 用
+    with open(os.path.join(root_dir, ".changed"), "w") as f:
+        f.write("1" if changed else "0")
+
     sys.exit(0)
 
 if __name__ == "__main__":
