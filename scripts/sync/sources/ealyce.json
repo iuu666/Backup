@@ -5,6 +5,11 @@
     "output": "rules/ealyce/Apple.list"
   },
   {
+    "name": "Bilibili",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/refs/heads/main/Rule/Bilibili.list",
+    "output": "rules/ealyce/Bilibili.list"
+  },
+  {
     "name": "Crypto",
     "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Crypto.list",
     "output": "rules/ealyce/Crypto.list"
@@ -14,6 +19,11 @@
     "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/CryptoDraft.list",
     "output": "rules/ealyce/CryptoDraft.list"
   },
+  {
+    "name": "Douyin",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/refs/heads/main/Rule/Douyin.list",
+    "output": "rules/ealyce/Douyin.list"
+  }, 
   {
     "name": "FQNovelAdvertising",
     "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/FQNovelAdvertising.list",
@@ -43,5 +53,10 @@
     "name": "Telegram",
     "url": "https://raw.githubusercontent.com/EAlyce/conf/main/Rule/Telegram.list",
     "output": "rules/ealyce/Telegram.list"
+  },
+  {
+    "name": "ai",
+    "url": "https://raw.githubusercontent.com/EAlyce/conf/refs/heads/main/Rule/ai.list",
+    "output": "rules/ealyce/ai.list"
   }
 ]
