@@ -1,0 +1,62 @@
+[
+  {
+    "name": "apple",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt",
+    "output": "rules/loyalsoldier/Surge/apple.txt"
+  },
+  {
+    "name": "cncidr",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/cncidr.txt",
+    "output": "rules/loyalsoldier/Surge/cncidr.txt"
+  },
+  {
+    "name": "direct",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/direct.txt",
+    "output": "rules/loyalsoldier/Surge/direct.txt"
+  },
+  {
+    "name": "gfw",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt",
+    "output": "rules/loyalsoldier/Surge/gfw.txt"
+  },
+  {
+    "name": "google",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt",
+    "output": "rules/loyalsoldier/Surge/google.txt"
+  },
+  {
+    "name": "greatfire",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt",
+    "output": "rules/loyalsoldier/Surge/greatfire.txt"
+  },
+  {
+    "name": "icloud",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt",
+    "output": "rules/loyalsoldier/Surge/icloud.txt"
+  },
+  {
+    "name": "private",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt",
+    "output": "rules/loyalsoldier/Surge/private.txt"
+  },
+  {
+    "name": "proxy",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/proxy.txt",
+    "output": "rules/loyalsoldier/Surge/proxy.txt"
+  },
+  {
+    "name": "reject",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt",
+    "output": "rules/loyalsoldier/Surge/reject.txt"
+  },
+  {
+    "name": "telegramcidr",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt",
+    "output": "rules/loyalsoldier/Surge/telegramcidr.txt"
+  },
+  {
+    "name": "tld-not-cn",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt",
+    "output": "rules/loyalsoldier/Surge/tld-not-cn.txt"
+  }
+]
