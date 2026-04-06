@@ -2,7 +2,7 @@ name: Sync Rules
 
 on:
   schedule:
-    - cron: '0 3 * * *'   # 每天运行（UTC时间）
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,10 +22,24 @@ jobs:
       - name: Run sync script
         run: python scripts/sync/sync.py
 
+      - name: Check changes
+        id: check
+        run: |
+          if [ -f .changed ] && [ "$(cat .changed)" = "1" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit changes
+        if: steps.check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Auto update rules" || echo "No changes"
+          git commit -m "Auto update rules - $(date '+%Y-%m-%d %H:%M:%S')"
           git push
+
+      - name: Skip commit
+        if: steps.check.outputs.changed == 'false'
+        run: echo "No changes, skip commit"
