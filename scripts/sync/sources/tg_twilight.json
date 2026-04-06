@@ -1,12 +1,12 @@
 [
   {
-    "name": "awa_ads_surge",
+    "name": "AWAvenue-Ads-Rule-Surge-RULE-SET",
     "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
-    "output": "rules/tg_twilight/surge/ads.list"
+    "output": "tg_twilight/Surge/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
   },
   {
-    "name": "awa_ads_qx",
+    "name": "AWAvenue-Ads-Rule-QuantumultX",
     "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-QuantumultX.list",
-    "output": "rules/tg_twilight/qx/ads.list"
+    "output": "tg_twilight/QuantumultX/AWAvenue-Ads-Rule-QuantumultX.list"
   }
 ]
