@@ -1,0 +1,117 @@
+[
+  {
+    "name": "direct",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list",
+    "output": "rules/basic/direct.list"
+  },
+  {
+    "name": "hijacking",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Hijacking/Hijacking.list",
+    "output": "rules/basic/hijacking.list"
+  },
+  {
+    "name": "privacy",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Privacy/Privacy_All_No_Resolve.list",
+    "output": "rules/basic/privacy.list"
+  },
+
+  {
+    "name": "apple",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list",
+    "output": "rules/system/apple.list"
+  },
+  {
+    "name": "microsoft",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list",
+    "output": "rules/system/microsoft.list"
+  },
+  {
+    "name": "google",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list",
+    "output": "rules/system/google.list"
+  },
+  {
+    "name": "github",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
+    "output": "rules/system/github.list"
+  },
+
+  {
+    "name": "openai",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
+    "output": "rules/ai/openai.list"
+  },
+  {
+    "name": "gemini",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list",
+    "output": "rules/ai/gemini.list"
+  },
+
+  {
+    "name": "telegram",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list",
+    "output": "rules/social/telegram.list"
+  },
+  {
+    "name": "instagram",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list",
+    "output": "rules/social/instagram.list"
+  },
+  {
+    "name": "tiktok",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list",
+    "output": "rules/social/tiktok.list"
+  },
+  {
+    "name": "douyin",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list",
+    "output": "rules/social/douyin.list"
+  },
+
+  {
+    "name": "spotify",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list",
+    "output": "rules/media/spotify.list"
+  },
+  {
+    "name": "youtube",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
+    "output": "rules/media/youtube.list"
+  },
+  {
+    "name": "netflix",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list",
+    "output": "rules/media/netflix.list"
+  },
+  {
+    "name": "disney",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list",
+    "output": "rules/media/disney.list"
+  },
+  {
+    "name": "china_media",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list",
+    "output": "rules/media/china_media.list"
+  },
+  {
+    "name": "global_media",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list",
+    "output": "rules/media/global_media.list"
+  },
+
+  {
+    "name": "proxy",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list",
+    "output": "rules/network/proxy.list"
+  },
+  {
+    "name": "china",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list",
+    "output": "rules/network/china.list"
+  },
+  {
+    "name": "china_max",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list",
+    "output": "rules/network/china_max.list"
+  }
+]
