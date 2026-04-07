@@ -105,6 +105,11 @@
     "output": "rules/blackmatrix7/Surge/Proxy_All_No_Resolve.list"
   },
   {
+    "name": "Global_All_No_Resolve",
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Global/Global_All_No_Resolve.list",
+    "output": "rules/blackmatrix7/Surge/Global_All_No_Resolve.list"
+  },,
+  {
     "name": "China_All_No_Resolve",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list",
     "output": "rules/blackmatrix7/Surge/China_All_No_Resolve.list"
@@ -219,6 +224,11 @@
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list",
   "output": "rules/blackmatrix7/QuantumultX/Proxy.list"
 },
+{
+  "name": "Global",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/QuantumultX/Global/Global.list",
+  "output": "rules/blackmatrix7/QuantumultX/Global.list"
+},,
 {
   "name": "China",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list",
