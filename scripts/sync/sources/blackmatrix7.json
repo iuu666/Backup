@@ -223,5 +223,10 @@
   "name": "China",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list",
   "output": "rules/blackmatrix7/QuantumultX/China.list"
+},
+{
+  "name": "ChinaMax",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/QuantumultX/ChinaMax/ChinaMax.list",
+  "output": "rules/blackmatrix7/QuantumultX/ChinaMax.list"
 }
 ]
