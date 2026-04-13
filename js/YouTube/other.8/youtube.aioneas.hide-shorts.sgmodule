@@ -3,7 +3,7 @@
 #!author=DivineEngine + app2smile + Maasea + ddgksf2013 + Aioneas
 #!homepage=https://github.com/Aioneas/Surge
 #!icon=https://raw.githubusercontent.com/Aioneas/Surge/main/Icon/YouTube.png
-#!category=Aioneas
+#!category=https://github.com/Aioneas/Surge/blob/main/Module/youtube.aioneas.hide-shorts.sgmodule
 
 [URL Rewrite]
 # ======= 视频广告请求 ======= #
