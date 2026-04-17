@@ -918,8 +918,8 @@ zeenews-fonts.s3.amazonaws.com
 .2gis.kg
 .2gis.kz
 .2gis.ru
+.2gis.tech
 .2gis.tj
-.2gis.ua
 .2gis.uz
 .2k.com
 .2kcoretech.online
@@ -3002,6 +3002,7 @@ zeenews-fonts.s3.amazonaws.com
 .asus.com
 .asuscloud.com
 .asuswebstorage.com
+.at.ua
 .atandt.com
 .atc.org.au
 .atchinese.com
@@ -3035,6 +3036,7 @@ zeenews-fonts.s3.amazonaws.com
 .att.jobs
 .att.net
 .att.tv
+.attachmail.ru
 .attachmy.com
 .attackers.net
 .attalascom.com
@@ -3280,6 +3282,7 @@ zeenews-fonts.s3.amazonaws.com
 .avinetworks.com
 .avinin.com
 .avira.com
+.avistaz.to
 .avito.ru
 .avito.st
 .avizoon.site
@@ -3919,6 +3922,8 @@ zeenews-fonts.s3.amazonaws.com
 .beforeigners.com
 .befuck.com
 .befuck.net
+.beget.com
+.beget.ru
 .begin-trade.com
 .behance.net
 .behindthescreenz.com
@@ -10204,6 +10209,7 @@ zeenews-fonts.s3.amazonaws.com
 .ghut.org
 .giantessbooru.com
 .giantessnight.com
+.gid.ru
 .giffgaff.com
 .giffgaff.design
 .gifnuki.com
@@ -17269,6 +17275,7 @@ zeenews-fonts.s3.amazonaws.com
 .okkisokuho.com
 .okko.sport
 .okko.tv
+.okkoapi.tv
 .okl.lt
 .oklink.com
 .okpool.me
@@ -18866,6 +18873,7 @@ zeenews-fonts.s3.amazonaws.com
 .projectshoreline.com
 .projectvasari.com
 .projectvoyeur.com
+.promodj.com
 .promonsterbeatsbydre.com
 .prompthero.com
 .pron.guru
@@ -19951,6 +19959,7 @@ zeenews-fonts.s3.amazonaws.com
 .screenwisetrendspanel.com
 .screw-my-wife.com
 .scribd.com
+.scripts-for-ucoz.ru
 .scriptspot.com
 .scrolller.com
 .sculpoly.com
@@ -22157,6 +22166,8 @@ zeenews-fonts.s3.amazonaws.com
 .timesnownews.com
 .timesofindia.indiatimes.com
 .timestalks.com
+.timeweb.cloud
+.timeweb.com
 .timi1.me
 .timo0.com
 .timtales.com
@@ -22603,6 +22614,7 @@ zeenews-fonts.s3.amazonaws.com
 .twblogger.com
 .twca.com.tw
 .twcomix.com
+.twcstorage.ru
 .tweakadmin.com
 .tweakfilms.com
 .tweaksoftware.com
@@ -22741,6 +22753,30 @@ zeenews-fonts.s3.amazonaws.com
 .uchi.ru
 .uchicago.edu
 .ucla.edu
+.ucoz.ae
+.ucoz.club
+.ucoz.co
+.ucoz.co.il
+.ucoz.co.uk
+.ucoz.com
+.ucoz.com.br
+.ucoz.com.ro
+.ucoz.de
+.ucoz.es
+.ucoz.fr
+.ucoz.hu
+.ucoz.kz
+.ucoz.lv
+.ucoz.md
+.ucoz.net
+.ucoz.org
+.ucoz.pl
+.ucoz.ru
+.ucoz.site
+.ucoz.ua
+.ucozmedia.com
+.ucozmedia.ru
+.ucoztemplates.com
 .udacity.com
 .udemy.com
 .udemycdn.com
@@ -22754,6 +22790,7 @@ zeenews-fonts.s3.amazonaws.com
 .ueberamazon.de
 .uflash.tv
 .uforadio.com.tw
+.uguide.ru
 .uguisupapa.net
 .uhairy.com
 .uhdwallpapers.org
@@ -22770,6 +22807,10 @@ zeenews-fonts.s3.amazonaws.com
 .ujizzcn.com
 .uk-exhibitionist.com
 .ukipad.com
+.ukit.ai
+.ukit.com
+.ukit.group
+.ukit.me
 .uku.im
 .ukwhoswho.com
 .ulifestyle.com.hk
@@ -22782,6 +22823,7 @@ zeenews-fonts.s3.amazonaws.com
 .ultrasurf.us
 .ultravpn.com
 .ultravpn.fr
+.uma.media
 .umagazine.com.hk
 .umass.edu
 .umbrella.com
@@ -24727,6 +24769,7 @@ zeenews-fonts.s3.amazonaws.com
 .xlstudio.com
 .xlydh.cc
 .xm.com
+.xmail.ru
 .xmalay.com
 .xmature.su
 .xmav99.com
