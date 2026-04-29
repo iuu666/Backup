@@ -22911,6 +22911,7 @@ zeenews-fonts.s3.amazonaws.com
 .upornia.com
 .uporno.xxx
 .uproxy.org
+.upsangel.com
 .uptodown.com
 .ura-akiba.jp
 .uraban.me
