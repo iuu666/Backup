@@ -20772,6 +20772,7 @@ zeenews-fonts.s3.amazonaws.com
 .softbankventuresasia.com
 .softbankworld.com
 .softether-download.com
+.softether.co.jp
 .softether.org
 .softfamous.com
 .softmodels.net
