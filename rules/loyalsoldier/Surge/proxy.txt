@@ -6799,6 +6799,7 @@ zeenews-fonts.s3.amazonaws.com
 .data-tscbank.ru
 .data-vocabulary.org
 .data.com
+.data18.com
 .datacloudmy.com
 .dataframeworks.com
 .dataliberation.org
@@ -7733,6 +7734,7 @@ zeenews-fonts.s3.amazonaws.com
 .dstk.dk
 .dswz88.xyz
 .dsyiren.com
+.dt18.com
 .dtci.co
 .dtci.technology
 .dtiblog.com
@@ -10249,6 +10251,7 @@ zeenews-fonts.s3.amazonaws.com
 .gettyimages.us
 .getuploader.com
 .getws1.com
+.getwsj.com
 .getwsone.com
 .getzola.org
 .gfacecbook.com
@@ -13381,6 +13384,7 @@ zeenews-fonts.s3.amazonaws.com
 .javdove.com
 .javdove8.xyz
 .javextreme.net
+.javfc2.xyz
 .javfilms.com
 .javfinder.ai
 .javfor.me
