@@ -33,7 +33,7 @@ http-request ^https:\/\/.*\/(newh5app\/singers\/0\?|openapi\/v1\/www\/search\/se
 hostname = *.kuwo.cn
 ⏰定时任务:
   cron "*每12分钟运行一次" script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuWoMusic/Task/other.1/kuwo.js,
-   timeout=3000, tag=酷我音乐(积分), images-url=https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwosvip.png
+   timeout=3000, tag=酷我音乐(积分), images-url=https://raw.githubusercontent.com/iuu666/Backup/main/js/KuWoMusic/Task/other.1/kuwosvip.png
 🔍手动抓包: 
   开启抓包,进入网页登陆后的界面
   搜索url记录关键词"configuration\/signature"请求头中的Cookies里的 userid和 websid 分别填入BoxJs（userid=loginUid，websid=loginSid）
