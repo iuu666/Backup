@@ -28,7 +28,7 @@
 🎯重写脚本:
  在网页酷我音乐上登陆，手机端需切换到桌面版才有登录口，登陆成功后切回移动版，成功获取Cookies！
   [Script]
-http-request ^https:\/\/.*\/(newh5app\/singers\/0\?|openapi\/v1\/www\/search\/searchKey\?) script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuWoMusic/Task/other.1/kuwo_Cookies.js, requires-body=true, timeout=60, enabled=false, tag=酷我音乐(积分)获取Cookies, images-url=https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwosvip.png
+http-request ^https:\/\/.*\/(newh5app\/singers\/0\?|openapi\/v1\/www\/search\/searchKey\?) script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuWoMusic/Task/other.1/kuwo_Cookies.js, requires-body=true, timeout=60, enabled=false, tag=酷我音乐(积分)获取Cookies, images-url=https://raw.githubusercontent.com/iuu666/Backup/main/js/KuWoMusic/Task/other.1/kuwosvip.png
 [MITM]
 hostname = *.kuwo.cn
 ⏰定时任务:
