@@ -1,7 +1,13 @@
 #!name=酷我音乐签到
 #!desc=酷我音乐自动签到、领金币、抽奖等任务
 #!author=bb
-#!category=酷我音乐
+#!category=
+#!1.安装插件&模块
+#!2.编辑参数填入酷我账号的手机号，OCR密匙登陆ocr.space领取
+#!3.然后打开 https://360.com/kuwo 
+#!4.然后获取图片二维码
+#!5.然后发送和填写验证码后登录
+#!6.首次会自动完成一次任务，后续缓存ck 定时运行
 #!date=2025-12-18
 #!arguments=phone:1xx,ocr:kk,notify:1
 #!arguments-desc=phone: 手机号 (用于Web登录，可留空)\nocr: OCR密钥 (用于验证码识别，可留空)\nnotify: 通知模式 (1=每次通知, 0=仅23点汇总，默认1)
