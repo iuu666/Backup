@@ -32,7 +32,7 @@ http-request ^https:\/\/.*\/(newh5app\/singers\/0\?|openapi\/v1\/www\/search\/se
 [MITM]
 hostname = *.kuwo.cn
 ⏰定时任务:
-  cron "*每12分钟运行一次" script-path=https://raw.githubusercontent.com/General74110/Scripts/master/Script/Task/kuwo.js,
+  cron "*每12分钟运行一次" script-path=https://raw.githubusercontent.com/iuu666/Backup/refs/heads/main/js/KuWoMusic/Task/other.1/kuwo.js,
    timeout=3000, tag=酷我音乐(积分), images-url=https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwosvip.png
 🔍手动抓包: 
   开启抓包,进入网页登陆后的界面
