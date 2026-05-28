@@ -1,5 +1,7 @@
 # AdGuard 规则说明
 
+> 最后更新时间：2026-05-28 08:16:24
+
 > 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。
 
 ## 规则列表
@@ -22,15 +24,19 @@
 
 在 Surge 配置文件中添加以下规则（按需选择）：
 
+### 核心必选
+
 ```text
-# ==================== 推荐必选（核心） ====================
 # 基础广告过滤
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/base-filter.txt,REJECT
 
 # 隐私追踪保护
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/tracking-protection.txt,REJECT
+```
 
-# ==================== 可选增强 ====================
+### 可选增强
+
+```text
 # 中文网站专用
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/chinese-filter.txt,REJECT
 
@@ -39,13 +45,19 @@ RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/soci
 
 # DNS 恶意域名屏蔽
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/dns-filter.txt,REJECT
+```
 
-# ==================== 烦人元素屏蔽 ====================
-# 方式一：使用合集（包含以下 5 个子项，推荐）
+### 烦人元素屏蔽
+
+#### 方式一：使用合集（包含以下 5 个子项，推荐）
+
+```text
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances.txt,REJECT
+```
 
-# 方式二：单独使用子项（按需选择）
+#### 方式二：单独使用子项（按需选择）
 
+```text
 # 1. Cookie 通知屏蔽
 RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT
 

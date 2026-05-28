@@ -1,3 +1,16 @@
+.-728x90a.
+.-bandarkiu.
+.-banner-ads.
+.-banner728x90.
+.-iklan1.
+.-iklan2.
+.-ikln.
+.-tototix.gif
+..1080.x.90.
+..3.n.2.1.l50.js
+..3.n.2.2.l30.js
+..prod.pr.analytics.console.aws.a2z.com
+..stape.net
 .0.avmarket.rs
 .0.myikas.com
 .0.net.easyjet.com
@@ -1085,8 +1098,6 @@
 .2zxm2pb3q38m2k.cfd
 .3.5646.cn
 .3.cjcp.cn
-.3.n.2.1.l50.js
-.3.n.2.2.l30.js
 .3.sinecosine.nl
 .3.ssqzj.com
 .3.www.cheetahhowevertowardsfrom.com
@@ -96526,7 +96537,6 @@
 .prod.html5-ads.vk-apps.com
 .prod.nitrosniffer.ottogroup.io
 .prod.otel.kaizen.nvidia.com
-.prod.pr.analytics.console.aws.a2z.com
 .prod.report.nacustomerexperience.citi.com
 .prod.roadplast.com
 .prod.tahoe-analytics.publishers.advertising.a2z.com
@@ -129012,7 +129022,6 @@
 .stape.neoprene.com.br
 .stape.neosmedicalacademy.com.br
 .stape.neresbrasil.com.br
-.stape.net
 .stape.neurau.com.br
 .stape.neuraw.com.br
 .stape.neurofuncional.com.br
