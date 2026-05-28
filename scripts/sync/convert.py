@@ -25,6 +25,13 @@ RETRY = 3
 # 初始化公共后缀列表（自动下载并定期更新，缓存24小时）
 psl = PublicSuffixList()
 
+# ========== 可选黑名单（按需添加，默认空）==========
+OPTIONAL_BLACKLIST = {
+    # 如果你确定要过滤某些域名，可以取消注释
+    # 'googleadservices.com',
+    # 'pagead2.googlesyndication.com',
+}
+
 # ========== 辅助函数 ==========
 @contextmanager
 def temp_file(content: bytes = None, suffix: str = '.txt'):
@@ -47,10 +54,32 @@ def is_ip_address(domain: str) -> bool:
     except ValueError:
         return False
 
+def is_likely_ad_pattern(domain: str) -> bool:
+    """
+    判断是否可能是广告垃圾规则（保守过滤，只过滤确定无害的模式）
+    这些模式绝不可能是正常域名
+    """
+    # 广告尺寸模式：如 120x600、300x250
+    if re.search(r'\d{2,4}x\d{2,4}', domain):
+        return True
+    
+    # 纯数字加横线：如 120-600
+    if re.match(r'^[\d\-]+$', domain):
+        return True
+    
+    # 以 .- 或 .. 开头的异常模式
+    if domain.startswith('.-') or domain.startswith('..'):
+        return True
+    
+    # 包含非法字符（正常域名只有字母数字横线点）
+    if re.search(r'[^a-zA-Z0-9\-\.]', domain):
+        return True
+    
+    return False
+
 def is_valid_domain(domain_str: str) -> bool:
     """
-    检查字符串是否为有效域名
-    使用 public_suffix_list 库自动验证 TLD
+    检查字符串是否为有效域名（安全版，宁漏勿杀）
     """
     if not domain_str or '.' not in domain_str:
         return False
@@ -58,10 +87,37 @@ def is_valid_domain(domain_str: str) -> bool:
     if is_ip_address(domain_str):
         return False
     
+    # 长度检查（RFC 标准）
+    if len(domain_str) < 3 or len(domain_str) > 253:
+        return False
+    
+    # 不能以点开头或结尾
+    if domain_str.startswith('.') or domain_str.endswith('.'):
+        return False
+    
+    # 不能有连续两个点（无效域名）
+    if '..' in domain_str:
+        return False
+    
+    # 检查每个部分（label）
+    parts = domain_str.split('.')
+    for part in parts:
+        if len(part) < 1 or len(part) > 63:
+            return False
+        if not part:
+            return False
+    
     # 使用公共后缀列表验证
-    # 如果域名无效或没有有效的公共后缀，返回 None
-    suffix = psl.public_suffix(domain_str)
-    return suffix is not None
+    try:
+        suffix = psl.public_suffix(domain_str)
+        return suffix is not None
+    except:
+        # 如果库出错，回退到基础检查
+        return len(parts) >= 2
+
+def is_blacklisted(domain: str) -> bool:
+    """检查是否在可选黑名单中"""
+    return domain in OPTIONAL_BLACKLIST
 
 # ========== 域名提取（增强版）==========
 def extract_domain_from_rule(line: str):
@@ -89,8 +145,20 @@ def extract_domain_from_rule(line: str):
         m = re.match(pattern, s)
         if m:
             domain = m.group(1)
-            if is_valid_domain(domain):
-                return domain
+            
+            # 基础格式验证
+            if not is_valid_domain(domain):
+                continue
+            
+            # 广告垃圾模式过滤
+            if is_likely_ad_pattern(domain):
+                continue
+            
+            # 可选黑名单过滤
+            if is_blacklisted(domain):
+                continue
+            
+            return domain
     return None
 
 # ========== 使用 AdGuard 编译器优化 ==========
@@ -138,6 +206,7 @@ def convert_to_domainset(raw_content: bytes) -> bytes:
             continue
         domains.add(domain)
 
+    # 输出时加前缀点，匹配域名及其所有子域名
     result = '\n'.join('.' + d for d in sorted(domains))
     return result.encode('utf-8')
 
