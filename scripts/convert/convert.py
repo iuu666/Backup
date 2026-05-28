@@ -190,7 +190,7 @@ def get_beijing_time() -> str:
 
 def check_count_anomaly(filename: str, current_count: int, meta: dict) -> bool:
     last_data = meta.get(filename, {})
-    last_count = last_data.get("count", 0) if isinstance(last_data, dict) else 0
+    last_count = last_data.get("latest", 0)
     if last_count == 0:
         return False
     change_ratio = (current_count - last_count) / last_count
@@ -210,7 +210,6 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("| 文件名 | 作用 |")
     lines.append("|--------|------|")
     
-    # 定义规则文件的显示顺序和说明
     rule_display = [
         ("base-filter.txt", "基础广告过滤"),
         ("tracking-protection.txt", "隐私追踪保护"),
@@ -248,16 +247,32 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("| 规则文件 | 7天前 | 昨天 | 今天 | 趋势 |")
     lines.append("|---------|-------|------|------|------|")
     
-    # 生成趋势表格行
+    # 定义规则文件的显示顺序
+    rule_order = [
+        "base-filter.txt",
+        "tracking-protection.txt",
+        "chinese-filter.txt",
+        "social-media.txt",
+        "dns-filter.txt",
+        "annoyances.txt",
+        "annoyances-cookie-notices.txt",
+        "annoyances-popups.txt",
+        "annoyances-mobile-app-banners.txt",
+        "annoyances-widgets.txt",
+        "annoyances-other.txt"
+    ]
+    
     today = datetime.now().date()
     week_ago = today - timedelta(days=7)
     yesterday = today - timedelta(days=1)
     
-    for filename in ["base-filter.txt", "chinese-filter.txt", "tracking-protection.txt"]:
+    for filename in rule_order:
         if filename not in meta:
             continue
         
-        history = meta[filename].get("history", []) if isinstance(meta[filename], dict) else []
+        data = meta[filename]
+        history = data.get("history", []) if isinstance(data, dict) else []
+        
         if not history:
             continue
         
@@ -266,13 +281,16 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
         week_ago_count = None
         
         for h in history:
-            date = datetime.strptime(h["date"], "%Y-%m-%d").date()
-            if date == today:
-                today_count = h["count"]
-            elif date == yesterday:
-                yesterday_count = h["count"]
-            elif date == week_ago:
-                week_ago_count = h["count"]
+            try:
+                date = datetime.strptime(h["date"], "%Y-%m-%d").date()
+                if date == today:
+                    today_count = h["count"]
+                elif date == yesterday:
+                    yesterday_count = h["count"]
+                elif date == week_ago:
+                    week_ago_count = h["count"]
+            except:
+                continue
         
         if today_count is None:
             continue
@@ -293,14 +311,7 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
         else:
             trend = "-"
         
-        # 获取显示名称
-        display_name = {
-            "base-filter.txt": "base-filter.txt",
-            "chinese-filter.txt": "chinese-filter.txt",
-            "tracking-protection.txt": "tracking-protection.txt"
-        }.get(filename, filename)
-        
-        lines.append(f"| {display_name} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
+        lines.append(f"| {filename} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
@@ -394,12 +405,28 @@ def process_single(src: dict, root_dir: str, meta: dict) -> tuple:
             f.write(converted_content)
         print(f"   ✅ 已更新 ({rule_count} 条)")
         
-        # 线程安全写入 meta
+        # 线程安全写入 meta，保留历史记录
         with meta_lock:
-            meta[filename] = {
-                "time": get_beijing_time(),
-                "count": rule_count
-            }
+            today = datetime.now().strftime("%Y-%m-%d")
+            if filename not in meta:
+                meta[filename] = {"history": []}
+            
+            history = meta[filename].get("history", [])
+            if not history or history[-1].get("date") != today:
+                history.append({"date": today, "count": rule_count})
+                # 只保留最近 30 天的历史
+                cutoff = datetime.now() - timedelta(days=30)
+                filtered_history = []
+                for h in history:
+                    try:
+                        if datetime.strptime(h["date"], "%Y-%m-%d") >= cutoff:
+                            filtered_history.append(h)
+                    except:
+                        continue
+                meta[filename]["history"] = filtered_history
+            
+            meta[filename]["latest"] = rule_count
+        
         return (name, True, filename, rule_count)
     else:
         print(f"   ✔ 无变化 ({rule_count} 条)")
