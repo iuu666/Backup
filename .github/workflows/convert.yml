@@ -3,7 +3,7 @@ name: Convert AdGuard to DOMAIN-SET
 on:
   schedule:
     - cron: '30 0 * * *'   # 每天 UTC 00:30（北京时间 08:30）
-  workflow_dispatch:        # 支持手动触发
+  workflow_dispatch:
 
 jobs:
   convert:
@@ -12,6 +12,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Cache AdGuard compiler results
+        uses: actions/cache@v3
+        with:
+          path: ~/.adguard_cache
+          key: adguard-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            adguard-cache-${{ runner.os }}-
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
