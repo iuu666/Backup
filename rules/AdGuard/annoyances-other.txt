@@ -1,0 +1,15 @@
+.backgrounds.wetransfer.net
+.banner.consultant.ru
+.coin-hive.com
+.coinhive.com
+.contributions.guardianapis.com
+.creatives-promo.telegraaf.nl
+.https-filtering-check.adtidy.org
+.illicium.wmtransfer.com
+.jobs.t3n.de
+.newsstat.dallasnews.com
+.point.widget.rakuten.co.jp
+.shop.kicker.de
+.smart-bdash.com
+.usefomo.com
+.xhamsterpremium.com
