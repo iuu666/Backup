@@ -190,7 +190,10 @@ def generate_readme(sources: list, root_dir: str, update_time: str):
     lines = []
     lines.append("# AdGuard 规则说明\n")
     lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
-    lines.append("## 规则列表\n")
+    lines.append("## 规则来源\n")
+    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
+    lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
+    lines.append("\n## 规则列表\n")
     lines.append("| 文件名 | 规则来源 | 作用 | 更新时间 |")
     lines.append("|--------|----------|------|----------|")
     
