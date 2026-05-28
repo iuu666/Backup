@@ -12,6 +12,9 @@ from pathlib import Path
 from datetime import datetime
 from contextlib import contextmanager
 
+# 使用公共后缀列表库（自动从 IANA/Mozilla 更新）
+from public_suffix_list import PublicSuffixList
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
@@ -19,19 +22,8 @@ ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
 TIMEOUT = 20
 RETRY = 3
 
-# ========== 有效顶级域名列表（可动态更新）==========
-# 基础 TLD 集合，后续可从 IANA 自动更新
-VALID_TLDS = {
-    'com', 'org', 'net', 'io', 'co', 'uk', 'de', 'fr', 'jp', 'cn',
-    'ru', 'br', 'tr', 'pl', 'cz', 'nl', 'se', 'no', 'fi', 'dk',
-    'at', 'ch', 'be', 'it', 'es', 'pt', 'gr', 'hu', 'ro', 'ua',
-    'in', 'id', 'my', 'sg', 'hk', 'tw', 'kr', 'au', 'nz', 'ca',
-    'mx', 'ar', 'cl', 'za', 'eu', 'gov', 'edu', 'mil', 'info', 'biz',
-    'tv', 'cc', 'me', 'name', 'pro', 'xyz', 'top', 'club', 'online',
-    'site', 'tech', 'store', 'press', 'host', 'space', 'website',
-    'cloud', 'app', 'dev', 'page', 'ly', 'today', 'group', 'work',
-    'link', 'news', 'media', 'social', 'blog', 'world', 'life', 'one'
-}
+# 初始化公共后缀列表（自动下载并定期更新，缓存24小时）
+psl = PublicSuffixList()
 
 # ========== 辅助函数 ==========
 @contextmanager
@@ -56,16 +48,20 @@ def is_ip_address(domain: str) -> bool:
         return False
 
 def is_valid_domain(domain_str: str) -> bool:
-    """检查字符串是否为有效域名"""
+    """
+    检查字符串是否为有效域名
+    使用 public_suffix_list 库自动验证 TLD
+    """
     if not domain_str or '.' not in domain_str:
         return False
+    
     if is_ip_address(domain_str):
         return False
-    parts = domain_str.split('.')
-    if len(parts) < 2:
-        return False
-    tld = parts[-1].lower()
-    return tld in VALID_TLDS
+    
+    # 使用公共后缀列表验证
+    # 如果域名无效或没有有效的公共后缀，返回 None
+    suffix = psl.public_suffix(domain_str)
+    return suffix is not None
 
 # ========== 域名提取（增强版）==========
 def extract_domain_from_rule(line: str):
