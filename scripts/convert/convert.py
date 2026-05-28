@@ -210,35 +210,51 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("| 文件名 | 作用 | 7天前 | 昨天 | 今天 | 趋势 |")
     lines.append("|--------|------|-------|------|------|------|")
     
-    # 定义所有规则文件的显示顺序和说明
+    # 定义所有规则文件的显示顺序和说明（文件名不带 .txt）
     all_rules = [
-        ("base-filter.txt", "基础广告过滤"),
-        ("tracking-protection.txt", "隐私追踪保护"),
-        ("chinese-filter.txt", "中文网站专用"),
-        ("social-media.txt", "社交媒体屏蔽"),
-        ("dns-filter.txt", "恶意域名屏蔽"),
-        ("annoyances.txt", "烦人元素合集（包含以下子项）"),
-        ("annoyances-cookie-notices.txt", "&nbsp;&nbsp;&nbsp;├─ Cookie 通知屏蔽"),
-        ("annoyances-popups.txt", "&nbsp;&nbsp;&nbsp;├─ 弹窗屏蔽"),
-        ("annoyances-mobile-app-banners.txt", "&nbsp;&nbsp;&nbsp;├─ 移动端横幅屏蔽"),
-        ("annoyances-widgets.txt", "&nbsp;&nbsp;&nbsp;├─ 网页挂件屏蔽"),
-        ("annoyances-other.txt", "&nbsp;&nbsp;&nbsp;└─ 其他烦人元素"),
+        ("base-filter", "基础广告过滤"),
+        ("tracking-protection", "隐私追踪保护"),
+        ("chinese-filter", "中文网站专用"),
+        ("social-media", "社交媒体屏蔽"),
+        ("dns-filter", "恶意域名屏蔽"),
+        ("annoyances", "烦人元素合集（包含以下子项）"),
+        ("annoyances-cookie-notices", "&nbsp;&nbsp;&nbsp;├─ Cookie 通知屏蔽"),
+        ("annoyances-popups", "&nbsp;&nbsp;&nbsp;├─ 弹窗屏蔽"),
+        ("annoyances-mobile-app-banners", "&nbsp;&nbsp;&nbsp;├─ 移动端横幅屏蔽"),
+        ("annoyances-widgets", "&nbsp;&nbsp;&nbsp;├─ 网页挂件屏蔽"),
+        ("annoyances-other", "&nbsp;&nbsp;&nbsp;└─ 其他烦人元素"),
     ]
+    
+    # meta 中的 key 仍然带 .txt，这里做映射
+    meta_key_map = {
+        "base-filter": "base-filter.txt",
+        "tracking-protection": "tracking-protection.txt",
+        "chinese-filter": "chinese-filter.txt",
+        "social-media": "social-media.txt",
+        "dns-filter": "dns-filter.txt",
+        "annoyances": "annoyances.txt",
+        "annoyances-cookie-notices": "annoyances-cookie-notices.txt",
+        "annoyances-popups": "annoyances-popups.txt",
+        "annoyances-mobile-app-banners": "annoyances-mobile-app-banners.txt",
+        "annoyances-widgets": "annoyances-widgets.txt",
+        "annoyances-other": "annoyances-other.txt",
+    }
     
     today = datetime.now().date()
     week_ago = today - timedelta(days=7)
     yesterday = today - timedelta(days=1)
     
-    for filename, desc in all_rules:
-        if filename not in meta:
-            lines.append(f"| {filename} | {desc} | - | - | - | - |")
+    for display_name, desc in all_rules:
+        key = meta_key_map.get(display_name)
+        if not key or key not in meta:
+            lines.append(f"| {display_name} | {desc} | - | - | - | - |")
             continue
         
-        data = meta[filename]
+        data = meta[key]
         history = data.get("history", []) if isinstance(data, dict) else []
         
         if not history:
-            lines.append(f"| {filename} | {desc} | - | - | - | - |")
+            lines.append(f"| {display_name} | {desc} | - | - | - | - |")
             continue
         
         today_count = None
@@ -258,7 +274,7 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
                 continue
         
         if today_count is None:
-            lines.append(f"| {filename} | {desc} | - | - | - | - |")
+            lines.append(f"| {display_name} | {desc} | - | - | - | - |")
             continue
         
         week_str = f"{week_ago_count:,}" if week_ago_count else "-"
@@ -277,7 +293,7 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
         else:
             trend = "-"
         
-        lines.append(f"| {filename} | {desc} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
+        lines.append(f"| {display_name} | {desc} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
     
     lines.append("")
     lines.append("## Surge 使用说明\n")
