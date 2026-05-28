@@ -1,3 +1,14 @@
+.-CookieInfo.
+.-cookie-cnil.
+.-cookie-law-popup.
+.-cookie-law.js
+.-cookie-message.js
+.-cookie-msg-bar.
+.-cookie-notice.
+.-cookie-policy.
+.-cookiePolicy.
+.-cookies-policy.
+.-eucookie.
 .aloofvest.com
 .api.consentjs.datagrail.io
 .app.secureprivacy.ai

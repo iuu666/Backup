@@ -6,17 +6,17 @@
 
 | 文件名 | 作用 | 规则来源 | 更新时间 |
 |--------|------|----------|----------|
-| base-filter.txt | AdGuard 基础广告过滤 | AdGuard | 2026-05-28 19:38:31 |
-| chinese-filter.txt | AdGuard 中文网站专用 | AdGuard | 2026-05-28 19:38:18 |
-| tracking-protection.txt | AdGuard 隐私追踪保护 | AdGuard | 2026-05-28 19:38:22 |
-| annoyances.txt | AdGuard 烦人元素（合集） | AdGuard | 2026-05-28 19:38:19 |
-| annoyances-cookie-notices.txt | AdGuard Cookie 通知屏蔽 | AdGuard | 2026-05-28 19:38:20 |
+| base-filter.txt | AdGuard 基础广告过滤 | AdGuard | 2026-05-28 22:09:19 |
+| chinese-filter.txt | AdGuard 中文网站专用 | AdGuard | 2026-05-28 22:09:12 |
+| tracking-protection.txt | AdGuard 隐私追踪保护 | AdGuard | 2026-05-28 22:09:12 |
+| annoyances.txt | AdGuard 烦人元素（合集） | AdGuard | 2026-05-28 22:09:13 |
+| annoyances-cookie-notices.txt | AdGuard Cookie 通知屏蔽 | AdGuard | 2026-05-28 22:09:13 |
 | annoyances-popups.txt | AdGuard 弹窗屏蔽 | AdGuard | 2026-05-28 19:38:21 |
 | annoyances-mobile-app-banners.txt | AdGuard 移动端 App 横幅屏蔽 | AdGuard | 2026-05-28 19:38:22 |
 | annoyances-widgets.txt | AdGuard 网页挂件屏蔽 | AdGuard | 2026-05-28 19:38:22 |
 | annoyances-other.txt | AdGuard 其他烦人元素屏蔽 | AdGuard | 2026-05-28 19:38:23 |
 | social-media.txt | AdGuard 社交媒体组件屏蔽 | AdGuard | 2026-05-28 19:38:23 |
-| dns-filter.txt | AdGuard DNS 恶意域名屏蔽 | AdGuard | 2026-05-28 19:38:31 |
+| dns-filter.txt | AdGuard DNS 恶意域名屏蔽 | AdGuard | 2026-05-28 22:09:18 |
 
 ## Surge 使用说明
 
