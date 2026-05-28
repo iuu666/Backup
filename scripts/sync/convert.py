@@ -99,16 +99,21 @@ def fetch(url: str) -> bytes:
             time.sleep(wait_time)
     raise Exception(f"Fetch failed: {url}")
 
-# ---------- 加载 JSON 配置 ----------
+# ---------- 加载 JSON 配置（只加载 adguard.json）----------
 def load_all_sources():
+    """只加载 adguard.json，忽略其他 JSON 文件"""
     all_sources = []
-    for file in os.listdir(CONFIG_DIR):
-        if file.endswith(".json"):
-            path = os.path.join(CONFIG_DIR, file)
-            print(f"📦 Loading {file}")
-            with open(path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                all_sources.extend(data)
+    
+    target_file = os.path.join(CONFIG_DIR, "adguard.json")
+    
+    if os.path.exists(target_file):
+        print(f"📦 Loading adguard.json")
+        with open(target_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            all_sources.extend(data)
+    else:
+        print(f"⚠️ 未找到 adguard.json，请检查路径: {target_file}")
+    
     return all_sources
 
 # ---------- 生成 README 说明文件 ----------
@@ -142,7 +147,6 @@ def generate_readme(sources: list, root_dir: str):
     lines.append("```")
     lines.append("\n**提示**：以上链接已替换为你的 GitHub 仓库地址，可直接使用。")
     
-    # 确保目录存在
     Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
     
     with open(readme_path, "w", encoding="utf-8") as f:
@@ -189,6 +193,14 @@ def process_single(src: dict, root_dir: str) -> tuple[str, bool]:
 # ---------- 主函数 ----------
 def main():
     sources = load_all_sources()
+    
+    if not sources:
+        print("❌ 没有加载到任何规则，请检查 adguard.json 文件")
+        changed_file = os.path.join(ROOT_DIR, ".changed")
+        with open(changed_file, "w") as f:
+            f.write("0")
+        return
+    
     changed = False
     changed_file = os.path.join(ROOT_DIR, ".changed")
     updated_sources = []
