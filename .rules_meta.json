@@ -1,0 +1,101 @@
+{
+  "chinese-filter.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 6266
+      }
+    ],
+    "latest": 6266
+  },
+  "tracking-protection.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 84574
+      }
+    ],
+    "latest": 84574
+  },
+  "base-filter.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 64041
+      }
+    ],
+    "latest": 64041
+  },
+  "annoyances-cookie-notices.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 180
+      }
+    ],
+    "latest": 180
+  },
+  "annoyances.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 861
+      }
+    ],
+    "latest": 861
+  },
+  "annoyances-mobile-app-banners.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 3
+      }
+    ],
+    "latest": 3
+  },
+  "annoyances-popups.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 419
+      }
+    ],
+    "latest": 419
+  },
+  "annoyances-other.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 16
+      }
+    ],
+    "latest": 16
+  },
+  "social-media.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 49
+      }
+    ],
+    "latest": 49
+  },
+  "annoyances-widgets.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 247
+      }
+    ],
+    "latest": 247
+  },
+  "dns-filter.txt": {
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 163378
+      }
+    ],
+    "latest": 163378
+  }
+}
