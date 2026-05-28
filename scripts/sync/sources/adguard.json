@@ -2,11 +2,31 @@
   {
     "name": "AdGuard Base Filter",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_url.txt",
-    "output_domainset": "domain-set/base-filter.txt"
+    "output_domainset": "rules/AdGuard/base-filter.txt"
+  },
+  {
+    "name": "AdGuard Chinese Filter",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/general_url.txt",
+    "output_domainset": "rules/AdGuard/chinese-filter.txt"
   },
   {
     "name": "AdGuard Tracking Protection",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/TrackingFilter/sections/general_url.txt",
-    "output_domainset": "domain-set/tracking-protection.txt"
+    "output_domainset": "rules/AdGuard/tracking-protection.txt"
+  },
+  {
+    "name": "AdGuard Annoyances (All)",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/general_url.txt",
+    "output_domainset": "rules/AdGuard/annoyances.txt"
+  },
+  {
+    "name": "AdGuard Social Media",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SocialMediaFilter/sections/general_url.txt",
+    "output_domainset": "rules/AdGuard/social-media.txt"
+  },
+  {
+    "name": "AdGuard DNS Filter",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/DNSFilter/sections/general_url.txt",
+    "output_domainset": "rules/AdGuard/dns-filter.txt"
   }
 ]
