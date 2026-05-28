@@ -28,7 +28,6 @@ ANOMALY_THRESHOLD = 0.3
 psl = PublicSuffixList()
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# 线程锁，用于保护 meta 字典的写入
 meta_lock = threading.Lock()
 
 OPTIONAL_BLACKLIST = {
@@ -73,6 +72,10 @@ def is_valid_domain(domain_str: str) -> bool:
         if len(parts) < 2:
             return False
         tld = parts[-1].lower()
+        if len(tld) < 2 or len(tld) > 24:
+            return False
+        if tld.isdigit():
+            return False
         if tld in ('js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'ico', 'html', 'htm', 'json', 'xml', 'txt'):
             return False
         return True
@@ -185,12 +188,28 @@ def save_meta(meta: dict):
     with open(META_FILE, "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2, ensure_ascii=False)
 
+def update_meta(meta: dict, filename: str, count: int):
+    """更新元数据，保留历史记录"""
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    if filename not in meta:
+        meta[filename] = {"history": []}
+    
+    history = meta[filename].get("history", [])
+    if not history or history[-1].get("date") != today:
+        history.append({"date": today, "count": count})
+        cutoff = datetime.now() - timedelta(days=30)
+        history = [h for h in history if datetime.strptime(h["date"], "%Y-%m-%d") >= cutoff]
+        meta[filename]["history"] = history
+    
+    meta[filename]["latest"] = count
+
 def get_beijing_time() -> str:
     return (datetime.utcnow() + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
 
 def check_count_anomaly(filename: str, current_count: int, meta: dict) -> bool:
     last_data = meta.get(filename, {})
-    last_count = last_data.get("count", 0) if isinstance(last_data, dict) else 0
+    last_count = last_data.get("latest", 0)
     if last_count == 0:
         return False
     change_ratio = (current_count - last_count) / last_count
@@ -199,75 +218,131 @@ def check_count_anomaly(filename: str, current_count: int, meta: dict) -> bool:
         return True
     return False
 
+def generate_trend_table(meta: dict) -> list:
+    """生成规则数量趋势表格"""
+    lines = []
+    lines.append("## 📊 规则数量趋势\n")
+    lines.append("| 规则文件 | 7天前 | 昨天 | 今天 | 趋势 |")
+    lines.append("|---------|-------|------|------|------|")
+    
+    today = datetime.now().date()
+    week_ago = today - timedelta(days=7)
+    yesterday = today - timedelta(days=1)
+    
+    for filename in ["base-filter.txt", "chinese-filter.txt", "tracking-protection.txt"]:
+        if filename not in meta:
+            continue
+        
+        history = meta[filename].get("history", [])
+        if not history:
+            continue
+        
+        today_count = None
+        yesterday_count = None
+        week_ago_count = None
+        
+        for h in history:
+            date = datetime.strptime(h["date"], "%Y-%m-%d").date()
+            if date == today:
+                today_count = h["count"]
+            elif date == yesterday:
+                yesterday_count = h["count"]
+            elif date == week_ago:
+                week_ago_count = h["count"]
+        
+        if today_count is None:
+            continue
+        
+        week_str = f"{week_ago_count:,}" if week_ago_count else "-"
+        yesterday_str = f"{yesterday_count:,}" if yesterday_count else "-"
+        today_str = f"{today_count:,}"
+        
+        if yesterday_count and today_count:
+            change = today_count - yesterday_count
+            percent = (change / yesterday_count) * 100
+            if change > 0:
+                trend = f"📈 +{percent:.1f}%"
+            elif change < 0:
+                trend = f"📉 {percent:.1f}%"
+            else:
+                trend = "➡️ 持平"
+        else:
+            trend = "-"
+        
+        lines.append(f"| {filename} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
+    
+    return lines
+
 def generate_readme(sources: list, root_dir: str, meta: dict):
     readme_path = os.path.join(root_dir, "rules", "AdGuard", "README.md")
     
     lines = []
-    lines.append("# AdGuard 规则说明\n")
-    lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
-    lines.append("## 规则列表\n")
-    lines.append("| 文件名 | 作用 | 规则来源 | 更新时间 |")
-    lines.append("|--------|------|----------|----------|")
+    lines.append("# 🛡️ AdGuard 规则\n")
+    lines.append("> 每天自动更新 · Surge 专用\n")
+    lines.append("## 📦 规则列表\n")
+    lines.append("| 文件 | 说明 |")
+    lines.append("|------|------|")
     
-    for src in sources:
-        filename = os.path.basename(src["output_domainset"])
-        name = src["name"]
-        time_data = meta.get(filename, {})
-        update_time = time_data.get("time", "未知") if isinstance(time_data, dict) else time_data
-        lines.append(f"| {filename} | {name} | AdGuard | {update_time} |")
+    rule_display = {
+        "base-filter.txt": "基础广告过滤",
+        "tracking-protection.txt": "隐私追踪保护",
+        "chinese-filter.txt": "中文网站专用",
+        "social-media.txt": "社交媒体屏蔽",
+        "dns-filter.txt": "恶意域名屏蔽",
+        "annoyances.txt": "烦人元素合集（包含以下 5 个子项）",
+    }
     
-    lines.append("\n## Surge 使用说明\n")
-    lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
+    sub_items = [
+        "annoyances-cookie-notices.txt — Cookie 通知屏蔽",
+        "annoyances-popups.txt — 弹窗屏蔽",
+        "annoyances-mobile-app-banners.txt — 移动端横幅屏蔽",
+        "annoyances-widgets.txt — 网页挂件屏蔽",
+        "annoyances-other.txt — 其他烦人元素",
+    ]
     
-    lines.append("### 核心必选\n")
+    for filename, desc in rule_display.items():
+        lines.append(f"| **{filename}** | {desc} |")
+    
+    lines.append("")
+    lines.append("<details>")
+    lines.append("<summary>📎 烦人元素子项（点击展开）</summary>\n")
+    for item in sub_items:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("</details>\n")
+    
+    lines.append("## 🔧 Surge 配置\n")
     lines.append("```text")
-    lines.append("# 基础广告过滤")
+    lines.append("# 核心必选")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/base-filter.txt,REJECT")
-    lines.append("")
-    lines.append("# 隐私追踪保护")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/tracking-protection.txt,REJECT")
-    lines.append("```\n")
-    
-    lines.append("### 可选增强\n")
-    lines.append("```text")
-    lines.append("# 中文网站专用")
+    lines.append("")
+    lines.append("# 可选增强")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/chinese-filter.txt,REJECT")
-    lines.append("")
-    lines.append("# 社交媒体组件屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/social-media.txt,REJECT")
-    lines.append("")
-    lines.append("# DNS 恶意域名屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/dns-filter.txt,REJECT")
-    lines.append("```\n")
-    
-    lines.append("### 烦人元素屏蔽\n")
-    lines.append("#### 方式一：使用合集（包含以下 5 个子项，推荐）\n")
-    lines.append("```text")
+    lines.append("")
+    lines.append("# 烦人元素（二选一）")
+    lines.append("# 方式一：使用合集")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances.txt,REJECT")
-    lines.append("```\n")
-    
-    lines.append("#### 方式二：单独使用子项（按需选择）\n")
-    lines.append("```text")
-    lines.append("# 1. Cookie 通知屏蔽")
-    lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT")
     lines.append("")
-    lines.append("# 2. 弹窗屏蔽")
-    lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-popups.txt,REJECT")
-    lines.append("")
-    lines.append("# 3. 移动端 App 横幅屏蔽")
-    lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-mobile-app-banners.txt,REJECT")
-    lines.append("")
-    lines.append("# 4. 网页挂件屏蔽")
-    lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-widgets.txt,REJECT")
-    lines.append("")
-    lines.append("# 5. 其他烦人元素屏蔽")
-    lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT")
+    lines.append("# 方式二：单独使用子项")
+    lines.append("# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT")
+    lines.append("# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-popups.txt,REJECT")
+    lines.append("# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-mobile-app-banners.txt,REJECT")
+    lines.append("# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-widgets.txt,REJECT")
+    lines.append("# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT")
     lines.append("```")
     
-    lines.append("\n---\n")
-    lines.append("## 规则来源\n")
-    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
-    lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
+    # 添加趋势表格
+    trend_lines = generate_trend_table(meta)
+    if len(trend_lines) > 2:
+        lines.extend(trend_lines)
+    
+    lines.append("\n## 📌 说明\n")
+    lines.append("- 规则文件每天北京时间 08:30 自动更新")
+    lines.append("- 来源：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)")
+    lines.append("- 转换工具：Python + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)")
     
     Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
     with open(readme_path, "w", encoding="utf-8") as f:
@@ -308,12 +383,8 @@ def process_single(src: dict, root_dir: str, meta: dict) -> tuple:
             f.write(converted_content)
         print(f"   ✅ 已更新 ({rule_count} 条)")
         
-        # 线程安全写入 meta
         with meta_lock:
-            meta[filename] = {
-                "time": get_beijing_time(),
-                "count": rule_count
-            }
+            update_meta(meta, filename, rule_count)
         return (name, True, filename, rule_count)
     else:
         print(f"   ✔ 无变化 ({rule_count} 条)")
