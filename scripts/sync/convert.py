@@ -194,13 +194,13 @@ def generate_readme(sources: list, root_dir: str, update_time: str):
     lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
     lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
     lines.append("\n## 规则列表\n")
-    lines.append("| 文件名 | 规则来源 | 作用 | 更新时间 |")
-    lines.append("|--------|----------|------|----------|")
+    lines.append("| 文件名 | 作用 | 规则来源 | 更新时间 |")
+    lines.append("|--------|------|----------|----------|")
     
     for src in sources:
         filename = os.path.basename(src["output_domainset"])
         name = src["name"]
-        lines.append(f"| {filename} | AdGuard | {name} | {update_time} |")
+        lines.append(f"| {filename} | {name} | AdGuard | {update_time} |")
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
