@@ -1,0 +1,46 @@
+{
+  "base-filter.txt": {
+    "time": "2026-05-28 23:13:43",
+    "count": 64024
+  },
+  "chinese-filter.txt": {
+    "time": "2026-05-28 23:13:43",
+    "count": 6266
+  },
+  "tracking-protection.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 84574
+  },
+  "annoyances-cookie-notices.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 179
+  },
+  "annoyances.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 860
+  },
+  "annoyances-mobile-app-banners.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 3
+  },
+  "annoyances-popups.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 419
+  },
+  "annoyances-other.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 16
+  },
+  "annoyances-widgets.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 247
+  },
+  "social-media.txt": {
+    "time": "2026-05-28 23:13:44",
+    "count": 49
+  },
+  "dns-filter.txt": {
+    "time": "2026-05-28 23:13:46",
+    "count": 163350
+  }
+}
