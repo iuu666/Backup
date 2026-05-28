@@ -38,7 +38,7 @@ from public_suffix_list import PublicSuffixList
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
-META_FILE = os.path.join(ROOT_DIR, "rules", "AdGuard", ".rules_meta.json")
+META_FILE = os.path.join(ROOT_DIR, ".rules_meta.json")
 
 # 编译器缓存目录（使用系统临时目录）
 CACHE_DIR = os.path.join(tempfile.gettempdir(), "adguard_rule_cache")
