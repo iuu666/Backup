@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
 META_FILE = os.path.join(ROOT_DIR, ".rules_meta.json")
-CACHE_DIR = os.path.join(tempfile.gettempdir(), "adguard_rule_cache")
+CACHE_DIR = os.path.join(os.path.expanduser("~"), ".adguard_cache")
 
 TIMEOUT = 20
 RETRY = 3
