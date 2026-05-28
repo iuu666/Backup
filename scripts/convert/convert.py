@@ -370,7 +370,9 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
     lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
     
-    Path(readme_path).parent.mkdir(parenters=True, exist_ok=True)
+    # 修复拼写错误：parenters → parents
+    Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
+    
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
     print(f"📄 已生成说明文件: {readme_path}")
