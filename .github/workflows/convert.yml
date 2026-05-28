@@ -38,7 +38,7 @@ jobs:
         run: pip install requests public-suffix-list
 
       - name: Run convert script
-        run: python scripts/sync/convert.py
+        run: python scripts/convert/convert.py
 
       - name: Commit and push changes
         run: |
