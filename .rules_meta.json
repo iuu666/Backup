@@ -1,74 +1,46 @@
 {
   "base-filter.txt": {
-    "time": "2026-05-28 23:13:43",
-    "count": 64024,
-    "history": [
-      {
-        "date": "2026-05-28",
-        "count": 64041
-      }
-    ],
-    "latest": 64041
+    "time": "2026-05-29 00:06:00",
+    "count": 64041
   },
   "chinese-filter.txt": {
-    "time": "2026-05-28 23:13:43",
+    "time": "2026-05-29 00:05:58",
     "count": 6266
   },
   "tracking-protection.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:01",
     "count": 84574
   },
   "annoyances-cookie-notices.txt": {
-    "time": "2026-05-28 23:13:44",
-    "count": 179,
-    "history": [
-      {
-        "date": "2026-05-28",
-        "count": 180
-      }
-    ],
-    "latest": 180
+    "time": "2026-05-29 00:05:59",
+    "count": 180
   },
   "annoyances.txt": {
-    "time": "2026-05-28 23:13:44",
-    "count": 860,
-    "history": [
-      {
-        "date": "2026-05-28",
-        "count": 861
-      }
-    ],
-    "latest": 861
+    "time": "2026-05-29 00:05:59",
+    "count": 861
   },
   "annoyances-mobile-app-banners.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:00",
     "count": 3
   },
   "annoyances-popups.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:00",
     "count": 419
   },
   "annoyances-other.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:01",
     "count": 16
   },
   "annoyances-widgets.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:00",
     "count": 247
   },
   "social-media.txt": {
-    "time": "2026-05-28 23:13:44",
+    "time": "2026-05-29 00:06:01",
     "count": 49
   },
   "dns-filter.txt": {
-    "time": "2026-05-28 23:13:46",
-    "count": 163350,
-    "history": [
-      {
-        "date": "2026-05-28",
-        "count": 163378
-      }
-    ],
-    "latest": 163378
+    "time": "2026-05-29 00:06:02",
+    "count": 163378
   }
 }
