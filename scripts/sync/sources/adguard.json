@@ -2,25 +2,11 @@
   {
     "name": "AdGuard Base Filter",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_url.txt",
-    "output": "raw/base-filter.txt",
     "output_domainset": "domain-set/base-filter.txt"
   },
   {
     "name": "AdGuard Tracking Protection",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/TrackingFilter/sections/general_url.txt",
-    "output": "raw/tracking-protection.txt",
     "output_domainset": "domain-set/tracking-protection.txt"
-  },
-  {
-    "name": "AdGuard Annoyances",
-    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/general_url.txt",
-    "output": "raw/annoyances.txt",
-    "output_domainset": "domain-set/annoyances.txt"
-  },
-  {
-    "name": "AdGuard Chinese Filter",
-    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/general_url.txt",
-    "output": "raw/chinese-filter.txt",
-    "output_domainset": "domain-set/chinese-filter.txt"
   }
 ]
