@@ -53,11 +53,5 @@
     "name": "AdGuard DNS 恶意域名屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/DNSFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/dns-filter.txt"
-  },
-  {
-    "name": "AdAway 广告主机屏蔽",
-    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AdAway/sections/general_url.txt",
-    "output_domainset": "rules/AdGuard/adaway.txt"
-  },
-
+  }
 ]
