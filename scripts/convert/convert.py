@@ -207,15 +207,100 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("# AdGuard 规则\n")
     lines.append("> 每天自动更新\n")
     lines.append("## 规则列表\n")
-    lines.append("| 文件名 | 作用 | 更新时间 |")
-    lines.append("|--------|------|----------|")
+    lines.append("| 文件名 | 作用 |")
+    lines.append("|--------|------|")
     
-    for src in sources:
-        filename = os.path.basename(src["output_domainset"])
-        name = src["name"]
-        time_data = meta.get(filename, {})
-        update_time = time_data.get("time", "未知") if isinstance(time_data, dict) else time_data
-        lines.append(f"| {filename} | {name} | {update_time} |")
+    # 定义规则文件的显示顺序和说明
+    rule_display = [
+        ("base-filter.txt", "基础广告过滤"),
+        ("tracking-protection.txt", "隐私追踪保护"),
+        ("chinese-filter.txt", "中文网站专用"),
+        ("social-media.txt", "社交媒体屏蔽"),
+        ("dns-filter.txt", "恶意域名屏蔽"),
+        ("annoyances.txt", "烦人元素合集（包含以下 5 个子项）"),
+    ]
+    
+    for filename, desc in rule_display:
+        lines.append(f"| {filename} | {desc} |")
+    
+    lines.append("")
+    lines.append("<details>")
+    lines.append("<summary>📎 烦人元素子项（点击展开）</summary>\n")
+    lines.append("| 文件名 | 说明 |")
+    lines.append("|--------|------|")
+    
+    sub_items = [
+        ("annoyances-cookie-notices.txt", "Cookie 通知屏蔽"),
+        ("annoyances-popups.txt", "弹窗屏蔽"),
+        ("annoyances-mobile-app-banners.txt", "移动端横幅屏蔽"),
+        ("annoyances-widgets.txt", "网页挂件屏蔽"),
+        ("annoyances-other.txt", "其他烦人元素"),
+    ]
+    
+    for filename, desc in sub_items:
+        lines.append(f"| {filename} | {desc} |")
+    
+    lines.append("")
+    lines.append("</details>\n")
+    
+    lines.append("## 规则数量趋势\n")
+    lines.append(f"> 最后更新：{run_time}\n")
+    lines.append("| 规则文件 | 7天前 | 昨天 | 今天 | 趋势 |")
+    lines.append("|---------|-------|------|------|------|")
+    
+    # 生成趋势表格行
+    today = datetime.now().date()
+    week_ago = today - timedelta(days=7)
+    yesterday = today - timedelta(days=1)
+    
+    for filename in ["base-filter.txt", "chinese-filter.txt", "tracking-protection.txt"]:
+        if filename not in meta:
+            continue
+        
+        history = meta[filename].get("history", []) if isinstance(meta[filename], dict) else []
+        if not history:
+            continue
+        
+        today_count = None
+        yesterday_count = None
+        week_ago_count = None
+        
+        for h in history:
+            date = datetime.strptime(h["date"], "%Y-%m-%d").date()
+            if date == today:
+                today_count = h["count"]
+            elif date == yesterday:
+                yesterday_count = h["count"]
+            elif date == week_ago:
+                week_ago_count = h["count"]
+        
+        if today_count is None:
+            continue
+        
+        week_str = f"{week_ago_count:,}" if week_ago_count else "-"
+        yesterday_str = f"{yesterday_count:,}" if yesterday_count else "-"
+        today_str = f"{today_count:,}"
+        
+        if yesterday_count and today_count:
+            change = today_count - yesterday_count
+            percent = (change / yesterday_count) * 100
+            if change > 0:
+                trend = f"📈 +{percent:.1f}%"
+            elif change < 0:
+                trend = f"📉 {percent:.1f}%"
+            else:
+                trend = "➡️ 持平"
+        else:
+            trend = "-"
+        
+        # 获取显示名称
+        display_name = {
+            "base-filter.txt": "base-filter.txt",
+            "chinese-filter.txt": "chinese-filter.txt",
+            "tracking-protection.txt": "tracking-protection.txt"
+        }.get(filename, filename)
+        
+        lines.append(f"| {display_name} | {week_str} | {yesterday_str} | {today_str} | {trend} |")
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
@@ -242,32 +327,31 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("```\n")
     
     lines.append("### 烦人元素屏蔽\n")
-    lines.append("#### 方式一：使用合集（包含以下 5 个子项，推荐）\n")
+    lines.append("#### 方式一：使用合集（推荐）\n")
     lines.append("```text")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances.txt,REJECT")
     lines.append("```\n")
     
-    lines.append("#### 方式二：单独使用子项（按需选择）\n")
+    lines.append("#### 方式二：单独使用子项\n")
     lines.append("```text")
-    lines.append("# 1. Cookie 通知屏蔽")
+    lines.append("# Cookie 通知屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT")
     lines.append("")
-    lines.append("# 2. 弹窗屏蔽")
+    lines.append("# 弹窗屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-popups.txt,REJECT")
     lines.append("")
-    lines.append("# 3. 移动端 App 横幅屏蔽")
+    lines.append("# 移动端横幅屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-mobile-app-banners.txt,REJECT")
     lines.append("")
-    lines.append("# 4. 网页挂件屏蔽")
+    lines.append("# 网页挂件屏蔽")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-widgets.txt,REJECT")
     lines.append("")
-    lines.append("# 5. 其他烦人元素屏蔽")
+    lines.append("# 其他烦人元素")
     lines.append("DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT")
     lines.append("```")
     
     lines.append("\n---\n")
     lines.append("## 规则来源\n")
-    lines.append(f"> 最后更新：{run_time}\n")
     lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)")
     lines.append("- 转换工具：Python + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)")
     
