@@ -2,8 +2,8 @@ name: Convert AdGuard to DOMAIN-SET
 
 on:
   schedule:
-    - cron: '30 0 * * *'
-  workflow_dispatch:
+    - cron: '30 0 * * *'   # 每天 UTC 00:30（北京时间 08:30）
+  workflow_dispatch:        # 支持手动触发
 
 jobs:
   convert:
@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install requests
+      - name: Install Python dependencies
+        run: pip install requests public-suffix-list
 
       - name: Run convert script
         run: python scripts/sync/convert.py
