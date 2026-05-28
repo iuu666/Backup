@@ -54,111 +54,51 @@ def is_ip_address(domain: str) -> bool:
     except ValueError:
         return False
 
-def is_likely_ad_pattern(domain: str) -> bool:
-    """
-    判断是否可能是广告垃圾规则（保守过滤，只过滤确定无害的模式）
-    这些模式绝不可能是正常域名
-    """
-    # 广告尺寸模式：如 120x600、300x250
-    if re.search(r'\d{2,4}x\d{2,4}', domain):
-        return True
-    
-    # 纯数字加横线：如 120-600
-    if re.match(r'^[\d\-]+$', domain):
-        return True
-    
-    # 以 .- 或 .. 开头的异常模式
-    if domain.startswith('.-') or domain.startswith('..'):
-        return True
-    
-    # 包含非法字符（正常域名只有字母数字横线点）
-    if re.search(r'[^a-zA-Z0-9\-\.]', domain):
-        return True
-    
-    return False
-
 def is_valid_domain(domain_str: str) -> bool:
-    """
-    检查字符串是否为有效域名（安全版，宁漏勿杀）
-    """
+    """检查字符串是否为有效域名"""
     if not domain_str or '.' not in domain_str:
         return False
     
     if is_ip_address(domain_str):
         return False
     
-    # 长度检查（RFC 标准）
-    if len(domain_str) < 3 or len(domain_str) > 253:
-        return False
-    
-    # 不能以点开头或结尾
-    if domain_str.startswith('.') or domain_str.endswith('.'):
-        return False
-    
-    # 不能有连续两个点（无效域名）
+    # 不能有连续两个点
     if '..' in domain_str:
         return False
     
-    # 检查每个部分（label）
-    parts = domain_str.split('.')
-    for part in parts:
-        if len(part) < 1 or len(part) > 63:
-            return False
-        if not part:
-            return False
+    # 长度检查
+    if len(domain_str) < 3 or len(domain_str) > 253:
+        return False
     
     # 使用公共后缀列表验证
     try:
         suffix = psl.public_suffix(domain_str)
         return suffix is not None
     except:
-        # 如果库出错，回退到基础检查
-        return len(parts) >= 2
+        return len(domain_str.split('.')) >= 2
 
 def is_blacklisted(domain: str) -> bool:
     """检查是否在可选黑名单中"""
     return domain in OPTIONAL_BLACKLIST
 
-# ========== 域名提取（增强版）==========
+# ========== 域名提取（简化版）==========
 def extract_domain_from_rule(line: str):
-    """从各种规则行中提取出纯域名，并进行有效性验证"""
+    """从编译器输出的 AdGuard 规则中提取域名"""
     s = line.strip()
     if not s:
         return None
 
-    # 跳过注释 / 白名单 / 隐藏元素规则等
-    if s.startswith(('!', '#', '@@', '##', '$$', '$.', '#')):
+    # 跳过注释
+    if s.startswith(('!', '#', '@@')):
         return None
 
-    patterns = [
-        r'^\|\|([a-zA-Z0-9\-\.]+)\^',
-        r'^\|\|([a-zA-Z0-9\-\.]+)(?=/|\^)',
-        r'^([a-zA-Z0-9\-\.]+)$',
-        r'^\d+\.\d+\.\d+\.\d+\s+([a-zA-Z0-9\-\.]+)$',
-        r'^\|https?://([a-zA-Z0-9\-\.]+)/?\|$',
-        r'\*\.([a-zA-Z0-9\-\.]+)',
-        r'^\*\.([a-zA-Z0-9\-\.]+)$',
-        r'^\.([a-zA-Z0-9\-\.]+)$'
-    ]
-    
-    for pattern in patterns:
-        m = re.match(pattern, s)
-        if m:
-            domain = m.group(1)
-            
-            # 基础格式验证
-            if not is_valid_domain(domain):
-                continue
-            
-            # 广告垃圾模式过滤
-            if is_likely_ad_pattern(domain):
-                continue
-            
-            # 可选黑名单过滤
-            if is_blacklisted(domain):
-                continue
-            
+    # 匹配 ||example.com^ 格式
+    m = re.match(r'^\|\|([a-zA-Z0-9\-\.]+)\^', s)
+    if m:
+        domain = m.group(1)
+        if is_valid_domain(domain) and not is_blacklisted(domain):
             return domain
+    
     return None
 
 # ========== 使用 AdGuard 编译器优化 ==========
@@ -174,7 +114,7 @@ def compile_with_adguard(raw_content: bytes) -> bytes:
                     "RemoveModifiers",
                     "Compress",
                     "Deduplicate",
-                    "Validate"
+                    "ValidateAllowIpAndPublicSuffix"  # 自动验证域名有效性
                 ]
             }
             with temp_file(json.dumps(config).encode(), '.json') as config_path:
