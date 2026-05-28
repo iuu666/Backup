@@ -20,6 +20,31 @@
     "output_domainset": "rules/AdGuard/annoyances.txt"
   },
   {
+    "name": "AdGuard Annoyances - Cookie Notices",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/cookie_notices.txt",
+    "output_domainset": "rules/AdGuard/annoyances-cookie-notices.txt"
+  },
+  {
+    "name": "AdGuard Annoyances - Popups",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/popups.txt",
+    "output_domainset": "rules/AdGuard/annoyances-popups.txt"
+  },
+  {
+    "name": "AdGuard Annoyances - Mobile App Banners",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/mobile_app_banners.txt",
+    "output_domainset": "rules/AdGuard/annoyances-mobile-app-banners.txt"
+  },
+  {
+    "name": "AdGuard Annoyances - Widgets",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/widgets.txt",
+    "output_domainset": "rules/AdGuard/annoyances-widgets.txt"
+  },
+  {
+    "name": "AdGuard Annoyances - Other",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/other.txt",
+    "output_domainset": "rules/AdGuard/annoyances-other.txt"
+  },
+  {
     "name": "AdGuard Social Media",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SocialMediaFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/social-media.txt"
@@ -28,5 +53,10 @@
     "name": "AdGuard DNS Filter",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/DNSFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/dns-filter.txt"
-  }
+  },
+  {
+    "name": "AdAway",
+    "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AdAway/sections/general_url.txt",
+    "output_domainset": "rules/AdGuard/adaway.txt"
+  },
 ]
