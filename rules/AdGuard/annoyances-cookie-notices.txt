@@ -85,6 +85,7 @@
 .cookie-script.com
 .cookie-switch.viminds.de
 .cookie-widget.ru
+.cookie.boatadmin.com
 .cookie.marsus.digital
 .cookie.pearshealthcyber.com
 .cookiebot.com

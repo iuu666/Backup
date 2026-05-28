@@ -1,7 +1,14 @@
 {
   "base-filter.txt": {
     "time": "2026-05-28 23:13:43",
-    "count": 64024
+    "count": 64024,
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 64041
+      }
+    ],
+    "latest": 64041
   },
   "chinese-filter.txt": {
     "time": "2026-05-28 23:13:43",
@@ -13,11 +20,25 @@
   },
   "annoyances-cookie-notices.txt": {
     "time": "2026-05-28 23:13:44",
-    "count": 179
+    "count": 179,
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 180
+      }
+    ],
+    "latest": 180
   },
   "annoyances.txt": {
     "time": "2026-05-28 23:13:44",
-    "count": 860
+    "count": 860,
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 861
+      }
+    ],
+    "latest": 861
   },
   "annoyances-mobile-app-banners.txt": {
     "time": "2026-05-28 23:13:44",
@@ -41,6 +62,13 @@
   },
   "dns-filter.txt": {
     "time": "2026-05-28 23:13:46",
-    "count": 163350
+    "count": 163350,
+    "history": [
+      {
+        "date": "2026-05-28",
+        "count": 163378
+      }
+    ],
+    "latest": 163378
   }
 }

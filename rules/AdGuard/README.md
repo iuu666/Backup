@@ -1,81 +1,60 @@
-# AdGuard 规则说明
+# 🛡️ AdGuard 规则
 
-> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。
+> 每天自动更新 · Surge 专用
 
-## 规则列表
+## 📦 规则列表
 
-| 文件名 | 作用 | 规则来源 | 更新时间 |
-|--------|------|----------|----------|
-| base-filter.txt | AdGuard 基础广告过滤 | AdGuard | 2026-05-28 23:13:43 |
-| chinese-filter.txt | AdGuard 中文网站专用 | AdGuard | 2026-05-28 23:13:43 |
-| tracking-protection.txt | AdGuard 隐私追踪保护 | AdGuard | 2026-05-28 23:13:44 |
-| annoyances.txt | AdGuard 烦人元素（合集） | AdGuard | 2026-05-28 23:13:44 |
-| annoyances-cookie-notices.txt | AdGuard Cookie 通知屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| annoyances-popups.txt | AdGuard 弹窗屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| annoyances-mobile-app-banners.txt | AdGuard 移动端 App 横幅屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| annoyances-widgets.txt | AdGuard 网页挂件屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| annoyances-other.txt | AdGuard 其他烦人元素屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| social-media.txt | AdGuard 社交媒体组件屏蔽 | AdGuard | 2026-05-28 23:13:44 |
-| dns-filter.txt | AdGuard DNS 恶意域名屏蔽 | AdGuard | 2026-05-28 23:13:46 |
+| 文件 | 说明 |
+|------|------|
+| **base-filter.txt** | 基础广告过滤 |
+| **tracking-protection.txt** | 隐私追踪保护 |
+| **chinese-filter.txt** | 中文网站专用 |
+| **social-media.txt** | 社交媒体屏蔽 |
+| **dns-filter.txt** | 恶意域名屏蔽 |
+| **annoyances.txt** | 烦人元素合集（包含以下 5 个子项） |
 
-## Surge 使用说明
+<details>
+<summary>📎 烦人元素子项（点击展开）</summary>
 
-在 Surge 配置文件中添加以下规则（按需选择）：
+- annoyances-cookie-notices.txt — Cookie 通知屏蔽
+- annoyances-popups.txt — 弹窗屏蔽
+- annoyances-mobile-app-banners.txt — 移动端横幅屏蔽
+- annoyances-widgets.txt — 网页挂件屏蔽
+- annoyances-other.txt — 其他烦人元素
 
-### 核心必选
+</details>
+
+## 🔧 Surge 配置
 
 ```text
-# 基础广告过滤
+# 核心必选
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/base-filter.txt,REJECT
-
-# 隐私追踪保护
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/tracking-protection.txt,REJECT
-```
 
-### 可选增强
-
-```text
-# 中文网站专用
+# 可选增强
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/chinese-filter.txt,REJECT
-
-# 社交媒体组件屏蔽
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/social-media.txt,REJECT
-
-# DNS 恶意域名屏蔽
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/dns-filter.txt,REJECT
-```
 
-### 烦人元素屏蔽
-
-#### 方式一：使用合集（包含以下 5 个子项，推荐）
-
-```text
+# 烦人元素（二选一）
+# 方式一：使用合集
 DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances.txt,REJECT
+
+# 方式二：单独使用子项
+# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT
+# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-popups.txt,REJECT
+# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-mobile-app-banners.txt,REJECT
+# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-widgets.txt,REJECT
+# DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT
 ```
+## 📊 规则数量趋势
 
-#### 方式二：单独使用子项（按需选择）
+| 规则文件 | 7天前 | 昨天 | 今天 | 趋势 |
+|---------|-------|------|------|------|
+| base-filter.txt | - | - | 64,041 | - |
 
-```text
-# 1. Cookie 通知屏蔽
-DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-cookie-notices.txt,REJECT
+## 📌 说明
 
-# 2. 弹窗屏蔽
-DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-popups.txt,REJECT
-
-# 3. 移动端 App 横幅屏蔽
-DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-mobile-app-banners.txt,REJECT
-
-# 4. 网页挂件屏蔽
-DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-widgets.txt,REJECT
-
-# 5. 其他烦人元素屏蔽
-DOMAIN-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT
-```
-
----
-
-## 规则来源
-
-- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
-
-- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)
+- 规则文件每天北京时间 08:30 自动更新
+- 来源：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
+- 转换工具：Python + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)
