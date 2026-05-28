@@ -6,6 +6,8 @@ import hashlib
 import time
 import ipaddress
 import concurrent.futures
+import subprocess
+import tempfile
 from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +17,7 @@ ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
 TIMEOUT = 20
 RETRY = 3
 
-# ---------- 域名提取（尽可能完善）----------
+# ---------- 域名提取（从编译后的规则中提取）----------
 def is_ip_address(domain: str) -> bool:
     try:
         ipaddress.ip_address(domain)
@@ -24,54 +26,90 @@ def is_ip_address(domain: str) -> bool:
         return False
 
 def extract_domain_from_rule(line: str):
-    """从各种规则行中提取出纯域名（如果可能）"""
+    """从编译后的 AdGuard 规则中提取纯域名"""
     s = line.strip()
     if not s:
         return None
 
-    # 1. 跳过注释 / 白名单 / 隐藏元素规则等
-    if s.startswith(('!', '#', '@@', '##', '$$', '$.', '#')):
+    # 跳过注释 / 白名单
+    if s.startswith(('!', '#', '@@')):
         return None
 
-    # 2. ||example.com^ 标准广告规则
+    # 匹配 ||example.com^ 格式（编译器输出格式）
     m = re.match(r'^\|\|([a-zA-Z0-9\-\.]+)\^', s)
     if m:
         return m.group(1)
 
-    # 3. ||example.com/path^ 或 ||example.com^$xxx
+    # 匹配 ||example.com/path^
     m = re.match(r'^\|\|([a-zA-Z0-9\-\.]+)(?=/|\^)', s)
     if m:
         return m.group(1)
 
-    # 4. example.com 纯域名
-    m = re.match(r'^([a-zA-Z0-9\-\.]+)$', s)
-    if m and '.' in m.group(1):
-        return m.group(1)
-
-    # 5. 0.0.0.0 example.com 或 127.0.0.1 example.com
-    m = re.match(r'^\d+\.\d+\.\d+\.\d+\s+([a-zA-Z0-9\-\.]+)$', s)
-    if m:
-        return m.group(1)
-
-    # 6. |http://example.com| 或 |https://example.com|
-    m = re.match(r'^\|https?://([a-zA-Z0-9\-\.]+)/?\|$', s)
-    if m:
-        return m.group(1)
-
-    # 7. *://*.example.com/* 通配符
-    m = re.search(r'\*\.([a-zA-Z0-9\-\.]+)', s)
-    if m:
-        return m.group(1)
-
-    # 8. *.example.com 泛域名
-    m = re.match(r'^\*\.([a-zA-Z0-9\-\.]+)$', s)
+    # 匹配 .example.com 格式（某些情况）
+    m = re.match(r'^\.([a-zA-Z0-9\-\.]+)$', s)
     if m:
         return m.group(1)
 
     return None
 
+def compile_with_adguard(raw_content: bytes) -> bytes:
+    """使用 AdGuard 官方编译器优化规则"""
+    try:
+        # 创建临时文件保存原始规则
+        with tempfile.NamedTemporaryFile(mode='wb', suffix='.txt', delete=False) as f:
+            f.write(raw_content)
+            input_path = f.name
+        
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+            # 创建编译器配置文件
+            config = {
+                "name": "AdGuard Compiled",
+                "sources": [
+                    {
+                        "source": input_path,
+                        "type": "adblock"
+                    }
+                ],
+                "transformations": [
+                    "RemoveComments",
+                    "RemoveModifiers",
+                    "Compress",
+                    "Deduplicate",
+                    "Validate"
+                ]
+            }
+            json.dump(config, f)
+            config_path = f.name
+        
+        # 调用 hostlist-compiler
+        result = subprocess.run(
+            ['hostlist-compiler', '-c', config_path, '-o', '/dev/stdout'],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        
+        # 清理临时文件
+        os.unlink(input_path)
+        os.unlink(config_path)
+        
+        return result.stdout.encode('utf-8')
+    
+    except subprocess.CalledProcessError as e:
+        print(f"   ⚠️ 编译器执行失败: {e.stderr}")
+        print(f"   ⚠️ 回退到原始转换")
+        return raw_content
+    except Exception as e:
+        print(f"   ⚠️ 编译器调用异常: {e}")
+        print(f"   ⚠️ 回退到原始转换")
+        return raw_content
+
 def convert_to_domainset(raw_content: bytes) -> bytes:
-    text = raw_content.decode('utf-8')
+    """将编译后的规则转换为 Surge DOMAIN-SET 格式"""
+    # 先调用编译器优化
+    compiled_content = compile_with_adguard(raw_content)
+    
+    text = compiled_content.decode('utf-8')
     domains = set()
 
     for line in text.splitlines():
