@@ -203,8 +203,8 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     readme_path = os.path.join(root_dir, "rules", "AdGuard", "README.md")
     
     lines = []
-    lines.append("# AdGuard 规则说明\n")
-    lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
+    lines.append("# AdGuard 规则\n")
+    lines.append("> 每天自动更新 · Surge 专用\n")
     lines.append("## 规则列表\n")
     lines.append("| 文件名 | 作用 | 规则来源 | 更新时间 |")
     lines.append("|--------|------|----------|----------|")
