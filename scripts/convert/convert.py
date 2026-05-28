@@ -201,20 +201,21 @@ def check_count_anomaly(filename: str, current_count: int, meta: dict) -> bool:
 
 def generate_readme(sources: list, root_dir: str, meta: dict):
     readme_path = os.path.join(root_dir, "rules", "AdGuard", "README.md")
+    run_time = get_beijing_time()
     
     lines = []
     lines.append("# AdGuard 规则\n")
-    lines.append("> 每天自动更新 · Surge 专用\n")
+    lines.append("> 每天自动更新\n")
     lines.append("## 规则列表\n")
-    lines.append("| 文件名 | 作用 | 规则来源 | 更新时间 |")
-    lines.append("|--------|------|----------|----------|")
+    lines.append("| 文件名 | 作用 | 更新时间 |")
+    lines.append("|--------|------|----------|")
     
     for src in sources:
         filename = os.path.basename(src["output_domainset"])
         name = src["name"]
         time_data = meta.get(filename, {})
         update_time = time_data.get("time", "未知") if isinstance(time_data, dict) else time_data
-        lines.append(f"| {filename} | {name} | AdGuard | {update_time} |")
+        lines.append(f"| {filename} | {name} | {update_time} |")
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
@@ -266,8 +267,9 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     
     lines.append("\n---\n")
     lines.append("## 规则来源\n")
-    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
-    lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
+    lines.append(f"> 最后更新：{run_time}\n")
+    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)")
+    lines.append("- 转换工具：Python + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)")
     
     Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
     with open(readme_path, "w", encoding="utf-8") as f:
