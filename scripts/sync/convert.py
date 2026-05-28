@@ -100,7 +100,8 @@ def process_single(src: dict, root_dir: str) -> tuple[str, bool]:
     if need_update:
         with open(output_path, "wb") as f:
             f.write(converted_content)
-        print(f"   ✅ 已更新 ({len(converted_content.splitlines())} 条)")
+        line_count = len(converted_content.splitlines())
+        print(f"   ✅ 已更新 ({line_count} 条)")
         return (name, True)
     else:
         print(f"   ✔ 无变化")
@@ -117,10 +118,13 @@ def main():
         futures = [executor.submit(process_single, src, ROOT_DIR) for src in sources]
         
         for future in concurrent.futures.as_completed(futures):
-            name, has_changed = future.result()
-            if has_changed:
-                changed = True
-                updated_sources.append(name)
+            try:
+                name, has_changed = future.result()
+                if has_changed:
+                    changed = True
+                    updated_sources.append(name)
+            except Exception as e:
+                print(f"⚠️ 处理规则时出错: {e}")
     
     with open(changed_file, "w") as f:
         f.write("1" if changed else "0")
@@ -133,4 +137,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"❌ 致命错误: {e}")
+        changed_file = os.path.join(ROOT_DIR, ".changed")
+        with open(changed_file, "w") as f:
+            f.write("0")
+        raise
