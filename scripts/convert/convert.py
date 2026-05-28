@@ -352,5 +352,3 @@ if __name__ == "__main__":
         with open(changed_file, "w") as f:
             f.write("0")
         raise
-
-看一下脚本，抓取以后，转换的怎么样
