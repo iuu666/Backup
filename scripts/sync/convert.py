@@ -28,6 +28,7 @@ def convert_to_domainset(raw_content: bytes) -> bytes:
     """将 AdGuard 原始规则转换为 Surge DOMAIN-SET 格式"""
     text = raw_content.decode('utf-8')
     domains = set()
+    ip_pattern = re.compile(r'^\d+\.\d+\.\d+\.\d+$')
     
     for line in text.splitlines():
         line = line.strip()
@@ -37,13 +38,15 @@ def convert_to_domainset(raw_content: bytes) -> bytes:
         
         match = re.match(r'^\|\|([a-zA-Z0-9\-\.]+)\^', line)
         if match:
-            domains.add(match.group(1))
+            domain = match.group(1)
+            # 过滤掉 IP 地址
+            if not ip_pattern.match(domain):
+                domains.add(domain)
     
     result = '\n'.join(sorted(domains))
     return result.encode('utf-8')
 
 def load_all_sources():
-    """加载所有 JSON 配置文件"""
     all_sources = []
     for file in os.listdir(CONFIG_DIR):
         if file.endswith(".json"):
@@ -58,9 +61,9 @@ def main():
     sources = load_all_sources()
     changed = False
     changed_file = os.path.join(ROOT_DIR, ".changed")
+    updated_sources = []
     
     for src in sources:
-        # 只处理配置了 url 和 output_domainset 的源
         if "url" not in src or "output_domainset" not in src:
             print(f"⚠️ 跳过 {src.get('name', 'unknown')}: 缺少 url 或 output_domainset")
             continue
@@ -70,22 +73,16 @@ def main():
         output_path = os.path.join(ROOT_DIR, src["output_domainset"])
         
         print(f"\n🔄 处理: {name}")
-        print(f"   URL: {url}")
         
-        # 下载原始规则
         try:
             raw_content = fetch(url)
         except Exception as e:
             print(f"   ❌ 下载失败: {e}")
             continue
         
-        # 转换为 DOMAIN-SET
         converted_content = convert_to_domainset(raw_content)
-        
-        # 确保输出目录存在
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         
-        # 检查是否有变化
         need_update = False
         if os.path.exists(output_path):
             with open(output_path, "rb") as f:
@@ -99,16 +96,20 @@ def main():
             with open(output_path, "wb") as f:
                 f.write(converted_content)
             line_count = len(converted_content.splitlines())
-            print(f"   ✅ 已更新: {line_count} 条规则 -> {src['output_domainset']}")
+            print(f"   ✅ 已更新: {line_count} 条规则")
             changed = True
+            updated_sources.append(name)
         else:
             print(f"   ✔ 无变化")
     
-    # 写入变化标记
     with open(changed_file, "w") as f:
         f.write("1" if changed else "0")
     
-    print(f"\n=== RESULT ===\n{'🚀 Changes detected' if changed else '😴 No changes'}")
+    print(f"\n=== RESULT ===")
+    if changed:
+        print(f"🚀 Changes detected: {', '.join(updated_sources)}")
+    else:
+        print("😴 No changes")
 
 if __name__ == "__main__":
     main()
