@@ -1,46 +1,46 @@
 {
   "base-filter.txt": {
-    "time": "2026-05-29 00:06:00",
+    "time": "2026-05-29 00:20:36",
     "count": 64041
   },
   "chinese-filter.txt": {
-    "time": "2026-05-29 00:05:58",
+    "time": "2026-05-29 00:20:35",
     "count": 6266
   },
   "tracking-protection.txt": {
-    "time": "2026-05-29 00:06:01",
+    "time": "2026-05-29 00:20:36",
     "count": 84574
   },
   "annoyances-cookie-notices.txt": {
-    "time": "2026-05-29 00:05:59",
+    "time": "2026-05-29 00:20:36",
     "count": 180
   },
   "annoyances.txt": {
-    "time": "2026-05-29 00:05:59",
+    "time": "2026-05-29 00:20:37",
     "count": 861
   },
   "annoyances-mobile-app-banners.txt": {
-    "time": "2026-05-29 00:06:00",
+    "time": "2026-05-29 00:20:37",
     "count": 3
   },
   "annoyances-popups.txt": {
-    "time": "2026-05-29 00:06:00",
+    "time": "2026-05-29 00:20:37",
     "count": 419
   },
   "annoyances-other.txt": {
-    "time": "2026-05-29 00:06:01",
+    "time": "2026-05-29 00:20:37",
     "count": 16
   },
   "annoyances-widgets.txt": {
-    "time": "2026-05-29 00:06:00",
+    "time": "2026-05-29 00:20:37",
     "count": 247
   },
   "social-media.txt": {
-    "time": "2026-05-29 00:06:01",
+    "time": "2026-05-29 00:20:37",
     "count": 49
   },
   "dns-filter.txt": {
-    "time": "2026-05-29 00:06:02",
+    "time": "2026-05-29 00:20:38",
     "count": 163378
   }
 }
