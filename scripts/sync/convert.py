@@ -9,7 +9,7 @@ import concurrent.futures
 import subprocess
 import tempfile
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from contextlib import contextmanager
 
 # 使用公共后缀列表库（自动从 IANA/Mozilla 更新）
@@ -114,7 +114,7 @@ def compile_with_adguard(raw_content: bytes) -> bytes:
                     "RemoveModifiers",
                     "Compress",
                     "Deduplicate",
-                    "ValidateAllowIpAndPublicSuffix"  # 自动验证域名有效性
+                    "ValidateAllowIpAndPublicSuffix"
                 ]
             }
             with temp_file(json.dumps(config).encode(), '.json') as config_path:
@@ -323,7 +323,8 @@ def main():
             except Exception as e:
                 print(f"⚠️ 处理规则时出错: {e}")
 
-    beijing_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # 北京时间 = UTC + 8
+    beijing_time = (datetime.utcnow() + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
     generate_readme(sources, ROOT_DIR, beijing_time)
 
     with open(changed_file, "w") as f:
