@@ -1,0 +1,3 @@
+.ad.chatpad.jp
+.br.app.link
+.https-filtering-check.adtidy.org
