@@ -1,62 +1,63 @@
 [
   {
-    "name": "AdGuard Base Filter",
+    "name": "AdGuard 基础广告过滤",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/base-filter.txt"
   },
   {
-    "name": "AdGuard Chinese Filter",
+    "name": "AdGuard 中文网站专用",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/chinese-filter.txt"
   },
   {
-    "name": "AdGuard Tracking Protection",
+    "name": "AdGuard 隐私追踪保护",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/TrackingFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/tracking-protection.txt"
   },
   {
-    "name": "AdGuard Annoyances (All)",
+    "name": "AdGuard 烦人元素（合集）",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/annoyances.txt"
   },
   {
-    "name": "AdGuard Annoyances - Cookie Notices",
+    "name": "AdGuard Cookie 通知屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/cookie_notices.txt",
     "output_domainset": "rules/AdGuard/annoyances-cookie-notices.txt"
   },
   {
-    "name": "AdGuard Annoyances - Popups",
+    "name": "AdGuard 弹窗屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/popups.txt",
     "output_domainset": "rules/AdGuard/annoyances-popups.txt"
   },
   {
-    "name": "AdGuard Annoyances - Mobile App Banners",
+    "name": "AdGuard 移动端 App 横幅屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/mobile_app_banners.txt",
     "output_domainset": "rules/AdGuard/annoyances-mobile-app-banners.txt"
   },
   {
-    "name": "AdGuard Annoyances - Widgets",
+    "name": "AdGuard 网页挂件屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/widgets.txt",
     "output_domainset": "rules/AdGuard/annoyances-widgets.txt"
   },
   {
-    "name": "AdGuard Annoyances - Other",
+    "name": "AdGuard 其他烦人元素屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/sections/other.txt",
     "output_domainset": "rules/AdGuard/annoyances-other.txt"
   },
   {
-    "name": "AdGuard Social Media",
+    "name": "AdGuard 社交媒体组件屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SocialMediaFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/social-media.txt"
   },
   {
-    "name": "AdGuard DNS Filter",
+    "name": "AdGuard DNS 恶意域名屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/DNSFilter/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/dns-filter.txt"
   },
   {
-    "name": "AdAway",
+    "name": "AdAway 广告主机屏蔽",
     "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AdAway/sections/general_url.txt",
     "output_domainset": "rules/AdGuard/adaway.txt"
   },
+
 ]
