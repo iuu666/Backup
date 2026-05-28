@@ -8,6 +8,7 @@ import ipaddress
 import concurrent.futures
 import subprocess
 import tempfile
+import threading
 from pathlib import Path
 from datetime import datetime, timedelta
 from contextlib import contextmanager
@@ -26,6 +27,9 @@ ANOMALY_THRESHOLD = 0.3
 
 psl = PublicSuffixList()
 os.makedirs(CACHE_DIR, exist_ok=True)
+
+# 线程锁，用于保护 meta 字典的写入
+meta_lock = threading.Lock()
 
 OPTIONAL_BLACKLIST = {
     # 'googleadservices.com',
@@ -65,7 +69,13 @@ def is_valid_domain(domain_str: str) -> bool:
         suffix = psl.public_suffix(domain_str)
         return suffix is not None
     except:
-        return len(domain_str.split('.')) >= 2
+        parts = domain_str.split('.')
+        if len(parts) < 2:
+            return False
+        tld = parts[-1].lower()
+        if tld in ('js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'ico', 'html', 'htm', 'json', 'xml', 'txt'):
+            return False
+        return True
 
 def is_blacklisted(domain: str) -> bool:
     return domain in OPTIONAL_BLACKLIST
@@ -135,9 +145,12 @@ def convert_to_domainset(raw_content: bytes) -> bytes:
     return result.encode('utf-8')
 
 def fetch(url: str, silent: bool = False) -> bytes:
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
     for i in range(RETRY):
         try:
-            r = requests.get(url, timeout=TIMEOUT)
+            r = requests.get(url, timeout=TIMEOUT, headers=headers)
             r.raise_for_status()
             return r.content
         except Exception as e:
@@ -294,10 +307,13 @@ def process_single(src: dict, root_dir: str, meta: dict) -> tuple:
         with open(output_path, "wb") as f:
             f.write(converted_content)
         print(f"   ✅ 已更新 ({rule_count} 条)")
-        meta[filename] = {
-            "time": get_beijing_time(),
-            "count": rule_count
-        }
+        
+        # 线程安全写入 meta
+        with meta_lock:
+            meta[filename] = {
+                "time": get_beijing_time(),
+                "count": rule_count
+            }
         return (name, True, filename, rule_count)
     else:
         print(f"   ✔ 无变化 ({rule_count} 条)")
@@ -352,5 +368,3 @@ if __name__ == "__main__":
         with open(changed_file, "w") as f:
             f.write("0")
         raise
-
-看一下脚本，抓取以后，转换的怎么样
