@@ -42,9 +42,10 @@ INVALID_EXTENSIONS = {'.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
-META_FILE = os.path.join(ROOT_DIR, ".rules_meta.json")
+DIFF_DIR = os.path.join(BASE_DIR, "diffs")
+META_FILE = os.path.join(BASE_DIR, ".rules_meta.json")
 CACHE_DIR = os.path.join(os.path.expanduser("~"), ".adguard_cache")
-WARNINGS_FILE = os.path.join(ROOT_DIR, "filter_warnings.log")
+WARNINGS_FILE = os.path.join(BASE_DIR, "filter_warnings.log")
 
 TIMEOUT = 20
 RETRY = 3
@@ -52,6 +53,7 @@ ANOMALY_THRESHOLD = 0.3
 
 psl = PublicSuffixList()
 os.makedirs(CACHE_DIR, exist_ok=True)
+os.makedirs(DIFF_DIR, exist_ok=True)
 
 OPTIONAL_BLACKLIST = {
     # 'googleadservices.com',
@@ -151,7 +153,6 @@ def is_surge_compatible(domain_with_dot: str) -> bool:
         return False
     if RE_AD_SIZE.search(domain_with_dot):
         return False
-    # 检查文件扩展名
     for ext in INVALID_EXTENSIONS:
         if domain_with_dot.endswith(ext):
             return False
@@ -201,7 +202,7 @@ def classify_and_extract_rule(line: str):
     return None, 'incompatible', f'Unsupported: {s[:100]}...'
 
 # ========== 规则变化报告 ==========
-def generate_diff_report(old_content: bytes, new_content: bytes, filename: str, output_path: str):
+def generate_diff_report(old_content: bytes, new_content: bytes, filename: str):
     old_lines = set(old_content.decode('utf-8').splitlines()) if old_content else set()
     new_lines = set(new_content.decode('utf-8').splitlines())
     
@@ -211,7 +212,7 @@ def generate_diff_report(old_content: bytes, new_content: bytes, filename: str, 
     if not added and not removed:
         return
     
-    diff_file = output_path.replace('.txt', '.diff.txt')
+    diff_file = os.path.join(DIFF_DIR, f"{filename}.diff.txt")
     with open(diff_file, 'w', encoding='utf-8') as f:
         f.write(f"=== {filename} 规则变化报告 ===\n")
         f.write(f"更新时间: {get_beijing_time()}\n")
@@ -486,7 +487,7 @@ def process_single(src: dict, root_dir: str, meta: dict) -> tuple:
             f.write(converted_content)
         
         if old_content:
-            generate_diff_report(old_content, converted_content, filename, output_path)
+            generate_diff_report(old_content, converted_content, filename)
         
         print(f"   ✅ 已更新 ({rule_count} 条)")
         meta[filename] = {
