@@ -10,6 +10,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 from datetime import datetime
+from contextlib import contextmanager
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
@@ -18,7 +19,8 @@ ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
 TIMEOUT = 20
 RETRY = 3
 
-# ========== 有效顶级域名列表 ==========
+# ========== 有效顶级域名列表（可动态更新）==========
+# 基础 TLD 集合，后续可从 IANA 自动更新
 VALID_TLDS = {
     'com', 'org', 'net', 'io', 'co', 'uk', 'de', 'fr', 'jp', 'cn',
     'ru', 'br', 'tr', 'pl', 'cz', 'nl', 'se', 'no', 'fi', 'dk',
@@ -31,7 +33,21 @@ VALID_TLDS = {
     'link', 'news', 'media', 'social', 'blog', 'world', 'life', 'one'
 }
 
-# ========== 域名验证 ==========
+# ========== 辅助函数 ==========
+@contextmanager
+def temp_file(content: bytes = None, suffix: str = '.txt'):
+    """安全的临时文件上下文管理器，自动清理"""
+    fd, path = tempfile.mkstemp(suffix=suffix)
+    os.close(fd)
+    try:
+        if content:
+            with open(path, 'wb') as f:
+                f.write(content)
+        yield path
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
 def is_ip_address(domain: str) -> bool:
     try:
         ipaddress.ip_address(domain)
@@ -43,14 +59,11 @@ def is_valid_domain(domain_str: str) -> bool:
     """检查字符串是否为有效域名"""
     if not domain_str or '.' not in domain_str:
         return False
-    
     if is_ip_address(domain_str):
         return False
-    
     parts = domain_str.split('.')
     if len(parts) < 2:
         return False
-    
     tld = parts[-1].lower()
     return tld in VALID_TLDS
 
@@ -65,16 +78,15 @@ def extract_domain_from_rule(line: str):
     if s.startswith(('!', '#', '@@', '##', '$$', '$.', '#')):
         return None
 
-    # 匹配各种规则格式
     patterns = [
-        r'^\|\|([a-zA-Z0-9\-\.]+)\^',           # ||example.com^
-        r'^\|\|([a-zA-Z0-9\-\.]+)(?=/|\^)',     # ||example.com/path^
-        r'^([a-zA-Z0-9\-\.]+)$',                 # example.com
-        r'^\d+\.\d+\.\d+\.\d+\s+([a-zA-Z0-9\-\.]+)$',  # 0.0.0.0 example.com
-        r'^\|https?://([a-zA-Z0-9\-\.]+)/?\|$', # |http://example.com|
-        r'\*\.([a-zA-Z0-9\-\.]+)',               # *.example.com
-        r'^\*\.([a-zA-Z0-9\-\.]+)$',             # *.example.com
-        r'^\.([a-zA-Z0-9\-\.]+)$'                # .example.com
+        r'^\|\|([a-zA-Z0-9\-\.]+)\^',
+        r'^\|\|([a-zA-Z0-9\-\.]+)(?=/|\^)',
+        r'^([a-zA-Z0-9\-\.]+)$',
+        r'^\d+\.\d+\.\d+\.\d+\s+([a-zA-Z0-9\-\.]+)$',
+        r'^\|https?://([a-zA-Z0-9\-\.]+)/?\|$',
+        r'\*\.([a-zA-Z0-9\-\.]+)',
+        r'^\*\.([a-zA-Z0-9\-\.]+)$',
+        r'^\.([a-zA-Z0-9\-\.]+)$'
     ]
     
     for pattern in patterns:
@@ -83,20 +95,13 @@ def extract_domain_from_rule(line: str):
             domain = m.group(1)
             if is_valid_domain(domain):
                 return domain
-            # 如果域名无效，继续尝试其他模式
-            continue
-    
     return None
 
 # ========== 使用 AdGuard 编译器优化 ==========
 def compile_with_adguard(raw_content: bytes) -> bytes:
     """使用 AdGuard 官方编译器优化规则"""
     try:
-        with tempfile.NamedTemporaryFile(mode='wb', suffix='.txt', delete=False) as f:
-            f.write(raw_content)
-            input_path = f.name
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with temp_file(raw_content, '.txt') as input_path:
             config = {
                 "name": "AdGuard Compiled",
                 "sources": [{"source": input_path, "type": "adblock"}],
@@ -108,23 +113,20 @@ def compile_with_adguard(raw_content: bytes) -> bytes:
                     "Validate"
                 ]
             }
-            json.dump(config, f)
-            config_path = f.name
-        
-        result = subprocess.run(
-            ['hostlist-compiler', '-c', config_path, '-o', '/dev/stdout'],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        
-        os.unlink(input_path)
-        os.unlink(config_path)
-        
-        return result.stdout.encode('utf-8')
-    
+            with temp_file(json.dumps(config).encode(), '.json') as config_path:
+                result = subprocess.run(
+                    ['hostlist-compiler', '-c', config_path, '-o', '/dev/stdout'],
+                    capture_output=True,
+                    text=True,
+                    check=True,
+                    timeout=60
+                )
+                return result.stdout.encode('utf-8')
+    except subprocess.TimeoutExpired:
+        print("   ⚠️ 编译器超时，回退到原始转换")
+        return raw_content
     except Exception as e:
-        print(f"   ⚠️ 编译器调用异常: {e}，回退到原始转换")
+        print(f"   ⚠️ 编译器异常: {e}，回退到原始转换")
         return raw_content
 
 # ========== 转换为 DOMAIN-SET ==========
@@ -140,21 +142,23 @@ def convert_to_domainset(raw_content: bytes) -> bytes:
             continue
         domains.add(domain)
 
-    # 输出时加前缀点，匹配域名及其所有子域名
     result = '\n'.join('.' + d for d in sorted(domains))
     return result.encode('utf-8')
 
-# ========== 下载（指数退避重试）==========
-def fetch(url: str) -> bytes:
+# ========== 下载（指数退避重试，静默模式）==========
+def fetch(url: str, silent: bool = False) -> bytes:
     for i in range(RETRY):
         try:
             r = requests.get(url, timeout=TIMEOUT)
             r.raise_for_status()
             return r.content
         except Exception as e:
-            wait_time = 2 ** i
-            print(f"[WARN] Retry {i+1}/{RETRY}: {e}, waiting {wait_time}s")
-            time.sleep(wait_time)
+            if i == RETRY - 1:
+                raise Exception(f"Fetch failed: {url}")
+            if not silent:
+                wait_time = 2 ** i
+                print(f"   [WARN] Retry {i+1}/{RETRY}: {e}, waiting {wait_time}s")
+            time.sleep(2 ** i)
     raise Exception(f"Fetch failed: {url}")
 
 # ========== 加载 JSON 配置 ==========
@@ -193,8 +197,6 @@ def generate_readme(sources: list, root_dir: str, update_time: str):
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
-    
-    # ========== 按大类分组，每个分组一个代码块 ==========
     
     # 核心必选
     lines.append("### 核心必选\n")
@@ -252,7 +254,7 @@ def generate_readme(sources: list, root_dir: str, update_time: str):
     print(f"📄 已生成说明文件: {readme_path}")
 
 # ========== 处理单个规则 ==========
-def process_single(src: dict, root_dir: str) -> tuple[str, bool]:
+def process_single(src: dict, root_dir: str) -> tuple:
     name = src["name"]
     url = src["url"]
     output_path = os.path.join(root_dir, src["output_domainset"])
@@ -260,7 +262,7 @@ def process_single(src: dict, root_dir: str) -> tuple[str, bool]:
     print(f"\n🔄 {name}")
 
     try:
-        raw_content = fetch(url)
+        raw_content = fetch(url, silent=True)
     except Exception as e:
         print(f"   ❌ 下载失败: {e}")
         return (name, False)
@@ -302,7 +304,7 @@ def main():
     changed_file = os.path.join(ROOT_DIR, ".changed")
     updated_sources = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         futures = [executor.submit(process_single, src, ROOT_DIR) for src in sources]
 
         for future in concurrent.futures.as_completed(futures):
@@ -314,10 +316,7 @@ def main():
             except Exception as e:
                 print(f"⚠️ 处理规则时出错: {e}")
 
-    # 获取当前北京时间
     beijing_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    # 生成 README 说明文件
     generate_readme(sources, ROOT_DIR, beijing_time)
 
     with open(changed_file, "w") as f:
