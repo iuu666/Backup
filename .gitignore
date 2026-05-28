@@ -1,3 +1,4 @@
 .changed
 __pycache__/
 *.pyc
+*.dat
