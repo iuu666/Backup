@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install AdGuard Hostlist Compiler
+        run: npm install -g @adguard/hostlist-compiler
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
