@@ -1,0 +1,38 @@
+name: Convert AdGuard to DOMAIN-SET
+
+on:
+  schedule:
+    - cron: '30 0 * * *'   # 每天 UTC 00:30（北京时间 08:30）
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run convert script
+        run: python scripts/sync/convert.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          if [ -f .changed ] && [ "$(cat .changed)" = "1" ]; then
+            git commit -m "更新 AdGuard DOMAIN-SET 规则 - $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "Changes committed and pushed"
+          else
+            echo "No changes, skip commit"
+          fi
