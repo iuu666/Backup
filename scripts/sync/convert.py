@@ -189,16 +189,15 @@ def generate_readme(sources: list, root_dir: str, update_time: str):
     
     lines = []
     lines.append("# AdGuard 规则说明\n")
-    lines.append(f"> 最后更新时间：{update_time}\n")
     lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
     lines.append("## 规则列表\n")
-    lines.append("| 文件名 | 规则来源 | 作用 |")
-    lines.append("|--------|----------|------|")
+    lines.append("| 文件名 | 规则来源 | 作用 | 更新时间 |")
+    lines.append("|--------|----------|------|----------|")
     
     for src in sources:
         filename = os.path.basename(src["output_domainset"])
         name = src["name"]
-        lines.append(f"| {filename} | AdGuard | {name} |")
+        lines.append(f"| {filename} | AdGuard | {name} | {update_time} |")
     
     lines.append("\n## Surge 使用说明\n")
     lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
