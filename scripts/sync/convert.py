@@ -285,19 +285,16 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     生成 rules/AdGuard/README.md 说明文件
     
     包含：
-    - 规则来源说明
     - 规则列表表格（文件名、作用、来源、更新时间）
     - Surge 配置示例（按大类分组，方便复制）
+    - 规则来源和转换工具说明（放在最下面）
     """
     readme_path = os.path.join(root_dir, "rules", "AdGuard", "README.md")
     
     lines = []
     lines.append("# AdGuard 规则说明\n")
     lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
-    lines.append("## 规则来源\n")
-    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
-    lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
-    lines.append("\n## 规则列表\n")
+    lines.append("## 规则列表\n")
     lines.append("| 文件名 | 作用 | 规则来源 | 更新时间 |")
     lines.append("|--------|------|----------|----------|")
     
@@ -358,11 +355,18 @@ def generate_readme(sources: list, root_dir: str, meta: dict):
     lines.append("RULE-SET,https://raw.githubusercontent.com/iuu666/Backup/main/rules/AdGuard/annoyances-other.txt,REJECT")
     lines.append("```")
     
-    Path(readme_path).parent.mkdir(parenters=True, exist_ok=True)
+    # ========== 规则来源和转换工具==========
+    lines.append("\n---\n")
+    lines.append("## 规则来源\n")
+    lines.append("- 原始规则：[AdGuard FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)\n")
+    lines.append("- 转换工具：自定义 Python 脚本 + [AdGuard Hostlist Compiler](https://github.com/AdguardTeam/HostlistCompiler)\n")
+    
+    Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
+    
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+    
     print(f"📄 已生成说明文件: {readme_path}")
-
 # ========== 处理单个规则（并发执行）==========
 def process_single(src: dict, root_dir: str, meta: dict) -> tuple:
     """
