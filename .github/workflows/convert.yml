@@ -2,7 +2,7 @@ name: Convert AdGuard to DOMAIN-SET
 
 on:
   schedule:
-    - cron: '30 0 * * *'   # 每天 UTC 00:30（北京时间 08:30）
+    - cron: '30 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -32,7 +32,6 @@ jobs:
           if [ -f .changed ] && [ "$(cat .changed)" = "1" ]; then
             git commit -m "更新 AdGuard DOMAIN-SET 规则 - $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
             git push
-            echo "Changes committed and pushed"
           else
             echo "No changes, skip commit"
           fi
