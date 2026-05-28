@@ -1,17 +1,35 @@
 import os
 import re
 import json
+import requests
+import hashlib
+import time
 from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../"))
 
-def convert_to_domainset(raw_content: str) -> list:
+TIMEOUT = 20
+RETRY = 3
+
+def fetch(url: str) -> bytes:
+    for i in range(RETRY):
+        try:
+            r = requests.get(url, timeout=TIMEOUT)
+            r.raise_for_status()
+            return r.content
+        except Exception as e:
+            print(f"[WARN] Retry {i+1}/{RETRY}: {e}")
+            time.sleep(2)
+    raise Exception(f"Fetch failed: {url}")
+
+def convert_to_domainset(raw_content: bytes) -> bytes:
     """将 AdGuard 原始规则转换为 Surge DOMAIN-SET 格式"""
+    text = raw_content.decode('utf-8')
     domains = set()
     
-    for line in raw_content.splitlines():
+    for line in text.splitlines():
         line = line.strip()
         
         if not line or line.startswith('!') or line.startswith('#') or line.startswith('@@'):
@@ -21,9 +39,11 @@ def convert_to_domainset(raw_content: str) -> list:
         if match:
             domains.add(match.group(1))
     
-    return sorted(domains)
+    result = '\n'.join(sorted(domains))
+    return result.encode('utf-8')
 
 def load_all_sources():
+    """加载所有 JSON 配置文件"""
     all_sources = []
     for file in os.listdir(CONFIG_DIR):
         if file.endswith(".json"):
@@ -37,46 +57,54 @@ def load_all_sources():
 def main():
     sources = load_all_sources()
     changed = False
-    changed_file = os.path.join(ROOT_DIR, ".changed_convert")
+    changed_file = os.path.join(ROOT_DIR, ".changed")
     
     for src in sources:
-        if "output" not in src or "output_domainset" not in src:
+        # 只处理配置了 url 和 output_domainset 的源
+        if "url" not in src or "output_domainset" not in src:
+            print(f"⚠️ 跳过 {src.get('name', 'unknown')}: 缺少 url 或 output_domainset")
             continue
         
         name = src["name"]
-        input_path = os.path.join(ROOT_DIR, src["output"])
+        url = src["url"]
         output_path = os.path.join(ROOT_DIR, src["output_domainset"])
         
-        print(f"\n🔄 转换: {name}")
+        print(f"\n🔄 处理: {name}")
+        print(f"   URL: {url}")
         
-        if not os.path.exists(input_path):
-            print(f"   ⚠️ 跳过：输入文件不存在")
+        # 下载原始规则
+        try:
+            raw_content = fetch(url)
+        except Exception as e:
+            print(f"   ❌ 下载失败: {e}")
             continue
         
-        with open(input_path, 'r', encoding='utf-8') as f:
-            raw_content = f.read()
+        # 转换为 DOMAIN-SET
+        converted_content = convert_to_domainset(raw_content)
         
-        domains = convert_to_domainset(raw_content)
+        # 确保输出目录存在
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-        new_content = '\n'.join(domains)
         
-        old_content = ""
+        # 检查是否有变化
+        need_update = False
         if os.path.exists(output_path):
-            with open(output_path, 'r', encoding='utf-8') as f:
+            with open(output_path, "rb") as f:
                 old_content = f.read()
+            if hashlib.md5(old_content).hexdigest() != hashlib.md5(converted_content).hexdigest():
+                need_update = True
+        else:
+            need_update = True
         
-        if old_content != new_content:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            print(f"   ✅ 已更新: {len(domains)} 条规则")
+        if need_update:
+            with open(output_path, "wb") as f:
+                f.write(converted_content)
+            line_count = len(converted_content.splitlines())
+            print(f"   ✅ 已更新: {line_count} 条规则 -> {src['output_domainset']}")
             changed = True
         else:
-            print(f"   ✔ 无变化: {len(domains)} 条规则")
-        
-        # 删除原始文件
-        os.remove(input_path)
-        print(f"   🗑️ 已删除: {src['output']}")
+            print(f"   ✔ 无变化")
     
+    # 写入变化标记
     with open(changed_file, "w") as f:
         f.write("1" if changed else "0")
     
