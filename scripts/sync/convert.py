@@ -111,6 +111,45 @@ def load_all_sources():
                 all_sources.extend(data)
     return all_sources
 
+# ---------- 生成 README 说明文件 ----------
+def generate_readme(sources: list, root_dir: str):
+    """生成 rules/AdGuard/README.md 说明文件"""
+    readme_path = os.path.join(root_dir, "rules", "AdGuard", "README.md")
+    
+    lines = []
+    lines.append("# AdGuard 规则说明\n")
+    lines.append("> 本目录下的规则文件由 GitHub Actions 自动生成，请勿手动修改。\n")
+    lines.append("## 规则列表\n")
+    lines.append("| 文件名 | 规则来源 | 作用 |")
+    lines.append("|--------|----------|------|")
+    
+    for src in sources:
+        filename = os.path.basename(src["output_domainset"])
+        name = src["name"]
+        lines.append(f"| {filename} | AdGuard | {name} |")
+    
+    lines.append("\n## 使用说明\n")
+    lines.append("在 Surge 配置文件中添加以下规则（按需选择）：\n")
+    lines.append("```text")
+    lines.append("# 基础广告过滤（推荐必选）")
+    lines.append("RULE-SET,https://raw.githubusercontent.com/你的用户名/仓库名/main/rules/AdGuard/base-filter.txt,REJECT")
+    lines.append("")
+    lines.append("# 隐私追踪保护（推荐必选）")
+    lines.append("RULE-SET,https://raw.githubusercontent.com/你的用户名/仓库名/main/rules/AdGuard/tracking-protection.txt,REJECT")
+    lines.append("")
+    lines.append("# 中文网站专用（可选）")
+    lines.append("RULE-SET,https://raw.githubusercontent.com/你的用户名/仓库名/main/rules/AdGuard/chinese-filter.txt,REJECT")
+    lines.append("```")
+    lines.append("\n**注意**：将 `你的用户名/仓库名` 替换为你的 GitHub 用户名和仓库名。")
+    
+    # 确保目录存在
+    Path(readme_path).parent.mkdir(parents=True, exist_ok=True)
+    
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    
+    print(f"📄 已生成说明文件: {readme_path}")
+
 # ---------- 处理单个规则 ----------
 def process_single(src: dict, root_dir: str) -> tuple[str, bool]:
     name = src["name"]
@@ -165,6 +204,9 @@ def main():
                     updated_sources.append(name)
             except Exception as e:
                 print(f"⚠️ 处理规则时出错: {e}")
+
+    # 生成 README 说明文件
+    generate_readme(sources, ROOT_DIR)
 
     with open(changed_file, "w") as f:
         f.write("1" if changed else "0")
