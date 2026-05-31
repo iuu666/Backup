@@ -3827,6 +3827,7 @@
 .allnewhost.com
 .alloutdubstep.com
 .alloy-web.zvuk.com
+.alloytitans.com
 .allsunflowers.com
 .allthelogs.com
 .alltracked.com
@@ -7563,6 +7564,7 @@
 .batmobile.com.tw
 .bats.video.yahoo.com
 .batsavcdn.ksmobile.net
+.battleburst.com
 .battlekite.com
 .bauqp.plankhardware.com
 .bauvf.bullystickscentral.com
