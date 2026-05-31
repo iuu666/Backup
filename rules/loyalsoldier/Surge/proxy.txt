@@ -14488,6 +14488,7 @@ zeenews-fonts.s3.amazonaws.com
 .livexxx.me
 .livingstream.com
 .livingyourambition.com
+.livinno.org
 .livrariart.com.br
 .lizardporn.com
 .lizol.co.in
@@ -17670,6 +17671,7 @@ zeenews-fonts.s3.amazonaws.com
 .ootbstudio.co.kr
 .op.gg
 .op7979.com
+.opac-project.eu
 .open.firstory.me
 .openai.com
 .openamt.com
