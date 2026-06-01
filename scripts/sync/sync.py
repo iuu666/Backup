@@ -1,3 +1,4 @@
+```python
 import os
 import requests
 import hashlib
@@ -11,6 +12,14 @@ CONFIG_DIR = os.path.join(BASE_DIR, "sources")
 TIMEOUT = 20
 RETRY = 3
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/136.0 Safari/537.36"
+    )
+}
+
 
 def md5(content: bytes) -> str:
     return hashlib.md5(content).hexdigest()
@@ -19,9 +28,14 @@ def md5(content: bytes) -> str:
 def fetch(url: str) -> bytes:
     for i in range(RETRY):
         try:
-            r = requests.get(url, timeout=TIMEOUT)
+            r = requests.get(
+                url,
+                timeout=TIMEOUT,
+                headers=HEADERS
+            )
             r.raise_for_status()
             return r.content
+
         except Exception as e:
             print(f"[WARN] Retry {i + 1}/{RETRY}: {e}")
             time.sleep(2)
@@ -78,7 +92,9 @@ def process(src, root_dir):
 
 
 def main():
-    root_dir = os.path.abspath(os.path.join(BASE_DIR, "../../"))
+    root_dir = os.path.abspath(
+        os.path.join(BASE_DIR, "../../")
+    )
 
     sources = load_all_sources()
 
@@ -94,7 +110,8 @@ def main():
             failed += 1
 
             print(
-                f"❌ Failed: {s.get('name', 'Unknown')} - {e}"
+                f"❌ Failed: "
+                f"{s.get('name', 'Unknown')} - {e}"
             )
 
     print("\n=== RESULT ===")
@@ -119,3 +136,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
