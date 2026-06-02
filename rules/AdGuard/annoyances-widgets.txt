@@ -243,5 +243,6 @@
 .widgets.sprinkletxt.com
 .widgets.taxel.jp
 .widgets.trustedshops.com
+.ws.nperf.com
 .yameyou.com
 .zdorovyak.com

@@ -8014,6 +8014,7 @@
 .bizo.com
 .bizrate.com
 .bizspring.net
+.biztoolsbrief.com
 .bizz.cochraneco.com
 .bja2.destinia.cz
 .bjdqbl.nippn-kenko.net
@@ -8241,6 +8242,7 @@
 .boar.hopehollow.com
 .boar.indieweb.org
 .boar.kostholdsveilederen.no
+.boardbumpers.com
 .boatcodeapp.com
 .boatpaper.com
 .boatsbuilding.com
@@ -20446,7 +20448,6 @@
 .followercounter.com
 .fomhr.superlash.pl
 .fonts.simoneferretti.net
-.fontserif.com
 .food.informaengage.com
 .foodbrochure.advancedtech.com
 .foodczar.com
@@ -26091,6 +26092,7 @@
 .hamsterspot.com
 .han.babyatoz.com
 .hancockhealth.hancockregional.org
+.handler.rgstats.com
 .handleteeth.com
 .handmade.prettyserendipity.co.uk
 .handsomehose.com

@@ -842,6 +842,7 @@
 .wonderpush.com
 .wp.24smi.org
 .wpush.biz
+.ws.nperf.com
 .wstpush-mobile.terra.com
 .wwclicknews.club
 .wwopenclick.vip
