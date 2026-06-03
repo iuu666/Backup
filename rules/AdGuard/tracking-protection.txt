@@ -9926,6 +9926,7 @@
 .ciscenje.net.jumia.com.ng
 .citiservi.es
 .citrusad.net
+.citydeal.net
 .cityofsanmateo.analytics.open.law
 .cityua.net
 .cizion.com
@@ -10011,6 +10012,7 @@
 .clear.sportsandfitness.com.bd
 .clear.tanhabdshop.com
 .clear.vision.net
+.clearclips.com
 .clearviewcrm.softrek.com
 .cleveritics.com
 .clevi.com
@@ -21052,6 +21054,7 @@
 .g.wonderchat.io
 .g.wunderbh.de
 .g.zecplus.de
+.g10498469755.co
 .g1be.swisslife-direct.fr
 .g5hvff5.chatwerk.de
 .g650.delcotimes.com
@@ -47271,6 +47274,7 @@
 .reach.jensenprecast.com
 .reach.terumo-bct.com
 .reachforce.com
+.reachhumans.com
 .reactful.com
 .reactjspdf.com
 .read.lightreading.com
@@ -70887,6 +70891,7 @@
 .stats.paulronge.se
 .stats.paypal-metrics.com
 .stats.paysagistes.pro
+.stats.peachify.top
 .stats.pebkac.io
 .stats.pendleratlas.de
 .stats.perpetual.pizza
