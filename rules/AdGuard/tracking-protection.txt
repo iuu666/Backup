@@ -16121,6 +16121,7 @@
 .daymodern.com
 .daytoday.ownbazarbd.com
 .dayyfq.rapidonline.com
+.dazzlescript.com
 .dazzlingbook.com
 .db7q4jg5rkhk8.cloudfront.net
 .dbcru.ryka.com
@@ -16995,6 +16996,7 @@
 .doclix.com
 .docodoco.jp
 .docomo-analytics.com
+.documentstock.com
 .docyjy.ryderwear.com
 .dodgebugs.com
 .dodrryvg.octopusenergy.co.jp
