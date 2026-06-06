@@ -8459,6 +8459,7 @@
 .browser-update.org
 .browser.events.data.msn.cn
 .browser.events.data.msn.com
+.browser.pipe.aria.microsoft.com
 .browsercfg-drcn.cloud.dbankcloud.cn
 .browserguides.net
 .browsing.doamore.com
@@ -20140,6 +20141,7 @@
 .finderlocator.com
 .findthetruth.allergyai.com
 .findyourdailyjoy.com
+.findyourdelight.com
 .fine.aftershoot.com
 .fine.ampelmannshop.com
 .fine.boum.garden
@@ -21705,6 +21707,7 @@
 .go-mpulse.net
 .go-response.thermofisher.com
 .go-stage.oracle.com
+.go-usertrack-importer.pub.rtl-api.com
 .go-vmware.broadcom.com
 .go.abcam.com
 .go.abqisotopes.com
@@ -22088,7 +22091,6 @@
 .goo-access-analytics.appspot.com
 .good.debbeq.com
 .good.iamandco.com
-.goodbark.com
 .goodcounter.org
 .goods.preoponno.com
 .google-analytics.bi.owox.com
@@ -80078,6 +80080,7 @@
 .umami.spencerdevs.xyz
 .umami.subdavis.com
 .umami.syg.ma
+.umami.vidcore.net
 .umamix.fadunews.in
 .umazvs.raybiotech.com
 .umbel.com
