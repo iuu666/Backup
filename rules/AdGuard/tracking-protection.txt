@@ -4744,6 +4744,7 @@
 .analytics.nrgprotects.com
 .analytics.oceanengine.com
 .analytics.octaglobal.com
+.analytics.oeksound.com
 .analytics.office-interior.com
 .analytics.ohmycharmz.com
 .analytics.oliveapp.net
@@ -16259,6 +16260,7 @@
 .dd.daffodilday.org.nz
 .dd.g2.com
 .dd.leboncoin.fr
+.dd.qwant.com
 .dd.reuters.com
 .dd6zx4ibq538k.cloudfront.net
 .ddbgi.bonheurjewelry.com
@@ -19991,7 +19993,6 @@
 .feast-events.guardianapis.com
 .featherstage.com
 .feathr.co
-.featureassets.org
 .featured.bradyid.com
 .featuregates.org
 .feavq.freeeasemd.com
@@ -26617,6 +26618,7 @@
 .hooks.geralbet.bet.br
 .hooks.lider.bet.br
 .hookworm.campaignzee.com
+.hoorayplay.com
 .hop.bouclidom.com
 .hoqje.repipe.com
 .horizon-track.globo.com
@@ -29867,6 +29869,7 @@
 .k.laredoute.pt
 .k.laredoute.ru
 .k.laredoute.se
+.k.qwant.com
 .k.total.fr
 .k.truffaut.com
 .k.voyageursdumonde.be
@@ -70178,6 +70181,7 @@
 .static.tuttocartucce.com
 .static.user-red.com
 .static.whatsapp.net.iberostar.com
+.statikk.modelviewer.lol
 .statis.greentonic.cz
 .statistic-overseas.yunxinfw.com
 .statistic.elkobraas.com
@@ -80081,6 +80085,8 @@
 .umami.subdavis.com
 .umami.syg.ma
 .umami.vidcore.net
+.umami.vidfast.pro
+.umami.vidup.to
 .umamix.fadunews.in
 .umazvs.raybiotech.com
 .umbel.com
