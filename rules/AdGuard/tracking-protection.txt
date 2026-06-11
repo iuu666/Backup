@@ -9669,6 +9669,7 @@
 .cdns.redskapsbolaget.se
 .cdnstats-a.akamaihd.net
 .cdnstr.com
+.cdnw.onlinelearning.hms.harvard.edu
 .cdnx.baiadellesirene.it
 .cdnx.capogrossocamerota.it
 .cdnx.dreamsresortsellia.it
@@ -27232,6 +27233,7 @@
 .ilzzb.retrofete.com
 .im-apps.net
 .im.cbsileads.com
+.image-sap.sfmc-content.com
 .image.ard.de
 .image.go.aricent.com
 .image.info.perkinelmer.com
@@ -29610,6 +29612,7 @@
 .joqawz.snipes.nl
 .joqdd.madeincookware.com.au
 .jornal.tesouros-da-julia.com
+.joshpaintings.com
 .joskgw.sewingmachinesplus.com
 .journal-bt.wildberries.ru
 .journey.bommelwonen.nl
@@ -45626,6 +45629,7 @@
 .plausible.redchamp.net
 .plausible.regex.help
 .plausible.retune.de
+.plausible.root-nation.net
 .plausible.sbw.org
 .plausible.scimago.es
 .plausible.shadygrovepca.org
@@ -60711,7 +60715,6 @@
 .srv.vinhosmariamaria.com.br
 .srv.vuecart.pk
 .srv.yourtulumconcierge.com
-.srvgl.com
 .srvr.dmvs-apac.com
 .srvr.drfelipepaulino.com.br
 .srvr.marcelobenites.com.br
@@ -79897,6 +79900,7 @@
 .udbdf.apkpure.com
 .udc.msn.com
 .udcazzuy.k9at.co.uk
+.udderstack.allstar.gg
 .udfa7.azbarbecue.be
 .udfa7.azgrillservice.de
 .udfa7.barbecue.nl
