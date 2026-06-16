@@ -2940,6 +2940,7 @@
 .adtd.parfumdreams.ie
 .adtd.parfumdreams.nl
 .adtd.parfumdreams.pt
+.adtech.abs-cbn.com
 .adtelligence.de
 .adtima-media.zascdn.me
 .adtima-static.zadn.vn
@@ -4386,6 +4387,7 @@
 .analytics.egernsund.de
 .analytics.eikko.ai
 .analytics.eip.telegraph.co.uk
+.analytics.ekonsilio.io
 .analytics.electro-com.ru
 .analytics.elegela.us
 .analytics.eliana.sa
@@ -45277,6 +45279,7 @@
 .pingomatic.com
 .pingpong.us
 .pings.conviva.com
+.pingsurvey.com
 .pingtas.qq.com
 .pinniped.quarantinecup.live
 .pinniped.resist.bot
@@ -45565,6 +45568,7 @@
 .plankton-gtm.a.autoscout24.com
 .plans.ceteraretirement.com
 .plans.fundtherebuild.com
+.plantcourse.com
 .plants.outsidein.com
 .plas.imfeld.dev
 .platform.datazoom.io
@@ -49608,7 +49612,6 @@
 .sas.f.peacocktv.com
 .sas.f.stable-int.peacocktv.com
 .sas.int-nft.peacocktv.com
-.sas.peacocktv.com
 .sas.stable-int.peacocktv.com
 .sas15k01.com
 .sat.sanoma.fi
@@ -82564,6 +82567,7 @@
 .wellgroomedhydrant.com
 .wellheater-ss.checkoutera.com
 .wellheatershop-ss.checkoutera.com
+.welovedata.go2cloud.org
 .welt-der-links.de
 .weltsgtm.weltausholz.de
 .wemqip.misli.com
