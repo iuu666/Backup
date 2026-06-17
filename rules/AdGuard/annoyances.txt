@@ -306,6 +306,7 @@
 .deltaction.com
 .device-api.indigitall.com
 .dgpcdn.org
+.didomi.foodvisor.io
 .digital-interview.com
 .disrepush.com
 .distributiontomatoes.com

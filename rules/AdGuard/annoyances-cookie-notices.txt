@@ -114,6 +114,7 @@
 .cookihq.com
 .cp.gutefrage.net
 .delivery.consentmanager.net
+.didomi.foodvisor.io
 .dse-cookiebanner.ford.com
 .ecookie.nl
 .fastcmp.com

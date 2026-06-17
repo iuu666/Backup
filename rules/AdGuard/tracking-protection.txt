@@ -258,6 +258,7 @@
 .a.camvision.dk
 .a.cartop.dk
 .a.chdist.com
+.a.cineflix.st
 .a.closerpets.co.uk
 .a.danskrejsehjaelp.dk
 .a.davosklostersmountains.ch
@@ -8455,6 +8456,7 @@
 .broadborder.com
 .broadcastbed.com
 .broaddoor.com
+.broadstreet.ai
 .broker.datazoom.io
 .bronto.com
 .brotherslocket.com
@@ -39230,6 +39232,7 @@
 .metrics-prod.suno.com
 .metrics-target.siriusxm.com
 .metrics-us.cometchat.io
+.metrics-web.help
 .metrics.24hourfitness.com
 .metrics.28degreescard.com.au
 .metrics.365-auctions.com
@@ -42260,6 +42263,7 @@
 .needleaf.com
 .needyneedle.com
 .negocio.banrural.com.gt
+.nehalist.io
 .nehcj.tryprodenta.com
 .neighborlywatch.com
 .nejmxt.vivishoeshoe.com
@@ -45800,6 +45804,7 @@
 .pool2.ioam.de
 .pool4.ioam.de
 .pool5.ioam.de
+.poolcushions.com
 .pop.deinkinderdoc.de
 .pop.devil.services
 .pop.feelbrill.lt
@@ -45993,6 +45998,7 @@
 .presetrabbits.com
 .presscoder.com
 .prettybicycle.com
+.prettydemo.com
 .prettyeasycafe.com
 .prettylearning.com
 .preview-collector.scopely.io
@@ -73177,7 +73183,6 @@
 .t.wvusports.com
 .t.xoom.com
 .t.y8.com
-.t.yesware.com
 .t.yogabars.in
 .t.yourcaraccidentcheck.com
 .t.zhipin.com
