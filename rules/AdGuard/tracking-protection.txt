@@ -27240,7 +27240,6 @@
 .ilzzb.retrofete.com
 .im-apps.net
 .im.cbsileads.com
-.image-sap.sfmc-content.com
 .image.ard.de
 .image.go.aricent.com
 .image.info.perkinelmer.com
@@ -30134,6 +30133,7 @@
 .kindlereunion.com
 .kinesis.eu-west-1.amazonaws.com
 .kingfisher.gedaly.com
+.kingsealed.com
 .kinisi.mkb-brandstof.nl
 .kippb.opticsplanet.com
 .kiqwal.autoscout24.es
@@ -45113,6 +45113,7 @@
 .perfectaudience.com
 .perfectfetch.com
 .perfiliate.com
+.performance-events.guardianapis.com
 .performance.athleticgym.com.co
 .performance.inncollectiongroup.com
 .performancerevenues.com
@@ -48016,6 +48017,7 @@
 .roastap.sixor.it
 .rob.megaopen.ru
 .robotgarages.com
+.robotsrefinery.com
 .rockagainst.com
 .rocket.bubble.dk
 .rockm.sydneyhydroplumbing.com.au
@@ -69974,6 +69976,7 @@
 .star.arana.ro
 .star.businessglobalizer.com
 .starfish.taskflow.io
+.starfurniture.net
 .starget.aircanada.com
 .starget.airmiles.ca
 .starget.bestoforlando.com
@@ -77433,6 +77436,7 @@
 .tracker-api.my.com
 .tracker-beam.aktuality.sk
 .tracker-dot-optimeeze.appspot.com
+.tracker-proxy.getmimo.com
 .tracker-rec.smart-bdash.com
 .tracker-v4.gamedock.io
 .tracker.a11.vega.aurion11.io
