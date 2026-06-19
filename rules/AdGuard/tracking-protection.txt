@@ -4756,7 +4756,6 @@
 .analytics.omniscientai.com
 .analytics.omnivent.com
 .analytics.ompgroup.com
-.analytics.onedio.com
 .analytics.ooyala.com
 .analytics.org.coveo.com
 .analytics.ouc.ac.cy
@@ -70300,6 +70299,7 @@
 .stats-newyork1.bloxcms.com
 .stats-proto.pandora.com
 .stats-ruzickap-github-io.ruzicka.dev
+.stats-sdk.tange365.com
 .stats-sg.ganymede.eu
 .stats-ssl.mdanderson.org
 .stats.1und1-drillisch.de
@@ -71804,6 +71804,7 @@
 .stts.swisshranalytics.ch
 .sttshub.tipmanager.net
 .studio.osstudio.dk
+.studioalkaline.com
 .studioibi.ibijus.com
 .study.vu.edu.au
 .studycooking.com
@@ -74807,6 +74808,7 @@
 .thebigvan.com
 .thebrainybulb.com
 .thecounter.com
+.thecounter.net
 .thecrazychili.com
 .thedoc.doctronic.ai
 .thedp.exhalewell.com

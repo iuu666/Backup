@@ -626,6 +626,7 @@
 .quantcast.mgr.consensu.org
 .quickalert.org
 .quiz.marquiz.ru
+.quizgo-widget.ru
 .quotiq.ru
 .qushad.com
 .r42tag.com

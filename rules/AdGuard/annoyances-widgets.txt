@@ -145,6 +145,7 @@
 .prod-live-chat.sprinklr.com
 .purechat.com
 .quiz.marquiz.ru
+.quizgo-widget.ru
 .quotiq.ru
 .rcm.shinobi.jp
 .re.trigs-sockets.com
