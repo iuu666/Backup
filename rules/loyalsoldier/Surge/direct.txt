@@ -14378,6 +14378,7 @@ xz.pphimalayanrt.com
 .azuiblc.com
 .azure-wave.com
 .azure.cc
+.azureflame.cloud
 .azureflying.com
 .azuremigrate.download.prss.microsoft.com
 .azuremigratetest.download.prss.microsoft.com
@@ -16975,6 +16976,7 @@ xz.pphimalayanrt.com
 .bjartmuseum.com
 .bjatv.com
 .bjbaidianfeng.com
+.bjbaifan.com
 .bjbalb.com
 .bjbaodao.net
 .bjbb.com
@@ -19412,6 +19414,7 @@ xz.pphimalayanrt.com
 .cangfengzhe.com
 .canghaiip.com
 .canghaimachine.com
+.cangjggame.com
 .canglanghospital.com
 .cangmang.xyz
 .cangoonline.com
@@ -21029,6 +21032,7 @@ xz.pphimalayanrt.com
 .chachengji.com
 .chacihai.com
 .chacuo.net
+.chadaodao.com
 .chadianhua.net
 .chadoc.com
 .chaej.com
@@ -34956,6 +34960,7 @@ xz.pphimalayanrt.com
 .feiersmart.com
 .feifandesign.com
 .feifanindustry.com
+.feifanmi.com
 .feifantxt.com
 .feifantxt.net
 .feifdx.com
@@ -75685,6 +75690,7 @@ xz.pphimalayanrt.com
 .qingnianlvxing.com
 .qingniantuzhai.com
 .qingnianwang.com
+.qingning88.com
 .qingpanduola.com
 .qingpin.vip
 .qingping.co
@@ -92675,6 +92681,7 @@ xz.pphimalayanrt.com
 .uniow.com
 .unipack-tech.com
 .uniproud.com
+.unisapps.com
 .uniscope.com
 .unisdigital.com
 .unisedu.com
@@ -92909,7 +92916,6 @@ xz.pphimalayanrt.com
 .urumqimtr.com
 .us-ex.com
 .us-qianzheng.com
-.us.ci
 .us0.me
 .usa-gam.com
 .usa-idc.com
