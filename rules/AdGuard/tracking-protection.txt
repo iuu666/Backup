@@ -10402,6 +10402,7 @@
 .code.r5hsid.ru
 .code.randomhouse.com
 .code.usergram.info
+.codedrink.com
 .codes.royalad.pl
 .coffe.faynestudio.com.br
 .coffee.brandzaak.nl
@@ -10592,6 +10593,7 @@
 .collector.bunchbox.co
 .collector.cakeresume.com
 .collector.cdp.cnn.com
+.collector.feedzop.com
 .collector.fiverr.com
 .collector.fullxh.com
 .collector.gamechanger.io
@@ -10612,6 +10614,7 @@
 .collector.pi.spectrum.net
 .collector.plarium.com
 .collector.prod.expedia.com
+.collector.quizzop.com
 .collector.reelevant.com
 .collector.retailcrm.pro
 .collector.rn.de
@@ -10625,6 +10628,7 @@
 .collector.taoxh.life
 .collector.theguardianlegalnetwork.com
 .collector.trendmd.com
+.collector.umogames.com
 .collector.vhx.tv
 .collector.xhaccess.com
 .collector.xhamster.com
@@ -11191,6 +11195,7 @@
 .corporatecommunications.bvifsc.vg
 .corporatemrguide.americanexpress.de
 .corporatepages.proximus.com
+.correctedcode.com
 .cortellisconnections.thomsonreuters.com
 .cosmi.io
 .cosmicsculptor.com
