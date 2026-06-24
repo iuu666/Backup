@@ -7198,6 +7198,7 @@
 .avrqa.estellabartlett.com
 .avs.adpinfo.com
 .avsjo.stickley.com
+.avsplow.com
 .avvfqs.nubia.com.tr
 .avvoe.juicedbikes.com
 .avzesq.eotica.com.br
@@ -19203,6 +19204,7 @@
 .event-action.popinfo.jp
 .event-api-cs.stardust-tv.com
 .event-api.hackle.io
+.event-collector.analytics.onedio.com
 .event-collector.moviesanywhere.com
 .event-collector.prd.data.s.joyn.de
 .event-dot-learning-piano.appspot.com
@@ -20283,6 +20285,7 @@
 .fjjkh.thelostestate.com
 .fjkjaj.peterhahn.nl
 .fjnrh.period.co
+.fjordsand.com
 .fjortk.braun-hamburg.com
 .fjqtg.resthavenokc.com
 .fjqtyu.bethowen.ru
@@ -43220,6 +43223,7 @@
 .obqvss.debameubelen.be
 .obra.obraelucro.com.br
 .obrqts.hudforeclosed.com
+.obs.forseasky.com
 .obscenesidewalk.com
 .obscurespace.com
 .observare.de
@@ -67212,7 +67216,6 @@
 .st.agendacheia.online
 .st.anastasija.lt
 .st.australianinvestmenteducation.com.au
-.st.avsplow.com
 .st.awefestival.com.br
 .st.ba6lob.com
 .st.bahn.de
@@ -73002,6 +73005,7 @@
 .t.numspot.com
 .t.nurivacalm.com
 .t.nusports.com
+.t.ofsys.com
 .t.ohiobobcats.com
 .t.okcciviccenter.com
 .t.okstate.com
