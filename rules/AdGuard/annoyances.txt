@@ -551,6 +551,7 @@
 .praght.tech
 .privacy-center.org
 .privacy-sdk.talent-soft.com
+.privacy.advancelocal.com
 .privacy.condenastdigital.com
 .privacy.ene.si
 .privacy.selbst.de
@@ -828,6 +829,7 @@
 .widget.webica.pro
 .widget.whatsbroadcast.com
 .widget.whatshelp.io
+.widget.yourgood.app
 .widgets.coingecko.com
 .widgets.getsitecontrol.com
 .widgets.hadilive.com

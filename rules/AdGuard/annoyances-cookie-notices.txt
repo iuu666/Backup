@@ -151,6 +151,7 @@
 .possiblepencil.com
 .privacy-center.org
 .privacy-sdk.talent-soft.com
+.privacy.advancelocal.com
 .privacy.condenastdigital.com
 .privacy.ene.si
 .privacy.selbst.de

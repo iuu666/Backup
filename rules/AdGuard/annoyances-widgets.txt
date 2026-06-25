@@ -234,6 +234,7 @@
 .widget.webica.pro
 .widget.whatsbroadcast.com
 .widget.whatshelp.io
+.widget.yourgood.app
 .widgets.coingecko.com
 .widgets.getsitecontrol.com
 .widgets.hadilive.com

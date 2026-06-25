@@ -112,9 +112,13 @@
       {
         "date": "2026-06-24",
         "count": 6563
+      },
+      {
+        "date": "2026-06-25",
+        "count": 6570
       }
     ],
-    "latest": 6563
+    "latest": 6570
   },
   "tracking-protection.txt": {
     "history": [
@@ -229,9 +233,13 @@
       {
         "date": "2026-06-24",
         "count": 84668
+      },
+      {
+        "date": "2026-06-25",
+        "count": 84671
       }
     ],
-    "latest": 84668
+    "latest": 84671
   },
   "base-filter.txt": {
     "history": [
@@ -346,9 +354,13 @@
       {
         "date": "2026-06-24",
         "count": 57370
+      },
+      {
+        "date": "2026-06-25",
+        "count": 57666
       }
     ],
-    "latest": 57370
+    "latest": 57666
   },
   "annoyances-cookie-notices.txt": {
     "history": [
@@ -463,9 +475,13 @@
       {
         "date": "2026-06-24",
         "count": 181
+      },
+      {
+        "date": "2026-06-25",
+        "count": 182
       }
     ],
-    "latest": 181
+    "latest": 182
   },
   "annoyances.txt": {
     "history": [
@@ -580,9 +596,13 @@
       {
         "date": "2026-06-24",
         "count": 864
+      },
+      {
+        "date": "2026-06-25",
+        "count": 866
       }
     ],
-    "latest": 864
+    "latest": 866
   },
   "annoyances-mobile-app-banners.txt": {
     "history": [
@@ -696,6 +716,10 @@
       },
       {
         "date": "2026-06-24",
+        "count": 3
+      },
+      {
+        "date": "2026-06-25",
         "count": 3
       }
     ],
@@ -814,6 +838,10 @@
       {
         "date": "2026-06-24",
         "count": 419
+      },
+      {
+        "date": "2026-06-25",
+        "count": 419
       }
     ],
     "latest": 419
@@ -930,6 +958,10 @@
       },
       {
         "date": "2026-06-24",
+        "count": 16
+      },
+      {
+        "date": "2026-06-25",
         "count": 16
       }
     ],
@@ -1048,6 +1080,10 @@
       {
         "date": "2026-06-24",
         "count": 49
+      },
+      {
+        "date": "2026-06-25",
+        "count": 49
       }
     ],
     "latest": 49
@@ -1165,9 +1201,13 @@
       {
         "date": "2026-06-24",
         "count": 249
+      },
+      {
+        "date": "2026-06-25",
+        "count": 250
       }
     ],
-    "latest": 249
+    "latest": 250
   },
   "dns-filter.txt": {
     "history": [
@@ -1282,8 +1322,12 @@
       {
         "date": "2026-06-24",
         "count": 157706
+      },
+      {
+        "date": "2026-06-25",
+        "count": 158064
       }
     ],
-    "latest": 157706
+    "latest": 158064
   }
 }

@@ -252,6 +252,7 @@
 .a.badheizkoerper.net
 .a.beprogressive.ro
 .a.bigtennetwork.com
+.a.boredpanda.bio
 .a.brack.ch
 .a.callawaygolf.com
 .a.callawaygolfpreowned.com
@@ -3982,7 +3983,6 @@
 .amplitude.thepure.app
 .ampltd.top.gg
 .ampltd2.medal.tv
-.ampscamp.net
 .amptrack-dailymail-co-uk.cdn.ampproject.org
 .amqbl.ballarddesigns.com
 .ams-beacons.xumo.com
@@ -6655,6 +6655,7 @@
 .apptics.zoho.in
 .apptracer.ru
 .apptracker.gamedock.io
+.appview.fafafa.ai
 .appvua.jetcost.nl
 .apqcjj.celford.com
 .aprci.ruggable.eu
@@ -8961,6 +8962,7 @@
 .canopylabs.com
 .canttouchme.estagencymarbella.com
 .canvasandsocks.com
+.canyonpizza.net
 .caowuq.babyliss-romania.ro
 .cap.88ads.xyz
 .capcush.net.anwalt.de
@@ -20285,7 +20287,6 @@
 .fjjkh.thelostestate.com
 .fjkjaj.peterhahn.nl
 .fjnrh.period.co
-.fjordsand.com
 .fjortk.braun-hamburg.com
 .fjqtg.resthavenokc.com
 .fjqtyu.bethowen.ru
@@ -44061,6 +44062,7 @@
 .out.velpa.pl
 .outdoorsoil.com
 .outdoorthingy.com
+.outerwords.com
 .outfit.wingsfit1.com
 .outreach.connectednation.org
 .outreach.crossref.org
@@ -53450,6 +53452,7 @@
 .seyfwl.interia.pl
 .sezadala.serjotattoo.com
 .sezbe.softsurroundings.com
+.sf-insights.io
 .sf.schufa.de
 .sf.strategicfba.com
 .sf.susannas-brautmode.de
