@@ -1,5 +1,6 @@
 .aloofvest.com
 .api.consentjs.datagrail.io
+.app.cookiemate.pl
 .app.secureprivacy.ai
 .appconsent.io
 .axept.io

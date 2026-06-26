@@ -43,6 +43,7 @@
 .app.chatplus.jp
 .app.conversiobot.com
 .app.convertbox.com
+.app.cookiemate.pl
 .app.davision.ai
 .app.dengage.com
 .app.getbeamer.com

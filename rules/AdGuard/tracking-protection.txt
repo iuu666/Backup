@@ -5121,6 +5121,7 @@
 .analytics.wikitide.net
 .analytics.wildlifestudios.com
 .analytics.winter.ink
+.analytics.wispbyte.com
 .analytics.witglobal.net
 .analytics.wondershare.cc
 .analytics.wrc.nic.in
@@ -6812,7 +6813,6 @@
 .ask.antalis.sk
 .ask.antalisabitek.com
 .ask.antalisbolivia.com
-.askdriver.com
 .aslkv.yarn.com
 .aslscc.globehunters.ie
 .asmail.renkim.com
@@ -78911,6 +78911,7 @@
 .trk.dvsystems.com
 .trk.e.mailchimp.com
 .trk.earthday.org
+.trk.edf.fr
 .trk.elmlea.com
 .trk.elmorietschle.cn
 .trk.elmorietschle.com
@@ -80222,7 +80223,6 @@
 .unknowncrate.com
 .unknownidea.com
 .unl1zvy2zuyn.franchiseplus.nl
-.unloadyourself.com
 .unlock.eleganceclothing.co
 .uns.stageegift.giftcards.com
 .unseenreport.com
