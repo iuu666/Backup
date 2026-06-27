@@ -43787,6 +43787,7 @@
 .opbdps.bonprix.fi
 .opbvu.getfirstperson.com
 .opcqf.analuisa.com
+.opecloud.com
 .open-analytics.hrw.org
 .open.oneplus.net
 .openclick.com
@@ -73370,7 +73371,6 @@
 .tagforward.dielampefabrik.de
 .tagger.communitiesxp.com
 .tagger.ope.scmp.com
-.tagger.opecloud.com
 .tagging.040fit.nl
 .tagging.4-pieds.com
 .tagging.aerth.eu
