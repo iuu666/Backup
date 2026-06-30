@@ -31148,6 +31148,7 @@
 .lists-tracking.komando.com
 .lists.ccmbg.com
 .lit.connatix.com
+.litags.feedblitz.com
 .lite.lchfarkivet.se
 .litix.io
 .littlelilistore.rdtrke.com
@@ -45860,6 +45861,7 @@
 .postaffiliatepro.com
 .postgraduate.smu.edu.sg
 .postgraduate2.smu.edu.sg
+.posthog.football24.ua
 .posthog.lingvanex.com
 .posthog.tarnkappe.info
 .potatoinvention.com
@@ -74570,6 +74572,7 @@
 .telemetrics.klaviyo.com
 .telemetry-in.battle.net
 .telemetry.adobe.io
+.telemetry.adsninja.ca
 .telemetry.am.pictet.com
 .telemetry.api.swiftkey.com
 .telemetry.api.wmcdp.io
