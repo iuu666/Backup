@@ -10411,6 +10411,7 @@
 .coffee.brandzaak.nl
 .coffee.garageroasted.co.uk
 .coffee.seducaoinvisivel.store
+.coffeefire.net
 .coffeesidehustle.com
 .cofs.partscentre.co.uk
 .cogxmr.travelplanet.pl
@@ -45876,6 +45877,7 @@
 .powerfulblends.com
 .powerfulcopper.com
 .powertips.idera.com
+.powertoolwiki.com
 .powerup.rsaworks.com
 .pozdl.bigfigmattress.com
 .pp.fitnesshubbd.xyz
@@ -47739,6 +47741,7 @@
 .ressources.promoneuve.fr
 .ressources.usine-digitale.com
 .ressources.usine-nouvelle.com
+.rest.comfy.ua
 .restfultools.com
 .restrainstorm.com
 .restructureinvention.com
