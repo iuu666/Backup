@@ -7515,6 +7515,7 @@
 .baikalize.com
 .baitbaseball.com
 .bal.balciselahattin.com
+.balancenotes.com
 .baldeagle.e-ma.re
 .balloonbelieve.com
 .ballr.jamesoro.com
@@ -45560,6 +45561,7 @@
 .pl.noartmusic.com
 .pl.paradiesgartenfestival.at
 .pl.paradisecity.be
+.pl.primis.tech
 .pl.scandal.events
 .pl.schaatsbaanmuseumplein.nl
 .pl.slotzeistlive.nl
@@ -47618,6 +47620,7 @@
 .reporting-api.gannettinnovation.com
 .reporting.aatkit.com
 .reporting.autographapp.me
+.reportmyads.com
 .reports-tsi.tangerine.io
 .reports.koalametrics.com
 .reports.omegacommerce.com
@@ -71767,6 +71770,7 @@
 .stream.neonail.nl
 .stream.neonail.pl
 .stream.supersportowy.pl
+.streams-scores.rbl.ms
 .streatserver.eleventickets.com
 .streetfit.wingsfit1.com
 .streetsort.com
@@ -72467,6 +72471,7 @@
 .sync.clearnview.com
 .sync.ebis.ne.jp
 .sync.getpublica.com
+.sync.inmobi.com
 .sync.morgdm.ru
 .sync.opendsp.ru
 .sync.outbrain.com
