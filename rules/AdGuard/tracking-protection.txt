@@ -21406,6 +21406,7 @@
 .getconnected.infor.com
 .getconversion.net
 .getinfo.fullsail.edu
+.getjan.io
 .getjethose-ss.checkoutera.com
 .getkatuchef-ss.topashopo.com
 .getlasso.co
