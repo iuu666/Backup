@@ -9854,6 +9854,7 @@
 .cheetah.songrender.com
 .cheetah.stolenboats.info
 .cheetah.zeh.co.il
+.chemistrycore.com
 .cherriescare.com
 .chessbranch.com
 .chesscolor.com
@@ -16337,6 +16338,7 @@
 .decide.mixpanel.com
 .decidedrum.com
 .decideinteractive.com
+.decisionhut.com
 .decisivebase.com
 .decisivedrawer.com
 .deck.versafloor.com
@@ -29503,6 +29505,7 @@
 .jipfq.etrendygo.com
 .jirafe.com
 .jitsu.ixbt.com
+.jitsu.ixbt.games
 .jitsu.ixbt.site
 .jiujpc.asgoodasnew.fr
 .jivsfr.drogarianovaesperanca.com.br
