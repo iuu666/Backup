@@ -312,6 +312,7 @@
 .a.hygienedepot.co.uk
 .a.icanotes.com
 .a.intensse.ro
+.a.ipinfo.io
 .a.ipoque.com
 .a.jaz-hotel.com
 .a.jobcloud.ai
@@ -4404,6 +4405,7 @@
 .analytics.esporteinterativo.com.br
 .analytics.essenzasegreta.com
 .analytics.everythingstream.com
+.analytics.evolushost.com
 .analytics.ewz.ch
 .analytics.expertstores.co.za
 .analytics.faceitanalytics.com
@@ -5072,6 +5074,7 @@
 .analytics.vivantskincare.com
 .analytics.vivint.com
 .analytics.vixcloud.co
+.analytics.vk.asahi.co.jp
 .analytics.vodgc.net
 .analytics.voxbusinesscard.com
 .analytics.vpplayer.tech
@@ -5994,6 +5997,7 @@
 .api.taggrs.io
 .api.taijistore.com.br
 .api.tapacerto.com.br
+.api.tblcontent.com
 .api.tecbov.com.br
 .api.telemetry.watchabc.go.com
 .api.tendency.com.br
@@ -20274,6 +20278,7 @@
 .fitmessage.com
 .fitnessmapper.com
 .fitwear.szfitwear.com.br
+.fitwithalpine.com
 .fiuoo.molarclean.com
 .five.coxshutkiacher.com
 .five.purnatafashion.com
@@ -20363,6 +20368,7 @@
 .fldoai.municipal.com
 .flea.elbertsnaturalfoods.com
 .flea.welikeoliver.com
+.fleathecat.com
 .flhqn.oatsovernight.com
 .flimsycircle.com
 .flimsythought.com
@@ -41596,6 +41602,7 @@
 .mr.mrnaturalfood.com
 .mr.olympics.com
 .mr.pinkbike.com
+.mradx.net
 .mrarl.kiki.world
 .mrb.upapi.net
 .mrboldpro-ss.checkoutera.com
@@ -42429,6 +42436,7 @@
 .net4ever.graciaflamenca.es
 .net63.net.jumia.ci
 .netagent.cz
+.netandbytes.com
 .netapm.music.163.com
 .netapplications.com
 .netbiscuits.net
@@ -45127,6 +45135,7 @@
 .people.mbtionline.com
 .people.moderncampground.com
 .people.spaciousskiescampgrounds.com
+.peoplebrain.net
 .peoxsw.korres.com
 .pepleb.ekosport.de
 .pepper.trywellbe.ba
@@ -81063,6 +81072,7 @@
 .uzrating.com
 .uzwfct.botoshop.cz
 .v-collector.dp.aws.charter.com
+.v.ipinfo.io
 .v.oney.es
 .v.oui.sncf
 .v.perfumesclub.com
