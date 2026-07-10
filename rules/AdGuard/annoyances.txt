@@ -586,6 +586,7 @@
 .push.maribacaberita.com
 .push.newscraft.io
 .push.reamaze.com
+.push.testabcd.top
 .push.ueep.com
 .push.webandname.com
 .push.world

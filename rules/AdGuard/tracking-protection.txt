@@ -3978,6 +3978,7 @@
 .amplifypixel.outbrain.com
 .amplilab.thepure.app
 .amplitude-experiment.bandlab.com
+.amplitude.anytype.io
 .amplitude.bandlab.com
 .amplitude.chess.com
 .amplitude.life360.com
@@ -4782,6 +4783,7 @@
 .analytics.perfumestime.sa
 .analytics.pesktop.com
 .analytics.petracarestore.com
+.analytics.pextra.cloud
 .analytics.pgncs.notion.so
 .analytics.phonezonestore.com
 .analytics.picknrg.com
@@ -20575,6 +20577,7 @@
 .forms.xperthr.com
 .forms.xtralis.com
 .forpci3.siege-corp.com
+.fortbeach.com
 .forter.com
 .fortnitechat.site
 .fortunatemark.com
@@ -26625,6 +26628,7 @@
 .hoafot.itoman.com
 .hoaqzs.manier.ro
 .hocgeese.com
+.hockeyfool.com
 .hod.asphalte.com
 .hodor-collect.arabam.com
 .hoiao.wooden-ships.com
@@ -29516,6 +29520,7 @@
 .jitsu.ixbt.com
 .jitsu.ixbt.games
 .jitsu.ixbt.site
+.jitsu.www1.ru
 .jiujpc.asgoodasnew.fr
 .jivsfr.drogarianovaesperanca.com.br
 .jixie.io
@@ -45033,6 +45038,7 @@
 .pbox.photobox.de
 .pbreo.sokolovelaw.com
 .pbrvf.daybreakskin.com
+.pbs.inmobi.com
 .pbsoe.softiespjs.com
 .pbstats.jpmorgan.com
 .pbstck.com
@@ -48441,6 +48447,7 @@
 .rum-ingress-coralogix.com
 .rum-metrics.bunny.net
 .rum.api.intuit.com
+.rum.catchmetrics.io
 .rum.conde.io
 .rum.condenastdigital.com
 .rum.corewebvitals.io
@@ -74605,6 +74612,7 @@
 .telemetry.adobe.io
 .telemetry.adsninja.ca
 .telemetry.am.pictet.com
+.telemetry.anytype.io
 .telemetry.api.swiftkey.com
 .telemetry.api.wmcdp.io
 .telemetry.art19.com
@@ -74618,6 +74626,7 @@
 .telemetry.chrobinson.com
 .telemetry.codefusion.technology
 .telemetry.commonspirit.org
+.telemetry.data.nvidia.com
 .telemetry.dematic.com
 .telemetry.doitbeststore.com
 .telemetry.doxo.com
@@ -81835,6 +81844,7 @@
 .vzzun.boxlunch.com
 .w.bulkbuydirect.co.uk
 .w.ilfattoquotidiano.it
+.w.inmobi.com
 .w.knuffelwuff.co.uk
 .w.pellepolitibil.no
 .w.revenuegeeks.com
