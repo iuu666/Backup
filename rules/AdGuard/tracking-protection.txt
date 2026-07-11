@@ -5219,6 +5219,7 @@
 .anontimes.com
 .anonym.data.funkedigital.de
 .anonymised.io
+.anonymized-metrics.rmbl.ws
 .anormal-tracker.de
 .anrdoezrs.net
 .ans.avast.com
@@ -9322,6 +9323,7 @@
 .capisgtm.joudicargo.com
 .capiss.nyralondon.com
 .capisvr.falaqfood.com
+.capitalopera.com
 .capitfes.andrefilipe.com.br
 .capitp.teacherpimenta.com
 .capriciouscorn.com
@@ -36756,6 +36758,7 @@
 .m.olympia.it
 .m.oneleet.com
 .m.optica4kids.com
+.m.privatesportshop.es
 .m.rech.studio
 .m.salihatfood.com
 .m.saltycloud.com
@@ -43747,6 +43750,7 @@
 .onefeed.co.uk
 .onegg.site
 .oneid.live
+.onekindmarket.com
 .onelink.appsflyer.com
 .onelink.me
 .onelinksmartscript.appsflyer.com
@@ -43762,6 +43766,7 @@
 .ongsono.com
 .onhqz.rocksbox.com
 .onigh.colorwowhair.com
+.onioncomic.com
 .onjjbn.koffiemarkt.be
 .onjmsj.sumai-surfin.com
 .onldlx.snowuniverse.com
