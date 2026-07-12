@@ -843,6 +843,7 @@
 .widgets.sprinkletxt.com
 .widgets.taxel.jp
 .widgets.trustedshops.com
+.widster.ru
 .wix.consentik.com
 .womanshouz.ru
 .wonderpush.com
