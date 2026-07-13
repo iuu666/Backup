@@ -4531,6 +4531,7 @@
 .analytics.infosysequinox.com
 .analytics.infosysprize.org
 .analytics.infosyspublicservices.com
+.analytics.infraloods.nl
 .analytics.innologica.com
 .analytics.inquirernetwork.net
 .analytics.iraiser.eu
@@ -8736,6 +8737,7 @@
 .c.bigmir.net
 .c.blockdetector.org
 .c.bouncepingpong.com
+.c.bubutv.top
 .c.civo.com
 .c.dpgmedia.net
 .c.erth.se

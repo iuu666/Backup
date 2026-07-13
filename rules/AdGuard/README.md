@@ -1,21 +1,21 @@
 # AdGuard 规则
 
-> 最后更新：2026-07-12 12:08:11
+> 最后更新：2026-07-13 12:10:43
 
 ## 规则列表
 
 | 文件名 | 作用 | 7天前 | 昨天 | 今天 | 趋势 |
 |--------|------|-------|------|------|------|
-| base-filter | 基础广告过滤 | 53,928 | 54,888 | 55,207 | 📈 +0.6% |
-| tracking-protection | 隐私追踪保护 | 84,689 | 84,722 | 84,724 | 📈 +0.0% |
-| chinese-filter | 中文网站广告过滤 | 6,404 | 6,464 | 6,473 | 📈 +0.1% |
+| base-filter | 基础广告过滤 | 54,232 | 55,207 | 55,508 | 📈 +0.5% |
+| tracking-protection | 隐私追踪保护 | 84,690 | 84,724 | 84,726 | 📈 +0.0% |
+| chinese-filter | 中文网站广告过滤 | 6,413 | 6,473 | 6,483 | 📈 +0.2% |
 | social-media | 社交媒体组件屏蔽 | 49 | 49 | 49 | ➡️ 持平 |
-| dns-filter | DNS 层广告拦截 | 154,105 | 155,219 | 155,552 | 📈 +0.2% |
-| annoyances | 烦人元素合集（包含以下子项） | 867 | 868 | 869 | 📈 +0.1% |
+| dns-filter | DNS 层广告拦截 | 154,460 | 155,552 | 155,870 | 📈 +0.2% |
+| annoyances | 烦人元素合集（包含以下子项） | 867 | 869 | 869 | ➡️ 持平 |
 | annoyances-cookie-notices | &nbsp;&nbsp;&nbsp;├─ Cookie 通知屏蔽 | 183 | 183 | 183 | ➡️ 持平 |
 | annoyances-popups | &nbsp;&nbsp;&nbsp;├─ 弹窗屏蔽 | 419 | 420 | 420 | ➡️ 持平 |
 | annoyances-mobile-app-banners | &nbsp;&nbsp;&nbsp;├─ 移动端横幅屏蔽 | 3 | 3 | 3 | ➡️ 持平 |
-| annoyances-widgets | &nbsp;&nbsp;&nbsp;├─ 网页挂件屏蔽 | 250 | 250 | 251 | 📈 +0.4% |
+| annoyances-widgets | &nbsp;&nbsp;&nbsp;├─ 网页挂件屏蔽 | 250 | 251 | 251 | ➡️ 持平 |
 | annoyances-other | &nbsp;&nbsp;&nbsp;└─ 其他烦人元素 | 16 | 16 | 16 | ➡️ 持平 |
 
 ## Surge 使用说明
