@@ -23,6 +23,7 @@
 .125.net.jumia.co.ke
 .13js1lbtbj3.sparkloop.app
 .13p76nnir.de
+.1414.hexa.su
 .16ao.mathon.fr
 .16i6nuuc2ej.koelewijn.nl
 .1800cnt.com
@@ -3640,6 +3641,7 @@
 .aktigzkm.haveglad.dk
 .aktkb.eshopygo.pl
 .aktrack.pubmatic.com
+.akutagawa.consumer.gopuff.com
 .akv2-br-cdn.kwai.net.iberostar.com
 .akviv.snagtights.eu
 .akwiqx.jdsports.be
@@ -9532,7 +9534,6 @@
 .ccgnuq.bbqgalore.com
 .cchlhb.budgetsport.fi
 .cchome-stage.adobe.io
-.cchome.adobe.io
 .ccjep.onehopewine.com
 .cckov.bluatlas.com
 .ccllt.fromrebel.ca
@@ -44999,6 +45000,7 @@
 .pass-1234.com
 .passivepolo.com
 .passt.cleens.co.uk
+.passwordbyte.com
 .pasta.esfile.duapps.com
 .pastoralroad.com
 .path.americansavinghacks.com
@@ -45728,6 +45730,7 @@
 .player-feedback.p7s1video.net
 .player-telemetry.vimeo.com
 .player.stats.live-video.net
+.playerhappy.com
 .playfulriver.com
 .plbcsd.vidaxl.se
 .plbusiness.samsung.com
@@ -48079,6 +48082,7 @@
 .robotsrefinery.com
 .rockagainst.com
 .rocket.bubble.dk
+.rocketmonitor.com
 .rockm.sydneyhydroplumbing.com.au
 .rockstarwriter.com
 .rodent.covisitor.app
@@ -48128,6 +48132,7 @@
 .route.atlasbus.com.ua
 .route.empresanoautomatico.com.br
 .route.kcvisibility.com
+.routebug.com
 .router28.net.anwalt.de
 .rovememoirs.com
 .rover.powerpeptides.com
