@@ -10172,6 +10172,7 @@
 .clk2.allaboutvibe.com
 .clkcv.livede55.com
 .clkstat.china.cn
+.clktrkd.com
 .cllctr.any.run
 .cllctr.roistat.com
 .cllfa.iheartraves.com
@@ -19543,6 +19544,7 @@
 .evorra.net
 .evrget.nikkan-gendai.com
 .evs.data.ciceksepeti.com
+.evs.segment.complex.com
 .evs.sgmt.loom.com
 .evss.evinyolu.net
 .evt.24.com
@@ -26655,6 +26657,7 @@
 .homebizplaza.com
 .homelycrown.com
 .homelyheater.com
+.homerunfood.com
 .homeslick.com
 .hommies.homestuffbd.com
 .honestdata.honesteco.org
@@ -47176,6 +47179,7 @@
 .r.readyhow.com
 .r.sib2.gardrops.com
 .r.studiosarte.com
+.r.vares.top
 .r066.dailytribune.com
 .r1c.ricardocuisine.com
 .r1ztni.oui.sncf
@@ -49877,6 +49881,7 @@
 .science.ygoprint.org
 .sciencedart.com
 .sciencerevenue.com
+.sciencevault.net
 .scientificshirt.com
 .scii.spolaorimoveis.com.br
 .scintillatingscissors.com
@@ -50096,6 +50101,7 @@
 .seamless.wtaxgroup.co
 .seamlesssalon.com
 .seao.business.samsung.com
+.seaotterplay.com
 .search.dailytopoptions.com
 .search.valuehunter.site
 .searchestracker.org
@@ -50390,6 +50396,7 @@
 .sematext.com
 .semcusto.solucaogratuita.site
 .semlimites.a2baceleradora.com
+.sendinblast.com
 .sendingspire.com
 .sendmoney.americanexpress.co.uk
 .sendtraffic.com
@@ -79218,6 +79225,7 @@
 .trk.stroeermediabrands.de
 .trk.supermarketnews.com
 .trk.svr-algorix.com
+.trk.swipey.me
 .trk.swolegripz.com
 .trk.tabucbd.com
 .trk.tbivision.com
