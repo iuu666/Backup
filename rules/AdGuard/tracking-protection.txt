@@ -19659,6 +19659,7 @@
 .ext.host-tracker.com
 .external-api.impression-neo.naver.com
 .external-promo-metrics.yandex.net
+.external-tag.mysquadbeyond.com
 .extole.com
 .extole.io
 .extra.wijck.com
@@ -26333,6 +26334,7 @@
 .heatmap-events-collector.instapage.com
 .heatmap.emma.tools
 .heatmap.it
+.heatmap.support-inc.co.jp
 .heatoor-ss.primeshopers.com
 .heavydetail.com
 .heavyplayground.com
@@ -55881,6 +55883,7 @@
 .skilledview.com
 .skillfuldrop.com
 .skillfullyfrugal.com
+.skillpuppy.com
 .skimresources.com
 .skin.gleamglows.com
 .skin.skindeli.com
@@ -72289,6 +72292,7 @@
 .swallow.pelias.io
 .swan.visualma.com
 .swankysquare.com
+.swanwebcreations.com
 .swapan.tradecosmix.com
 .swasc.homedepot.ca
 .swasc.homedepot.com
@@ -72384,6 +72388,7 @@
 .swm.zwartecross.nl
 .swmdqn.sizeofficial.fr
 .swmkru.zlutahala.cz
+.swordblock.com
 .swordfish.elvietanny.com
 .swordfish.floofs.com
 .swordfish.holzschuhe.at
