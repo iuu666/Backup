@@ -26110,6 +26110,7 @@
 .h00c.sfr.fr
 .h019.wtae.com
 .h031.familydollar.com
+.h2tcbox.baidu.com
 .h353.ncadvertiser.com
 .h5.eagllwin.com
 .h516.thereporteronline.com
@@ -30635,6 +30636,7 @@
 .l.osakazine.net
 .l.otemo-yan.net
 .l.ouest-france.fr
+.l.ovhcloud.com
 .l.page.worldvision.ca
 .l.player.ooyala.com
 .l.premium.naver.com
@@ -41717,6 +41719,7 @@
 .mt.gigazine.net
 .mt.labasad.com
 .mt3.maisontheatre.com
+.mtag.markopolo.ai
 .mtaul.coverland.com
 .mtbflj.elementaree.ru
 .mtbhf.ragecreate.com
@@ -74191,6 +74194,7 @@
 .target.zinia.de
 .targetab.metrobyt-mobile.com
 .targetads.io
+.targetfax.com
 .targetfuel.com
 .targeting.api.drift.com
 .targeting.tbt.arcpublishing.com
@@ -74923,6 +74927,7 @@
 .thegreatesthits.takustik.com
 .thejavalane.com
 .themangotea.com
+.themegoats.com
 .themepicker.com
 .thenurafix-ss.checkoutera.com
 .thepolorvision-ss.checkoutera.com
@@ -81290,6 +81295,8 @@
 .verticalscope.com
 .verticalsearchworks.com
 .vertster.com
+.verybark.com
+.verybouncy.com
 .verypopularwebsite.com
 .vet.mexicoveterinario.com.mx
 .veumpy.shooos.sk
@@ -81422,6 +81429,7 @@
 .view.stylebob.com
 .view.trendwiseai.com
 .view.zijieapi.com
+.viewresource.com
 .views-dual.hulu.com
 .views.2222.ro
 .views.ericcapella.com
