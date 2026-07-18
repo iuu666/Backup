@@ -8723,6 +8723,7 @@
 .bznxqj.fiat.it
 .bzpgi.plankandbeam.com
 .bzqxze.remixshop.com
+.bzrcdn.openai.com
 .bzrch.heyskipperfishing.com
 .bzrpp.nakednutrition.ca
 .bzsfvi.fnacpro.com
@@ -20761,6 +20762,7 @@
 .franchising.mcdonalds.ca
 .franchising.pizzapizza.ca
 .franchising.toppers.ca
+.franken-analytics.makeup.global
 .franksfloral.com
 .franticroof.com
 .fraud.adjoe.zone
@@ -74493,7 +74495,6 @@
 .tdgobe.uk.urth.co
 .tdgobe.urth.co
 .tdi.cartoonnetwork.com
-.tdid.m.qq.com
 .tdjvod.chevignon.com.co
 .tdk.petsplace.nl
 .tdnel.tend.com
