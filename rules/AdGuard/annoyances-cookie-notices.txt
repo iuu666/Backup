@@ -7,7 +7,6 @@
 .bundles.efilli.com
 .cc.silktide.com
 .ccdn.mobildev.in
-.ccm.abload.de
 .ccm.hamburg-magazin.de
 .ccm.takuma.de
 .ccm19.de

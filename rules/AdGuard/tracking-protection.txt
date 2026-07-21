@@ -7803,6 +7803,7 @@
 .bee.tc.easebar.com
 .beedigital.padigital.es
 .beeline.beeline-tire.co.jp
+.beelinecolor.com
 .beemrdwn.com
 .beencounter.com
 .beest.thrsty.com
@@ -7832,6 +7833,7 @@
 .beneficios.davivienda.hn
 .beneficios.davivienda.sv
 .benefits.aon.com
+.benefitssense.com
 .bentengine.com
 .bentley.euroshop.com.pe
 .beoofo.pairs.lv
@@ -8356,6 +8358,7 @@
 .boundlessveil.com
 .bovid.neural.love
 .box.kryptotrejder.sk
+.boxandcover.com
 .bp.danielleguiziony.com
 .bp.elietahari.com
 .bp4apps.horus.biz
@@ -9334,6 +9337,7 @@
 .capitalopera.com
 .capitfes.andrefilipe.com.br
 .capitp.teacherpimenta.com
+.caplights.com
 .capriciouscorn.com
 .capsula.nutravy.com.br
 .captainstick.com
@@ -10219,6 +10223,7 @@
 .cloisteredcurve.com
 .clothing.blue-industry.com
 .clothing.pinglelifestyle.com
+.clothsense.com
 .cloud-exploration.com
 .cloud.beauty.avon.com
 .cloud.bengt-martins.se
@@ -16301,7 +16306,6 @@
 .dd.daffodilday.org.nz
 .dd.g2.com
 .dd.leboncoin.fr
-.dd.qwant.com
 .dd.reuters.com
 .dd6zx4ibq538k.cloudfront.net
 .ddbgi.bonheurjewelry.com
@@ -59860,6 +59864,7 @@
 .snipe.mizzuu.co
 .sniperlog.ru
 .sniphub.com
+.snippet.affilimate.io
 .snjvh.calecimprofessional.com
 .snljxd.tdarsenal.ru
 .snlpt.carnivoresnax.com
