@@ -7006,6 +7006,7 @@
 .atgt.grafana.com
 .athena-event-provider.n11.com
 .athena.accsc.com.au
+.athena.archive.org
 .athena.nederlandseloterij.nl
 .athena.toto.nl
 .athenainstitute.biz
@@ -20974,7 +20975,6 @@
 .funoverflow.com
 .funsdata.com
 .funstage.com
-.funtoyplanet.com
 .fuooms.aetrex.com
 .fuoqr.comfortorthowear.com
 .fupbi.gopurebeauty.com
@@ -45759,6 +45759,7 @@
 .player-telemetry.vimeo.com
 .player.stats.live-video.net
 .playerhappy.com
+.playerscache.com
 .playfulriver.com
 .plbcsd.vidaxl.se
 .plbusiness.samsung.com
@@ -46368,6 +46369,7 @@
 .provenpixel.com
 .providence.voxmedia.com
 .providers.mhc.net
+.provingmagic.com
 .provize.3dfitness.cz
 .provize.brilas.cz
 .provize.dzumdzum.cz
@@ -47222,6 +47224,7 @@
 .rabbit.kilowatt.media
 .rabbit.radicalxchange.org
 .rabbit.upwardhomes.net
+.rabbitboots.com
 .rabbitbreath.com
 .rabbitrifle.com
 .rabiul.petalcalyx.com
@@ -55687,6 +55690,7 @@
 .siivqn.bricoman.it
 .silentcredit.com
 .silentjackal.com
+.silentsingle.com
 .siliconslow.com
 .silkworm.boxmood.be
 .silkworm.preventingsuicideinsussex.org
