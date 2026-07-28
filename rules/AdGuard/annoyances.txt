@@ -676,7 +676,6 @@
 .showtalk.jp
 .signup.e2ma.net
 .sm-sp.followfollow.com
-.smart-bdash.com
 .smart.idmnet.pl
 .smbtnupsh.com
 .smetrics.telegraph.co.uk

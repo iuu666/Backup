@@ -2344,6 +2344,7 @@
 .acv.mc-nurse.net
 .acv.mc-pharma.net
 .acv.me-hikari.net
+.acv.mira-dsp.com
 .acv.next-air-wifi.com
 .acv.next-internet.info
 .acv.nft-hikari.net
@@ -4964,6 +4965,7 @@
 .analytics.subzero-wolf.com
 .analytics.superstructure.ai
 .analytics.surfline.com
+.analytics.sutochno.ru
 .analytics.sve.cc
 .analytics.sydney.edu.au
 .analytics.syf.com
@@ -12306,6 +12308,7 @@
 .d3kyk5bao1crtw.cloudfront.net
 .d3l3lkinz3f56t.cloudfront.net
 .d3lqotgbn3npr.cloudfront.net
+.d3lw7s0briwuoi.cloudfront.net
 .d3p8zr0ffa9t17.cloudfront.net
 .d3pkntwtp2ukl5.cloudfront.net
 .d3plfjw9uod7ab.cloudfront.net
@@ -20448,6 +20451,7 @@
 .fly.caljetelite.com
 .fly.ofernandoluz.com
 .fly.pid.edu.pl
+.flyflightstar.com
 .flyingfish.whoisrepresented.org
 .flystranger.com
 .flznib.weblio.jp
@@ -20527,6 +20531,7 @@
 .foodstats.eurofins.de
 .foomjy.teacollection.com
 .foot.wiki
+.footballmedal.com
 .footprint.frizznflame.com
 .footprintdns.com
 .footprintlive.com
@@ -21688,6 +21693,7 @@
 .globalapi.ad.xiaomi.com
 .globalbanking.wolterskluwer.com
 .globalcommunications.sc.com
+.globalorders.net
 .globalservices.conde.digital
 .globalsiteanalytics.com
 .globalsolutions.risk.lexisnexis.com

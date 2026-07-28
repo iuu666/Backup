@@ -11,6 +11,5 @@
 .newsstat.dallasnews.com
 .point.widget.rakuten.co.jp
 .shop.kicker.de
-.smart-bdash.com
 .usefomo.com
 .xhamsterpremium.com
