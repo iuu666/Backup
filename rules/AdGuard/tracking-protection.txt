@@ -2094,6 +2094,7 @@
 .abo.schibsted.no
 .aboardamusement.com
 .aboardlevel.com
+.aboutcorgis.com
 .above.50degreesintheshade.com
 .above.fearlessgrad.com
 .abovechat.com
@@ -3773,7 +3774,6 @@
 .al.yslabo.net
 .al.zenjirou.jp
 .aladdinupdate.blackrock.com
-.aladinia.app
 .alamin.annawabi.com
 .alb.reddit.com
 .albanychicago.advancedtech.com
@@ -3843,6 +3843,7 @@
 .alluringbucket.com
 .allvfz.chapellerie-traclet.com
 .allvideometrika.com
+.allycoop.com
 .almhhn.pet-friends.co.kr
 .almondbuns.com
 .alnop.skidznyc.com
@@ -12449,6 +12450,7 @@
 .daniel.bartenderlab.com
 .danv01ao0kdr2.cloudfront.net
 .dap.amsterdam.nl
+.dap.hindustantimes.com
 .dap.livemint.com
 .dap.worldota.net
 .dapperdiscussion.com
@@ -60477,6 +60479,7 @@
 .specialevent.informaengage.com
 .specialscissors.com
 .specialstat.com
+.specialtypin.com
 .specola.coertini.com
 .spectacularstamp.com
 .spectate.com
@@ -60486,6 +60489,7 @@
 .speederpro-ss.zavydeals.com
 .speederproshop-ss.checkoutera.com
 .speedtracker.de
+.speedysteaks.com
 .spelar.org
 .spellingthoughts.com
 .spellknight.com
@@ -70425,6 +70429,7 @@
 .stats-a.maxthon.com
 .stats-api.skylum.com
 .stats-blog.lewsion.com
+.stats-cdn.polyspeak.ai
 .stats-connect.comet.it
 .stats-dev.brid.tv
 .stats-iobit-com.us-east-1.elasticbeanstalk.com
