@@ -1468,6 +1468,7 @@ zftksc.launches.appsflyersdk.com
 .acs.org
 .actalis.com
 .actalis.it
+.actifio.com
 .activelearnprimary.co.uk
 .activelearnprimary.com.au
 .activematter.game
@@ -13829,7 +13830,10 @@ zftksc.launches.appsflyersdk.com
 .jetbrains.ai
 .jetbrains.cloud
 .jetbrains.com
+.jetbrains.dev
 .jetbrains.net
+.jetbrains.org
+.jetbrains.ru
 .jetbrains.space
 .jetbrains.team
 .jetfuelapp.com
@@ -14384,6 +14388,8 @@ zftksc.launches.appsflyersdk.com
 .korona.com
 .koshelek.app
 .kostenlosepornoclips.com
+.kotl.in
+.kotlinconf.com
 .kotlinlang.org
 .koubaibu.jp
 .koukoku.jp
@@ -14410,6 +14416,7 @@ zftksc.launches.appsflyersdk.com
 .kspcoin.com
 .ksyp10.com
 .ktech.team
+.ktor.io
 .ktvu.com
 .ktzhk.com
 .ku77.xyz
@@ -16725,6 +16732,7 @@ zftksc.launches.appsflyersdk.com
 .myicloud.net
 .myiphide.com
 .myipod.net
+.myjetbrains.com
 .myjkwd.com
 .myjs.tw
 .mykomica.org
@@ -17553,6 +17561,7 @@ zftksc.launches.appsflyersdk.com
 .ntdtvla.com
 .ntdvideo.tw
 .ntdvn.com
+.nthlink.com
 .ntl.fyi
 .ntnews.com.au
 .ntp-os01.ocn.ad.jp
@@ -18070,6 +18079,7 @@ zftksc.launches.appsflyersdk.com
 .openweave.io
 .openwebster.com
 .openwrt.org
+.openxla.org
 .opera.com
 .opinionjournal.com
 .oppai-doga.info
@@ -22381,6 +22391,7 @@ zftksc.launches.appsflyersdk.com
 .talkatone.com
 .talkboxapp.com
 .talkcc.com
+.talkingkotlin.com
 .talkonly.net
 .talksport.com
 .tamilsexvideos.cc
