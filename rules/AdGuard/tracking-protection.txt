@@ -19854,6 +19854,7 @@
 .fancyrat.flatuicolors.com
 .fancyrat.keurslager-goeminne.be
 .fangfeeling.com
+.fanless.net
 .fanplayr.com
 .fapi.ametistaaliancas.com.br
 .fapi.apolodog.com.br
@@ -27132,6 +27133,7 @@
 .idot.cz
 .idqwqm.kkday.com
 .idsfq.katespade.de
+.idsmodules.com
 .idsod.catholic.com
 .idsqb.evanalexandergrooming.com
 .idtvo.ezrider.nl
@@ -80290,14 +80292,7 @@
 .ulyfrf.dekruidenbaron.nl
 .um-public-panel-prod.s3.amazonaws.com
 .um.merinfo.se
-.umami.aigenerations.net
 .umami.is
-.umami.spencerdevs.xyz
-.umami.subdavis.com
-.umami.syg.ma
-.umami.vidcore.net
-.umami.vidfast.pro
-.umami.vidup.to
 .umamix.fadunews.in
 .umazvs.raybiotech.com
 .umbel.com
@@ -80318,7 +80313,7 @@
 .umlkp.snydersfurniture.com
 .umlvbe.rucipello.com
 .umnoho.bazaarmall.co.kr
-.umommy.online
+.umommy.cyou
 .umrvmb.net.anwalt.de
 .umtzwr.adidas.co.kr
 .umuiz.heritagecares.com
