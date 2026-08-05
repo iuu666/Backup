@@ -22364,6 +22364,7 @@
 .gsg9.carrefour-banque.fr
 .gsght.com
 .gsimedia.net
+.gsitrix.com
 .gsjznb.damondmotorsports.com
 .gslclvw.lackorecouture.com
 .gslive.edm.globalsources.com
@@ -39310,6 +39311,7 @@
 .metricas.tufcleaning.ca
 .metricas.wbeduca.com.br
 .metricas.zionerp.com.br
+.metricfresh.com
 .metricreceiver.cellrebel.com
 .metrics-a.wbx2.com
 .metrics-api.librato.com
@@ -45053,6 +45055,7 @@
 .party.oewheelsllc.com
 .party.partyhalli.fi
 .party.petland.dk
+.partycharge.com
 .parves.doctorshopbd.com
 .pass-1234.com
 .passivepolo.com
@@ -59927,6 +59930,7 @@
 .snowdayonline.xyz
 .snowflake.qq.com
 .snowmentor.com
+.snowpeaksoftware.com
 .snowplow-pixel.tradingview.com
 .snowsignal.com
 .snowy.bellroy.com
@@ -60020,6 +60024,7 @@
 .soloqmyl.tefcold.ru
 .soloqmyl.tefcold.sk
 .solosduetstrios.com
+.solsticeblack.com
 .solucionestech.personal.com.ar
 .solution.resonac.com
 .solutions.a-1freeman.com
@@ -60299,6 +60304,7 @@
 .sonar.semantiqo.com
 .songs.newdelica.com
 .songsterritory.com
+.sonicsessions.net
 .sonne.helgahilft.com
 .sono.filhosehabitos.com.br
 .sonoow.ecco-verde.pl
