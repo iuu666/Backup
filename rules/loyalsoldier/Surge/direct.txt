@@ -63919,6 +63919,7 @@ xz.pphimalayanrt.com
 .madajiefood.com
 .madaomall.com
 .madboxi.com
+.made-in-china.com
 .madefuns.com
 .madeinchinastone.com
 .madewei.com
@@ -65657,6 +65658,7 @@ xz.pphimalayanrt.com
 .microxiang.com
 .microyan.com
 .microzuji.com
+.micstatic.com
 .mictormedical.com
 .micu.hk
 .micun.com
@@ -73259,6 +73261,7 @@ xz.pphimalayanrt.com
 .powercx.com
 .powerde.com
 .powereasy.net
+.poweremarket.com
 .powerex1.com
 .powerflow-tech.com
 .powerfulchina.com
