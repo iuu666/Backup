@@ -3991,6 +3991,7 @@
 .amplitude.thepure.app
 .ampltd.top.gg
 .ampltd2.medal.tv
+.ampscamp.net
 .amptrack-dailymail-co-uk.cdn.ampproject.org
 .amqbl.ballarddesigns.com
 .ams-beacons.xumo.com
