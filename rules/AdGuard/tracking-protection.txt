@@ -6879,6 +6879,7 @@
 .assets.kost1.no
 .assets.mediahostingcdn.com
 .assets.ogrzewanie-pex.pl
+.assets.onedollarstats.com
 .assets.oupe.es
 .assets.piercingkungen.se
 .assets.prydligt.com
@@ -10973,6 +10974,7 @@
 .conseils.dotbase.com
 .consent-manager-events.ogury.io
 .consentag.eu
+.console-telemetry.oci.oraclecloud.com
 .console.data4.net
 .consolidata.ai
 .consulting.guidehouse.com
@@ -60014,6 +60016,7 @@
 .soft.bitesoftco.com
 .softdrinks.euvou.events
 .softonic-analytics.net
+.softscales.com
 .soggysponge.com
 .sogtm.academy.org.il
 .sogtm.colman.ac.il
@@ -60622,6 +60625,7 @@
 .sport.dopeshop12.com
 .sport.stimium.com
 .sports.sportszone.com.bd
+.sportsclubstat.com
 .sportsnearby.com
 .sportyforum.com
 .spotlersearchanalytics.com
@@ -70694,6 +70698,7 @@
 .stats.dignityhealth.org
 .stats.dillen.dev
 .stats.discotel.de
+.stats.divee.ai
 .stats.divyanshu013.dev
 .stats.dmail.co.nz
 .stats.dmarcdigests.com
@@ -70903,6 +70908,7 @@
 .stats.jdheyburn.co.uk
 .stats.jeremygreenawalt.com
 .stats.jerickson.net
+.stats.jerkmotion.com
 .stats.jessesquires.com
 .stats.jetzt-aktivieren.de
 .stats.jhsheridan.com
@@ -78913,6 +78919,7 @@
 .treadbun.com
 .treasuredata.com
 .treatment.grammarly.com
+.treatmentforgout.com
 .treatoceans.com
 .treconeanalytics.com
 .treefrog.kaffeknappen.no
@@ -79567,6 +79574,7 @@
 .trust.mitutoyo.com
 .trust.titanhq.com
 .trusted-collector-bk.tmocce.com
+.trustmodule.com
 .trv.upperbooking.com
 .trvju.servicedogs.com
 .trvonu.k-manga.jp
@@ -79978,6 +79986,7 @@
 .u.fordprotectplans.com
 .u.knuffelwuff.at
 .u.knuffelwuff.dk
+.u.lessbutbetter.studio
 .u.makro.es
 .u.makro.pl
 .u.makro.pt
@@ -81201,6 +81210,7 @@
 .v.oui.sncf
 .v.perfumesclub.com
 .v.shopify.com
+.v.voltmail.io
 .v.voxberg.com
 .v.vratiexpress.com
 .v063.4029tv.com
