@@ -295,6 +295,7 @@ mwf-service.akamaized.net
 na1r.services.adobe.com
 nbbb1bb7.pmhcjk.com
 netflix.com.edgesuite.net
+nix-community.github.io
 notary-submissions-prod.s3-accelerate.amazonaws.com
 notary-submissions-prod.s3.us-west-2.amazonaws.com
 notebooklm-pa.googleapis.com
@@ -5356,6 +5357,7 @@ zftksc.launches.appsflyersdk.com
 .buicha.social
 .building3dcontent.com
 .builtfromebay.com
+.builtwithnix.org
 .bukkake-jav.com
 .bullguard.com
 .bullog.org
@@ -16807,6 +16809,7 @@ zftksc.launches.appsflyersdk.com
 .mynavi.jp
 .mynetname.net
 .mynike.com
+.mynixos.com
 .myoctocat.com
 .myparagliding.com
 .mypearson.com
@@ -17501,7 +17504,15 @@ zftksc.launches.appsflyersdk.com
 .nivod.tv
 .nivodi.tv
 .nivodz.com
+.nix-community.org
+.nix.dev
+.nix.store
+.nixcon.org
+.nixcon2017.org
+.nixlang.com
 .nixos.org
+.nixos.wiki
+.nixpkgs.org
 .niziero.info
 .njactb.org
 .njav.tv
@@ -26372,6 +26383,7 @@ zftksc.launches.appsflyersdk.com
 .yandex.eu
 .yandex.fi
 .yandex.fr
+.yandex.it
 .yandex.jobs
 .yandex.kg
 .yandex.kz
