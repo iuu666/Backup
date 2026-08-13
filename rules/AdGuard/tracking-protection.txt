@@ -47135,6 +47135,7 @@
 .quick-counter.net
 .quicklyedit.com
 .quicksandear.com
+.quicktattoo.com
 .quicktrick.net
 .quiddity.goguardian.com
 .quietknowledge.com
@@ -79904,6 +79905,7 @@
 .twirll-stape-int.twirll.com
 .twistairclub.net.anwalt.de
 .twistloss.com
+.twisty.net
 .twitter.sx
 .twiz.wizaly.fr
 .twjobq.sixt.co.uk
@@ -81338,6 +81340,7 @@
 .vdzpnx.gnc.com.mx
 .vdzrjr.kenminkyosai.or.jp
 .vebed.tennibot.com
+.vectorshirt.com
 .veduy.com
 .vedznh.cumhuriyet.com.tr
 .veersantrealestate.dubaii.me
@@ -81545,6 +81548,7 @@
 .vinlens.com
 .vinsight.de
 .vinub.com
+.violetdemise.com
 .vip.gophersport.com
 .vip.granicus.com
 .vip.maxtor.com
