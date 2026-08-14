@@ -2417,6 +2417,7 @@
 .adash-emas.cn-hangzhou.aliyuncs.com
 .adash.m.taobao.com
 .adash.man.aliyuncs.com
+.adashx.m.taobao.com
 .adashx.ut.alibaba.com
 .adashx4ae.ut.taobao.com
 .adashx4id.ut.taobao.com
@@ -5663,6 +5664,7 @@
 .api.findenkaereste.dk
 .api.fiodeminastricot.com.br
 .api.firebim.com.br
+.api.firwinds.site
 .api.flatroninformatica.com.br
 .api.flocktory.com
 .api.flordelizdesignfloral.com.br
@@ -11753,7 +11755,6 @@
 .curalate.com
 .curatedtea.com
 .curbminers.com
-.curbneon.com
 .cure.curedpharmacy.com
 .cure.trueface.org
 .curiosity-seven.vercel.app
@@ -21387,6 +21388,7 @@
 .genesis.malwarebytes.com
 .genieedmp.com
 .genieesspv.jp
+.geniuslinkcdn.com
 .genova.gas-up.it
 .geo-service.adtelligent.com
 .geo.bluedot.io
@@ -43905,6 +43907,7 @@
 .open-analytics.hrw.org
 .open.oneplus.net
 .openclick.com
+.opendatastats.net
 .openfpcdn.io
 .openhit.com
 .openinstall.io
@@ -81777,6 +81780,7 @@
 .volts.shopping.naver.com
 .volume.vytalise.co.uk
 .volume.vytalise.eu
+.volumesystem.com
 .voluumtlkrnarketing.com
 .vonagebusiness.telesphere.com
 .vonht.foragehyperfoods.com
@@ -82071,6 +82075,7 @@
 .waawuu.highfashionhome.com
 .wabsgz.studocu.com
 .waet.datalogue.de
+.wafflemakers.net
 .waffles.cohnacrylics.com
 .wafoub.graindemalice.fr
 .waghth.democrata.com.br
@@ -82598,6 +82603,7 @@
 .webmetrics.zebra.com
 .weborama-tech.ru
 .weborama.com
+.webpagekit.com
 .webpageviews.click
 .webprospector.de
 .webpushstat-sgp.engagelab.com
@@ -82782,6 +82788,7 @@
 .werldj.mister-auto.se
 .wes.marketing.wtinternal-sandbox.com
 .wesbgz.travel.co.jp
+.westsideglobe.com
 .wev.myvitalityz.site
 .wevbgr.vidaxl.it
 .wewbxx.hircus.fr
