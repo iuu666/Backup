@@ -4369,6 +4369,7 @@
 .analytics.3q.sa
 .analytics.7-herbs.com
 .analytics.74.ru
+.analytics.7reels.cc
 .analytics.a-f.io
 .analytics.ad.daum.net
 .analytics.adam.page
@@ -5049,6 +5050,7 @@
 .analytics.neruzksa.com
 .analytics.net.dz.jumia.com
 .analytics.netkeiba.com
+.analytics.netronline.dev
 .analytics.newdirectionsaromatics.ca
 .analytics.newdirectionsaromatics.com
 .analytics.neworleanssaints.com
@@ -5346,6 +5348,7 @@
 .analytics.staybridge.com
 .analytics.stocksport-online.de
 .analytics.streamingworld.xyz
+.analytics.streamvaultsrc.click
 .analytics.studiodesignapp.com
 .analytics.styria.hr
 .analytics.subzero-wolf.com
@@ -12259,6 +12262,7 @@
 .cochin.net.anwalt.de
 .cocjl.statefortyeight.com
 .cockroach.head4work.com.au
+.cocoacafes.com
 .coconut.flyingsquirrelsports.ca
 .coconut.flyingsquirrelsports.com
 .coconut.flyingsquirrelsports.us
@@ -15006,6 +15010,7 @@
 .dampdock.com
 .damselfly.vegenook.com
 .danatrak.com
+.dancingmarmot.com
 .dandr.alexandriauk.com
 .dandydune.com
 .dandyglow.com
@@ -21875,6 +21880,7 @@
 .earnbaht.com
 .earopro-ss.checkoutera.com
 .earthlybuzz.com
+.earthsauce.com
 .earthups.com
 .earthworm.creatifmediagroup.com
 .earthworm.elenabirkenwald.com
@@ -25248,6 +25254,7 @@
 .fit.fitpen.com
 .fit.wingsfit1.com
 .fitanalytics.com
+.fitgreatest.com
 .fitibeats-ss.checkoutera.com
 .fitibeats-ss.offeroshop.com
 .fitnessmapper.com
@@ -59366,7 +59373,6 @@
 .quhdnr.musiciansfriend.com
 .quick-counter.net
 .quicklyedit.com
-.quicktattoo.com
 .quicktrick.net
 .quiddity.goguardian.com
 .quietknowledge.com

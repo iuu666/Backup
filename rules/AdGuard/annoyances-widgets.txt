@@ -19,6 +19,7 @@
 .app.mycountrytalks.org
 .app.popuparchitect.com
 .apps.azhelp.ru
+.ar-cdn.net
 .artibot.ai
 .assets-prod.vicomi.com
 .avaamo.com

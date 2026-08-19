@@ -57,6 +57,7 @@
 .appconsent.io
 .apps.azhelp.ru
 .aquarepush.com
+.ar-cdn.net
 .arianelab.com
 .artibot.ai
 .assets-prod.vicomi.com
