@@ -4298,6 +4298,7 @@
 .analytic20.detik.com
 .analytically.net
 .analytics-api.a-f.io
+.analytics-api.byub.org
 .analytics-api.gemcommerce.com
 .analytics-api.invideo.io
 .analytics-api.liveapp.com
@@ -4500,6 +4501,7 @@
 .analytics.butenas.de
 .analytics.byeternify.com
 .analytics.byondesign.com
+.analytics.byub.org
 .analytics.calculavalorvivienda.es
 .analytics.calibrecleaning.com.au
 .analytics.callbell.eu
@@ -5372,6 +5374,7 @@
 .analytics.t-mobile.com
 .analytics.taahirajewellery.com
 .analytics.tabichan.jp
+.analytics.talentegy.com
 .analytics.talokaivo.fi
 .analytics.tashandley.com
 .analytics.tatadigital.com
@@ -8727,6 +8730,7 @@
 .beacon.ehow.com
 .beacon.elairaspirit.com
 .beacon.eleos.co.uk
+.beacon.errorception.com
 .beacon.geniee.jp
 .beacon.gtv-pub.com
 .beacon.gu-web.net
@@ -8769,6 +8773,7 @@
 .beam.remp.nv.ua
 .beamvolcano.com
 .beancontrol.com
+.beandelight.com
 .beanstalkdata.com
 .beanstock.com
 .bear.builtbyborda.com
@@ -11272,6 +11277,7 @@
 .cdn.memo.co
 .cdn.meno-me.com
 .cdn.metodolumens.com.br
+.cdn.mgln.ai
 .cdn.mircheigeshoa.com
 .cdn.moengage.com
 .cdn.monlabubu.ch
@@ -34214,6 +34220,7 @@
 .healthier.luminishealth.org
 .healthy.partandparcel.com.au
 .healthy.spartanburgregional.com
+.healthyclad.com
 .heap-api.com
 .heap.drop.com
 .heapanalytics.com
@@ -34888,6 +34895,7 @@
 .hubble.mrstarsky.com
 .hubble.netease.com
 .hubble.remmenexpert.nl
+.hubcapcafe.net
 .hubkgy.yves-rocher.sk
 .hubmetric.samsclub.com
 .hubmetrics.samsclub.com
@@ -39721,6 +39729,7 @@
 .leafpilot.com
 .leaity.dlm1947.com
 .leaplunchroom.com
+.leapquick.com
 .learn.acpprograms.org
 .learn.aiu.edu.au
 .learn.aiu.sg
@@ -45807,6 +45816,7 @@
 .losecounter.de
 .losslace.com
 .losstrack.com
+.lostwaxlab.com
 .lotto.expresshub.com.bd
 .loudlunch.com
 .loumax.resamatic.fr
@@ -54290,6 +54300,7 @@
 .novak.warwoodtool.com
 .novamedicpro-ss.checkoutera.com
 .novaseekers.com
+.novazen.net
 .novedades.telecomfibercorp.com.ar
 .novi.webnovi.eu
 .novigrad.piko.hr
@@ -57238,6 +57249,7 @@
 .photohints.com
 .photorank.me
 .photospace.life
+.photosubscribe.com
 .photovault.pics
 .photovault.store
 .php.panasiaticsolutions.com
@@ -57885,6 +57897,7 @@
 .pointlesspocket.com
 .pointlessprofit.com
 .pointmediatracker.com
+.pointsshare.com
 .poirot.custommade.com
 .poisedfuel.com
 .poisedpig.com

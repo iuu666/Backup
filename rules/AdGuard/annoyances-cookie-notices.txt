@@ -109,6 +109,7 @@
 .cookies.pro-idea.cz
 .cookies.prod.tekla.com
 .cookies.travyk.nl
+.cookies.truecaller.com
 .cookiespool.com
 .cookiewarden-content.teb.com.tr
 .cookihq.com
@@ -168,6 +169,7 @@
 .sp.api.no
 .spolecznosci.mgr.consensu.org
 .tarteaucitron.io
+.team.epccm19.com
 .thestrad-gb.thestrad.com
 .tiq.espritshop.pl
 .traceprof.com

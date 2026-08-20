@@ -281,6 +281,7 @@
 .cookies.pro-idea.cz
 .cookies.prod.tekla.com
 .cookies.travyk.nl
+.cookies.truecaller.com
 .cookiespool.com
 .cookiewarden-content.teb.com.tr
 .cookihq.com
@@ -713,6 +714,7 @@
 .tanganrss.com
 .tariffuxx.de
 .tarteaucitron.io
+.team.epccm19.com
 .tel1mekar.com
 .tempersonic.com
 .thestrad-gb.thestrad.com
