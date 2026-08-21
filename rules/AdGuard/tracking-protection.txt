@@ -3196,6 +3196,7 @@
 .afd.baidu.com
 .afdbwq.blivakker.no
 .afecvu.bulevip.com
+.afeteforfood.com
 .afevxr.guydemarle.com
 .aff-policy.lbesecapi.com
 .aff-report.lbesecapi.com
@@ -8524,6 +8525,7 @@
 .bank.svb.com
 .banks.adpinfo.com
 .banner.appsflyer.com
+.bannerave.com
 .banopz.superkancl.cz
 .banstat.nadavi.net
 .baptisttop1000.com
@@ -9878,6 +9880,7 @@
 .burldh.made-kim.co.kr
 .burnbubble.com
 .burner.bodyline.ro
+.burningclock.com
 .burpee.thesculptsociety.com
 .burstbeacon.com
 .burt.io
@@ -10941,6 +10944,7 @@
 .cardinal.newman.is
 .cardinal.zenting.app
 .cardmethod.com
+.cardproducer.com
 .cards-clnxml-services.net.mydays.de
 .care.advancedscare.com
 .care.alaricong.com
@@ -24577,6 +24581,7 @@
 .fahmta.xcweather.co.uk
 .faibl.org
 .fail.adr.ec
+.fairanalytics.de
 .fairfaxmedia.sharedcount.com
 .fairfeeling.com
 .fairiesbranch.com
@@ -25456,6 +25461,7 @@
 .fmgbe.vktrygear.com
 .fmhzi.ergopouch.com.au
 .fmjgtp.dentalspeed.com
+.fml-x.com
 .fmlau.ocoabeauty.com
 .fmlnqh.benditoconforto.com.br
 .fmnoa.rarecarat.com
@@ -59606,7 +59612,6 @@
 .rampanel.com
 .rampmetrics.com
 .rand.propspotter.com.au
-.randisphotos.com
 .randiul.com
 .random.amuuzbouche.com
 .random.osorteiodosprimos.me
@@ -62906,6 +62911,7 @@
 .scnon.perpetualtraffic.com
 .scode.randomhouse.com
 .scoegp.learnandmaster.com
+.scollect.17173.com
 .sconnectstats.mckesson.com
 .scookies-adobe.24plus.be
 .scookies-adobe.cbc.be
