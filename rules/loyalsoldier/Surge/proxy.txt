@@ -11876,6 +11876,7 @@ zftksc.launches.appsflyersdk.com
 .hippyhillscomix.com
 .hipzoom.net
 .hiroshimabank.co.jp
+.historylines.net
 .historyofdota.com
 .historyofdota.net
 .historyofdota.org
@@ -14392,6 +14393,7 @@ zftksc.launches.appsflyersdk.com
 .kiwi.jp
 .kiwi.kz
 .kiwibrowser.com
+.kiwix.org
 .kiyobank.co.jp
 .kk-whys.co.jp
 .kk.stream
@@ -15513,6 +15515,7 @@ zftksc.launches.appsflyersdk.com
 .mcdonaldsapps.com
 .mcdonaldsarabia.com
 .mcdonaldsparties.co.nz
+.mceindex.com
 .mcisco.com
 .mcpeaceofmind.com
 .mcrouter.net
