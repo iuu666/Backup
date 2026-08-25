@@ -39986,6 +39986,7 @@
 .life.reliefly.co
 .life.safetynest.com.au
 .life.trywellife.com
+.lifecoverdirect.com
 .lifescience.item24.de
 .lifescience.item24.it
 .lifestyle.edm.globalsources.com
@@ -49139,6 +49140,7 @@
 .mengis-linden.org
 .mennoc.mezlan.com
 .mensch.ekd.de
+.mentalreef.com
 .menteechain.com
 .mentor.adrianscalper.com
 .mentor.direitocomprado.com.br
@@ -52135,6 +52137,7 @@
 .miseventos.orem.com.mx
 .missionrewards.com
 .misst.mibiota.de
+.missvent.com
 .mistervillas.com
 .mistyhorizon.com
 .miszfe.glamira.es
@@ -53910,6 +53913,7 @@
 .newsale.bdpriyostore.com
 .newsanalytics.com.au
 .newsbotnet.com
+.newscompiler.com
 .newserv.xyz
 .newserver.bangla99.com
 .newserver.bardapraia.com.pt
@@ -54587,6 +54591,7 @@
 .num.irp.gg
 .numbers.coolconfetti.com
 .numbers.monthlyphotos.com
+.numericblog.com
 .numerino.cz
 .numerousnest.com
 .nums.upscale.app
@@ -56071,6 +56076,7 @@
 .p.ryanhalliday.com
 .p.sadoc.com.br
 .p.smartertravel.com
+.p.softmedia.cz
 .p.statp.com
 .p.tizonaa.com
 .p.versacommerce.de
@@ -102217,6 +102223,7 @@
 .vision.neurobiocomportementalisme.com
 .visioncriticalpanels.com
 .visistat.com
+.visit-server.inmobi-choice.io
 .visit.adelaide.edu.au
 .visit.argfuscator.net
 .visit.asb.co.nz
