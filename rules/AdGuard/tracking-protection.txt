@@ -7579,6 +7579,7 @@
 .arrlrk.edigital.hu
 .arsaqf.yukoyuko.net
 .art.rollinart.at
+.artbranch.net
 .artefact.is
 .artfut.com
 .artho.arthobd.com
@@ -8078,6 +8079,7 @@
 .auto-ping.com
 .auto.boostpouchco.com
 .autoaffiliatenetwork.com
+.autoappearancetraining.com
 .autoaudience.com
 .autoid.com
 .autoimmunity.thermo.com
@@ -8765,6 +8767,7 @@
 .beacon.wikia-services.com
 .beacon.www.theguardian.com
 .beacon.ztgame.com
+.beaconimages.netflix.net
 .beacons-prod.fubo.tv
 .beacons.ads.fubo.tv
 .beacons.digital.disneyadvertising.com
@@ -8893,6 +8896,7 @@
 .bewsgxy.solidandstriped.com
 .beyolp.pebmed.com.br
 .beyond.bluewolf.com
+.beyondgoodness.com
 .beyondmeasure.rigoltech.com
 .beyondwickedmapping.org
 .bez.vowega.de
@@ -9389,6 +9393,7 @@
 .blue.bpsdepot.nl
 .blue.unitedbyblue.com
 .bluecava.com
+.bluecollarmuse.com
 .blueconic.net
 .bluecore.com
 .bluecounter.de
@@ -24325,6 +24330,8 @@
 .exapxl.de
 .exbujk.glamood.com
 .exc.ns.nl
+.excess-ga.duolingo.com
+.excess.duolingo.com
 .exch.adaptable.nl
 .exch.bolderman.nl
 .exch.de-duurzame-jongens.nl

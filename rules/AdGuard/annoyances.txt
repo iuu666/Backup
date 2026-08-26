@@ -576,6 +576,7 @@
 .push.anews.one
 .push.asahiinteractive.com
 .push.autosaratov.ru
+.push.brownbrothers.io
 .push.delivery.ethinking.de
 .push.englishraven.com
 .push.esputnik.com.ua
