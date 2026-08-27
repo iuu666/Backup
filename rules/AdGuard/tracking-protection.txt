@@ -5509,6 +5509,7 @@
 .analytics.warnertv.fr
 .analytics.washingtoncountybank.com
 .analytics.watchcredo.com
+.analytics.watchott.org
 .analytics.wavelz.com
 .analytics.wayland.app
 .analytics.webads.eu
@@ -8566,6 +8567,7 @@
 .bastingart.com
 .basuey.toyscenter.it
 .bat.bing.com
+.bat.bing.net
 .bat.heelix.be
 .batmobile.com.tw
 .bats.video.yahoo.com
@@ -9136,6 +9138,7 @@
 .bidpapers.com
 .bidr.io
 .bidrbu.bett1.at
+.bidscube.com
 .bidswitch.net
 .bienvivre.chartwell.com
 .biesn.crossrope.com
@@ -12309,7 +12312,6 @@
 .cohfp.chairish.com
 .coikujte.g-heat.com
 .coin.historyhoard.com
-.cointent.com
 .col.casa.it
 .col.idealista.com
 .col.idealista.fr
@@ -23753,6 +23755,9 @@
 .eu-1-id5-sync.com
 .eu-cdn.kgm-motors.co.uk
 .eu-data.kameleoon.io
+.eu-onrt-stsdk.vivoglobal.com
+.eu-ort-stsdk.vivoglobal.com
+.eu-stsdk.vivoglobal.com
 .eu-survey.com
 .eu-west-1-cluster1.net.mydays.de
 .eu.bus-exclusive.com
@@ -24320,6 +24325,7 @@
 .ewstv.wxyz.com
 .ewtlvx.olliscience.com
 .ewygto.swanicoco.co.kr
+.ex-adreq-asia.vivoglobal.com
 .ex.pudaierbangladesh.com
 .exact.purify-waters.com
 .exactag.com
@@ -24942,6 +24948,7 @@
 .felidae.mysuperportal.com
 .felidae.theforeignarchitect.com
 .felidae.top10partnersuche.ch
+.felinesocial.com
 .felix.alpinloacker.com
 .felix.feelgrounds.com
 .fellowshipvillage.fellowshiplifeinc.org
@@ -26452,6 +26459,7 @@
 .gamefowl.karlsutt.com
 .gamefowl.nonprofit.foundation
 .gamergirl.pro
+.gamerone.net
 .gamestats.easybrain.com
 .gamingfun.me
 .gamma.ui.system.netsalesmedia.pl
@@ -27729,7 +27737,6 @@
 .gocpi.quadrant.gg
 .gocuxy.baycrews.jp
 .god.jewelpalace.in
-.goddesslamps.com
 .godhat.com
 .godseedband.com
 .godvd.cleansimpleeats.com
@@ -27765,6 +27772,7 @@
 .good.iamandco.com
 .good.mindbustingescaperooms.com
 .good.store.kazistorebd.com
+.goodandwild.com
 .goodcounter.org
 .goodfoodtours.com
 .google-analytics.bi.owox.com
@@ -37046,6 +37054,7 @@
 .init.blackcrow.ai
 .init.izoa.fr
 .inixwg.vibrate.co.kr
+.inkcoupon.com
 .inlks.topliftpros.com
 .inlog01.hket.com
 .inmmyp.lenspecsmu.ru
@@ -38455,6 +38464,7 @@
 .jugvl.transformationprotein.com
 .juicebard.com
 .juiceblocks.com
+.juicemovement.com
 .juicingoasis.com
 .juicyt.juicysms.com
 .jujrwt.kasseler-jobanzeiger.de

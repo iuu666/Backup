@@ -1,19 +1,19 @@
 # AdGuard 规则
 
-> 最后更新：2026-08-26 10:10:40
+> 最后更新：2026-08-27 18:11:34
 
 ## 规则列表
 
 | 文件名 | 作用 | 7天前 | 昨天 | 今天 | 趋势 |
 |--------|------|-------|------|------|------|
-| base-filter | 基础广告过滤 | 54,260 | 54,753 | 55,039 | 📈 +0.5% |
-| tracking-protection | 隐私追踪保护 | 106,273 | 106,312 | 106,319 | 📈 +0.0% |
-| chinese-filter | 中文网站广告过滤 | 6,445 | 6,226 | 6,236 | 📈 +0.2% |
+| base-filter | 基础广告过滤 | 54,533 | 55,039 | 55,355 | 📈 +0.6% |
+| tracking-protection | 隐私追踪保护 | 106,286 | 106,319 | 106,329 | 📈 +0.0% |
+| chinese-filter | 中文网站广告过滤 | 6,459 | 6,236 | 6,250 | 📈 +0.2% |
 | social-media | 社交媒体组件屏蔽 | 49 | 49 | 49 | ➡️ 持平 |
-| dns-filter | DNS 层广告拦截 | 176,092 | 176,505 | 176,814 | 📈 +0.2% |
-| annoyances | 烦人元素合集（包含以下子项） | 868 | 870 | 871 | 📈 +0.1% |
-| annoyances-cookie-notices | &nbsp;&nbsp;&nbsp;├─ Cookie 通知屏蔽 | 182 | 184 | 184 | ➡️ 持平 |
-| annoyances-popups | &nbsp;&nbsp;&nbsp;├─ 弹窗屏蔽 | 420 | 420 | 421 | 📈 +0.2% |
+| dns-filter | DNS 层广告拦截 | 176,397 | 176,814 | 177,182 | 📈 +0.2% |
+| annoyances | 烦人元素合集（包含以下子项） | 870 | 871 | 871 | ➡️ 持平 |
+| annoyances-cookie-notices | &nbsp;&nbsp;&nbsp;├─ Cookie 通知屏蔽 | 184 | 184 | 184 | ➡️ 持平 |
+| annoyances-popups | &nbsp;&nbsp;&nbsp;├─ 弹窗屏蔽 | 420 | 421 | 421 | ➡️ 持平 |
 | annoyances-mobile-app-banners | &nbsp;&nbsp;&nbsp;├─ 移动端横幅屏蔽 | 3 | 3 | 3 | ➡️ 持平 |
 | annoyances-widgets | &nbsp;&nbsp;&nbsp;├─ 网页挂件屏蔽 | 252 | 252 | 252 | ➡️ 持平 |
 | annoyances-other | &nbsp;&nbsp;&nbsp;└─ 其他烦人元素 | 15 | 15 | 15 | ➡️ 持平 |
