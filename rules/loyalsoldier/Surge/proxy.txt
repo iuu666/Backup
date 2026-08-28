@@ -20179,6 +20179,7 @@ zftksc.launches.appsflyersdk.com
 .relateiq.com
 .religionnews.com
 .remirepo.net
+.remna.st
 .rencapbank.ru
 .renchead.com
 .rencredit.ru
@@ -25516,6 +25517,7 @@ zftksc.launches.appsflyersdk.com
 .wpoforum.com
 .wpvip.com
 .wrenchead.com
+.write.as
 .writesonic.com
 .ws-blau.com
 .ws-tcg.com
