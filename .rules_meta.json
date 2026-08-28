@@ -2,10 +2,6 @@
   "chinese-filter.txt": {
     "history": [
       {
-        "date": "2026-07-29",
-        "count": 6252
-      },
-      {
         "date": "2026-07-30",
         "count": 6260
       },
@@ -120,16 +116,16 @@
       {
         "date": "2026-08-27",
         "count": 6250
+      },
+      {
+        "date": "2026-08-28",
+        "count": 6263
       }
     ],
-    "latest": 6250
+    "latest": 6263
   },
   "tracking-protection.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 84798
-      },
       {
         "date": "2026-07-30",
         "count": 84804
@@ -245,16 +241,16 @@
       {
         "date": "2026-08-27",
         "count": 106329
+      },
+      {
+        "date": "2026-08-28",
+        "count": 106337
       }
     ],
-    "latest": 106329
+    "latest": 106337
   },
   "base-filter.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 59884
-      },
       {
         "date": "2026-07-30",
         "count": 60119
@@ -370,16 +366,16 @@
       {
         "date": "2026-08-27",
         "count": 55355
+      },
+      {
+        "date": "2026-08-28",
+        "count": 55641
       }
     ],
-    "latest": 55355
+    "latest": 55641
   },
   "annoyances-cookie-notices.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 182
-      },
       {
         "date": "2026-07-30",
         "count": 182
@@ -495,16 +491,16 @@
       {
         "date": "2026-08-27",
         "count": 184
+      },
+      {
+        "date": "2026-08-28",
+        "count": 184
       }
     ],
     "latest": 184
   },
   "annoyances.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 867
-      },
       {
         "date": "2026-07-30",
         "count": 867
@@ -620,16 +616,16 @@
       {
         "date": "2026-08-27",
         "count": 871
+      },
+      {
+        "date": "2026-08-28",
+        "count": 870
       }
     ],
-    "latest": 871
+    "latest": 870
   },
   "annoyances-mobile-app-banners.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 3
-      },
       {
         "date": "2026-07-30",
         "count": 3
@@ -744,6 +740,10 @@
       },
       {
         "date": "2026-08-27",
+        "count": 3
+      },
+      {
+        "date": "2026-08-28",
         "count": 3
       }
     ],
@@ -752,10 +752,6 @@
   "annoyances-popups.txt": {
     "history": [
       {
-        "date": "2026-07-29",
-        "count": 420
-      },
-      {
         "date": "2026-07-30",
         "count": 420
       },
@@ -870,17 +866,17 @@
       {
         "date": "2026-08-27",
         "count": 421
+      },
+      {
+        "date": "2026-08-28",
+        "count": 420
       }
     ],
-    "latest": 421
+    "latest": 420
   },
   "annoyances-other.txt": {
     "history": [
       {
-        "date": "2026-07-29",
-        "count": 15
-      },
-      {
         "date": "2026-07-30",
         "count": 15
       },
@@ -994,6 +990,10 @@
       },
       {
         "date": "2026-08-27",
+        "count": 15
+      },
+      {
+        "date": "2026-08-28",
         "count": 15
       }
     ],
@@ -1002,10 +1002,6 @@
   "social-media.txt": {
     "history": [
       {
-        "date": "2026-07-29",
-        "count": 49
-      },
-      {
         "date": "2026-07-30",
         "count": 49
       },
@@ -1119,6 +1115,10 @@
       },
       {
         "date": "2026-08-27",
+        "count": 49
+      },
+      {
+        "date": "2026-08-28",
         "count": 49
       }
     ],
@@ -1127,10 +1127,6 @@
   "annoyances-widgets.txt": {
     "history": [
       {
-        "date": "2026-07-29",
-        "count": 251
-      },
-      {
         "date": "2026-07-30",
         "count": 251
       },
@@ -1245,16 +1241,16 @@
       {
         "date": "2026-08-27",
         "count": 252
+      },
+      {
+        "date": "2026-08-28",
+        "count": 252
       }
     ],
     "latest": 252
   },
   "dns-filter.txt": {
     "history": [
-      {
-        "date": "2026-07-29",
-        "count": 160151
-      },
       {
         "date": "2026-07-30",
         "count": 160384
@@ -1370,8 +1366,12 @@
       {
         "date": "2026-08-27",
         "count": 177182
+      },
+      {
+        "date": "2026-08-28",
+        "count": 177536
       }
     ],
-    "latest": 177182
+    "latest": 177536
   }
 }
