@@ -4332,6 +4332,7 @@
 .analytics-ingestion.production-public.tubi.io
 .analytics-ingress-global.bitmovin.com
 .analytics-ingress.bitmovin.com
+.analytics-ios-tcp.rayjump.com
 .analytics-ipv6.tiktokw.us
 .analytics-lgs.corebridgefinancial.com
 .analytics-log.withhive.com
@@ -21206,6 +21207,7 @@
 .drvive.lamoda.ru
 .drxeqq.wishhotels.com.br
 .drydrum.com
+.dryerwasher.com
 .drzbe.agileoffroad.com
 .drzzg.mallet.com
 .ds-aksb-a.akamaihd.net
@@ -25081,6 +25083,7 @@
 .files.udawy.com
 .files.urlinsgroup.com
 .files.velpa.pl
+.fileshareengine.com
 .filesys.mccmedale.pl
 .filetransfer.velpa.pl
 .filitrac.com
@@ -54310,6 +54313,7 @@
 .nordics.movanze.se
 .nordics.nitecaps.no
 .north.charityright.org.uk
+.northstar.cr
 .nos.nosepinpalace.com
 .nosgl.gearforears.com
 .nosjew.glamira.de
@@ -57167,6 +57171,7 @@
 .perion.com
 .perk0mean.com
 .perle.perledelumina.ro
+.permagroove.com
 .permutive.app
 .permutive.com
 .perpetualtracking.lytess.com
@@ -57713,6 +57718,7 @@
 .plans.fundtherebuild.com
 .plantcourse.com
 .plants.outsidein.com
+.plantscafe.net
 .plas.imfeld.dev
 .platform.datazoom.io
 .platform.malwarebytes.com
