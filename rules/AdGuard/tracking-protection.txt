@@ -217,7 +217,6 @@
 .77tracking.com
 .78rkcgj4i8c6.www.cefirates.com
 .7bet.sevenbets.com.br
-.7bpeople.com
 .7c2vd9kr4pt.assugrin.ch
 .7eer.net
 .7eleven.marketing.7eleven.com.au
@@ -2445,7 +2444,6 @@
 .ad-kraft.aloe-tallow.com
 .ad-log-upload-os.hoyoverse.com
 .ad-log.dable.io
-.ad-log.wemakeprice.com
 .ad-plus.com.tr
 .ad-score.com
 .ad-spire.net
@@ -4337,7 +4335,6 @@
 .analytics-lgs.corebridgefinancial.com
 .analytics-log.withhive.com
 .analytics-logger.service.junctiontv.net
-.analytics-mkt.wemakeprice.com
 .analytics-nssl.bradyid.com
 .analytics-op.streak.ninja
 .analytics-prd.aws.wehaa.net
@@ -8870,6 +8867,7 @@
 .best.turajmart.com
 .bestboundary.com
 .bestclimbers.net
+.bestcoffeemachine.net
 .bestill.help.no
 .bestshoesboot.com
 .bestsportsbra.com
@@ -38488,6 +38486,7 @@
 .jupki.sokolovelaw.com
 .juris.pedroburak.com
 .justconfig.com
+.justfordocs.com
 .justicejudo.com
 .justid.io
 .justlagoon.com
@@ -89658,6 +89657,7 @@
 .stats.fishersci.it
 .stats.flightformation.com
 .stats.flightsphere.com
+.stats.flixcloud.cc
 .stats.fluorescent.co
 .stats.folienmarkt.de
 .stats.fomo.com
@@ -90106,6 +90106,7 @@
 .stats.realestate.cv.ua
 .stats.realestate.kyiv.ua
 .stats.realestate.uz.ua
+.stats.reanime.to
 .stats.referralhero.com
 .stats.refurbished-handys.de
 .stats.rehaag-immobilien.de
@@ -103994,7 +103995,6 @@
 .wlmwkz.adrop.sk
 .wlog.ifdo.co.kr
 .wlog.ksapisrv.com
-.wlog.tmon.co.kr
 .wlp3.aegon.es
 .wlpdfo.choicefurnituresuperstore.co.uk
 .wlptux.habitaclia.com
