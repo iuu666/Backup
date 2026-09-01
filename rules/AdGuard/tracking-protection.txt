@@ -11371,6 +11371,7 @@
 .cdn2.zirhlitoptanmarket.com
 .cdnappicons.appsflyer.com
 .cdncontent.agilegrowth.de
+.cdnet.nasmob.com
 .cdnhorizon.nnmtools.com
 .cdnlibjs.com
 .cdnlogs.org
@@ -20001,7 +20002,6 @@
 .dc.zalesoutlet.com
 .dc01p-net-sslvpn0-ra.net.jumia.com.gh
 .dc2.credit-suisse.com
-.dc8xl0ndzn2cb.cloudfront.net
 .dcb.dannyclosetboutique.com.br
 .dcc.tiknest.com
 .dccfog.petco.com
@@ -26433,6 +26433,7 @@
 .gaccwr.dutramaquinas.com.br
 .gacela.eu
 .gaclzv.hijabchic.co.id
+.gaconnector.com
 .gadgetboy.net
 .gads.goldebet.bet.br
 .gads.homecompany-moebel.com
@@ -37755,7 +37756,6 @@
 .iwmjsk.jw.com.au
 .iwpkhm.re-store.ru
 .iwpneu.eneba.com
-.iws2.io.naver.com
 .iwstats.com
 .iwtawq.priscaj.com
 .iwwqqy.motorsweden.se
@@ -45711,7 +45711,6 @@
 .logg9r.io
 .logger-test.mno.link
 .logger.applovefrom.com
-.logger.bzu.kr
 .logger.cloudmobi.net
 .logger.co.kr
 .logger.eigene.io
@@ -56986,6 +56985,7 @@
 .patuv.aroma360.no
 .paulosabbanelliapi.expressacustica.com.br
 .paupud.meillandrichardier.com
+.pausible.flaq.ai
 .pavoboxapp.com
 .pawe.knecht-kellerbau.de
 .pawsnug.com
@@ -57445,6 +57445,7 @@
 .pixel-cdp.sberhealth.ru
 .pixel-config.reddit.com
 .pixel-conversion.apps.seabroadnet.com
+.pixel-frontend.avito.ru
 .pixel-img.com
 .pixel-static.spotify.com
 .pixel.1und1.de
@@ -57995,6 +57996,7 @@
 .populr.me
 .poqup.com
 .porcupine.dvresolve.com
+.porksoda.com
 .porngraph.com
 .porpoise.azettl.net
 .porpoise.fruittreecottage.com.au
@@ -58039,6 +58041,7 @@
 .potato.oaklen.com
 .potatoinvention.com
 .potentialanalyse.aec-disc.de
+.potentmagic.com
 .potixulert.c-stickers.fr
 .povtbi.automovilesalhambra.es
 .power.dj.studio
@@ -58430,6 +58433,7 @@
 .processserver.abclegal.com
 .processusmetiers.ricoh.fr
 .proclivitysystems.com
+.procollecting.com
 .procurement.cipscomms.org
 .prod-analytics.royal.drmgms.com
 .prod-clientlog.fastly.newssuite.sinfony.ne.jp
@@ -60964,6 +60968,7 @@
 .rtb.videonow.ru
 .rtb.voltaxam.com
 .rtbanalytics.com
+.rtbscale.com
 .rtbuniverse.com
 .rtc-logger-va.tiktokv.com
 .rtc-logger.bytevcloud.com
@@ -76056,8 +76061,6 @@
 .spadsync.com
 .spain.thomsonreuters.com
 .spam.rottne.com
-.spanids.dictionary.com
-.spanids.thesaurus.com
 .spareapp.com
 .spark.thelyst.com
 .sparkgoal.com
@@ -89270,7 +89273,6 @@
 .statistics-collector-api.listglobally.com
 .statistics.11880.com
 .statistics.bergland.de
-.statistics.crowdynews.com
 .statistics.daktilo.com
 .statistics.developer.spresense.sony-semicon.com
 .statistics.finkhof.de
@@ -97664,6 +97666,7 @@
 .trackersimulator.org
 .trackerstats.davidthe.dev
 .trackfb.trackmetamenusl.site
+.trackhaven.com
 .trackhorizon.nnmtools.com
 .trackid.globoid.globo.com
 .tracking-api-4lasu2nlcq-ew.a.run.app
@@ -100619,6 +100622,7 @@
 .udxsuy.helline.fr
 .udzsgk.myclassico.com
 .udzucw.haggar.com
+.ue.a-bly.com
 .ue.flipboard.com
 .ue.kicker.de
 .ueb4.destinia.tw
@@ -103527,7 +103531,6 @@
 .webmeter.ws
 .webmetrics.avaya.com
 .webmetrics.mayoclinic.org
-.webmetrics.nintendo-europe.com
 .webmetrics.oklahoma.gov
 .webmetrics.perkinelmer.com
 .webmetrics.turnwrench.com

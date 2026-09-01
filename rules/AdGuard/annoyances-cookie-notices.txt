@@ -78,6 +78,7 @@
 .consent.wko.at
 .consentbanner.de
 .consentframework.com
+.consentpro.com
 .consenttool.haendlerbund.de
 .controlcookies.com
 .cookie-consent-tracking-app.codeblocks.sk
@@ -114,6 +115,7 @@
 .cookiewarden-content.teb.com.tr
 .cookihq.com
 .cp.gutefrage.net
+.dadoslegais.com
 .delivery.consentmanager.net
 .didomi.foodvisor.io
 .dse-cookiebanner.ford.com

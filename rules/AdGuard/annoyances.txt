@@ -246,6 +246,7 @@
 .consent.wko.at
 .consentbanner.de
 .consentframework.com
+.consentpro.com
 .consenttool.haendlerbund.de
 .consultsystems.ru
 .continual.ly
@@ -295,6 +296,7 @@
 .crimitating.com
 .currepush.com
 .d2r1yp2w7bby2u.cloudfront.net
+.dadoslegais.com
 .dankulavius.com
 .danorenius.com
 .dashboard.bildircin.az
