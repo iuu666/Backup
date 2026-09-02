@@ -10978,6 +10978,7 @@
 .caringcast.com
 .carloforward.com
 .carmen.golem.de
+.carmen2.golem.de
 .carmona.anunciojuridico.com.br
 .carp.amespacios.com
 .carp.spotonevent.no
@@ -23071,6 +23072,7 @@
 .emealandingpage.ajo1emea.adls.adobevlab.com
 .emealandingpage.ajo2emea.adls.adobevlab.com
 .emedns.bonify.de
+.emergency.zeta-ai.io
 .emerheat-ss.shopperlo.com
 .emerheat-ss.wellheater.com
 .emersonecologics.com.102.122.207.net
@@ -38636,6 +38638,7 @@
 .kalwub.mizuho-re.co.jp
 .kameleoon.com
 .kameleoon.eu
+.kameleoon.io
 .kameo.32degrees.com
 .kampaania.aripaevmeedia.ee
 .kampanja.bhtelecom.ba
@@ -54776,6 +54779,7 @@
 .o.swisscom.ch
 .o.webmd.com
 .o.xbox.com
+.o11y-proxy-otel-frontend.meli.com
 .o1lvz.poopy.co
 .o2de.mno.link
 .o2o.api.xiaomi.com
@@ -58689,6 +58693,7 @@
 .puffypurpose.com
 .pufjc.attunemedspa.com
 .pufqhd.rounz.com
+.pugspress.com
 .pugvm.durangoboots.com
 .puiwrs.misterspex.de
 .puja.amardeeprawat.com
@@ -59883,6 +59888,7 @@
 .rechenschieber.transfermarkt.us
 .rechenschieber.transfermarkt.world
 .recid.aquatalia.com
+.recipepile.net
 .recipepin.com
 .recml.simplynootropics.com
 .reco.target2sell.com
@@ -59918,6 +59924,7 @@
 .redbricksoap.com
 .redcounter.net
 .reddwarf.till-sanders.de
+.redexecs.com
 .redistats.com
 .redstatcounter.com
 .redt.bagatt.com

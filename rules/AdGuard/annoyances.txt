@@ -294,6 +294,7 @@
 .cracataum.com
 .creatives-promo.telegraaf.nl
 .crimitating.com
+.cubot.eigene.io
 .currepush.com
 .d2r1yp2w7bby2u.cloudfront.net
 .dadoslegais.com
@@ -852,7 +853,6 @@
 .wonderpush.com
 .wp.24smi.org
 .wpush.biz
-.ws.nperf.com
 .wstpush-mobile.terra.com
 .wwclicknews.club
 .wwopenclick.vip
