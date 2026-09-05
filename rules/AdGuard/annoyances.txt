@@ -300,6 +300,7 @@
 .dadoslegais.com
 .dankulavius.com
 .danorenius.com
+.dante-ai.com
 .dashboard.bildircin.az
 .date.cursorinfo.co.il
 .date.forumodua.com

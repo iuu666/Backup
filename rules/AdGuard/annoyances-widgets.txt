@@ -83,6 +83,7 @@
 .corover.mobi
 .cp.onicon.ru
 .cubot.eigene.io
+.dante-ai.com
 .date.cursorinfo.co.il
 .date.forumodua.com
 .decagon.ai
