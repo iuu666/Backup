@@ -492,6 +492,7 @@
 .a2.americasavingsexperts.com
 .a2.avomeen.com
 .a2.borgentech.com
+.a2.cineflix.st
 .a3.ogt.jp
 .a352.sandiegouniontribune.com
 .a433.dailypress.com
@@ -75488,6 +75489,7 @@
 .soggysponge.com
 .sogtm.academy.org.il
 .sogtm.colman.ac.il
+.sogu.tripster.ru
 .sohan.sodaibari.com
 .sohiuc.sheego.de
 .soilcontent.com
