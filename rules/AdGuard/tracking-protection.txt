@@ -55827,6 +55827,7 @@
 .orlqtz.lampenwelt.ch
 .oropz.ultimatelinings.com
 .orqhz.alexandrebirman.com
+.orsdls.di.runestone.samsung.com
 .orsds.ziavia.com
 .orsmfg.notino.de
 .ortkrq.damyller.com.br
@@ -60970,6 +60971,7 @@
 .rta.dailymail.co.uk
 .rta.redhomestore.com
 .rta2.metro.co.uk
+.rta2.newscientist.com
 .rta2.newzit.com
 .rtag.farmers.com
 .rtattr.skyup.aero
@@ -70064,6 +70066,7 @@
 .shatterloop.com
 .shazzat.prinush.com
 .shbtjz.directours.com
+.shealth-analytics-api.samsunghealth.com
 .sheargovernor.com
 .sheba.dhakapharmachy.com
 .sheep.littleboat.digital
@@ -91324,6 +91327,7 @@
 .sundaysky.com
 .sunflaggroup.com
 .sunios.de
+.sunnylettings.com
 .sunrise.adnanagic.com
 .sunrise.sm-project.com
 .sunsetcampfires.com
@@ -91386,6 +91390,7 @@
 .surveyscout.com
 .surveywriter.com
 .survicate.com
+.sushivolant.com
 .sustainability.ricoh.co.za
 .sustaindenim.com
 .sut.dailyfx.com
@@ -94250,10 +94255,12 @@
 .tech.tejomed.com
 .tech.wellbots.fr
 .techads.nazifshop.com
+.techcatcher.com
 .techconverter.com
 .techdrivethru.com
 .techgifts.tradeshow.globalsources.com
 .techlab-cdn.com
+.techmix.net
 .technical-service.net
 .technical.kyzen.com
 .techno.technostorm.de
@@ -101082,6 +101089,7 @@
 .urcaq.eberjey.com
 .urdam.hillcrestmemorialgarden.com
 .urdap.forever21.com
+.ureca.samsungapps.com
 .urehgr.halekulani.com
 .ureoaw.netthandelen.no
 .ureruadebis.papawash.com
