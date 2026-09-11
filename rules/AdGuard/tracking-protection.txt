@@ -8795,6 +8795,7 @@
 .bechd.goodnightfox.com
 .becomemummy.com
 .bed.bedkingdom.co.uk
+.beddingdownbaby.com
 .beddn.gundrymd.com
 .bedmz.mercimamanboutique.com
 .bedrop.marketing-tech.io
@@ -9147,6 +9148,7 @@
 .biggerbling.com
 .bighornbasin.net
 .bigleapforward.org
+.bigpicframing.com
 .bigsauron.ru
 .bigstats.net
 .bigsv.ontrackmeals.com
@@ -9154,6 +9156,7 @@
 .bigwetbrush.com
 .bigworldfashion.com
 .bijkep.hotelesestelar.com
+.bijouxbee.com
 .bike.turbobd.com
 .bikeexerciser.com
 .bikepaws.com
@@ -9184,6 +9187,7 @@
 .biome.medicalplus.com.bd
 .bionicclick.com
 .biot.byads.co
+.biotechnologysciences.com
 .bipog.perfectwhitetee.com
 .biqizo.vixpaulahermanny.com
 .bird.brondby.com
@@ -20796,6 +20800,7 @@
 .distributionpocket.com
 .distributiontomatoes.com
 .disturbedquiet.com
+.disutgh7q0ncc.cloudfront.net
 .dit.whatsapp.net
 .dit.whatsapp.net.iberostar.com
 .divolution.com
@@ -24195,6 +24200,7 @@
 .events.pella.com
 .events.petcamp.com.br
 .events.plumbv.com
+.events.plutus.ninja
 .events.popinfo.jp
 .events.prd.api.discomax.com
 .events.privy.com
@@ -60193,6 +60199,7 @@
 .reqstat.api.mega.co.nz
 .request.verisign.com
 .requestmetrics.com
+.rer4.com
 .rerjk.bugmd.com
 .rertrc.abc-mart.net
 .res-x.com
@@ -106133,6 +106140,7 @@
 .zo.zeitgeist-outdoor.de
 .zobgqg.sirobari.jp
 .zobtmj.kiddies-kingdom.com
+.zodalt.com
 .zodhqv.peterson.fr
 .zoerxk.belifmeetsvdl.com
 .zogio.kiauraeyewear.com
