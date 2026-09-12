@@ -218,6 +218,7 @@
 .7hdl8dlfjm4g.www.cybernetman.com
 .7info.deshshoppingmart.com
 .7lbd4.armandthiery.fr
+.7lzwgj.donaukurier.de
 .7mx.eider.com
 .7mx.eidershop.com
 .7wrxo2xh.iriscreative.co
@@ -9123,6 +9124,7 @@
 .bia.brightinfo.com
 .bibglj.timberland.fr
 .bicp-analytics.postscript.io
+.bid.ctv.house
 .bid.run
 .bidbpo.dr-10.com
 .bidder.doceree.com
@@ -9395,6 +9397,8 @@
 .blue.bpsdepot.co.uk
 .blue.bpsdepot.nl
 .blue.unitedbyblue.com
+.bluebellbooks.com
+.bluebirdteam.com
 .bluecava.com
 .bluecollarmuse.com
 .blueconic.net
@@ -9749,6 +9753,7 @@
 .broadcastbed.com
 .broaddoor.com
 .broadstreet.ai
+.broflask.com
 .broker.datazoom.io
 .bronto.com
 .bronze.bygg.com.br
@@ -26790,6 +26795,7 @@
 .get.ukg.mx
 .get.ukg.nl
 .get4click.ru
+.getads.ru
 .getaliveblue-ss.olladeals.com
 .getaquafusion-ss.checkoutera.com
 .getaway.cybeartrack.com.au
@@ -35256,6 +35262,7 @@
 .idopm.progressjj.co.uk
 .idot.cz
 .idqwqm.kkday.com
+.idsequoia.ai
 .idsfq.katespade.de
 .idsmodules.com
 .idsod.catholic.com
@@ -45536,6 +45543,7 @@
 .log.bloodppressure.info
 .log.bloodsugars.live
 .log.bunjang.co.kr
+.log.calomeal.com
 .log.classting.com
 .log.cleandesigner.live
 .log.cleanertoolboxonline.live
@@ -53311,6 +53319,7 @@
 .mybloglog.com
 .mycounter.com.ua
 .mycounter.ua
+.mydatascript.bubbleup.com
 .mydeze.croisierenet.com
 .myecmz.gruener.at
 .myevents.thalesgroup.com

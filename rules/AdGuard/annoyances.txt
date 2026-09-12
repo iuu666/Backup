@@ -461,6 +461,7 @@
 .mailget.net
 .maillist-manage.com
 .majorworker.com
+.marketing.mgbayern.de
 .martabackrock.com
 .master-push.net
 .maylohack.ru
@@ -485,6 +486,7 @@
 .my.hellobar.com
 .my.leadpages.net
 .my1elitclub.com
+.mydatascript.bubbleup.com
 .mylivechat.com
 .mypush.online
 .n1goserch.com

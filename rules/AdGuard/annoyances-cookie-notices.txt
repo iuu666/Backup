@@ -144,6 +144,7 @@
 .metomic.io
 .mobile-data.onetrust.io
 .modeto.com
+.mydatascript.bubbleup.com
 .nebulacrescent.com
 .nebulousgarden.com
 .noterium.com
