@@ -13658,6 +13658,7 @@
 .crypto-o.click
 .cryptonow.algomoneo.com
 .crystalboulevard.com
+.crystaldewfarm.com
 .crzohw.intersport.gr
 .cs.analytics.lego.com
 .cs.avito.ru
@@ -20144,6 +20145,7 @@
 .decide.mixpanel.com
 .decidedrum.com
 .decideinteractive.com
+.decimalnet.com
 .decisionhut.com
 .decisivebase.com
 .decisivedrawer.com
@@ -37075,6 +37077,7 @@
 .inlks.topliftpros.com
 .inlog01.hket.com
 .inmmyp.lenspecsmu.ru
+.inmobicdn.net
 .inmtuj.jobs.ie
 .inmuzp.popsockets.com
 .innae.mftstamps.com
@@ -91959,6 +91962,7 @@
 .sync.playhood.nl
 .sync.programmatica.com
 .sync.taboola.com
+.synccache.com
 .syndesmos.bambelo.com
 .synergy-e.com
 .synonymoussticks.com

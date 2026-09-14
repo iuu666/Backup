@@ -645,6 +645,7 @@
 .realpush.media
 .relateddigital.com
 .renderer.qmerce.com
+.rival-contents.com
 .rocket-push.com
 .rodo.agora.pl
 .rokettsaince.com
