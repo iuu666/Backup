@@ -461,6 +461,7 @@
 .a.ttest.fr
 .a.tunley-environmental.com
 .a.twofaceaesthetics.com
+.a.ussp.io
 .a.uwhealth.org
 .a.visme.co
 .a.vital-health-path.com
@@ -9130,6 +9131,7 @@
 .bidder.doceree.com
 .bidder.dsp.outfit7.com
 .bidder.mdspinc.com
+.bidderstack.com
 .bidef.sokolovelaw.com
 .bidmachine.io
 .bidpapers.com
@@ -13664,6 +13666,7 @@
 .cs.avito.ru
 .cs.chaussea.com
 .cs.hot.net.il
+.cs.ifedata.ru
 .cs.media.net
 .cs.nexttv.co.il
 .cs.zg-api.com
@@ -21185,6 +21188,7 @@
 .drflexa-ss.checkoutera.com
 .drga.dubairealestate.net
 .drhsder4m.marinapinhasdermatologia.com.br
+.driedwheat.com
 .driftingchef.com
 .driftpizza.com
 .drive.lotuscarrental.is
@@ -24581,6 +24585,7 @@
 .fabcharting.com
 .fabcourses.iapcollege.com
 .fabio.ilydecor.com
+.fabledglory.com
 .fabledsoul.com
 .fabricww.com
 .fabryczna.viessmann.pl
@@ -24762,6 +24767,7 @@
 .fauzxn.hairlavie.com
 .favbt.theweeklyedition.com
 .favor1.fractal.jp
+.faxardent.net
 .faxcoupons.com
 .faxsmarter.instantinfo.com
 .fayhbg.sifjakobs.se
@@ -25228,6 +25234,7 @@
 .fireworkanalytics.com
 .fireworkcamp.com
 .firing.hearthfireclay.org
+.firmasset.com
 .first-id.fr
 .first.aguiarinjurylawyers.com
 .first.aquatime.ro
@@ -37359,6 +37366,7 @@
 .intelligenceretarget.com
 .intelligentbusinessconcepts.e.epiqnotification.com
 .intelligentscissors.com
+.intent.ai
 .intent.cbsi.com
 .intentlens.com
 .interact.enco.io
@@ -52725,6 +52733,7 @@
 .mp3king.club
 .mp5.multi-prets.com
 .mparticle.com
+.mpartner.digital
 .mpc.nicequest.com
 .mpecom-analyticevents-prod.boyner.com.tr
 .mpfmb.eightsaintsskincare.com
@@ -53391,6 +53400,7 @@
 .myvisitors.se
 .myvisualiq.net
 .myw.business-unicorn.com
+.myweb3id.io
 .mywebstats.com.au
 .mywebstats.org
 .mywedding-beacon.team-rec.jp
@@ -54452,7 +54462,6 @@
 .nr-beacon.movingimage.com
 .nr-data.net
 .nr-events.taboola.com
-.nr.bidderstack.com
 .nr7.us
 .nra.locktonaffinity.net
 .nrastbstp.meunumerologo.com.br
@@ -55556,6 +55565,7 @@
 .onestat.com
 .onetag-sys.com
 .onetag.co.kr
+.onetarget.ru
 .ongc.justmusic.co.il
 .onghfx.revolve.com
 .ongreed.ongreed.com
@@ -56102,6 +56112,7 @@
 .p.data.cctv.com
 .p.ejs.dev
 .p.eneba.com
+.p.food.ru
 .p.gazeta.pl
 .p.gm99.com
 .p.iforge.app
@@ -61001,6 +61012,7 @@
 .rtax.criteo.com
 .rtb-trk4.linkedin.com
 .rtb-us-east.linkedin.com
+.rtb.dynotech.io
 .rtb.videonow.ru
 .rtb.voltaxam.com
 .rtbanalytics.com
@@ -70752,6 +70764,7 @@
 .smart46.lplnow.com
 .smart62.lplnow.com
 .smart98.lplnow.com
+.smartcallback.ru
 .smartcam.adt-worldwide.com
 .smartcard.apps.coloros.com
 .smartctr.com
@@ -76022,6 +76035,7 @@
 .sp.lansingstatejournal.com
 .sp.lapaula.sk
 .sp.ldnews.com
+.sp.linkssp.ru
 .sp.lohud.com
 .sp.mansfieldnewsjournal.com
 .sp.marionstar.com
@@ -91947,12 +91961,14 @@
 .sync.1dmp.io
 .sync.adap.tv
 .sync.adotmob.com
+.sync.adsp.io
 .sync.adspend.space
 .sync.bruno.wine
 .sync.bumlam.com
 .sync.clearnview.com
 .sync.ebis.ne.jp
 .sync.getpublica.com
+.sync.gonet-ads.com
 .sync.inmobi.com
 .sync.liveclin.com
 .sync.morgdm.ru
@@ -93863,6 +93879,7 @@
 .targeting.washpost.nile.works
 .targetlr.adobe.com
 .targetman.ru
+.targetrtb.com
 .targetsecure.kohler.com
 .targetsoc.spela.svenskaspel.se
 .targettur.www.svenskaspel.se
@@ -94617,6 +94634,7 @@
 .thebestpaints.com
 .thebigvan.com
 .thebrainybulb.com
+.thecodingpad.com
 .thecounter.com
 .thecounter.net
 .thecrazychili.com

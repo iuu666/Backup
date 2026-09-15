@@ -51,6 +51,7 @@
 .app.mailjet.com
 .app.mycountrytalks.org
 .app.najva.com
+.app.notirabbit.com
 .app.popuparchitect.com
 .app.pushaja.com
 .app.secureprivacy.ai

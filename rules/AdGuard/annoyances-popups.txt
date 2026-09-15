@@ -28,6 +28,7 @@
 .app.getbeamer.com
 .app.mailjet.com
 .app.najva.com
+.app.notirabbit.com
 .app.pushaja.com
 .aquarepush.com
 .arianelab.com
