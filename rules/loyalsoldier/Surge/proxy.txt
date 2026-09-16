@@ -346,6 +346,7 @@ opgg-static.akamaized.net
 origin-a.akamaihd.net
 osu.ppy.sh
 p-events-delivery.akamaized.net
+p16-tiktok-dm-sticker-sign-sg.ibyteimg.com
 p16-tiktokcdn-com.akamaized.net
 packages.microsoft.com
 paper-attachments.s3.amazonaws.com
@@ -22226,6 +22227,9 @@ zftksc.launches.appsflyersdk.com
 .stripchat.com
 .stripe-terminal-local-reader.net
 .stripe.com
+.stripe.dev
+.stripe.events
+.stripe.global
 .stripe.network
 .stripecdn.com
 .stripparadise.com
