@@ -7482,6 +7482,7 @@
 .apps.software.netsimplicity.com
 .apps.velpa.pl
 .appsanalytics.appideas.it
+.appsecstudio.com
 .appsflyer-report.honkaiimpact3.com
 .apptics.zoho.in
 .apptracer.ru
@@ -9617,6 +9618,7 @@
 .boundlessbrake.com
 .boundlessveil.com
 .bovid.neural.love
+.bowlershut.com
 .box.kryptotrejder.sk
 .box.velpa.pl
 .boxandcover.com
@@ -13982,6 +13984,7 @@
 .cufroa.aboutyou.be
 .cuftub.myspirit.com.br
 .cuino.boironusa.com
+.cuisinevoyager.com
 .culturaltracking.ru
 .culture.intermedes.com
 .culturedcamera.com
@@ -21388,6 +21391,7 @@
 .dta.apploye.com
 .dta.eventoslatorre.com
 .dta.woest-sport.com
+.dtam.thrive.today
 .dtaum.frontgate.com
 .dtav.gersonquintao.com
 .dtbkg.withjean.com.au
@@ -46743,6 +46747,7 @@
 .manamoment.com
 .manatee.biodom.bio
 .manatee.wemaketechsimple.com
+.manateemotors.com
 .manaus.ondec.com.br
 .manaus2026.ondec.com.br
 .manauslidera2026.ondec.com.br
@@ -90313,6 +90318,7 @@
 .stats.starfish.team
 .stats.steepandcheap.com
 .stats.steirerjobs.at
+.stats.stellar.rip
 .stats.stephlow.audio
 .stats.strawberry.rocks
 .stats.streamhub.io
