@@ -169,6 +169,7 @@ download.visualstudio.microsoft.com
 downloaddispatch.itunes.apple.com
 dreamspark.download.prss.microsoft.com
 dreamsparkuat.download.prss.microsoft.com
+drivers.amd.com
 edge.geo.kaspersky.com
 end-api.shallow.ink
 end.shallow.ink
@@ -82652,6 +82653,7 @@ xz.pphimalayanrt.com
 .sjf029.com
 .sjfcdn.com
 .sjfh168.com
+.sjfls6.com
 .sjfpro.com
 .sjfzxm.com
 .sjg8.com
