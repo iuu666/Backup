@@ -5339,6 +5339,7 @@
 .analytics.spark.co.nz
 .analytics.spearly.com
 .analytics.sportera.fans
+.analytics.sportigio.com
 .analytics.sports.ru
 .analytics.sposadeste.com
 .analytics.ssmas.com
@@ -8781,6 +8782,7 @@
 .beam.koddi.com
 .beam.remp.impresa.pt
 .beam.remp.nv.ua
+.beam.telegram.hr
 .beamvolcano.com
 .beancontrol.com
 .beandelight.com
@@ -10312,6 +10314,7 @@
 .campaign.shl.com
 .campaign.ssab.com
 .campaign.tandemdiabetes.com
+.campaign.telegram.hr
 .campaign.viessmann-cold.com
 .campaigncog.com
 .campaigninfo.motorolasolutions.com
@@ -25320,7 +25323,6 @@
 .fishhoo.com
 .fishing.bucketbro.com.au
 .fishingrodsgalore.com
-.fishingtoolsbox.com
 .fishspies.com
 .fit.bedrijfsfitnessnederland.nl
 .fit.fitelastix.nl
@@ -60444,6 +60446,7 @@
 .revotas.com
 .revprotect.com
 .revuyt.misako.com
+.rewardangels.com
 .rewards.parago.com
 .rewards.web.doitbest.com
 .rewardtv.com
@@ -95444,6 +95447,7 @@
 .topicalcartel.com
 .topicjungle.com
 .topiz.ru
+.toplaunch.net
 .toplist.cz
 .toplist.eu
 .toplist.sk
@@ -97769,6 +97773,7 @@
 .tracker.stats.in.th
 .tracker.str-nrg.com
 .tracker.swedish.org
+.tracker.telegram.hr
 .tracker.thinkermail.com
 .tracker.thinkindot.com
 .tracker.tianmu.mobi
@@ -99063,6 +99068,7 @@
 .training.hager.co.uk
 .training.indigobusiness.co.uk
 .training.thunderhead.com
+.trainingreality.com
 .traka8.crypto-mall.org
 .traker.fundacoessemcomplicacoes.com.br
 .traker.karenrosebusiness.com.br
@@ -102138,6 +102144,7 @@
 .vengefulgrass.com
 .venomousvessel.com
 .ventivmedia.com
+.venturemen.com
 .venusgloria.com
 .veocq.essenzshop.at
 .veosfi.woonexpress.nl
@@ -103073,6 +103080,7 @@
 .waitinglistsale.net.mydays.de
 .waitingnumber.com
 .waixpa.supriagora.com.br
+.walkourworld.com
 .wallaby.cron.help
 .wallaby.legendkeeper.com
 .walrus.fetzcolor.at
@@ -103515,6 +103523,7 @@
 .webbyword.net
 .webc2s.pubgw.yahoo.com
 .webcasts.de.ni.com
+.webclarion.com
 .webclicktracker.com
 .webcompteur.com
 .webcon.se-legal.de
