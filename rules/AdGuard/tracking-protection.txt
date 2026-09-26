@@ -7583,7 +7583,9 @@
 .arsaqf.yukoyuko.net
 .art.rollinart.at
 .artbranch.net
+.artcat.net
 .artefact.is
+.artfulsavage.com
 .artfut.com
 .artho.arthobd.com
 .arthurbrent.aquadrip.se
@@ -14124,6 +14126,7 @@
 .cutechin.com
 .cutie.kidsmagictree.com
 .cutld.kahootsfeedandpet.com
+.cutsmarter.net
 .cutzl.authorsuccess.com
 .cuwtqn.doseofcolors.com
 .cux.io
@@ -50841,6 +50844,7 @@
 .metrics.lexusofwatertown.com
 .metrics.lexusofwayzata.com
 .metrics.lexussantamonicamobile.com
+.metrics.li
 .metrics.lichthallemaag.ch
 .metrics.life.com
 .metrics.lifetime.life
