@@ -4116,6 +4116,7 @@
 .amazing.tagpeak.com
 .amazingcounters.com
 .amazingentri.stape.dev
+.amazinglea.com
 .amazy.ru
 .ambasador.montessorikurz.cz
 .ambasador.montessorispolecne.cz
@@ -17126,6 +17127,7 @@
 .data-sst.florianhorsefood.nl
 .data-stream.level.agency
 .data-us.hilo.com
+.data-www-weaver.wanted.co.kr
 .data.07eins.com
 .data.123drogisterij.nl
 .data.130combinacoes.com
