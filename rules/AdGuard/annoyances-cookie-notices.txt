@@ -52,6 +52,7 @@
 .cmpv2.techadvisor.fr
 .cmpv2.tori.fi
 .cmpworker.operationsports.com
+.compliance.datacamp.com
 .complydog.com
 .confirmic.com
 .consent-manager.thenextweb.com

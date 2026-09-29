@@ -218,6 +218,7 @@
 .collectcdn.com
 .comagic.ru
 .comm100.com
+.compliance.datacamp.com
 .complydog.com
 .components.justanswer.com
 .config.gorgias.chat
