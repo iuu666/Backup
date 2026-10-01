@@ -22444,6 +22444,7 @@
 .edqmrt.spinlife.com
 .edrone.me
 .edsawa.simplynursery.com
+.edshowpigs.com
 .edt02.net
 .edtp.de
 .edu.bodyandbrowseducation.com
@@ -27321,7 +27322,6 @@
 .gnrnc.intermobilifurniture.ro
 .gnsdp.toms.com
 .gnshwf.room-park.ru
-.gnsnpaw.com
 .gnuavcpc.woods.se
 .gnwiwc.store.lapine.co.jp
 .gnzcmh.sangishop.jp
@@ -63108,6 +63108,7 @@
 .scout.bergfreunde.nl
 .scout.bergfreunde.no
 .scout.bergfreunde.se
+.scout.data.funkedigital.de
 .scp.deltadentalwa.com
 .scpzx.traxxas.com
 .scrapcranes.com
@@ -76068,6 +76069,7 @@
 .sp.courierpress.com
 .sp.dailyrecord.com
 .sp.dailyworld.com
+.sp.data.funkedigital.de
 .sp.delawareonline.com
 .sp.delmarvanow.com
 .sp.democratandchronicle.com
@@ -94708,6 +94710,7 @@
 .theadex.com
 .thebestlinks.com
 .thebestpaints.com
+.thebicyclehut.com
 .thebigvan.com
 .thebrainybulb.com
 .thecodingpad.com
