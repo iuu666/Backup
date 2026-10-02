@@ -5829,6 +5829,7 @@
 .api-napoli.store.sscnapoli.it
 .api-notify.markarch.com
 .api-pixels.easyadsapp.com
+.api-sdk.beaconbank.jp
 .api-shrek.net.jumia.com.gh
 .api-stape.bennimoda.com.br
 .api-stape.biancastore.com.br
@@ -46816,6 +46817,7 @@
 .mar.englishkaku.com
 .marathondataco.com
 .marblediscussion.com
+.marbleseeds.com
 .marcom.biodex.com
 .marcom.biodexrehab.com
 .marcomauto.globalfoundries.com
@@ -91118,6 +91120,7 @@
 .strawberry.essenzshop.rs
 .strawburn.com
 .strawroute.com
+.stream-log.profilepassport.jp
 .stream.borza.com
 .stream.corporatefinanceinstitute.com
 .stream.datago.ru
@@ -105556,6 +105559,7 @@
 .ymvikp.estadao.com.br
 .ymviwl.just4camper.de
 .ymvmx.mygrooveguide.com
+.ymzu9eeo1y.ru
 .ynagqs.vidaxl.pl
 .ynemmp.goertz.de
 .yngnwe.8division.com
