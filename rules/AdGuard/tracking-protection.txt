@@ -34317,6 +34317,7 @@
 .heartbreakingmind.com
 .hearthow.com
 .heatmap-events-collector.instapage.com
+.heatmap-tracking-do-to-s3-worker-prod.flipdesk.workers.dev
 .heatmap.emma.tools
 .heatmap.it
 .heatmap.support-inc.co.jp
@@ -93662,6 +93663,7 @@
 .tapjoy.com
 .tapjoy.net
 .taplytics.com
+.tapoutmusic.com
 .taps.io
 .tapstat.ru
 .tapstream.com
