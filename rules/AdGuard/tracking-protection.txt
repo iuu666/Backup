@@ -24336,6 +24336,7 @@
 .evrica.omonim.com
 .evs.data.ciceksepeti.com
 .evs.segment.complex.com
+.evs.segwww.incident.io
 .evs.sgmt.loom.com
 .evss.evinyolu.net
 .evt.24.com
@@ -95482,6 +95483,7 @@
 .topmalaysia.com
 .topofblogs.com
 .topofthehill.brynje.no
+.topratedwaterfilter.com
 .topsecretapp.net
 .topshows.theotherpalace.co.uk
 .topspin.npo.nl
