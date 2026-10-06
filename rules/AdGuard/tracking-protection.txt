@@ -4805,6 +4805,7 @@
 .analytics.ikarao-shop.com
 .analytics.ikyu.com
 .analytics.infinitidesign.it
+.analytics.infomaniak.com
 .analytics.infosys.com
 .analytics.infosys.org
 .analytics.infosysbpm.com
@@ -6906,8 +6907,10 @@
 .apm-native.xiaohongshu.com
 .apm-track.xiaohongshu.com
 .apm.relationshipone.com
+.apm.volccdn.com
 .apm.yahoo.co.jp
 .apmplus.ap-southeast-1.volces.com
+.apmplus.volces.com
 .apohk.moventashop.com
 .apollo.miniclip.com
 .apollo.plein.nl
@@ -9209,6 +9212,7 @@
 .biot.byads.co
 .biotechnologysciences.com
 .bipog.perfectwhitetee.com
+.biprx.n12.co.il
 .biqizo.vixpaulahermanny.com
 .bird.brondby.com
 .bird.hecten.com
@@ -9875,6 +9879,7 @@
 .bu.adpinfo.com
 .buaal.pharmacyonline.co.uk
 .buasmk.earthshoes.com
+.buballmighty.com
 .bubasocks-ss.checkoutera.com
 .bubasocks-ss.shopperoc.com
 .bubblestat.com
@@ -102482,6 +102487,7 @@
 .visits.iloveuobgold.com
 .visits.lt
 .visitstreamer.com
+.visualcommservices.com
 .visualdna.com
 .visualrevenue.com
 .visualscience.external.bbc.co.uk
