@@ -5830,6 +5830,7 @@
 .api-napoli.store.sscnapoli.it
 .api-notify.markarch.com
 .api-pixels.easyadsapp.com
+.api-sdk-tracking.beaconbank.jp
 .api-sdk.beaconbank.jp
 .api-shrek.net.jumia.com.gh
 .api-stape.bennimoda.com.br
@@ -7560,6 +7561,7 @@
 .argus.november.de
 .argus.umarbutler.com
 .arhzq.victimadvocacycenter.com
+.ariaclean.com
 .ariane.abtasty.com
 .arif.arianperfumes.com
 .arif.hameshainvest.com
@@ -9186,6 +9188,7 @@
 .bilahh.feuvert.fr
 .bilingualgeek.com
 .billing.uwebsolutions.net
+.billionpet.com
 .billowybead.com
 .billowybelief.com
 .billtable.com
@@ -11039,6 +11042,7 @@
 .carteiro.altashabilidadesesuperdotacao.com
 .carteiro.institutomapeando.com.br
 .cartelsalsa.com
+.cartersci.com
 .cartjoint.com
 .cartlug.com
 .carts.guru
@@ -11761,6 +11765,7 @@
 .ciscenje.net.jumia.com.ng
 .cisco-capwap-controller.net.iberostar.com
 .citiservi.es
+.citizensactive.com
 .citrusad.net
 .citsnmdc01.net.mydays.de
 .city.cityattirebd.com
@@ -14524,6 +14529,7 @@
 .d.gordetmedrw.se
 .d.greatmarketing.ai
 .d.grey.co
+.d.ground.news
 .d.growify.ai
 .d.guidedascentcoaching.com
 .d.haaltheorie.nl
@@ -30374,6 +30380,7 @@
 .gtm.gridhaussystems.co.uk
 .gtm.gridx.lu
 .gtm.gringaschool.com
+.gtm.ground.news
 .gtm.groupsoftware.com.br
 .gtm.growarq.com
 .gtm.grpcorretora.com.br
@@ -59671,6 +59678,7 @@
 .qzzle.formulandcanada.com
 .qzzusj.bygghjemme.no
 .r-log.dable.io
+.r-tag.coeteco.jp
 .r.aachener-zeitung.de
 .r.akipam.com
 .r.anamagnani.com.br
@@ -93037,6 +93045,7 @@
 .tag.eu.flashforge.com
 .tag.farmatecrs.com.br
 .tag.fastpatchdrywallrepair.com
+.tag.flvcdn.net
 .tag.fmscycles.com
 .tag.foreverfierce.com
 .tag.franquiahomeangels.com.br
