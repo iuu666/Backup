@@ -4320,6 +4320,7 @@
 .analytics-conomi.line.me
 .analytics-dataplane.invideo.io
 .analytics-egain.com
+.analytics-event.com
 .analytics-events.inshorts.com
 .analytics-fe.digital-cloud-west.medallia.com
 .analytics-fe.digital-cloud.medallia.eu
@@ -9621,6 +9622,7 @@
 .boqufs.2nn.jp
 .borckt.abarth.it
 .boredcrown.com
+.borefee.com
 .boringberry.com
 .boringpirate.com
 .bosrs.avenue.com
@@ -12166,6 +12168,7 @@
 .cluster.gralhaimoveis.com.br
 .cluster.imoveiscitalli.com.br
 .clustrmaps.com
+.clutchcourses.com
 .clvelzhz.eandm.bg
 .clvk.viki.io
 .clvwgr.tvert.jp
@@ -37402,6 +37405,7 @@
 .intake-logging.wikimedia.org
 .intake-lr.com
 .intarget.ru
+.integrations-itbl.co
 .integrations.syncmedia.io
 .intel-trk.informa.com
 .intel-trk.lloydslistintelligence.com
@@ -46507,6 +46511,7 @@
 .lzwtlo.watches.ae
 .lzwxzz.chintaistyle.jp
 .m-brain.fi
+.m-chromadrone.prod.suno.com
 .m-metrics.capitalone.com
 .m-pathy.com
 .m-stratovibe.prod.suno.com
@@ -89333,6 +89338,7 @@
 .stat.rare.ru
 .stat.recklesslove.co.za
 .stat.rizeniskoly.cz
+.stat.s.ee
 .stat.safeway.com
 .stat.scroogefrog.com
 .stat.smarteca.cz
@@ -97040,6 +97046,7 @@
 .track.ertha.io
 .track.escoladefotografos.com
 .track.escoladoinconsciente.com.br
+.track.esteban.fr
 .track.estoneworks.com
 .track.eurasc.org
 .track.eurogirlsescort.com
@@ -97793,6 +97800,7 @@
 .tracker.marcomp.com.br
 .tracker.mattel.com
 .tracker.metricool.com
+.tracker.mida-app.io
 .tracker.mtrtb.com
 .tracker.multisearch.io
 .tracker.myth.dev

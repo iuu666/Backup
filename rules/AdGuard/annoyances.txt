@@ -247,6 +247,7 @@
 .consent.truste.com
 .consent.wko.at
 .consentbanner.de
+.consentement.quebecor.com
 .consentframework.com
 .consentpro.com
 .consenttool.haendlerbund.de
