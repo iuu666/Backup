@@ -23,6 +23,7 @@
 .artibot.ai
 .assets-prod.vicomi.com
 .avaamo.com
+.barry3.controld.com
 .bazzaro.ru
 .blinger.io
 .blog-rss.com
