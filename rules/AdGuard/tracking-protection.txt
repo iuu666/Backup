@@ -13031,6 +13031,7 @@
 .commercial.davey.com
 .commercial.equifax.com
 .commet.intker.com
+.commitlogs.com
 .comms.adss.com
 .comms.cigna.co.uk
 .comms.cigna.com.hk
@@ -22350,6 +22351,7 @@
 .dudu.umzugradar.de
 .dudyrv.packlinq.nl
 .duelf.xstanceinsoles.com
+.duetcode.com
 .dufbut.wtennis.com.br
 .dujgiq.trendhim.pl
 .duk.devolkitchens.co.uk
@@ -63181,6 +63183,7 @@
 .rt.ayudafinancieras.com
 .rt.balletbeautiful.com
 .rt.biovitalcorelab.com
+.rt.buzzni.com
 .rt.connectprosnow.com
 .rt.dailycarepro.com
 .rt.dispo-seo.com
@@ -101326,6 +101329,7 @@
 .tracking.brevant.com
 .tracking.brgeneral.org
 .tracking.brice.fr
+.tracking.broadpeak.io
 .tracking.bt-blue.com
 .tracking.bugece.co
 .tracking.burningbutter.com
