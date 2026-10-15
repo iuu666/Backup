@@ -6834,7 +6834,6 @@
 .api.srceprirode.rs
 .api.stahlhart.com.br
 .api.startbeglobal.com
-.api.statsig.com
 .api.statsigcdn.com
 .api.staydepot.com.br
 .api.stelariss.com.br
@@ -21956,6 +21955,7 @@
 .dorli.thehealthclique.co
 .dormir.dormax.pt
 .dormouse.consentkit.com
+.dorsalapp.com
 .dossierportal.net.mydays.de
 .doswwi.caringlasses.com
 .dot-com-stats.sladewatkins.net
@@ -22061,6 +22061,7 @@
 .drive.oparup.com
 .drive.seagate.com
 .driveniq.com
+.drivenmove.com
 .drivetrain.gearrista.dk
 .drjzh.loveinfaith.life
 .drkaq.nlbeauty.bg
@@ -22876,6 +22877,7 @@
 .earwig.oofi.es
 .eastcapelots.com
 .easter-analytics.com
+.eastpalms.com
 .easy-hit-counters.com
 .easy.fixoem.com
 .easy.lv
@@ -25489,6 +25491,7 @@
 .extole.com
 .extole.io
 .extra.wijck.com
+.extracover.net
 .extractobservation.com
 .extralocker.com
 .extramilefloorcare.ericksonbuilt.com
