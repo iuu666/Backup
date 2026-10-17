@@ -3351,6 +3351,7 @@
 .adtarget.fcbarcelona.net
 .adtarget.fcbrookies.cat
 .adtarget.me
+.adtasukaru.com
 .adtcdn.unidadeditorial.es
 .adtd.douglas.at
 .adtd.douglas.be
@@ -25779,6 +25780,7 @@
 .extra.wijck.com
 .extracover.net
 .extractobservation.com
+.extraliner.com
 .extralocker.com
 .extramilefloorcare.ericksonbuilt.com
 .extramonies.com
@@ -26678,6 +26680,7 @@
 .fitibeats-ss.checkoutera.com
 .fitibeats-ss.offeroshop.com
 .fitnessmapper.com
+.fitnesssponsor.com
 .fitwithalpine.com
 .fitzt.guruhotel.com
 .fiuoo.molarclean.com
@@ -27527,6 +27530,7 @@
 .ftmvv.heydude.com
 .ftnnce.autodoc.dk
 .ftp.rottne.com
+.ftpmagic.com
 .ftqmv.midtownumbrellas.com
 .ftqsz.frankiesbikinis.com
 .ftrack.dowasdeal.com
@@ -27802,6 +27806,7 @@
 .g.probatterij.nl
 .g.restoreyourcore.com
 .g.rocket-school.com
+.g.rtbrain.app
 .g.rushtranslate.com
 .g.saksooka.com
 .g.scharfenstein.eu
