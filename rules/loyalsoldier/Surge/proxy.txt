@@ -6888,6 +6888,7 @@ zftksc.launches.appsflyersdk.com
 .cursor.com
 .cursor.sh
 .cursorapi.com
+.cursorvm.com
 .curve.fi
 .curvefish.com
 .curvybbwwives.com
@@ -18226,6 +18227,7 @@ zftksc.launches.appsflyersdk.com
 .opac-project.eu
 .open.firstory.me
 .openai.com
+.openai.org
 .openamt.com
 .openapiplatform.com
 .openapiservice.com
@@ -20866,6 +20868,7 @@ zftksc.launches.appsflyersdk.com
 .schwab.com.hk
 .schwab.com.sg
 .schwabassetmanagement.com
+.schwabcdn.com
 .schwabplan.com
 .sci-hub.ee
 .sci-hub.it.nf
@@ -23225,6 +23228,8 @@ zftksc.launches.appsflyersdk.com
 .timestalks.com
 .timeweb.cloud
 .timeweb.com
+.timeweb.tech
+.timewebcloud.kz
 .timi1.me
 .timo0.com
 .timtales.com
@@ -23802,6 +23807,7 @@ zftksc.launches.appsflyersdk.com
 .typekit.net
 .typenetwork.com
 .typepad.com
+.typesafe.ai
 .typeset.io
 .typesquare.com
 .typography.com
