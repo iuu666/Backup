@@ -270,6 +270,8 @@ impala-media-production.s3.amazonaws.com
 imperial.insendi.com
 incoming-telemetry.thunderbird.net
 incoming.telemetry.mozilla.org
+kp-config-smart-tv.akamaized.net
+kp-configs-smart-tv.s3.eu-central-1.amazonaws.com
 lastfm-img.freetls.fastly.net
 lastfm.freetls.fastly.net
 lazer.ppy.sh
@@ -15246,6 +15248,7 @@ zftksc.launches.appsflyersdk.com
 .magestic.com
 .magicalmirai.com
 .magicmovies.com
+.magnific.com
 .mahajantech.com
 .mahjongsoul.com
 .maidonanews.jp
@@ -16717,6 +16720,7 @@ zftksc.launches.appsflyersdk.com
 .mt0011.site
 .mtao.fun
 .mthruf.com
+.mts-link.ru
 .mts-ws.net
 .mts.ru
 .mtsbank.ru
@@ -19565,6 +19569,7 @@ zftksc.launches.appsflyersdk.com
 .postimages.org
 .postimg.cc
 .postini.com
+.postman.com
 .posts.careerengine.us
 .posty.kr
 .postyourgirls.ws
