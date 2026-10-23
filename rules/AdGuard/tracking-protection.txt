@@ -8134,6 +8134,7 @@
 .applytics.napps-1.com
 .applytics.nordvpn.com
 .applytics.os4work.com
+.applytics.zwyr157wwiu6eior.com
 .appmetr.com
 .appmetrica.yandex.com
 .appmetrica.yandex.net
@@ -21380,6 +21381,7 @@
 .data.voorkappers.be
 .data.voyager.dev.cjmadobe.com
 .data.voybien.com
+.data.vzhh.de
 .data.waleskamarinho.com
 .data.wallartsmetal.com
 .data.wanderingowl.com
@@ -50162,6 +50164,7 @@
 .manaus.ondec.com.br
 .manaus2026.ondec.com.br
 .manauslidera2026.ondec.com.br
+.manawell.net
 .mandant.net.anwalt.de
 .mandc.pwc.no
 .mandibula.resettfitness.com.br
@@ -81619,6 +81622,7 @@
 .spyfocusshop-ss.shopboosta.com
 .spylog.com
 .spylog.ru
+.spyrep.com
 .spysubstance.com
 .spytsg.horti.jp
 .spyzw.sexyhair.com
@@ -95793,6 +95797,7 @@
 .stats.crunchtime.fun
 .stats.crypdit.com
 .stats.cuddlers.co.za
+.stats.curd.io
 .stats.curtiscummings.me
 .stats.cybersim.de
 .stats.cyknij.com
@@ -110761,6 +110766,7 @@
 .wellaskin-sst.checkoutera.com
 .wellawhite-ss.checkoutera.com
 .wellawoman-ss.olladeals.com
+.wellbeingforce.com
 .wellbyfinancial.fmservice.com
 .wellfi.drinksprinkle.com
 .wellfi.enjoysprinkle.com
@@ -110957,6 +110963,7 @@
 .withsounds.com
 .withyou.shorr.com
 .witpux.habitaclia.com
+.wittyfamous.com
 .wittypopcorn.com
 .wittyshack.com
 .wiwa.williamwalker.be
