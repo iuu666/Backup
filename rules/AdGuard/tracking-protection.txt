@@ -569,6 +569,7 @@
 .a.camvision.dk
 .a.carryu.com
 .a.cartop.dk
+.a.cdn-lab.shop
 .a.chdist.com
 .a.cineflix.st
 .a.closerpets.co.uk
@@ -50164,7 +50165,6 @@
 .manaus.ondec.com.br
 .manaus2026.ondec.com.br
 .manauslidera2026.ondec.com.br
-.manawell.net
 .mandant.net.anwalt.de
 .mandc.pwc.no
 .mandibula.resettfitness.com.br
@@ -60897,6 +60897,7 @@
 .painstakingpickle.com
 .paintmogul.com
 .paintpear.com
+.pajamabrand.com
 .pajfpadj.kuorsis.fi
 .pajsb.coopsleepgoods.com
 .pakdru.altrarunning.com
@@ -107758,7 +107759,6 @@
 .unif-id.ssp.inmobi.com
 .unif.hedgy-haagplanten.nl
 .unified-ter-na.hismarttv.com
-.unifybots.com
 .uninterestedquarter.com
 .uniqodo.com
 .unisdk.proxima.nie.easebar.com
