@@ -61977,6 +61977,7 @@
 .pingmeter.com
 .pingomatic.com
 .pingpong.us
+.pingprove.com
 .pings.conviva.com
 .pingsurvey.com
 .pingtas.qq.com
