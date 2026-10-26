@@ -9554,6 +9554,7 @@
 .behavior-tracking-event-gateway.imweb.me
 .behavior.tongdun.net
 .behavioralengine.com
+.beholdthyson.com
 .bei.amstelwood.nl
 .bekannt-im-web.de
 .belanger.net.anwalt.de
@@ -61997,6 +61998,7 @@
 .pipeline.rd.nl
 .pipeline.sangemeel.shop
 .pippio.com
+.pipsgain.com
 .pipujp.titaneyeplus.com
 .piq4.inseec.education
 .piqcg.sokolovelaw.com
