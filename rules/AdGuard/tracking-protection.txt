@@ -10050,6 +10050,7 @@
 .bigconfigs.reliableequipmentparts.com
 .bigdata-scfx-push.kucoin.plus
 .bigdata.clarin.com
+.bigdata.downza.com
 .bigfishapparel.com
 .bigfluffycatexchange.crabdance.com
 .biggerbling.com
@@ -13741,6 +13742,7 @@
 .collect.peek-cloppenburg.pl
 .collect.pipekit.co.uk
 .collect.pollentjek.dk
+.collect.pravdastat.com
 .collect.premiere-urgence.org
 .collect.printera.lt
 .collect.purple.com
@@ -31028,6 +31030,7 @@
 .gravity4.com
 .gravitygive.com
 .gravitykick.com
+.gravitypics.com
 .gray-csr12.net.abomix.de
 .graychalk.com
 .grayoranges.com
@@ -31066,6 +31069,7 @@
 .grocerycrew.com
 .grocerydog.com
 .grofag.hollandandbarrett.ie
+.groglog.com
 .groove.eezyball.com
 .groovespacing.com
 .groovy-manul.pikapod.net
@@ -37477,6 +37481,7 @@
 .hduuf.mesotheliomaclaimscenter.info
 .hdxdhu.zumnorde.de
 .hdzupx.bonprix-wa.be
+.headbandeau.com
 .headlight.caro-auto.de
 .headshot.monster
 .headydegree.com
@@ -58377,6 +58382,7 @@
 .metrics.sebkort.com
 .metrics.secure.eurocard.com
 .metrics.securemaxxia.com.au
+.metrics.selectel.ru
 .metrics.selectquote.com
 .metrics.seloger.com
 .metrics.semana.com
@@ -67128,6 +67134,7 @@
 .quhdnr.musiciansfriend.com
 .quick-counter.net
 .quicklyedit.com
+.quickpints.com
 .quicktattoo.com
 .quicktrick.net
 .quiddity.goguardian.com
@@ -104263,6 +104270,7 @@
 .telemetry.oliverwymanforum.com
 .telemetry.otsuka-us.com
 .telemetry.owenscorning.com
+.telemetry.paypay.ne.jp
 .telemetry.proton.me
 .telemetry.ruthschris.com
 .telemetry.schwinnfitness.com
@@ -111113,6 +111121,8 @@
 .umami.stayspiced.com
 .umami.trackiq.com
 .umami.trapilot.ai
+.umami.vidfast.vc
+.umami.vidup.to
 .umami2.devliang.xyz
 .umami3.devliang.xyz
 .umami4.devliang.xyz
@@ -116408,6 +116418,7 @@
 .zendesk-integration.net.mydays.de
 .zenkq.happyhairbrush.co.uk
 .zenru.1md.org
+.zenstats.yzhy19.cn
 .zenticbd.zentic.com.bd
 .zeocr.realbotanicals.com
 .zeoorc.nordicnest.dk

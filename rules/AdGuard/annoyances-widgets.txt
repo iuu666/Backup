@@ -207,6 +207,7 @@
 .widget.beesender.com
 .widget.beop.io
 .widget.bitay.com.tr
+.widget.brambles.ai
 .widget.chatbullet.com
 .widget.cloud-cdn.ru
 .widget.contactleader.pl
