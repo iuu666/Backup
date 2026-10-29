@@ -37523,6 +37523,7 @@
 .heatmap.it
 .heatmap.support-inc.co.jp
 .heatoor-ss.primeshopers.com
+.heatrave.com
 .heavmgby.www.doubleb.bio
 .heavydetail.com
 .heavyplayground.com
@@ -37587,6 +37588,7 @@
 .hemcgm.smaphocase.com
 .hemxqn.boldking.com
 .henrydrich.edge48.testandtarget.omniture.com
+.hensonempire.com
 .hentaicounter.com
 .hente.afffclaimscenter.com
 .henwilkson.com
@@ -37625,6 +37627,7 @@
 .hey.tanqueo.com
 .heyaxr.fashiondays.bg
 .heycomputers.com
+.heyhotshots.com
 .heymatic.com
 .heystaks.com
 .heytr.kaleandme.de
@@ -67304,6 +67307,7 @@
 .rac.ruutu.fi
 .raccoon.alexanderssonlaw.com
 .raccoon.jaronheard.com
+.racerpets.com
 .racket.metzler.fr
 .racket.metzler.it
 .rackforstorage.com
@@ -67513,6 +67517,7 @@
 .readgins.smithbook.com
 .readingguilt.com
 .readnotify.com
+.readourminds.com
 .ready.aljut.com
 .ready.curriculumassociates.com
 .readymoon.com
@@ -67708,6 +67713,7 @@
 .regularplants.com
 .regulatesleet.com
 .rehabilitatereason.com
+.reignfans.com
 .reijhx.budgetheating.com
 .reindaks.com
 .reingod.com
@@ -99901,6 +99907,7 @@
 .stats.spark.co.nz
 .stats.spark.nz
 .stats.sparkloop.app
+.stats.spidersense.xyz
 .stats.spottedlublin.pl
 .stats.spreadsimple.com
 .stats.spreadtheworld.net
@@ -111121,6 +111128,7 @@
 .umami.stayspiced.com
 .umami.trackiq.com
 .umami.trapilot.ai
+.umami.vidcore.net
 .umami.vidfast.vc
 .umami.vidup.to
 .umami2.devliang.xyz
