@@ -173,6 +173,7 @@
 .soglkuki.prolexgroup.ru
 .sp.api.no
 .spolecznosci.mgr.consensu.org
+.static-cmp22.ciaopeople.it
 .tarteaucitron.io
 .team.epccm19.com
 .thestrad-gb.thestrad.com

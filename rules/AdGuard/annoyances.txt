@@ -707,6 +707,7 @@
 .spolecznosci.mgr.consensu.org
 .ss.6ib.ru
 .st.yagla.ru
+.static-cmp22.ciaopeople.it
 .static.landbot.io
 .static.leadia.ru
 .static.me-talk.ru
