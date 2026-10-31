@@ -6432,6 +6432,7 @@
 .aphjor.welovepuzzle.ro
 .aphtn.dsw.ca
 .aphxav.green-acres.it
+.api-abtest-cdn.learnings.ai
 .api-access.pangolin-sdk-toutiao1.com
 .api-adservices.apple.com
 .api-analytics.pelikan.sk
@@ -9697,6 +9698,7 @@
 .bestclimbers.net
 .bestcoffeemachine.net
 .bestill.help.no
+.bestpriceonly.com
 .bestshoesboot.com
 .bestsportsbra.com
 .besucher.nona.de
@@ -12054,6 +12056,7 @@
 .carefuldolls.com
 .carepay.gaf.com
 .cargdk.bakerross.co.uk
+.cargrasp.com
 .caribou.mcgregorpublishing.com
 .caringcast.com
 .carloforward.com
@@ -12460,6 +12463,7 @@
 .cdn.shopnowlulu.com
 .cdn.smartgoods.de
 .cdn.smlog.co.kr
+.cdn.snitcher.com
 .cdn.sophi.io
 .cdn.sorenwatches.com
 .cdn.sov.stream
@@ -13008,6 +13012,7 @@
 .clavecin.taokids.be
 .clavecin.taokids.com
 .claycandle.com
+.claydar.com
 .clb.yahoo.co.jp
 .clb.yahooapis.jp
 .clc.stackoverflow.com
@@ -28262,6 +28267,7 @@
 .fluencymedia.com
 .fluff.stape.com.ua
 .fluffy-analytics.vercel.app
+.fluffybirds.com
 .fluffyscompleatbouti.net.mydays.de
 .fluidsurveys.com
 .flurry.com
@@ -37740,6 +37746,7 @@
 .high.adhd-founder.com
 .high.useoxepay.com.br
 .higherengine.com
+.higherhub.com
 .highfalutinbox.com
 .highfalutinhoney.com
 .highmetrics.com
@@ -39564,6 +39571,7 @@
 .individuad.net
 .indiyo.38-8931.com
 .indoeasia.edm.globalsources.com
+.indscout.com
 .industry.statefoodsafety.com
 .industry.tafensw.edu.au
 .ineedhits.com
@@ -67325,6 +67333,7 @@
 .radar.josianamendes.adv.br
 .radar.marinhoadvmg.com.br
 .radar.rodrigopradomentor.com.br
+.radar.snitcher.com
 .radexports.com
 .radi.l27.cz
 .radi.zachrannasit.cz
@@ -99091,6 +99100,7 @@
 .stats.circularfurniture.dk
 .stats.citizenos.com
 .stats.clavisaurea.xyz
+.stats.cleanip.io
 .stats.clear-media.com
 .stats.cleverdiabetic.com
 .stats.cloudflex.team
