@@ -12890,6 +12890,7 @@
 .cinrv.genuinestyle.com
 .ciqds.geta33.com
 .ciqne.myobvi.com
+.circascope.com
 .circle.am
 .circlelevel.com
 .cirrus-full-snapshots-track-csv-v1-0-na-prod.s3.amazonaws.com
@@ -41428,6 +41429,8 @@
 .jayshoesshop-ss.topashopo.com
 .jaytk.ecosproutify.com
 .jaytk.natureswellnessonline.com
+.jazzdocumentary.com
+.jazzpianofast.com
 .jbanv.etrendygo.com
 .jbbljg.autoscout24.bg
 .jbddm.broadwayintucson.com
@@ -41935,6 +41938,7 @@
 .jovslw.gardenmarkt.de
 .jowtkv.vertbaudet.de
 .joybangla.itsa1shop.com
+.joybegins.com
 .joyfulharbor.com
 .joyouspool.com
 .joyoussurprise.com
@@ -42486,6 +42490,7 @@
 .keycloak.rottne.com
 .keydbc.fabgetaways.com
 .keymetric.net
+.keymono.net
 .keytrack.de
 .keywee.co
 .keywordstrategy.org
@@ -110758,6 +110763,7 @@
 .ub-analytics.com
 .ub-xjp.vvbrd.com
 .ub.finanzfrage.net
+.ubbrobccheck20.cc
 .ubcaih.xlmoto.dk
 .ubcolj.cebu-oh.com
 .ubdbja.bellaboho.com
