@@ -17656,6 +17656,7 @@ xz.pphimalayanrt.com
 .bustoprint.com
 .bustruckexpo.com
 .busuanzi.cc
+.busyming.com
 .but7.com
 .butair.com
 .butao.com
@@ -29664,6 +29665,7 @@ xz.pphimalayanrt.com
 .doubanio.com
 .doubao-dev.com
 .doubao.com
+.doubaoapps.com
 .doubaocdn.com
 .doubaozhidao.com
 .doubean.com
@@ -109913,6 +109915,7 @@ xz.pphimalayanrt.com
 .zymc1.com
 .zymkcdn.com
 .zymkshop.com
+.zymls.com
 .zyoffice.com
 .zyoo.net
 .zyoogame.com
