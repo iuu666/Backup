@@ -114,6 +114,7 @@
 .cookies.travyk.nl
 .cookies.truecaller.com
 .cookiespool.com
+.cookiethough.dev
 .cookiewarden-content.teb.com.tr
 .cookihq.com
 .cp.gutefrage.net
@@ -160,6 +161,7 @@
 .privacy.advancelocal.com
 .privacy.condenastdigital.com
 .privacy.ene.si
+.privacy.fcbcookies.cat
 .privacy.selbst.de
 .privacy.wum.rocks
 .prod-origin.truendo.com

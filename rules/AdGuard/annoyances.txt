@@ -288,6 +288,7 @@
 .cookies.travyk.nl
 .cookies.truecaller.com
 .cookiespool.com
+.cookiethough.dev
 .cookiewarden-content.teb.com.tr
 .cookihq.com
 .corover.mobi
@@ -565,6 +566,7 @@
 .privacy.advancelocal.com
 .privacy.condenastdigital.com
 .privacy.ene.si
+.privacy.fcbcookies.cat
 .privacy.selbst.de
 .privacy.wum.rocks
 .pro-news.net
