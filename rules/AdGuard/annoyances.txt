@@ -149,6 +149,7 @@
 .chaser.ru
 .chat.amplify.ai
 .chat.autofaq.ai
+.chat.loopsai.com
 .chat.mundiale.com.br
 .chat.quickcep.com
 .chat.sociomile.com

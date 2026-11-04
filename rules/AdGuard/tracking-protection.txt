@@ -6491,6 +6491,7 @@
 .api-meta.mercelsantos.com.br
 .api-meta.petitcolore.com.br
 .api-napoli.store.sscnapoli.it
+.api-node.corvexa.cloud
 .api-notify.markarch.com
 .api-pixels.easyadsapp.com
 .api-sdk-tracking.beaconbank.jp
@@ -9275,7 +9276,6 @@
 .b.socialdemokraterna.se
 .b.telus.com
 .b.tienda.com
-.b.trueanthem.com
 .b.tryknowmad.com
 .b.videoamp.com
 .b.wheelabratorgroup.com
@@ -13994,6 +13994,7 @@
 .collector.trendmd.com
 .collector.umogames.com
 .collector.vhx.tv
+.collector.wawlabs.com
 .collector.xhaccess.com
 .collector.xhamster.com
 .collector.xhofficial.com
@@ -105190,6 +105191,7 @@
 .telemetry.doitbeststore.com
 .telemetry.doxo.com
 .telemetry.dzen.ru
+.telemetry.ecosoft.group
 .telemetry.eyeo.com
 .telemetry.gfe.nvidia.com
 .telemetry.goodlifefitness.com
@@ -111078,6 +111080,7 @@
 .tru.am
 .truckstomatoes.com
 .truculentrate.com
+.trueanthem.com
 .truebackpack.com
 .truehits.in.th
 .truehits.net
