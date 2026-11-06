@@ -101,6 +101,7 @@
 .fastcallagent.com
 .feedback.luxnet.ua
 .feedgrabbr.com
+.fibot-widget.fibabanka.com.tr
 .foresee.com
 .form.cloudleadia.com
 .formilla.com

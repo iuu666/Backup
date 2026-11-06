@@ -357,6 +357,7 @@
 .feedify.net
 .feraciumus.com
 .fernomius.com
+.fibot-widget.fibabanka.com.tr
 .flipdish-cookie-consent.s3-eu-west-1.amazonaws.com
 .fontmenice.com
 .foresee.com
