@@ -12310,6 +12310,7 @@
 .cassatp.roadcases.com
 .cassette.planetecycle.com
 .cast.net.anwalt.de
+.castlereach.com
 .casualphysics.com
 .cat.beunitedinchrist.com
 .cat.fiore.ai
@@ -67439,6 +67440,7 @@
 .pumpedpurpose.com
 .pumpkin.abine.com
 .pumpkin.bellaandduke.com
+.puncherr.com
 .punk.strangereaction.com
 .puntosadoc.comunicaciones.puntosadoc.com
 .punyplant.com
@@ -114636,6 +114638,8 @@
 .visits.iloveuobgold.com
 .visits.lt
 .visitstreamer.com
+.visor.sberbank.ru
+.visor.sbrf.ru
 .visual.danielgomezglobal.com
 .visualcommservices.com
 .visualdna.com

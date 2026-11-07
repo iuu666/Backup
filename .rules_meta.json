@@ -2,10 +2,6 @@
   "chinese-filter.txt": {
     "history": [
       {
-        "date": "2026-10-08",
-        "count": 6270
-      },
-      {
         "date": "2026-10-09",
         "count": 6276
       },
@@ -120,16 +116,16 @@
       {
         "date": "2026-11-06",
         "count": 6137
+      },
+      {
+        "date": "2026-11-07",
+        "count": 6148
       }
     ],
-    "latest": 6137
+    "latest": 6148
   },
   "tracking-protection.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 106552
-      },
       {
         "date": "2026-10-09",
         "count": 106560
@@ -245,16 +241,16 @@
       {
         "date": "2026-11-06",
         "count": 119001
+      },
+      {
+        "date": "2026-11-07",
+        "count": 119005
       }
     ],
-    "latest": 119001
+    "latest": 119005
   },
   "base-filter.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 56325
-      },
       {
         "date": "2026-10-09",
         "count": 56571
@@ -370,16 +366,16 @@
       {
         "date": "2026-11-06",
         "count": 54636
+      },
+      {
+        "date": "2026-11-07",
+        "count": 54934
       }
     ],
-    "latest": 54636
+    "latest": 54934
   },
   "annoyances-cookie-notices.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 188
-      },
       {
         "date": "2026-10-09",
         "count": 189
@@ -495,16 +491,16 @@
       {
         "date": "2026-11-06",
         "count": 192
+      },
+      {
+        "date": "2026-11-07",
+        "count": 192
       }
     ],
     "latest": 192
   },
   "annoyances.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 877
-      },
       {
         "date": "2026-10-09",
         "count": 878
@@ -620,16 +616,16 @@
       {
         "date": "2026-11-06",
         "count": 886
+      },
+      {
+        "date": "2026-11-07",
+        "count": 886
       }
     ],
     "latest": 886
   },
   "annoyances-mobile-app-banners.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 3
-      },
       {
         "date": "2026-10-09",
         "count": 3
@@ -744,6 +740,10 @@
       },
       {
         "date": "2026-11-06",
+        "count": 3
+      },
+      {
+        "date": "2026-11-07",
         "count": 3
       }
     ],
@@ -752,10 +752,6 @@
   "annoyances-popups.txt": {
     "history": [
       {
-        "date": "2026-10-08",
-        "count": 421
-      },
-      {
         "date": "2026-10-09",
         "count": 421
       },
@@ -869,6 +865,10 @@
       },
       {
         "date": "2026-11-06",
+        "count": 421
+      },
+      {
+        "date": "2026-11-07",
         "count": 421
       }
     ],
@@ -877,10 +877,6 @@
   "annoyances-other.txt": {
     "history": [
       {
-        "date": "2026-10-08",
-        "count": 16
-      },
-      {
         "date": "2026-10-09",
         "count": 16
       },
@@ -994,6 +990,10 @@
       },
       {
         "date": "2026-11-06",
+        "count": 16
+      },
+      {
+        "date": "2026-11-07",
         "count": 16
       }
     ],
@@ -1002,10 +1002,6 @@
   "social-media.txt": {
     "history": [
       {
-        "date": "2026-10-08",
-        "count": 49
-      },
-      {
         "date": "2026-10-09",
         "count": 49
       },
@@ -1120,16 +1116,16 @@
       {
         "date": "2026-11-06",
         "count": 49
+      },
+      {
+        "date": "2026-11-07",
+        "count": 49
       }
     ],
     "latest": 49
   },
   "annoyances-widgets.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 253
-      },
       {
         "date": "2026-10-09",
         "count": 253
@@ -1245,16 +1241,16 @@
       {
         "date": "2026-11-06",
         "count": 258
+      },
+      {
+        "date": "2026-11-07",
+        "count": 258
       }
     ],
     "latest": 258
   },
   "dns-filter.txt": {
     "history": [
-      {
-        "date": "2026-10-08",
-        "count": 178392
-      },
       {
         "date": "2026-10-09",
         "count": 178664
@@ -1370,8 +1366,12 @@
       {
         "date": "2026-11-06",
         "count": 189020
+      },
+      {
+        "date": "2026-11-07",
+        "count": 189336
       }
     ],
-    "latest": 189020
+    "latest": 189336
   }
 }
