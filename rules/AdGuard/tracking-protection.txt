@@ -14103,6 +14103,7 @@
 .collector.roistat.com
 .collector.schibsted.io
 .collector.scopely.io
+.collector.snowplow.supercell.com
 .collector.snplow.net
 .collector.statowl.com
 .collector.superwall.me
@@ -30661,6 +30662,7 @@
 .ghonnz.columbiasports.co.jp
 .ghorserver.ghoreponno.com
 .ghostgenie.com
+.ghostscholars.com
 .ghostwoodalbum.com
 .ghosv.goodgames.com.au
 .ghp.adp.ca
@@ -60326,6 +60328,7 @@
 .mkt.paleolf.com
 .mkt.sensio.com.br
 .mkt.seuclienteoculto.com.br
+.mkt.supercell.com
 .mkt.torr.com.bd
 .mkt.tyrenergia.com.br
 .mkt.universo88.com.br
@@ -67086,6 +67089,7 @@
 .programmes-skema.skema.edu
 .programs.ironmountain.com
 .programs.mellanox.com
+.projectglove.com
 .projectsunblock.com
 .promclickapp.biz
 .prometheus.eulerian.io
@@ -67465,6 +67469,7 @@
 .purpose.maxizoo.pl
 .purposepipe.com
 .purr.javawhiskers.co.uk
+.pursuitwomen.com
 .push-api.topaz-analytics.com
 .push.zhanzhang.baidu.com
 .push2check.com
