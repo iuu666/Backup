@@ -5102,6 +5102,7 @@
 .analytics.dashboard.fingerprint.com
 .analytics.data.lloydsbankinggroup.com
 .analytics.data.visenze.com
+.analytics.datacite.org
 .analytics.datahc.com
 .analytics.datasavannah.com
 .analytics.datascientest.com
@@ -30742,7 +30743,6 @@
 .gjgjl.1898leather.com
 .gjhjo.impactdogcrates.com
 .gjhkyh.4fresh.ru
-.gjirafa.net
 .gjirc.findyourhealthyplace.com
 .gjjtey.mystylebags.it
 .gjkha.beautyandtheboutique.com
@@ -41668,6 +41668,7 @@
 .intinfo.wolterskluwer.com
 .intlsst.zagg.com
 .intlsucus.ucweb.com
+.intobuddy.com
 .intouch.schlesingerassociates.com
 .intr.naymish.com
 .intralog.euvou.events
@@ -41742,6 +41743,7 @@
 .ioxqdp.leatherology.com
 .iozozb.shapertools.com
 .ip-adress.com
+.ip-info.ff.avast.com
 .ip-label.net
 .ip.chipestimate.com
 .ip.goguardian.com
@@ -41792,6 +41794,7 @@
 .iplogger.info
 .iplogger.org
 .iplogger.ru
+.ipm-provider.ff.avast.com
 .ipm.adblockplus.dev
 .ipmeta.io
 .ipmolrez.ems-dolorclast.com
@@ -44710,6 +44713,7 @@
 .lime.zaplamp.com
 .limecodesign.com
 .limepeal.com
+.limitowl.com
 .limpet.pioneerlandscapingllc.com
 .line1-log.biligame.net
 .lineartechnik.item24.de
@@ -61709,6 +61713,7 @@
 .nc0.co
 .ncbabz.hometogo.co.uk
 .ncbvr.workmanusa.com
+.ncc.avast.com
 .ncc.nip-col.jp
 .nccaf.ncc-mens.com
 .nccbp.apothekerblatt.com
@@ -65905,6 +65910,7 @@
 .piranha.minnmyatsoe.com
 .pirnn.hibobbie.com
 .pirsch.io
+.pisano.com.tr
 .pisqpr.puuilo.fi
 .pista.pecasmagicas.com.br
 .pitaya.devinue.com.br
@@ -69944,6 +69950,8 @@
 .rubicon.wellsfargo.com
 .rubolite.ems-dental.com
 .rubouthunger.com
+.rubwonders.com
+.rubymoonwinery.com
 .rubyswinehouse.com
 .rucounter.ru
 .rudder-server-prd.arena.im
@@ -71966,6 +71974,7 @@
 .scriptshead.com
 .scripttags.jst.ai
 .scrollservice.com
+.scrubchi.com
 .scrubswim.com
 .scs.allsecur.nl
 .scs.arcteryx.com
@@ -79631,6 +79640,7 @@
 .sheep.vaxstandby.com
 .sheeta.nrj-play.fr
 .sheoil.newyorkandcompany.com
+.shepherd.ff.avast.com
 .sherlock-events-sampler.ebay.com
 .sherlock.gessikanogueira.com.br
 .sherlock.markplusinstitute.com
