@@ -204,6 +204,7 @@
 .cmp.seniorguide.jp
 .cmp.setupcmp.com
 .cmp.sibbo.net
+.cmp.sklep.motogo.pl
 .cmp.springernature.com
 .cmps.o2.cz
 .cmpv2.computerwoche.de
