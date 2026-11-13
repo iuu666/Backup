@@ -721,6 +721,7 @@
 .stengeholt.com
 .sticky.news
 .stumtererum.com
+.subscribe-forms.beehiiv.com
 .sumo.com
 .support-widget.userlocal.jp
 .swaptrap.live
