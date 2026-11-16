@@ -79,6 +79,7 @@ bnetcmsus-a.akamaihd.net
 bnetproduct-a.akamaihd.net
 bnetshopus.akamaized.net
 brightcove.imgix.net
+builds.dotnet.microsoft.com
 bybit-exchange.github.io
 bybit.ada.support
 c.ppy.sh
@@ -181,6 +182,7 @@ dlmobilegarena-a.akamaihd.net
 dmqdd6hw24ucf.cloudfront.net
 docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com
 docker-pinata-support.s3.amazonaws.com
+dotnetcli.trafficmanager.net
 doy2mn9upadnk.cloudfront.net
 dqd0jw5gvbchn.cloudfront.net
 dqrpb9wgowsf5.cloudfront.net
@@ -549,6 +551,7 @@ steamusercontent-a.akamaihd.net
 steamuserimages-a.akamaihd.net
 steamvideo-a.akamaihd.net
 straitsx-826709081262441084-b790f87a2ae6fd417434295.freshchat.com
+sundry-star-net-geo.trafficmanager.net
 supercell.helpshift.com
 supercell.zendesk.com
 t.ssp.hinet.net
@@ -7170,6 +7173,7 @@ zftksc.launches.appsflyersdk.com
 .deasians.com
 .debank.com
 .debian.org
+.debot.ai
 .debug.com
 .debugproject.com
 .decentr.net
@@ -20410,6 +20414,7 @@ zftksc.launches.appsflyersdk.com
 .relateiq.com
 .religionnews.com
 .remirepo.net
+.remna.dev
 .remna.st
 .rencapbank.ru
 .renchead.com

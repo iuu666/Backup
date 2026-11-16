@@ -111,6 +111,7 @@ collaborateppe.download.prss.microsoft.com
 communities.apple.com
 configuration.apple.com
 configuration.apple.com.akadns.net
+configuration.ls.apple.com
 connectivitycheck.gstatic.com
 crashlyticsreports-pa.googleapis.com
 crl-lb.apple.com.akadns.net
@@ -327,10 +328,12 @@ msdn.download.prss.microsoft.com
 msdprod-ad.download.prss.microsoft.com
 msproduct.download.prss.microsoft.com
 music.apple.com
+musicstatus.itunes.apple.com
 musicstatus.music.apple.com
 mvod.itunes.apple.com
 myapp.itunes.apple.com
 myvs.download.prss.microsoft.com
+mzstorekit.itunes.apple.com
 np-edge.itunes.apple.com
 ntp.aliyun.com
 ntp.tencent.com
@@ -18571,6 +18574,7 @@ xz.pphimalayanrt.com
 .capsuleshanghai.com
 .captain-cro.com
 .captainbi.com
+.captive.apple.com
 .capturetheflag.fun
 .capvision.com
 .capwhale.com
