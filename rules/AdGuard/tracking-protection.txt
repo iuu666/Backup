@@ -12558,6 +12558,7 @@
 .cassatp.pacificregister.com
 .cassatp.roadcases.com
 .cassette.planetecycle.com
+.cast-imp.jtbc.co.kr
 .cast.net.anwalt.de
 .castlereach.com
 .casualphysics.com
@@ -86945,6 +86946,7 @@
 .sport.wingsfit1.com
 .sportsclubstat.com
 .sportsnearby.com
+.sportswidows.com
 .sportybrains.com
 .sportyforum.com
 .spositive.positivelife.pl
@@ -102651,6 +102653,7 @@
 .stats.pronouns.page
 .stats.propublica.org
 .stats.protoelectro.com
+.stats.proxypurity.com
 .stats.psychotherapieravensburg.de
 .stats.psykedeliskportal.dk
 .stats.pttrn.io
@@ -108460,6 +108463,7 @@
 .tophits4u.de
 .topicalcartel.com
 .topicjungle.com
+.topicspin.com
 .topiz.ru
 .toplaunch.net
 .toplist.cz
@@ -116078,6 +116082,7 @@
 .visitstreamer.com
 .visor.sberbank.ru
 .visor.sbrf.ru
+.vistacool.net
 .vistalid-statistiques.fr
 .visual.danielgomezglobal.com
 .visualcommservices.com
@@ -116769,6 +116774,7 @@
 .wam.flirttrck.com
 .wamahe.wokularach.pl
 .wan.kbdmp.com
+.wanmatures.com
 .wantingwindow.com
 .wao.atu.de
 .wap.wovn.io
@@ -116811,6 +116817,7 @@
 .waterboa.midu.dev
 .waterboa.nighttrain.co
 .watering.drinkflowater.com
+.waterloco.com
 .waterywave.com
 .watg.xxxlutz.com
 .wats.gogoinflight.com
@@ -116824,6 +116831,7 @@
 .wavesmachine.com
 .wavrlh.cedok.cz
 .wavzlt.michaelstars.com
+.waxguide.com
 .waxsirens.com
 .way2traffic.com
 .wayfinderanalytics.servicebus.windows.net
