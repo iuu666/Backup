@@ -5263,6 +5263,7 @@ zftksc.launches.appsflyersdk.com
 .bravoteens.com
 .bravotube.net
 .bravotube.tv
+.bravotv.com
 .brawlstars.com
 .brawlstarsgame.com
 .brazilpartneruniversity.com
@@ -6485,6 +6486,7 @@ zftksc.launches.appsflyersdk.com
 .cn.shafaqna.com
 .cna.com.tw
 .cnbc.com
+.cnbccouncils.com
 .cnbcfm.com
 .cnbeta.com
 .cnbeta.com.tw
@@ -9368,6 +9370,7 @@ zftksc.launches.appsflyersdk.com
 .fantom.foundation
 .fantom.network
 .fantv.hk
+.fanza.jp
 .fap-xxx.com
 .fap18.net
 .fap666.com
@@ -9815,6 +9818,7 @@ zftksc.launches.appsflyersdk.com
 .fnmt.es
 .foampositeshoes.com
 .fochk.org
+.focusfeatures.com
 .focustaiwan.tw
 .fofg.org
 .foftolia.com
@@ -11605,6 +11609,7 @@ zftksc.launches.appsflyersdk.com
 .hayabusa.media
 .hayday.com
 .haydaygame.com
+.hayu.com
 .hayya.ae
 .hbabit.com
 .hbfile.net
@@ -12050,6 +12055,7 @@ zftksc.launches.appsflyersdk.com
 .hkporn.net
 .hkreadingcity.net
 .hkreporter.com
+.hkt
 .hkt-enterprise.com
 .hkt-eye.com
 .hkt.com
@@ -12973,6 +12979,7 @@ zftksc.launches.appsflyersdk.com
 .ilife.wang
 .illawarramercury.com.au
 .illgames.jp
+.illumination.com
 .illusion111.com
 .illusionas.com
 .illusionchn.com
@@ -16726,7 +16733,6 @@ zftksc.launches.appsflyersdk.com
 .msk.kitazawa.me
 .msn.com
 .msn.net
-.msnbc.com
 .msnewskids.com
 .msnewskids.net
 .msnewskids.org
@@ -17126,8 +17132,11 @@ zftksc.launches.appsflyersdk.com
 .nbcolympics.com
 .nbcsports.com
 .nbcudigitaladops.com
+.nbcumv.com
 .nbcuni.com
+.nbcunicareers.com
 .nbcuniversal.com
+.nbcuniversalprivacy.com
 .nbdh15.buzz
 .nbtvpn.com
 .nbys.tv
@@ -18755,6 +18764,7 @@ zftksc.launches.appsflyersdk.com
 .pbxes.org
 .pc.com
 .pca.st
+.pccw
 .pccw.com
 .pccwglobal.com
 .pccwsolutions.com
@@ -20350,6 +20360,7 @@ zftksc.launches.appsflyersdk.com
 .renyurenquan.org
 .renzhe.cloud
 .repe21.com
+.replit.com
 .repo.new
 .report-megafon.ru
 .repotama.com
@@ -22812,6 +22823,7 @@ zftksc.launches.appsflyersdk.com
 .telegramdownload.com
 .telekom.com
 .telekom.de
+.telemundo.com
 .telerik.com
 .telesco.pe
 .telesec.de
@@ -23403,6 +23415,7 @@ zftksc.launches.appsflyersdk.com
 .torrentproject.se
 .torrenty.org
 .torrindex.net
+.tortoisegit.org
 .tortoisesvn.net
 .torvpn.com
 .tosh.comedycentral.com
@@ -23894,6 +23907,7 @@ zftksc.launches.appsflyersdk.com
 .udnfunlife.com
 .udomain.hk
 .udtrucksmeena.com
+.udxfpp.com
 .ueberamazon.de
 .uflash.tv
 .uforadio.com.tw
@@ -23971,11 +23985,18 @@ zftksc.launches.appsflyersdk.com
 .united.ru
 .unity.com
 .unity3d.com
+.universalbeijingresort.com
+.universalhorrorunleashed.com
+.universalkidsresort.com
 .universalorlando.com
+.universalpictures.co.uk
 .universalpictures.com
+.universalpicturesathome.com
 .universalpicturesinternational.com
+.universalproductsexperiences.com
 .universalscalablefirmware.org
 .universalstudioshollywood.com
+.universalukproject.co.uk
 .universitypressscholarship.com
 .unknownspace.org
 .unkoscene.com
@@ -24002,6 +24023,7 @@ zftksc.launches.appsflyersdk.com
 .upfrontcfd.com
 .upfrontfea.com
 .upghsbc.com
+.uphe.com
 .upholdjustice.org
 .upjav.cc
 .uplay-istrip.com
@@ -24051,6 +24073,7 @@ zftksc.launches.appsflyersdk.com
 .usersdrive.com
 .usertrust.com
 .usfk.mil
+.usj.co.jp
 .usma.edu
 .usno.navy.mil
 .usocial.pro
