@@ -2,26 +2,26 @@
 #--------------------------------------
 #Total lines: 998
 #Version: 1.7.9-release
-#Update time: 2026-11-16 17:36:05 UTC+8
-#Update content: 新增拦截TopOn聚合与上海领页广告接口8条及崩溃日志与埋点上报域名6条
+#Update time: 2026-11-23 00:33:15 UTC+8
+#Update content: IP规则补充no-resolve并修正IPv6与正则输出#221，感谢@hhh2210
 
 #Homepage: https://github.com/TG-Twilight/AWAvenue-Ads-Rule
 #License: https://github.com/TG-Twilight/AWAvenue-Ads-Rule/blob/main/LICENSE
 
 
-IP-CIDR,111.20.26.186/32
-IP-CIDR,112.84.130.73/32
-IP-CIDR,116.142.251.100/32
-IP-CIDR,116.177.251.215/32
-IP-CIDR,120.77.173.114/32
-IP-CIDR,123.56.23.22/32
-IP-CIDR,14.29.101.160/32
-IP-CIDR,14.29.101.168/32
-IP-CIDR,14.29.101.169/32
-IP-CIDR,182.254.116.116/32
-IP-CIDR,203.205.137.89/32
-IP-CIDR,218.77.192.51/32
-IP-CIDR,38.190.225.166/32
+IP-CIDR,111.20.26.186/32,no-resolve
+IP-CIDR,112.84.130.73/32,no-resolve
+IP-CIDR,116.142.251.100/32,no-resolve
+IP-CIDR,116.177.251.215/32,no-resolve
+IP-CIDR,120.77.173.114/32,no-resolve
+IP-CIDR,123.56.23.22/32,no-resolve
+IP-CIDR,14.29.101.160/32,no-resolve
+IP-CIDR,14.29.101.168/32,no-resolve
+IP-CIDR,14.29.101.169/32,no-resolve
+IP-CIDR,182.254.116.116/32,no-resolve
+IP-CIDR,203.205.137.89/32,no-resolve
+IP-CIDR,218.77.192.51/32,no-resolve
+IP-CIDR,38.190.225.166/32,no-resolve
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
 DOMAIN,1500026601.vodplayer.wxamedia.com
