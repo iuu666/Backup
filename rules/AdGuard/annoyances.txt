@@ -97,6 +97,7 @@
 .callback.onlinepbx.ru
 .callkeeper.ru
 .callmenow.com.ua
+.campaign.denikn.cz
 .canzocoos.com
 .carambo.la
 .catchynews.net

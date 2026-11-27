@@ -3045,6 +3045,7 @@
 .adc.api.nine.com.au
 .adc.nine.com.au
 .adc.xxxlshop.de
+.adcanvas.com
 .adcct.advancecctvbd.com
 .adcfj.chocomize.com
 .adchemix.com
@@ -6743,6 +6744,7 @@
 .aowaat.elfadistrelec.fi
 .aozmpm.jwell.com
 .aozwsa.scotthotel.com
+.ap-prd-edge-clientlog.nexon.com
 .ap.absoluteprotein.in
 .ap.alphaplatform.net
 .ap.app.mixvariado.com
@@ -8628,6 +8630,7 @@
 .applytics.os4work.com
 .applytics.zwyr157wwiu6eior.com
 .appmetr.com
+.appmetrica.sovcombank.ru
 .appmetrica.yandex.com
 .appmetrica.yandex.net
 .approach.wise1-golf.com
@@ -10071,6 +10074,7 @@
 .beafdf.restaupro.com
 .beagle.prod.tda.link
 .beam.bereach.ai
+.beam.denikn.cz
 .beam.ecomms.beamconnect.com.au
 .beam.koddi.com
 .beam.remp.impresa.pt
@@ -10163,6 +10167,7 @@
 .beratung.schippkeundpartner.com
 .berninischulz.anunciojuridico.com.br
 .berry.strathberry.com
+.berrytots.com
 .berserkhydrant.com
 .bersq.theadventurechallenge.com
 .best-casino-malaysia-reviews.net.mydays.de
@@ -39048,6 +39053,7 @@
 .heartbeats.prd.data.s.joyn.de
 .heartbreakingmind.com
 .hearthow.com
+.heathstyle.com
 .heatmap-events-collector.instapage.com
 .heatmap-tracking-do-to-s3-worker-prod.flipdesk.workers.dev
 .heatmap.emma.tools
@@ -39627,6 +39633,7 @@
 .hovnec.biovancia.com
 .hovxns.dehen1920.com
 .howdoesthislook.com
+.howglam.com
 .hoxha.nieuwspaal.network
 .hoxsin-ad.hoxsin.co.jp
 .hp.taboola.com
@@ -45814,6 +45821,7 @@
 .livetrafficfeed.com
 .livewebstats.dk
 .living.chartwell.com
+.livingoff.com
 .livingsleet.com
 .livkjl.recea.pl
 .livlnpnd.goteam.dk
@@ -56202,6 +56210,7 @@
 .mascguys.com
 .maschine.bengs-modellbau.de
 .maserati-info.p06.elqsandbox.com
+.maskdomains.com
 .maskedadmin.com
 .masondown.com
 .masseurexpress.com
@@ -66300,6 +66309,7 @@
 .pamelarandom.com
 .pamvc.sexymodest.com
 .pamzqm.yitechnology.com
+.pan.pazarama.com
 .panda.kasika.io
 .panda.khadi.de
 .panda.khadi.es
@@ -70161,7 +70171,6 @@
 .ranklink.de
 .ranlq.homedics.com
 .rannat.varusteleka.com
-.rapid-cdn.yottaa.com
 .rapidcounter.com
 .rapidscraper.com
 .rapidstats.net
@@ -111001,6 +111010,7 @@
 .toweringanswer.com
 .toxic-writer.xyz
 .toy.libaasfashionmart.com
+.toy.log.nexon.io
 .toyotacf.net.mydays.de
 .toys.kongessloejd.be
 .toys.kongessloejd.ch
