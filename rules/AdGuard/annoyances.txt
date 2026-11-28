@@ -109,6 +109,7 @@
 .ccm19.de
 .cdn-chat.grattis.ru
 .cdn-server.live
+.cdn.aichat24.ru
 .cdn.callbackhunter.com
 .cdn.callbackkiller.com
 .cdn.callibri.ru

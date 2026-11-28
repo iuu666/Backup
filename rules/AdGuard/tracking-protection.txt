@@ -2605,6 +2605,7 @@
 .ac-ebis.usen-ssi.jp
 .ac-ebis.usen-store.com
 .ac-ebis.usen.biz
+.ac.avito.ru
 .ac.conel.jp
 .ac.ecai-report.com
 .ac.geechs-job.com
@@ -12955,6 +12956,7 @@
 .cdn.defractal.com
 .cdn.deviceinf.com
 .cdn.dfsdk.com
+.cdn.diginetica.net
 .cdn.dminorschool.com
 .cdn.dsspn.com
 .cdn.dulceauroraa.com
@@ -56238,6 +56240,7 @@
 .materialparcel.com
 .mateti.net
 .matheranalytics.com
+.mathrevolt.com
 .mathtag.com
 .mato.clanto.cloud
 .mato.pruebasfondeo.com
@@ -57836,6 +57839,7 @@
 .melodiousharmony.com
 .melodioussymphony.com
 .melodyglobe.com
+.melodyivory.com
 .meltmilk.com
 .member.oewa.at
 .member.usenix.org
@@ -57922,6 +57926,7 @@
 .messages.blackhat.com
 .messaging.ajo17apac.adls.adobevlab.com
 .messmonster.com
+.messrod.com
 .messyoranges.com
 .mesure.ad-works.fr
 .mesure.chaussuresduchateau.com
@@ -62901,6 +62906,7 @@
 .mysunwest.fmservice.com
 .mythad.com
 .mythtracker.com
+.mythweaver.net
 .mytictac.com
 .mytop.live.vkvideo.ru
 .mytopf.com
@@ -67164,6 +67170,7 @@
 .pelvt.clearchoice.com
 .pemskb.unitedcinemas.jp
 .pen.pendoring.co.za
+.penbuzz.com
 .pendo-data-prod.box.com
 .pengeskabe.jcp.dk
 .penguin.craftpeak.io
@@ -67508,6 +67515,7 @@
 .pitmanmusic.com
 .piu.alldent-zahnzentrum-bremen.de
 .pivimc.unitrailer.pl
+.pivotfresh.com
 .piwik.agglo-larochelle.fr
 .piwik.astiga.com
 .piwik.bistum-essen.de
@@ -117475,6 +117483,7 @@
 .users.51.la
 .users.vesrox.com
 .users.vidy.st
+.usersays.com
 .usesfathom.com
 .usgzei.vidaxl.ch
 .usivbt.qoo10.com

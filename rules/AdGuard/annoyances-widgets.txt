@@ -37,6 +37,7 @@
 .carambo.la
 .cbot.ai
 .cdn-chat.grattis.ru
+.cdn.aichat24.ru
 .cdn.callbackhunter.com
 .cdn.callbackkiller.com
 .cdn.callibri.ru
